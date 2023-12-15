@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Web\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class,'index'])->name('/');
+Route::get('/register', [HomeController::class,'register'])->name('register');
+Route::get('/register/travel-agent', [HomeController::class,'registerTravelAgent'])->name('registerTravelAgent');
+Route::get('/register/regular-user', [HomeController::class,'registerRegularUser'])->name('registerRegularUser');
+Route::get('/verify/otp', [HomeController::class,'verifyOtp'])->name('verifyOtp');
+Route::get('/login', [HomeController::class,'login'])->name('login');
+Route::get('/forgot/password', [HomeController::class,'forgotPassword'])->name('forgotPassword');
+Route::get('/forgot/otp', [HomeController::class,'forgotOtp'])->name('forgotOtp');
+Route::get('/reset/password', [HomeController::class,'resetPassword'])->name('resetPassword');
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
