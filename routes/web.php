@@ -17,6 +17,8 @@ use App\Http\Controllers\Web\HomeController;
 Route::get('/', [HomeController::class,'index'])->name('/');
 Route::get('/register', [HomeController::class,'register'])->name('register');
 Route::get('/register/travel-agent', [HomeController::class,'registerTravelAgent'])->name('registerTravelAgent');
+Route::post('/register/travel/agent/submit', [HomeController::class,'registerTravelAgentSubmit'])->name('registerTravelAgentSubmit');
+Route::post('/register/regular/user/submit', [HomeController::class,'registerRegularUserSubmit'])->name('registerRegularUserSubmit');
 Route::get('/register/regular-user', [HomeController::class,'registerRegularUser'])->name('registerRegularUser');
 Route::get('/verify/otp', [HomeController::class,'verifyOtp'])->name('verifyOtp');
 Route::get('/login', [HomeController::class,'login'])->name('login');

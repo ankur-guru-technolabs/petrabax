@@ -33,3 +33,245 @@ let tabChange = function(val){
     ele[val-2].focus()
   }   
 } 
+
+// REGISTER TRAVEL AGENT 
+
+// FORM SUBMIT
+
+$(document).ready(function() {
+  $($.validator.addMethod("strongPassword", function(value, element) {
+    var hasMinLength = value.length >= 8;
+    var hasUpperCase = /[A-Z]/.test(value);
+    var hasLowerCase = /[a-z]/.test(value);
+    var hasDigit = /\d/.test(value);
+    var hasSpecialChar = /[@$!%*?&]/.test(value);
+    var errorMessages = [];
+    if (!hasMinLength) {
+        errorMessages.push("Password must be at least 8 characters long.");
+    }
+    if (!hasUpperCase) {
+        errorMessages.push("Password must include at least one uppercase letter.");
+    }
+    if (!hasLowerCase) {
+        errorMessages.push("Password must include at least one lowercase letter.");
+    }
+    if (!hasDigit) {
+        errorMessages.push("Password must include at least one numeric digit.");
+    }
+    if (!hasSpecialChar) {
+        errorMessages.push("Password must include at least one special character (@ $ ! % * ? &).");
+    }
+    this.settings.messages[element.name].strongPassword = errorMessages.join("<br>");
+    return hasMinLength && hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar;
+  }, "Password requirements not met."));
+  $("#register-travel-agent-form").validate({
+      rules: {
+          first_name: {
+            required: true,
+            maxlength: 50,
+          },
+          last_name: {
+              required: true,
+              maxlength: 50,
+          },
+          email: {
+              required: true,
+              email: true,
+          },
+          secondary_email: {
+              email: true,
+          },
+          password: {
+              required: true,
+              strongPassword: true,
+          },
+          cpwd: {
+              required: true,
+              equalTo: "#password-field",
+          },
+          agency: {
+            required: true,
+          },
+          arc: {
+            required: true,
+          },
+          address: {
+            required: true,
+          },
+          city: {
+            required: true,
+          },
+          state: {
+            required: true,
+          },
+          country: {
+            required: true,
+          },
+          zip_code: {
+            required: true,
+          },
+          phone_number: {
+            required: true,
+          },
+          terms: {
+            required: true,
+          }
+      },
+      messages: {
+          first_name: {
+            required: "Please enter your first name",
+            maxlength: "First name cannot be more than 50 characters",
+          },
+          last_name: {
+              required: "Please enter your last name",
+              maxlength: "Last name cannot be more than 50 characters",
+          },
+          email: {
+              required: "Please enter a valid email address",
+              email: "Email must be a valid Email",
+          },
+          secondary_email: {
+              email: "Please enter a valid secondary email address",
+          },
+          password: {
+              required: "Please choose a secure password",
+              passwordLength: "Password must be at least 8 characters and meet the specified criteria.",
+          },
+          cpwd: {
+              required: "Please confirm your chosen password",
+              equalTo: "Password and confirm password should be the same",
+          },
+          agency: {
+              required: "Please enter the name of your travel agency",
+          },
+          arc: {
+              required: "Please enter your ARC, IATAN, or CLIA number",
+          },
+          address: {
+              required: "Please enter your agency's address",
+          },
+          city: {
+              required: "Please enter the name of your city",
+          },
+          state: {
+              required: "Please enter the name of your state or province",
+          },
+          country: {
+              required: "Please enter the name of your country",
+          },
+          zip_code: {
+              required: "Please enter your zip code",
+          },
+          phone_number: {
+              required: "Please enter a valid phone number",
+          },
+          terms: {
+              required: "Please check the box to indicate your consent to the terms and conditions."
+          },
+      },
+      errorElement: 'span',
+      errorPlacement: function (error, element) {
+          error.addClass('invalid-feedback');
+          element.closest('.form-group').append(error);
+      },
+      submitHandler: function (form) {
+          form.submit();
+      }
+  });
+  $("#register-regular-user-form").validate({
+      rules: {
+          first_name: {
+            required: true,
+            maxlength: 50,
+          },
+          last_name: {
+              required: true,
+              maxlength: 50,
+          },
+          email: {
+              required: true,
+              email: true,
+          },
+          password: {
+              required: true,
+              strongPassword: true,
+          },
+          cpwd: {
+              required: true,
+              equalTo: "#password-field",
+          },
+          address: {
+            required: true,
+          },
+          city: {
+            required: true,
+          },
+          state: {
+            required: true,
+          },
+          country: {
+            required: true,
+          },
+          zip_code: {
+            required: true,
+          },
+          phone_number: {
+            required: true,
+          },
+          terms: {
+            required: true,
+          }
+      },
+      messages: {
+          first_name: {
+            required: "Please enter your first name",
+            maxlength: "First name cannot be more than 50 characters",
+          },
+          last_name: {
+              required: "Please enter your last name",
+              maxlength: "Last name cannot be more than 50 characters",
+          },
+          email: {
+              required: "Please enter a valid email address",
+              email: "Email must be a valid Email",
+          },
+          password: {
+              required: "Please choose a secure password",
+              passwordLength: "Password must be at least 8 characters and meet the specified criteria.",
+          },
+          cpwd: {
+              required: "Please confirm your chosen password",
+              equalTo: "Password and confirm password should be the same",
+          },
+          address: {
+              required: "Please enter your address",
+          },
+          city: {
+              required: "Please enter your city",
+          },
+          state: {
+              required: "Please enter your state or province",
+          },
+          country: {
+              required: "Please enter your country",
+          },
+          zip_code: {
+              required: "Please enter your zip code",
+          },
+          phone_number: {
+              required: "Please enter a valid phone number",
+          },
+          terms: {
+              required: "Please check the box to indicate your consent to the terms and conditions."
+          },
+      },
+      errorElement: 'span',
+      errorPlacement: function (error, element) {
+          error.addClass('invalid-feedback');
+          element.closest('.form-group').append(error);
+      },
+      submitHandler: function (form) {
+          form.submit();
+      }
+  });
+});

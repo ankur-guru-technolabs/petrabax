@@ -34,6 +34,7 @@
 </div>
 <script type="text/javascript" src="{{ asset('/assets/js/propper.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('/assets/js/jquery.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 <script type="text/javascript" src="{{ asset('/assets/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('/assets/js/owl.carousel.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('/assets/js/custom.js')}}"></script>
