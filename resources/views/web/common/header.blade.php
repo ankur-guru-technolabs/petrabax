@@ -15,4 +15,5 @@
     <link rel="stylesheet" href="{{ asset('/assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('/assets/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{ asset('/assets/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>

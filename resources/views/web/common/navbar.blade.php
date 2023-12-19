@@ -5,9 +5,10 @@
             <a href="{{route('/')}}" class="site-logo desktop-logo">Petrabax</a>
         </div>
         <div class="col-8 right-signup-btn">
+            @if(Auth::guest())
             <a href="{{route('register')}}" class="site-login-btn signup-btn">Sign Up</a>
             <a href="{{route('login')}}" class="site-login-btn login-btn">Login</a>
-
+            @endif
                 <button class="navbar-toggler site-menu-switch  d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa-solid fa-bars"></i>
         </button>

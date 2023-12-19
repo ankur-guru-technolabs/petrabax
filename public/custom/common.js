@@ -26,7 +26,7 @@ let digitValidate = function(ele){
 }
 
 let tabChange = function(val){
-  let ele = document.querySelectorAll('input');
+  let ele = document.querySelectorAll('input.otp-input');
   if(ele[val-1].value != ''){
     ele[val].focus()
   }else if(ele[val-1].value == ''){
@@ -273,5 +273,49 @@ $(document).ready(function() {
       submitHandler: function (form) {
           form.submit();
       }
+  });
+  $("#otp-verify-form").validate({
+    rules: {
+        digit1: {
+            required: true,
+            digits: true,
+            maxlength: 1
+        },
+        digit2: {
+            required: true,
+            digits: true,
+            maxlength: 1
+        },
+        digit3: {
+            required: true,
+            digits: true,
+            maxlength: 1
+        },
+        digit4: {
+            required: true,
+            digits: true,
+            maxlength: 1
+        }
+    },
+    errorElement: "span",
+    errorPlacement: function (error, element) {
+      $("#otp-error-message").text("Please enter 4 digit OTP");
+      $("#otp-error-message").css("color", "red");
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      if ($("#digit1").val() && $("#digit2").val() && $("#digit3").val() && $("#digit4").val()) {
+        $("#otp-error-message").text(""); // Remove the error message when all digits are filled
+      }
+    },
+    submitHandler: function (form) {
+      // Concatenate the values of all four OTP input fields
+      let otpValue = '';
+      for (let i = 1; i <= 4; i++) {
+          let digit = $("#digit" + i).val();
+          otpValue += digit;
+      }
+      $("#concate-otp input").val(otpValue);
+      form.submit();
+    }
   });
 });
