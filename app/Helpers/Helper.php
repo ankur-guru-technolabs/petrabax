@@ -27,7 +27,7 @@ class Helper {
 
         // For sending otp to mail
         
-        if(isset($data['registration_otp'])){
+        if(isset($data['registration_otp']) || isset($data['forgot_pwd_otp'])){
             $otp          = substr(number_format(time() * rand(),0,'',''),0,4);
             $temp         = Temp::firstOrNew(['key' => $data['email']]);
             $temp->key    = $data['email'];

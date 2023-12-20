@@ -25,8 +25,12 @@ Route::get('/verify/otp', [HomeController::class,'verifyOtp'])->name('verifyOtp'
 Route::post('/verify/otp/submit', [HomeController::class,'verifyOtpSubmit'])->name('verifyOtpSubmit');
 Route::get('/login', [HomeController::class,'login'])->name('login');
 Route::get('/forgot/password', [HomeController::class,'forgotPassword'])->name('forgotPassword');
+Route::post('/forgot/password/send/otp', [HomeController::class,'forgotPasswordSendOtp'])->name('forgotPasswordSendOtp');
+Route::get('/forgot/password/resend/otp', [HomeController::class,'forgotPasswordResendOtp'])->name('forgotPasswordResendOtp');
 Route::get('/forgot/otp', [HomeController::class,'forgotOtp'])->name('forgotOtp');
+Route::post('/forgot/verify/otp/submit', [HomeController::class,'forgotVerifyOtpSubmit'])->name('forgotVerifyOtpSubmit');
 Route::get('/reset/password', [HomeController::class,'resetPassword'])->name('resetPassword');
+Route::post('/reset/password/submit', [HomeController::class,'resetPasswordSubmit'])->name('resetPasswordSubmit');
 
 // Auth::routes();
 

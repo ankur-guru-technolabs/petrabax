@@ -171,6 +171,7 @@ $(document).ready(function() {
       },
       errorElement: 'span',
       errorPlacement: function (error, element) {
+          $('.text-danger').text('');
           error.addClass('invalid-feedback');
           element.closest('.form-group').append(error);
       },
@@ -267,6 +268,7 @@ $(document).ready(function() {
       },
       errorElement: 'span',
       errorPlacement: function (error, element) {
+          $('.text-danger').text('');
           error.addClass('invalid-feedback');
           element.closest('.form-group').append(error);
       },
@@ -299,6 +301,7 @@ $(document).ready(function() {
     },
     errorElement: "span",
     errorPlacement: function (error, element) {
+      $('.text-danger').text('');
       $("#otp-error-message").text("Please enter 4 digit OTP");
       $("#otp-error-message").css("color", "red");
     },
@@ -316,6 +319,104 @@ $(document).ready(function() {
       }
       $("#concate-otp input").val(otpValue);
       form.submit();
+    }
+  });
+  $("#forgot-pwd-email-form").validate({
+    rules: {
+      email: {
+        required: true,
+        email: true,
+      },
+    },
+    messages: {
+      email: {
+          required: "Please enter a valid email address",
+          email: "Email must be a valid Email",
+      },
+    },
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+      $('.text-danger').text('');
+      error.addClass('invalid-feedback');
+      element.closest('.form-group').append(error);
+    },
+    submitHandler: function (form) {
+        form.submit();
+    }
+  });
+  $("#forgot-otp-verify-form").validate({
+    rules: {
+        digit1: {
+            required: true,
+            digits: true,
+            maxlength: 1
+        },
+        digit2: {
+            required: true,
+            digits: true,
+            maxlength: 1
+        },
+        digit3: {
+            required: true,
+            digits: true,
+            maxlength: 1
+        },
+        digit4: {
+            required: true,
+            digits: true,
+            maxlength: 1
+        }
+    },
+    errorElement: "span",
+    errorPlacement: function (error, element) {
+      $('.text-danger').text('');
+      $("#forgot-otp-error-message").text("Please enter 4 digit OTP");
+      $("#forgot-otp-error-message").css("color", "red");
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      if ($("#digit1").val() && $("#digit2").val() && $("#digit3").val() && $("#digit4").val()) {
+        $("#forgot-otp-error-message").text("");
+      }
+    },
+    submitHandler: function (form) {
+      let otpValue = '';
+      for (let i = 1; i <= 4; i++) {
+          let digit = $("#digit" + i).val();
+          otpValue += digit;
+      }
+      $("#forgot-concate-otp input").val(otpValue);
+      form.submit();
+    }
+  });
+  $("#reset-password-form").validate({
+    rules: {
+        password: {
+            required: true,
+            strongPassword: true,
+        },
+        cpwd: {
+            required: true,
+            equalTo: "#password-field",
+        },
+    },
+    messages: {
+        password: {
+            required: "Please choose a secure password",
+            passwordLength: "Password must be at least 8 characters and meet the specified criteria.",
+        },
+        cpwd: {
+            required: "Please confirm your chosen password",
+            equalTo: "Password and confirm password should be the same",
+        },
+    },
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+        $('.text-danger').text('');
+        error.addClass('invalid-feedback');
+        element.closest('.form-group').append(error);
+    },
+    submitHandler: function (form) {
+        form.submit();
     }
   });
 });

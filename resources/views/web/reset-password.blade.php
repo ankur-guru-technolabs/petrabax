@@ -10,19 +10,23 @@
             <div class="col-lg-1 d-none d-lg-block"></div>
             <div class="col-sm-6 col-lg-5 login-form">
                 <h2>Reset Account Password</h2>
-                <form>
+                <form id="reset-password-form" action="{{route('resetPasswordSubmit')}}" method="post">
+                    @csrf
                     <div class="form-group">
                         <label>Password</label>
                         <div class="position-relative hideshow-pwd">
-                            <input id="password-field" type="password" class="form-control" name="password" placeholder="Password" required>
+                            <input id="password-field" type="password" class="form-control" name="password" placeholder="Password" value="{{ old('password') }}">
                             <span toggle="#password-field" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>
+                            @error('password')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label>Confirm Password</label>
                         <div class="position-relative hideshow-pwd">
-                            <input id="password-field1" type="password" class="form-control" name="cpwd" placeholder="Confirm Password" required>
+                            <input id="password-field1" type="password" class="form-control" name="cpwd" placeholder="Confirm Password" value="{{ old('password') }}">
                             <span toggle="#password-field1" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>
                         </div>
                     </div>
