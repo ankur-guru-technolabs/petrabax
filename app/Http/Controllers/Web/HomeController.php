@@ -9,6 +9,7 @@ use App\Models\Temp;
 use App\Models\User;
 use Auth;
 use Helper;
+use Session;
 
 class HomeController extends Controller
 {
@@ -147,6 +148,47 @@ class HomeController extends Controller
         session()->put('registration_email', $request->email);
 
         return redirect()->route('verifyOtp')->with('message','Registered Successfully');
+    }
+
+    public function loginSubmit(Request $request){
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required|password_strength',
+        ],[
+            'password_strength' => 'The :attribute must be at least 8 characters long and meet the specified criteria.',
+        ]);
+    
+        $validator->addExtension('password_strength', function ($attribute, $value, $parameters, $validator) {
+            return preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/', $value);
+        });
+    
+        $validator->sometimes('password', 'password_strength', function ($input) {
+            return !empty($input->password);
+        });
+    
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+       
+        $email = $request->email;
+        $password = $request->password;
+        $user = User::where('email', '=', $email)->first();
+        
+        if (!$user) {
+            $validator = Validator::make([], []);
+            $validator->errors()->add('email', 'The user with the provided email does not exist.');
+            return redirect()->back()->withErrors($validator)->withInput();
+        } 
+
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            Auth::login($user);
+            $rememberMeLifetime = $request->has('remember_me') ? config('auth.remember_me_lifetime', 20160) : config('auth.without_remember_me_lifetime', 60);
+    
+            Session::put('login_expires_at', now()->addMinutes($rememberMeLifetime));
+            Session::put('is_remembered', $request->has('remember_me'));
+            return redirect()->route('/')->with('message','Login Successfully');
+        } 
+        return redirect()->back()->with('error', 'Invalid Credentials')->withInput();
     }
 
     public function resendOtp(){
@@ -305,6 +347,6 @@ class HomeController extends Controller
             $user->update();
         } 
         session()->forget('forgot_pwd_email');
-        return redirect()->route('/')->with('message','Password Reset Successfully');
+        return redirect()->route('login')->with('message','Password Reset Successfully');
     }
 }

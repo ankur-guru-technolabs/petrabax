@@ -419,4 +419,35 @@ $(document).ready(function() {
         form.submit();
     }
   });
+  $("#login-form").validate({
+    rules: {
+        email: {
+            required: true,
+            email: true,
+        },
+        password: {
+            required: true,
+            strongPassword: true,
+        },
+    },
+    messages: {
+        email: {
+            required: "Please enter a valid email address",
+            email: "Email must be a valid Email",
+        },
+        password: {
+            required: "Please choose a secure password",
+            passwordLength: "Password must be at least 8 characters and meet the specified criteria.",
+        },
+    },
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+        $('.text-danger').text('');
+        error.addClass('invalid-feedback');
+        element.closest('.form-group').append(error);
+    },
+    submitHandler: function (form) {
+        form.submit();
+    }
+  });
 });

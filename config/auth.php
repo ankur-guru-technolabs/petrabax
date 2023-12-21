@@ -111,5 +111,7 @@ return [
     */
 
     'password_timeout' => 10800,
+    'remember_me_lifetime' => 20160,
+    'without_remember_me_lifetime' => 60,
 
 ];
