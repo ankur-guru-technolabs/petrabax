@@ -94,6 +94,70 @@
 	    }
 	}
 
+	function searching_carousel() {
+		if($('.searching-carousel').length) {
+	      $('.searching-carousel').owlCarousel({
+	            loop:true,
+	            margin:0,
+	            nav:true,
+	            autoplay: true,
+	            items:1,
+	            dots:false
+	        })
+	    } 
+	}
+
+	function client_carousel() {
+		if($('.client-carousel').length) {
+	      $('.client-carousel').owlCarousel({
+	            loop:true,
+	            margin:0,
+	            nav:false,
+	            autoplay: true,
+	            dots:false,
+	            responsive: {
+				    0: {
+				      items: 1
+				    },
+				    320: {
+				      items: 2
+				    },
+				    576: {
+				      items: 3
+				    },
+
+				    1024: {
+				      items: 4
+				    },
+
+				    1366: {
+				      items: 6
+				    }
+				}
+	        })
+	    }
+	}
+
+	function tour_carousel() {
+		if($('.tour-carousel').length) {
+	      $('.tour-carousel').owlCarousel({
+	            loop:true,
+	            margin:30,
+	            nav:true,
+	            autoplay: true,
+	            dots:false,
+	            responsive: {
+				    0: {
+				      items: 1
+				    },
+				    576: {
+				      items: 2
+				    }
+				}
+	        })
+	    }
+	}
+
 	function hideshow_password() {
 		
 		if($(".toggle-password").length) {
@@ -110,16 +174,29 @@
 		}
 	}
 
+	function pendingorder_carousel() {
+		if($('.pending-box-image-carousel').length) {
+	      $('.pending-box-image-carousel').owlCarousel({
+	            loop:true,
+	            margin:0,
+	            nav:true,
+	            autoplay: true,
+	            items:1,
+	            dots:false
+	        })
+	    } 
+	}
+
 	function password_size() {
 		$('input[type="password"]').focus(function() { 
-	    //   $('input[type="password"]').css('font-size','26px');
+	     // $('input[type="password"]').css('font-size','26px');
 	    });
 
 	    if( $('input[type="password"]').val() != "") {
-	    //   $('input[type="password"]').css('font-size','26px');
+	      //$('input[type="password"]').css('font-size','26px');
 	    }
 	    else {
-	    //   $('input[type="password"]').css('font-size','15px');
+	      //$('input[type="password"]').css('font-size','15px');
 	    }
 	}
 
@@ -137,6 +214,7 @@
 	});
 	
 	$( window ).on("load",function() {
+
 		sameheightform();
 
 		attration_carousel();
@@ -152,6 +230,14 @@
 		hideshow_password();
 
 		password_size();
+
+		searching_carousel();
+
+		client_carousel();
+
+		pendingorder_carousel();
+
+		tour_carousel();
 
 		var cururl = window.location.href;
 		
@@ -172,6 +258,11 @@
 	      if (window.location.href.indexOf("login.html") > -1) {
 	      	$('.site-login-btn.login-btn').addClass('active');
 	      }
+
+
+	    if($(".nice-select").length){
+	       $('select.nice-select').niceSelect();
+	    } 
 
 	});
 
