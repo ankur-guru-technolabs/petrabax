@@ -188,8 +188,8 @@
                     <h2>Come again</h2>
                     <p>Are You sure you want to Logout?</p>
                     <div class="button-block d-flex align-items-center">
-                        <a href="#">Log out</a>
-                        <a href="#">Cancel</a>
+                        <a href="{{route('logout')}}">Log out</a>
+                        <a href="">Cancel</a>
                     </div>
                 </div>
             </div>

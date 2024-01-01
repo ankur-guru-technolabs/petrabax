@@ -17,8 +17,9 @@ use App\Http\Controllers\Web\AuthController;
 
 Route::middleware(['checkUserSession'])->group(function () {
     Route::get('/', [AuthController::class, 'index'])->name('/');
-    Route::get('/logout', function () {
-        Auth::logout();
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/main/profile', [HomeController::class, 'mainProfile'])->name('mainProfile');
+        Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
     });
 });
 
@@ -45,7 +46,6 @@ Route::group(['middleware' => ['guest']], function () {
     Route::post('/reset/password/submit', [AuthController::class,'resetPasswordSubmit'])->name('resetPasswordSubmit');
 
 });
-Route::get('/main/profile', [HomeController::class,'mainProfile'])->name('mainProfile');
 
 Route::any('{fallback}', function () {
     return redirect()->route('/');

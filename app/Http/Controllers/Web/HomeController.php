@@ -17,4 +17,10 @@ class HomeController extends Controller
     public function mainProfile(){
         return view('web.Home.main-profile');
     }
+   
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('/')->with('message','Logout Successfully');
+
+    }
 }
