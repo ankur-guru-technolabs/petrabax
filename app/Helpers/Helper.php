@@ -5,6 +5,7 @@ use Mail;
 use App\Mail\EmailVerificationMail;
 use App\Models\Temp;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class Helper {
 
@@ -32,6 +33,16 @@ class Helper {
             $temp         = Temp::firstOrNew(['key' => $data['email']]);
             $temp->key    = $data['email'];
             $temp->value  = $otp;
+            $temp->save();
+            Mail::to($data['email'])->send(new EmailVerificationMail($otp));
+        }
+       
+        if(isset($data['email_update_otp'])){
+            $otp            = substr(number_format(time() * rand(),0,'',''),0,4);
+            $temp           = Temp::firstOrNew(['key' => $data['email']]);
+            $temp->key      = $data['email'];
+            $temp->value    = $otp;
+            $temp->user_id  = Auth::id();
             $temp->save();
             Mail::to($data['email'])->send(new EmailVerificationMail($otp));
         }

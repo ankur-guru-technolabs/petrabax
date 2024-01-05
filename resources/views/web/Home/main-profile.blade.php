@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-4 col-6 travel-box">
                 <div class="travel-box-inner">
-                    <a href="regular-user-profile.html">
+                    <a href="{{route('myProfile')}}">
                         <div class="icon-box">
                             <span><img src="{{ asset('assets/images/profile-icon.png')}}" alt="Profile"></span>
                         </div>
@@ -141,7 +141,7 @@
             @endif
             <div class="col-md-4 col-6 travel-box">
                 <div class="travel-box-inner">
-                    <a href="#">
+                    <a href="{{route('suggestions')}}">
                         <div class="icon-box">
                             <span><img src="{{ asset('assets/images/note-text.png')}}" alt="Suggestions"></span>
                         </div>

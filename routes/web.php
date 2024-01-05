@@ -19,11 +19,18 @@ Route::middleware(['checkUserSession'])->group(function () {
     Route::get('/', [AuthController::class, 'index'])->name('/');
     Route::middleware(['auth'])->group(function () {
         Route::get('/main/profile', [HomeController::class, 'mainProfile'])->name('mainProfile');
+        Route::get('/suggestions', [HomeController::class, 'suggestions'])->name('suggestions');
+        Route::post('/submit/suggestions', [HomeController::class, 'submitSuggestions'])->name('submitSuggestions');
+        Route::get('/my/profile', [HomeController::class, 'myProfile'])->name('myProfile');
+        Route::post('/update/profile', [HomeController::class, 'updateProfile'])->name('updateProfile');
         Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
     });
 });
 
 
+Route::get('/verify/otp', [AuthController::class,'verifyOtp'])->name('verifyOtp');
+Route::post('/verify/otp/submit', [AuthController::class,'verifyOtpSubmit'])->name('verifyOtpSubmit');
+Route::get('/resend/otp', [AuthController::class,'resendOtp'])->name('resendOtp');
 
 Route::group(['middleware' => ['guest']], function () {
 
@@ -32,9 +39,6 @@ Route::group(['middleware' => ['guest']], function () {
     Route::post('/register/travel/agent/submit', [AuthController::class,'registerTravelAgentSubmit'])->name('registerTravelAgentSubmit');
     Route::post('/register/regular/user/submit', [AuthController::class,'registerRegularUserSubmit'])->name('registerRegularUserSubmit');
     Route::get('/register/regular-user', [AuthController::class,'registerRegularUser'])->name('registerRegularUser');
-    Route::get('/resend/otp', [AuthController::class,'resendOtp'])->name('resendOtp');
-    Route::get('/verify/otp', [AuthController::class,'verifyOtp'])->name('verifyOtp');
-    Route::post('/verify/otp/submit', [AuthController::class,'verifyOtpSubmit'])->name('verifyOtpSubmit');
     Route::get('/login', [AuthController::class,'login'])->name('login');
     Route::post('/login/submit', [AuthController::class,'loginSubmit'])->name('loginSubmit');
     Route::get('/forgot/password', [AuthController::class,'forgotPassword'])->name('forgotPassword');

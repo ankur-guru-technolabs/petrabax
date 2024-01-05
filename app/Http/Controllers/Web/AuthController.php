@@ -192,21 +192,34 @@ class AuthController extends Controller
     }
 
     public function resendOtp(){
-        if(!session('registration_email')){
+        if(!session('registration_email') && !session('update_old_email')){
             return redirect()->back()->with('error','Can not find email');
         }
-        $email = session('registration_email');
-        $email_data   = [
-            'email'               => $email,
-            'registration_otp'    => 'registration_otp',
-            'subject'             => 'Registration OTP',
-        ];
-        Helper::sendMail('emails.registration_otp', $email_data, $email, '');
+        $email = session('registration_email') ?? session('update_old_email');
+
+        if(session('registration_email')){
+            $email_data   = [
+                'email'               => $email,
+                'registration_otp'    => 'registration_otp',
+                'subject'             => 'Registration OTP',
+            ];
+            Helper::sendMail('emails.registration_otp', $email_data, $email, '');
+        }
+
+        if(session('update_old_email')){
+            $email_data   = [
+                'email'               => $email,
+                'email_update_otp'    => 'email_update_otp',
+                'subject'             => 'Email Update OTP',
+            ];
+            Helper::sendMail('emails.email_update_otp', $email_data, $aemail, '');
+        }
+
         return redirect()->back()->with('message','OTP send Successfully');
     }
   
     public function verifyOtpSubmit(Request $request){
-        if(!session('registration_email')){
+        if(!session('registration_email') && !session('update_old_email')){
             return redirect()->back()->with('error','Can not find email');
         }
 
@@ -218,8 +231,7 @@ class AuthController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $email = session('registration_email');
-        
+        $email = session('registration_email') ?? session('update_old_email');
         $temp         = Temp::where('key',$email)->first();
         if($temp != null){
             $is_data_present = Temp::where('key',$email)->where('value',$request->otp)->first();
@@ -231,6 +243,17 @@ class AuthController extends Controller
                 if ($minutesDifference > 10) {
                     return redirect()->back()->with('error','OTP expired. Please resend');
                 }
+
+                // IF USER UPDATE EMAIL THEN IT WILL USE
+                
+                if(session('update_old_email')){
+                    User::where('id',$temp->user_id)->update(['email' => $temp->key]);
+                    $is_data_present->delete();
+                    session()->forget('update_old_email');
+                    return redirect()->route('mainProfile')->with('message','Email Updated Successfully');
+                }
+
+                // IF USER REGISTER THEN IT WILL USE
 
                 $user = User::where('email', '=', $email)->first();
 
