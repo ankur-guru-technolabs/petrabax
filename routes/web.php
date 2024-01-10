@@ -1,8 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\AuthController;
+use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\Web\HotelController;
+use App\Http\Controllers\Web\InfoController;
+use App\Http\Controllers\Web\OrderController;
+use App\Http\Controllers\Web\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +20,16 @@ use App\Http\Controllers\Web\AuthController;
 */
 
 Route::middleware(['checkUserSession'])->group(function () {
-    Route::get('/', [AuthController::class, 'index'])->name('/');
     Route::middleware(['auth'])->group(function () {
+        Route::get('/detail/review', [HotelController::class, 'detailReview'])->name('detailReview');
+        
+        Route::get('/completed/order', [OrderController::class, 'completedOrder'])->name('completedOrder');
+
+        Route::get('/payment', [PaymentController::class, 'payment'])->name('payment');
+        Route::get('/pay/online', [PaymentController::class, 'payOnline'])->name('payOnline');
+
         Route::get('/main/profile', [HomeController::class, 'mainProfile'])->name('mainProfile');
+        Route::get('/group/travel', [HomeController::class, 'groupTravel'])->name('groupTravel');
         Route::get('/suggestions', [HomeController::class, 'suggestions'])->name('suggestions');
         Route::post('/submit/suggestions', [HomeController::class, 'submitSuggestions'])->name('submitSuggestions');
         Route::get('/my/profile', [HomeController::class, 'myProfile'])->name('myProfile');
@@ -27,6 +38,16 @@ Route::middleware(['checkUserSession'])->group(function () {
     });
 });
 
+Route::get('/', [AuthController::class, 'index'])->name('/');
+Route::get('/hotels', [HotelController::class, 'hotels'])->name('hotels');
+Route::get('/hotels/list', [HotelController::class, 'hotelsList'])->name('hotelsList');
+Route::get('/hotel/detail', [HotelController::class, 'hotelDetails'])->name('hotelDetails');
+
+Route::get('/paradores', [HotelController::class, 'paradores'])->name('paradores');
+
+Route::get('/cart', [HotelController::class, 'cart'])->name('cart');
+Route::get('/thank-you', [HotelController::class, 'thankYou'])->name('thankYou');
+Route::get('/destination/guides', [HotelController::class, 'destinationGuides'])->name('destinationGuides');
 
 Route::get('/verify/otp', [AuthController::class,'verifyOtp'])->name('verifyOtp');
 Route::post('/verify/otp/submit', [AuthController::class,'verifyOtpSubmit'])->name('verifyOtpSubmit');
@@ -50,6 +71,11 @@ Route::group(['middleware' => ['guest']], function () {
     Route::post('/reset/password/submit', [AuthController::class,'resetPasswordSubmit'])->name('resetPasswordSubmit');
 
 });
+
+Route::get('/about-us', [InfoController::class,'aboutUs'])->name('aboutUs');
+Route::get('/video-libary', [InfoController::class,'videoLibrary'])->name('videoLibrary');
+Route::get('/terms-conditions', [InfoController::class,'termsCondition'])->name('termsCondition');
+Route::get('/contact-us', [InfoController::class,'contactUs'])->name('contactUs');
 
 Route::any('{fallback}', function () {
     return redirect()->route('/');

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        @include('web.common.header')
+        @include('web.Common.header')
     </head>
     <body>
-        @include('web.common.navbar')
+        @include('web.Common.navbar')
         <div class="site-main-content">
             @yield('content')
-            @include('web.common.contact-us')
+            @include('web.Common.contact-us')
         </div>
-        @include('web.common.footer')
+        @include('web.Common.footer')
+        @yield('jscontent')
     </body>
 </html>

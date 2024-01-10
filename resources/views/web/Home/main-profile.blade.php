@@ -46,7 +46,7 @@
             @if(Auth::user()->type == 'user')
             <div class="col-md-4 col-6 travel-box">
                 <div class="travel-box-inner">
-                    <a href="#">
+                    <a href="{{route('groupTravel')}}">
                         <div class="icon-box">
                             <span><img src="{{ asset('assets/images/people.png')}}" alt="Group Travel"></span>
                         </div>
@@ -118,7 +118,7 @@
             @if(Auth::user()->type == 'travel_agent')
             <div class="col-md-4 col-6 travel-box">
                 <div class="travel-box-inner">
-                    <a href="#">
+                    <a href="{{route('groupTravel')}}">
                         <div class="icon-box">
                             <span><img src="{{ asset('assets/images/terms.png')}}" alt="Terms"></span>
                         </div>

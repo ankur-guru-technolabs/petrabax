@@ -1,7 +1,7 @@
 <div class="footer-section">
     <div class="container">
         <ul class="footer-menu-link">
-            <li><a href="#">About Us</a></li>
+            <li><a href="{{route('aboutUs')}}">About Us</a></li>
             <li><a href="#">Brochure Centre </a></li>
             <li><a href="#">Order Brochure</a></li>
             <li><a href="#">Affiliate Program</a></li>
@@ -10,12 +10,12 @@
             <li><a href="#">Terms of Use</a></li>
 
 
-            <li><a href="#">Video Library</a></li>
+            <li><a href="{{route('videoLibrary')}}">Video Library</a></li>
             <li><a href="#">Find an Agent </a></li>
             <li><a href="#">Credit Card Form</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="{{route('termsCondition')}}">Terms & Conditions</a></li>
             <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="{{route('contactUs')}}">Contact Us</a></li>
             <li><a href="#">Cookies  </a></li>
         </ul>
         <div class="copyright-section">
@@ -34,12 +34,16 @@
 </div>
 <script type="text/javascript" src="{{ asset('/assets/js/propper.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('/assets/js/jquery.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js" integrity="sha512-LsnSViqQyaXpD4mBBdRYeP6sRwJiJveh2ZIbW41EBrNmKxgr/LFZIiWT6yr+nycvhvauz8c2nYMhrP80YhG7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 <script type="text/javascript" src="{{ asset('/assets/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('/assets/js/owl.carousel.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('/assets/js/custom.js')}}"></script>
 <script type="text/javascript" src="{{ asset('/custom/common.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script type="text/javascript" src="{{ asset('assets/js/masonry.pkgd.min.js')}}"></script>
+
 <script>
   @if(Session::has('message'))
         toastr.options =

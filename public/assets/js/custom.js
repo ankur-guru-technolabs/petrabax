@@ -187,17 +187,17 @@
 	    } 
 	}
 
-	function password_size() {
-		$('input[type="password"]').focus(function() { 
-	     // $('input[type="password"]').css('font-size','26px');
-	    });
-
-	    if( $('input[type="password"]').val() != "") {
-	      //$('input[type="password"]').css('font-size','26px');
-	    }
-	    else {
-	      //$('input[type="password"]').css('font-size','15px');
-	    }
+	function orderimage_carousel() {
+		if($('.order-image-carousel').length) {
+	      	$('.order-image-carousel').owlCarousel({
+	            loop:true,
+	            margin:0,
+	            nav:true,
+	            autoplay: true,
+	            items:1,
+	            dots:false
+	        })
+	    } 
 	}
 
 	/* + Document On Ready */
@@ -229,8 +229,6 @@
 
 		hideshow_password();
 
-		password_size();
-
 		searching_carousel();
 
 		client_carousel();
@@ -239,10 +237,9 @@
 
 		tour_carousel();
 
-		var cururl = window.location.href;
-		
-	   // cururl = cururl.split('#')[0];
+		orderimage_carousel();
 
+		var cururl = window.location.href;
 	 
 	    var parts = cururl.split('/');
 

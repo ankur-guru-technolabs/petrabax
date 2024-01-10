@@ -21,6 +21,10 @@ class HomeController extends Controller
         return view('web.Home.main-profile');
     }
  
+    public function groupTravel(){
+        return view('web.Home.group-travel');
+    }
+
     public function suggestions(){
         return view('web.Home.suggestions');
     }

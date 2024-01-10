@@ -66,13 +66,13 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item active" href="#">Hotels</a>
+                            <a class="dropdown-item active" href="{{route('hotels')}}">Hotels</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Paradores of Spain</a>
+                            <a class="dropdown-item" href="{{route('paradores')}}">Paradores of Spain</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Paradores of Portugal</a>
+                            <a class="dropdown-item" href="{{route('paradores')}}">Paradores of Portugal</a>
                         </li>
                     </ul>
                 </li>
@@ -185,7 +185,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"
+                    <a class="nav-link" href="{{route('cart')}}"
                         >Cart
                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path

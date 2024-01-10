@@ -611,4 +611,122 @@ $(document).ready(function() {
         form.submit();
     }
   });
+
+  // HOTEL PAGE
+
+  $('.datepicker').datepicker({
+    format: 'dd/mm/yyyy',
+  });
+
+  $("#roomguest").on("click",function() {
+    $(".room-select-dropdown").toggleClass("show"); 
+  });
+
+  $('.add:not(.child-add)').click(function () {   
+    var th = $(this).closest('.wrap').find('.count');     
+    th.val(+th.val() + 1);
+  });
+  
+  $('.sub').click(function () {
+    var th = $(this).closest('.wrap').find('.count');     
+    if (th.val() > 1) th.val(+th.val() - 1);
+  });
+
+  $('.add.child-add').on("click",function () {
+    if ($(this).prev().val() < 12) {
+      $(this).prev().val(+$(this).prev().val() + 1);
+    }
+  });
+
+  $('.sub.child-sub, .children-sub').click(function () {
+    var th = $(this).closest('.wrap').find('.count');     
+    if (th.val() > 0) th.val(+th.val() - 1);
+  });
+
+  $(document).click(function (e) {
+    e.stopPropagation();
+    var container = $(".filter-room-guest");
+    //check if the clicked area is dropDown or not
+    if (container.has(e.target).length === 0) {
+        $('.room-select-dropdown').removeClass("show");
+    }
+  });
+  
+  // HOTEL LIST
+
+  $(".mobile-view-widget-btn").on("click",function(){
+    $(".left-sidebar-widget .sidebar-inner").toggleClass("active");
+  });
+
+  $("#min_price,#max_price").on('change', function () {
+    $('#price-range-submit').show();
+    var min_price_range = parseInt($("#min_price").val());
+    var max_price_range = parseInt($("#max_price").val());
+    if (min_price_range > max_price_range) {
+      $('#max_price').val(min_price_range);
+    }
+    $("#slider-range").slider({
+      values: [min_price_range, max_price_range]
+    });
+  });
+
+  $("#min_price,#max_price").on("paste keyup", function () {                                        
+    $('#price-range-submit').show();
+    var min_price_range = parseInt($("#min_price").val());
+    var max_price_range = parseInt($("#max_price").val());
+    if(min_price_range == max_price_range){
+      max_price_range = min_price_range + 100;
+      $("#min_price").val(min_price_range);   
+      $("#max_price").val(max_price_range);
+    }
+    $("#slider-range").slider({
+      values: [min_price_range, max_price_range]
+    });
+  });
+
+
+  $(function () {
+    $("#slider-range").slider({
+      range: true,
+      orientation: "horizontal",
+      min: 0,
+      max: 10000,
+      values: [0, 10000],
+      step: 100,
+
+      slide: function (event, ui) {
+        if (ui.values[0] == ui.values[1]) {
+          return false;
+        }
+        $("#min_price").val(ui.values[0]);
+        $("#max_price").val(ui.values[1]);
+      }
+    });
+    $("#min_price").val($("#slider-range").slider("values", 0));
+    $("#max_price").val($("#slider-range").slider("values", 1));
+  });
+
+  // HOTEL DETAILS
+
+  $("#includegst").click(function () {
+    if ($(this).is(":checked")) {
+      $(".gst-block-filed").toggleClass('show');
+    } else {
+      $(".gst-block-filed").RemoveClass('show');
+    }
+  });
+
+  // PARADORES
+
+  $('.masonry-grid').masonry({
+    itemSelector: '.masonary-box',
+  });
+
+  $(document).click(function (e) {
+    e.stopPropagation();
+    var container = $(".filter-room-guest");
+    if (container.has(e.target).length === 0) {
+      $('.room-select-dropdown').removeClass("show");
+    }
+  });
 });
