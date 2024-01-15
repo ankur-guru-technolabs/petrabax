@@ -5,7 +5,7 @@
             <a href="{{route('/')}}" class="site-logo desktop-logo">Petrabax</a>
         </div>
         <div class="col-8 right-signup-btn">
-            @if(Auth::guest())
+            @if(Auth::guest() || Auth::user()->type == 'admin')
             <a href="{{route('register')}}" class="site-login-btn signup-btn">Sign Up</a>
             <a href="{{route('login')}}" class="site-login-btn login-btn">Login</a>
             @endif

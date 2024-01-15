@@ -24,7 +24,7 @@ class Helper {
         
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-        $headers .= 'From: <info@konnected-dating.com>' . "\r\n";
+        $headers .= 'From: <info@petrabax.com>' . "\r\n";
 
         // For sending otp to mail
         
