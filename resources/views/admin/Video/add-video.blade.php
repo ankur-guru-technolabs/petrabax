@@ -23,7 +23,7 @@
                             </select>
                         </div>
                         <div class="col-sm-6 form-group brochure-full-width-upload custom-upload">
-                            <label>Image Upload</label>
+                            <label>Video Upload</label>
                             <div class="myform">
                                 <div class="uploadbox">
                                     <span class="btn_upload"><input type="file" id="imag" title="" class="input-img" accept="image/*"/><img id="uploadicon1" src="{{ asset('/assets_admin/images/gallery-add.png')}}" alt="Gallery Add">

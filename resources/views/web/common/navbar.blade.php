@@ -19,14 +19,26 @@
 <nav class="navbar navbar-expand-lg sitemain-menu">
     <div class="container">
         <a class="navbar-brand mobile-menu d-none" href="{{route('/')}}">Petrabax</a>
-
+        @php
+            $activeRoutes = [
+                'home' => request()->routeIs('/'),
+                'hotel' => request()->routeIs('hotels') || request()->routeIs('hotelsList') || request()->routeIs('hotelDetails') || request()->routeIs('paradores'),
+                'transfer' => request()->routeIs('support'),
+                'train' => request()->routeIs('support'),
+                'tour' => request()->routeIs('support'),
+                'car' => request()->routeIs('support'),
+                'road' => request()->routeIs('support'),
+                'spanish' => request()->routeIs('support'),
+                'cart' => request()->routeIs('cart'),
+            ];
+        @endphp
         <div
             class="collapse navbar-collapse"
             id="navbarSupportedContent"
         >
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{route('/')}}"
+                    <a class="nav-link {{ $activeRoutes['home'] ? 'active' : '' }}" href="{{route('/')}}"
                         >Home
                         <svg class="menu-icon-svg" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -39,7 +51,7 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hotel
+                    <a class="nav-link dropdown-toggle {{ $activeRoutes['hotel'] ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hotel
                         <svg class="menu-icon-svg" width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M12.2923 20.1663H4.95898C3.12565 20.1663 2.20898 19.2497 2.20898 17.4163V10.083C2.20898 8.24967 3.12565 7.33301 4.95898 7.33301H9.54232V17.4163C9.54232 19.2497 10.459 20.1663 12.2923 20.1663Z" stroke="#498C92" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"
@@ -77,7 +89,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"
+                    <a class="nav-link {{ $activeRoutes['transfer'] ? 'active' : '' }}" href="#"
                         >Transfers & Day Trips
                         <svg class="menu-icon-svg" width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -90,7 +102,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"
+                    <a class="nav-link {{ $activeRoutes['train'] ? 'active' : '' }}" href="#"
                         >Trains
                         <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -100,7 +112,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"
+                    <a class="nav-link {{ $activeRoutes['tour'] ? 'active' : '' }}" href="#"
                         >Tours
                         <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -110,7 +122,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"
+                    <a class="nav-link {{ $activeRoutes['car'] ? 'active' : '' }}" href="#"
                         >Cars
                         <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -141,7 +153,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"
+                    <a class="nav-link {{ $activeRoutes['road'] ? 'active' : '' }}" href="#"
                         >Santiago's Road
                         <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -163,7 +175,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"
+                    <a class="nav-link {{ $activeRoutes['spanish'] ? 'active' : '' }}" href="#"
                         >In Spanish
                         <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -185,7 +197,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('cart')}}"
+                    <a class="nav-link {{ $activeRoutes['cart'] ? 'active' : '' }}" href="{{route('cart')}}"
                         >Cart
                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
