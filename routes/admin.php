@@ -2,6 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\BrochureManagementController;
+use App\Http\Controllers\Admin\CommissionManagementController;
+use App\Http\Controllers\Admin\ContentManagementController;
+use App\Http\Controllers\Admin\CouponController;
+use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\Admin\FeeManagementController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\VideoController;
+use App\Http\Controllers\Admin\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +24,18 @@ use App\Http\Controllers\Admin\AuthController;
 Route::prefix('/admin')->group(function () {
     Route::middleware(['auth','admin.check'])->group(function () {
         Route::get('/dashboard', [AuthController::class, 'index'])->name('dashboard');
+        Route::get('/add/brochure', [BrochureManagementController::class, 'addBrochure'])->name('addBrochure');
+        Route::get('/commission/list', [CommissionManagementController::class, 'commissionList'])->name('commissionList');
+        Route::get('/content/list', [ContentManagementController::class, 'contentList'])->name('contentList'); 
+        Route::get('/add/coupon', [CouponController::class, 'addCoupon'])->name('addCoupon');
+        Route::get('/add/employee', [EmployeeController::class, 'addEmployee'])->name('addEmployee');
+        Route::get('/add/fee', [FeeManagementController::class, 'addFee'])->name('addFee');
+        Route::get('/fee/list', [FeeManagementController::class, 'feeList'])->name('feeList');
+        Route::get('/order/list', [OrderController::class, 'orderList'])->name('orderList');
+        Route::get('/order/detail', [OrderController::class, 'orderDetail'])->name('orderDetail');
+        Route::get('/add/video', [VideoController::class, 'addVideo'])->name('addVideo');
+        Route::get('/user/list', [UserController::class, 'userList'])->name('userList');
+        Route::get('/user/view', [UserController::class, 'userView'])->name('userView');
     });
 
     Route::group(['middleware' => ['guest']], function () {

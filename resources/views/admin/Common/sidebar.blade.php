@@ -13,13 +13,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="user-management.html">
+                    <a href="{{route('userList')}}">
                         <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/user-management.svg')}}" alt="Icon">
                         <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/user-management-hover.svg')}}" alt="Icon"> User Management
                     </a>
                 </li>
                 <li>
-                    <a href="commission-management.html">
+                    <a href="{{route('commissionList')}}">
                         <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/commission.svg')}}" alt="Icon">
                         <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/commission-hover.svg')}}" alt="Icon"> Commission
                     </a>
@@ -31,8 +31,8 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="agent-fee-management.html">Fees management</a></li>
-                        <li><a class="dropdown-item" href="agent-add-fee-management.html">Add Fees</a></li>
+                        <li><a class="dropdown-item" href="{{route('feeList')}}">Fees management</a></li>
+                        <li><a class="dropdown-item" href="{{route('addFee')}}">Add Fees</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -41,9 +41,8 @@
                         <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/coupon-hover.svg')}}" alt="Icon"> Coupon
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="coupon.html">Coupon</a></li>
-                        <li><a class="dropdown-item" href="create-coupon.html">Create Coupon</a></li>
+                    <ul class="dropdown-menu"> 
+                        <li><a class="dropdown-item" href="{{route('addCoupon')}}">Create Coupon</a></li>
                     </ul>
                 </li>
                 <li>
@@ -58,17 +57,37 @@
                         <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/hotel-paradores-hover.svg')}}" alt="Icon"> Hotel content (Paradores)
                     </a>
                 </li>
-                <li>
-                    <a href="brochure-management.html">
+                <li class="dropdown">
+                    <a class="dropdown-link" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">
                         <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/brochure.svg')}}" alt="Icon">
                         <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/brochure-hover.svg')}}" alt="Icon"> Brochure management
+                        <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{route('addBrochure')}}">Brochure</a></li>
+                        <li><a class="dropdown-item" href="{{route('addBrochure')}}">Create Brochure</a></li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="video-management.html">
+                <li class="dropdown">
+                    <a class="dropdown-link" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">
                         <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/video.svg')}}" alt="Icon">
                         <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/video-hover.svg')}}" alt="Icon"> Video management
+                        <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{route('addVideo')}}">Video</a></li>
+                        <li><a class="dropdown-item" href="{{route('addVideo')}}">Create Video</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-link" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/video.svg')}}" alt="Icon">
+                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/video-hover.svg')}}" alt="Icon"> Order management
+                        <span><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{route('orderList')}}">Order</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#">
@@ -95,11 +114,11 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="add-new-emplyoee.html">Add Employees</a></li>
+                        <li><a class="dropdown-item" href="{{route('addEmployee')}}">Add Employees</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="content-management.html">
+                    <a href="{{route('contentList')}}">
                         <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/cms.svg')}}" alt="Icon">
                         <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/cms-hover.svg')}}" alt="Icon"> Content management
                     </a>
