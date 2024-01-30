@@ -43,15 +43,16 @@
 		if($(".niceselect").length) {
 			$('.niceselect').niceSelect(); 
 		}
-
-		$(".admin-sidebar").niceScroll({
-	      cursorcolor: "#4C735A",
-	      cursorwidth: "3px", 
-	      cursorborder: "none",
-	      cursorborderradius: "3px",
-	      autohidemode: false,
-	      railpadding: { top: 0, right: 3, left: 3, bottom: 0 }
-	    });
+		if($(".admin-sidebar").length) {
+			$(".admin-sidebar").niceScroll({
+		      cursorcolor: "#4C735A",
+		      cursorwidth: "3px", 
+		      cursorborder: "none",
+		      cursorborderradius: "3px",
+		      autohidemode: false,
+		      railpadding: { top: 0, right: 3, left: 3, bottom: 0 }
+		    });
+		}
 	});
 
 })(jQuery);

@@ -134,13 +134,14 @@
         <h2>Featured Hotels</h2>
       </div>
       <div class="row">
+        @foreach($hotels as $hotel)
         <div class="col-md-4 col-6 hotel-box featured-hotels-box">
           <div class="hotel-box-inner">
             <div class="hotel-img">
               <img src="{{ asset('assets/images/featured-hotels-1.jpg')}}" alt="featured-hotels">
             </div>
             <div class="hotel-content">
-              <h2>Miro, Vizcaya - Bilbao, SPAIN</h2>
+              <h2>{{$hotel['name']['content']}}</h2>
               <div class="hotel-sort-details">
                 <span class="count-rating w-100 d-inline-block">
                   <i class="fa-solid fa-star"></i>
@@ -148,15 +149,15 @@
                 </span>
                 <span class="availablety">4 Rooms available</span>
               </div>
-              <p>Located in the heart of Gran Vía in Madrid, This trendy hotel is 3-minute walk from Gran Via subway station,Its originality will surprise you and can be perceived as soon ...</p>
+              <p>{{  \Illuminate\Support\Str::limit($hotel['description']['content'], 170, '...') }}</p>
             </div>
             <div class="book-btn">
                 <a href="#" title="book now">Book Now</a>
             </div>
           </div>
         </div>
-
-        <div class="col-md-4 col-6 hotel-box featured-hotels-box">
+        @endforeach
+        <!-- <div class="col-md-4 col-6 hotel-box featured-hotels-box">
           <div class="hotel-box-inner">
             <div class="hotel-img">
               <img src="{{ asset('assets/images/featured-hotels-2.jpg')}}" alt="featured-hotels">
@@ -264,7 +265,7 @@
                 <a href="#" title="book now">Book Now</a>
             </div>
           </div>
-        </div>
+        </div> -->
 
 
       </div>

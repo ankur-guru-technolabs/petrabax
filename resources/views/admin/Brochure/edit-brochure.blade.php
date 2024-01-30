@@ -3,28 +3,33 @@
 <div class="admin-content-area">
     <div class="video-management">
         <div class="section-header">
-            <h2>Video management</h2>
+            <h2>Brochure management</h2>
         </div>
-        <div class="video-management-inner">
-            <div class="video-content">
-            <form id="video-form" action="{{route('videoSubmit')}}" method="post" enctype="multipart/form-data">
+        <div class="video-management-inner brochure-management">
+            <div class="video-content ">
+                <div class="back-to-order-link d-flex align-items-center">
+                    <a href="{{route('brochureList')}}"><i class="fa-solid fa-chevron-left"></i></a>
+                    <h5 class="mx-auto">Edit</h5>
+                </div>
+                <form id="brochure-form" action="{{route('brochureUpdate')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
-                        <div class="col-sm-6 form-group">
-                            <label>Video URL</label>
-                            <input type="text" class="form-control" name="url" id="url">
-                            @if($errors->has('url'))
+                        <input type="hidden" name="id" value="{{$brochure->id}}">
+                        <div class="col-sm-4 form-group">
+                            <label>Brochure Name</label>
+                            <input type="text" class="form-control" name="name" value="{{$brochure->name}}">
+                            @if($errors->has('name'))
                                 <small class="text-danger">
-                                    {{ $errors->first('url') }}
+                                    {{ $errors->first('name') }}
                                 </small>
                             @endif
                         </div>
-                        <div class="col-sm-6 form-group">
+                        <div class="col-sm-4 form-group">
                             <label>Select Category</label>
                             <select class="nice-select form-control" name="category_id" id="category_id">
                                 <option value="">Select Category</option>
                                 @foreach($categories as $cat)
-                                    <option value="{{$cat->id}}">{{$cat->name}}</option>
+                                    <option value="{{$cat->id}}" {{$cat->id == $brochure->category_id  ? 'selected' : ''}}>{{$cat->name}}</option>
                                 @endforeach
                             </select>
                             <p id="cat-error"></p>
@@ -34,34 +39,36 @@
                                 </small>
                             @endif
                         </div>
-                        <div class="col-sm-6 form-group brochure-full-width-upload custom-upload">
-                            <label>Video Upload</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 form-group brochure-full-width-upload  custom-upload">
+                            <label>Image Upload</label>
                             <div class="myform">
                                 <div class="uploadbox">
-                                    <span class="btn_upload"><input type="file" id="imag" title="" class="input-img" accept="video/*" name="video"/><img id="uploadicon1" src="{{ asset('/assets_admin/images/gallery-add.png')}}" alt="Gallery Add">
+                                    <span class="btn_upload"><input type="file" id="imag" title="" class="input-img" accept="image/*" name="image"/><img class="preview1 prev" id="uploadicon1" src="{{ asset('/brochure/'.$brochure->image) }}" alt="Gallery Add">
                                         <img id="ImgPreview" src="" class="preview1" />
                                         <input type="button" id="removeImage1" value="x" class="btn-rmv1" />
                                     </span>
                                 </div>
-                                @if($errors->has('video'))
+                                @if($errors->has('image'))
                                     <small class="text-danger">
-                                        {{ $errors->first('video') }}
+                                        {{ $errors->first('image') }}
                                     </small>
                                 @endif
                             </div>
                         </div>
-                        <div class="col-sm-6 form-group brochure-full-width-upload custom-upload">
-                            <label>Thumbnail Upload</label>
+                        <div class="col-sm-4 form-group  custom-upload">
+                            <label>PDF Upload</label>
                             <div class="myform">
                                 <div class="uploadbox">
-                                    <span class="btn_upload"><input type="file" id="imag2" title="" class="input-img" accept="image/*" name="thumbnail"/><img id="uploadicon2" src="{{ asset('/assets_admin/images/gallery-add.png')}}" alt="Gallery Add">
-                                        <img id="ImgPreview2" src="" class="preview2" />
+                                    <span class="btn_upload"><input type="file" id="imag2" title="" class="input-img" accept="application/pdf" name="pdf"/><img id="uploadicon2" src="{{ asset('/assets_admin/images/gallery-add.png')}}" alt="Gallery Add">
+                                        <img id="ImgPreview2" src="{{ asset('/assets_admin/images/pdf.png') }}" class="preview2" />
                                         <input type="button" id="removeImage2" value="x" class="btn-rmv2" />
                                     </span>
                                 </div>
-                                @if($errors->has('thumbnail'))
+                                @if($errors->has('pdf'))
                                     <small class="text-danger">
-                                        {{ $errors->first('thumbnail') }}
+                                        {{ $errors->first('pdf') }}
                                     </small>
                                 @endif
                             </div>
@@ -77,7 +84,7 @@
 </div>
 @endsection
 @section('jscontent') 
-<script type="text/javascript">
+<script type = "text/javascript">
     $(".nice-select").niceSelect();
 
     function readURL(input, imgControlName) {
@@ -92,10 +99,8 @@
 
     $("#imag").change(function() {
         // add your logic to decide which image control you'll use
-        // var imgControlName = "#ImgPreview";
-        // readURL(this, imgControlName);
-        var basePath = window.location.origin;
-        $(".preview1").attr("src",basePath + "/assets_admin/images/video.png");
+        var imgControlName = "#ImgPreview";
+        readURL(this, imgControlName);
         $('#uploadicon1').addClass('show');
         $('.preview1').addClass('prev');
         $('.btn-rmv1').addClass('rmv');
@@ -103,8 +108,10 @@
 
     $("#imag2").change(function() {
         // add your logic to decide which image control you'll use
-        var imgControlName = "#ImgPreview2";
-        readURL(this, imgControlName);
+        // var imgControlName = "#ImgPreview2";
+        // readURL(this, imgControlName);
+        var basePath = window.location.origin;
+        $(".preview2").attr("src",basePath + "/assets_admin/images/pdf.png");
         $('#uploadicon2').addClass('show');
         $('.preview2').addClass('prev');
         $('.btn-rmv2').addClass('rmv');
@@ -121,48 +128,32 @@
 
     $("#removeImage2").click(function(e) {
         e.preventDefault();
-        $("#imag2").val("");
-        $("#ImgPreview2").attr("src", "");
-        $('.preview2').removeClass('prev');
+        // $("#imag2").val("");
+        // $("#ImgPreview2").attr("src", "");
+        // $('.preview2').removeClass('prev');
         $('.btn-rmv2').removeClass('rmv');
-        $('#uploadicon2').removeClass('show');
-    }); 
+        // $('#uploadicon2').removeClass('show');
+    });
 
     $(document).ready(function() {
-        $("#video-form").validate({
+        $('#uploadicon2').addClass('show');
+        $('.preview2').addClass('prev');
+        $("#brochure-form").validate({
             ignore: [],
             rules:{
-                url: {
-                    required: function (element) {
-                        return ($("#imag").val().length == 0 && $("#imag2").val().length == 0);
-                    }
-                },
-                video: {
-                    required: function (element) {
-                        return ($("#url").val().length == 0);
-                    }
-                },
-                thumbnail: {
-                    required: function (element) {
-                        return ($("#url").val().length == 0);
-                    }
+                name: {
+                    required: true
                 },
                 category_id: {
                     required: true
-                },
+                }
             },
             messages:{
-                url: {
-                    required: "Url field is required when both video and thumbnail are empty."
-                },
-                video: {
-                    required: "Video field is required when both url and thumbnail are empty."
-                },
-                thumbnail: {
-                    required: "Thumbnail field is required when both url and video are empty."
+                name:{
+                    required: "Name filed is required."
                 },
                 category_id: {
-                    required: "Category id field is required."
+                    required: "Category is required."
                 }
             },
             errorElement: 'span',
@@ -178,29 +169,7 @@
                 }
             },
             submitHandler: function (form) {
-                if ($("#url").val().length !== 0 && $("#imag").val().length !== 0 && $("#imag2").val().length !== 0) {
-                    alert("Please fill only url or video and thumbnail");
-                    return false;
-                }
                 form.submit();
-            },
-            success: function (label, element) {
-                var fieldName = $(element).attr('name');
-                if (fieldName === 'url') {
-                    $("#imag").removeClass('error');
-                    $("#imag-error").remove();
-                    $("#imag2").removeClass('error');
-                    $("#imag2-error").remove();
-                } else if (fieldName === 'video' || fieldName === 'thumbnail') {
-                    $("#url").removeClass('error');
-                    $("#url").next('.error').remove();
-                }
-            }
-        });
-        $("#category_id").change(function () {
-            if ($(this).val() !== "") {
-                $("#category_id").removeClass('error');
-                $("#category_id-error").remove();
             }
         });
     });

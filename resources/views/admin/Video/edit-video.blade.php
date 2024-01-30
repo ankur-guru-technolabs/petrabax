@@ -7,12 +7,13 @@
         </div>
         <div class="video-management-inner">
             <div class="video-content">
-            <form id="video-form" action="{{route('videoSubmit')}}" method="post" enctype="multipart/form-data">
+            <form id="video-form" action="{{route('videoUpdate')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
+                        <input type="hidden" name="id" value="{{$video->id}}">
                         <div class="col-sm-6 form-group">
                             <label>Video URL</label>
-                            <input type="text" class="form-control" name="url" id="url">
+                            <input type="text" class="form-control" name="url" id="url" value="{{$video->url}}">
                             @if($errors->has('url'))
                                 <small class="text-danger">
                                     {{ $errors->first('url') }}
@@ -24,7 +25,7 @@
                             <select class="nice-select form-control" name="category_id" id="category_id">
                                 <option value="">Select Category</option>
                                 @foreach($categories as $cat)
-                                    <option value="{{$cat->id}}">{{$cat->name}}</option>
+                                    <option value="{{$cat->id}}" {{$cat->id == $video->category_id  ? 'selected' : ''}}>{{$cat->name}}</option>
                                 @endforeach
                             </select>
                             <p id="cat-error"></p>
@@ -38,7 +39,13 @@
                             <label>Video Upload</label>
                             <div class="myform">
                                 <div class="uploadbox">
-                                    <span class="btn_upload"><input type="file" id="imag" title="" class="input-img" accept="video/*" name="video"/><img id="uploadicon1" src="{{ asset('/assets_admin/images/gallery-add.png')}}" alt="Gallery Add">
+                                    <span class="btn_upload"><input type="file" id="imag" title="" class="input-img" accept="video/*" name="video"/>
+                                        @if($video->video)
+                                            <input type="hidden" value="{{ $video->video }}" name="video" id="hidden-video-value">
+                                            <img id="old-video" src="{{ asset('/assets_admin/images/video.png') }}" alt="Gallery Add">
+                                        @else
+                                            <img id="uploadicon1" src="{{ asset('/assets_admin/images/gallery-add.png')}}" alt="Gallery Add">
+                                        @endif
                                         <img id="ImgPreview" src="" class="preview1" />
                                         <input type="button" id="removeImage1" value="x" class="btn-rmv1" />
                                     </span>
@@ -54,7 +61,13 @@
                             <label>Thumbnail Upload</label>
                             <div class="myform">
                                 <div class="uploadbox">
-                                    <span class="btn_upload"><input type="file" id="imag2" title="" class="input-img" accept="image/*" name="thumbnail"/><img id="uploadicon2" src="{{ asset('/assets_admin/images/gallery-add.png')}}" alt="Gallery Add">
+                                    <span class="btn_upload"><input type="file" id="imag2" title="" class="input-img" accept="image/*" name="thumbnail"/>
+                                        @if($video->thumbnail_image)
+                                            <input type="hidden" value="{{ $video->thumbnail_image }}" name="thumbnail" id="hidden-thumb-value">
+                                            <img class="preview2 prev" id="old-thumb" src="{{ asset('/video/'.$video->thumbnail_image) }}" alt="Gallery Add">
+                                        @else
+                                            <img id="uploadicon2" src="{{ asset('/assets_admin/images/gallery-add.png')}}" alt="Gallery Add">
+                                        @endif
                                         <img id="ImgPreview2" src="" class="preview2" />
                                         <input type="button" id="removeImage2" value="x" class="btn-rmv2" />
                                     </span>
@@ -94,15 +107,20 @@
         // add your logic to decide which image control you'll use
         // var imgControlName = "#ImgPreview";
         // readURL(this, imgControlName);
+        $('#old-video').attr("src", "");
+        $('#hidden-video-value').val("");
         var basePath = window.location.origin;
         $(".preview1").attr("src",basePath + "/assets_admin/images/video.png");
         $('#uploadicon1').addClass('show');
         $('.preview1').addClass('prev');
         $('.btn-rmv1').addClass('rmv');
     });
-
+    
     $("#imag2").change(function() {
         // add your logic to decide which image control you'll use
+        $('#old-thumb').attr("src", "");
+        $('#old-thumb').hide();
+        $('#hidden-thumb-value').val("")
         var imgControlName = "#ImgPreview2";
         readURL(this, imgControlName);
         $('#uploadicon2').addClass('show');
@@ -117,6 +135,9 @@
         $('.preview1').removeClass('prev');
         $('.btn-rmv1').removeClass('rmv');
         $('#uploadicon1').removeClass('show');
+        var basePath = window.location.origin;
+        $('#old-video').attr("src", basePath + "/assets_admin/images/gallery-add.png");
+        $('#hidden-video-value').val("");
     });
 
     $("#removeImage2").click(function(e) {
@@ -126,25 +147,44 @@
         $('.preview2').removeClass('prev');
         $('.btn-rmv2').removeClass('rmv');
         $('#uploadicon2').removeClass('show');
+        var basePath = window.location.origin;
+        $('#old-thumb').attr("src", basePath + "/assets_admin/images/gallery-add.png");
+        if ($('#old-thumb').is(':hidden')) {
+            $('#old-thumb').show();
+        }
+        $('#hidden-thumb-value').val("");
     }); 
 
     $(document).ready(function() {
+        @if($video->video)
+            $('.btn-rmv1').addClass('rmv');
+        @endif
+        @if($video->thumbnail_image)
+            $('.btn-rmv2').addClass('rmv');
+        @endif
         $("#video-form").validate({
             ignore: [],
             rules:{
                 url: {
                     required: function (element) {
-                        return ($("#imag").val().length == 0 && $("#imag2").val().length == 0);
+                        var hiddenVideoValue = $("#hidden-video-value").val();
+                        var hiddenThumbValue  = $("#hidden-thumb-value").val();
+                        return (
+                            ($("#imag").val().length == 0 && $("#imag2").val().length == 0) &&
+                            ((hiddenVideoValue == undefined || hiddenVideoValue.length == 0) && (hiddenThumbValue == undefined || hiddenThumbValue.length == 0))
+                        );
                     }
                 },
                 video: {
                     required: function (element) {
-                        return ($("#url").val().length == 0);
+                        var hiddenVideoValue = $("#hidden-video-value").val();
+                        return ($("#url").val().length == 0 && (hiddenVideoValue == undefined || hiddenVideoValue.length == 0));
                     }
                 },
                 thumbnail: {
                     required: function (element) {
-                        return ($("#url").val().length == 0);
+                        var hiddenThumbValue  = $("#hidden-thumb-value").val();
+                        return ($("#url").val().length == 0 && (hiddenThumbValue == undefined || hiddenThumbValue.length == 0));
                     }
                 },
                 category_id: {
@@ -178,7 +218,9 @@
                 }
             },
             submitHandler: function (form) {
-                if ($("#url").val().length !== 0 && $("#imag").val().length !== 0 && $("#imag2").val().length !== 0) {
+                var hiddenVideoValue = $("#hidden-video-value").val();
+                var hiddenThumbValue  = $("#hidden-thumb-value").val();
+                if ($("#url").val().length !== 0 && ($("#imag").val().length !== 0 && $("#imag2").val().length !== 0)) {
                     alert("Please fill only url or video and thumbnail");
                     return false;
                 }
