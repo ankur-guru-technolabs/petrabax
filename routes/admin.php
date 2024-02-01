@@ -34,13 +34,16 @@ Route::prefix('/admin')->group(function () {
         Route::get('/brochure/list', [BrochureManagementController::class, 'brochureList'])->name('brochureList');
         Route::get('/add/brochure', [BrochureManagementController::class, 'addBrochure'])->name('addBrochure');
         Route::post('/brochure/submit', [BrochureManagementController::class, 'brochureSubmit'])->name('brochureSubmit');
-        Route::get('/brochure/edit/{id}', [BrochureManagementController::class, 'brochureEdit'])->name('brochureEdit'); 
-        Route::post('/brochure/update', [BrochureManagementController::class, 'brochureUpdate'])->name('brochureUpdate');  
         Route::get('/brochure/delete/{id}', [BrochureManagementController::class, 'brochureDelete'])->name('brochureDelete'); 
         Route::get('/commission/list', [CommissionManagementController::class, 'commissionList'])->name('commissionList');
         Route::get('/content/list', [ContentManagementController::class, 'contentList'])->name('contentList'); 
         Route::post('/content/submit', [ContentManagementController::class, 'contentSubmit'])->name('contentSubmit'); 
+        Route::get('/coupon/list', [CouponController::class, 'couponList'])->name('couponList'); 
         Route::get('/add/coupon', [CouponController::class, 'addCoupon'])->name('addCoupon');
+        Route::post('/coupon/submit', [CouponController::class, 'couponSubmit'])->name('couponSubmit');
+        Route::get('/coupon/edit/{id}', [CouponController::class, 'couponEdit'])->name('couponEdit'); 
+        Route::post('/coupon/update', [CouponController::class, 'couponUpdate'])->name('couponUpdate');  
+        Route::get('/coupon/delete/{id}', [CouponController::class, 'couponDelete'])->name('couponDelete'); 
         Route::get('/add/employee', [EmployeeController::class, 'addEmployee'])->name('addEmployee');
         Route::get('/add/fee', [FeeManagementController::class, 'addFee'])->name('addFee');
         Route::get('/fee/list', [FeeManagementController::class, 'feeList'])->name('feeList');

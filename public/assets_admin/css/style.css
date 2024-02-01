@@ -1243,6 +1243,10 @@ table.dataTable td a.edit-icon {
 	border-bottom: 0;
 }
 
+.coupon-form-content .form-top-filed {
+	max-width: 430px;
+}
+
 .coupon-form-content {
 	max-width: 500px;
 	margin-bottom: 80px;
@@ -1403,6 +1407,7 @@ table.dataTable td a.edit-icon {
 	color: #373737;
 	padding-left: 30px;
 }
+.coupon-form-content .form-top-filed .nice-select,
 .maximum-discount .nice-select {
 	border: 1px solid #98CE44;
   border-radius: 10px;
@@ -1417,7 +1422,22 @@ table.dataTable td a.edit-icon {
   width: 170px;
   background-color: transparent;
 } 
+.coupon-form-content .form-top-filed .nice-select {
+	max-width: 100%;
+	width: 100%;
+}
+.price-prifix-discount {
+	position: absolute;
+	top: 18px;
+	left: 9px;
+	color: #6C757D;
+	font-size: 14px;
+}
+.form-filed-data .form-control.spacing-left {
+	padding-left: 20px;
+}
 
+.coupon-form-content .form-top-filed .nice-select:after,
 .maximum-discount .nice-select:after {
 	width: 11px;
 	height: 11px;

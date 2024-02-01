@@ -10,7 +10,7 @@
                 'user' => request()->routeIs('userList') || request()->routeIs('userView'),
                 'commision' => request()->routeIs('commissionList'),
                 'fee' => request()->routeIs('addFee') || request()->routeIs('feeList'),
-                'coupon' => request()->routeIs('addCoupon'),
+                'coupon' => request()->routeIs('addCoupon') || request()->routeIs('couponList') || request()->routeIs('countEdit'),
                 'hotelbeds' => request()->routeIs('addHotelbeds'),
                 'paradores' => request()->routeIs('addParadores'),
                 'brochure' => request()->routeIs('addBrochure') || request()->routeIs('brochureList') || request()->routeIs('brochureEdit'),
@@ -64,7 +64,8 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
                     <ul class="dropdown-menu {{ $activeRoutes['coupon'] ? 'show' : '' }}"> 
-                        <li><a class="dropdown-item {{ request()->routeIs('addCoupon') ? 'active' : '' }}" href="{{route('addCoupon')}}">Create Coupon</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('couponList') ? 'active' : '' }}" href="{{route('couponList')}}">List</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('addCoupon') ? 'active' : '' }}" href="{{route('addCoupon')}}">Add</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

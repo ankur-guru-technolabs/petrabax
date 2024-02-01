@@ -3,18 +3,19 @@
 <div class="admin-content-area">
     <div class="create-coupon-section">
         <div class="section-header">
-            <h2>Create Coupon</h2>
+            <h2>Edit Coupon</h2>
         </div>
         <div class="create-coupon-inner user-management-inner">
             <h3>Create coupon</h3>
             <div class="coupon-form-content">
-                <form id="coupon-form" action="{{route('couponSubmit')}}" method="post" enctype="multipart/form-data">
+                <form id="coupon-form" action="{{route('couponUpdate')}}" method="post" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" name="id" value="{{$coupon->id}}">
                     <div class="form-top-filed">
                         <div class="row">
                             <div class="col-sm-6 form-group">
                                 <label>Coupon Title</label>
-                                <input type="text" class="form-control" name="title">
+                                <input type="text" class="form-control" name="title" value="{{$coupon->title}}">
                                 @if($errors->has('title'))
                                     <small class="text-danger">
                                         {{ $errors->first('title') }}
@@ -23,7 +24,7 @@
                             </div>
                             <div class="col-sm-6 form-group">
                                 <label>Coupon Code</label>
-                                <input type="text" class="form-control" name="code">
+                                <input type="text" class="form-control" name="code" value="{{$coupon->code}}">
                                 @if($errors->has('code'))
                                     <small class="text-danger">
                                         {{ $errors->first('code') }}
@@ -36,7 +37,7 @@
                                 <select class="form-control nice-select" name="category_id" id="category_id">
                                     <option value="">Select</option>
                                     @foreach($categories as $cat)
-                                        <option value="{{$cat->id}}">{{$cat->name}}</option>
+                                        <option value="{{$cat->id}}" {{$cat->id == $coupon->category_id  ? 'selected' : ''}}>{{$cat->name}}</option>
                                     @endforeach
                                 </select>
                                 <p id="cat-error"></p>
@@ -50,8 +51,8 @@
                                 <label>User Type</label>
                                 <select class="form-control nice-select" name="user_type" id="user_type">
                                     <option value="">Select</option>
-                                    <option value="user">User</option>
-                                    <option value="travel_agent">Travel agent</option>
+                                    <option value="user"  {{$coupon->user_type == "user"  ? 'selected' : ''}}>User</option>
+                                    <option value="travel_agent"  {{$coupon->user_type == "travel_agent"  ? 'selected' : ''}}>Travel agent</option>
                                 </select>
                                 <p id="user-error"></p>
                                 @if($errors->has('user_type'))
@@ -71,7 +72,7 @@
                                 <div class="form-filed-data">
                                     <div class="position-relative">
                                         <span class="price-prifix-discount">$</span>
-                                        <input type="number" class="form-control spacing-left" name="max_discount">
+                                        <input type="number" class="form-control spacing-left" name="max_discount" value="{{$coupon->max_discount}}">
                                         @if($errors->has('max_discount'))
                                             <small class="text-danger">
                                                 {{ $errors->first('max_discount') }}
@@ -86,17 +87,17 @@
                         <div class="col-6 discount-option-box">
                             <label>Discount</label>
                             <div class="custom-radio-btn">
-                                <input type="radio" id="percentage" name="discount" value="percentage">
+                                <input type="radio" id="percentage" name="discount" value="percentage" {{ ($coupon->discount_type == "percentage")? "checked" : "" }}>
                                 <label for="percentage" class="d-flex align-items-center">
                                     <!--<input type="text" class="form-control">-->
-                                    <input class="form-control input-card-fees" type="text" min="0" max="99" onKeyUp="if(this.value>99){this.value='99';}else if(this.value<0){this.value='0';}" name="percentage_discount">
+                                    <input class="form-control input-card-fees" type="text" min="0" max="99" onKeyUp="if(this.value>99){this.value='99';}else if(this.value<0){this.value='0';}" name="percentage_discount" value="{{$coupon->percentage_discount}}">
                                     <span>% off</span>
                                 </label>
                             </div>
                             <div class="custom-radio-btn discount-option-box">
-                                <input type="radio" id="price" name="discount" value="price">
+                                <input type="radio" id="price" name="discount" value="price" {{ ($coupon->discount_type == "price")? "checked" : "" }}>
                                 <label for="price" class="d-flex align-items-center">
-                                    <input type="number" class="form-control input-card-fees" name="price_discount">
+                                    <input type="number" class="form-control input-card-fees" name="price_discount" value="{{$coupon->price_discount}}">
                                     <span>Price off</span>
                                 </label>
                             </div>
@@ -106,7 +107,7 @@
                             <div class="form-filed-data">
                                 <label>Start date</label>
                                 <div class="position-relative datepicker-icon-add">
-                                    <input type="text" class="form-control" id="datepickerstart" placeholder="Select date" name="start_date">
+                                    <input type="text" class="form-control" id="datepickerstart" placeholder="Select date" name="start_date" value="{{date('d/m/Y', strtotime($coupon->start_date))}}">
                                     @if($errors->has('start_date'))
                                         <small class="text-danger">
                                             {{ $errors->first('start_date') }}
@@ -117,7 +118,7 @@
                             <div class="form-filed-data">
                                 <label>End date</label>
                                 <div class="position-relative datepicker-icon-add">
-                                    <input type="text" class="form-control" id="datepickerend" placeholder="Select date" name="end_date">
+                                    <input type="text" class="form-control" id="datepickerend" placeholder="Select date" name="end_date" value="{{date('d/m/Y', strtotime($coupon->end_date))}}">
                                     @if($errors->has('end_date'))
                                         <small class="text-danger">
                                             {{ $errors->first('end_date') }}
