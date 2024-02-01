@@ -29,9 +29,21 @@
                             </select>
                             <p id="cat-error"></p>
                             @if($errors->has('category_id'))
-                                <small class="text-danger">
-                                    {{ $errors->first('category_id') }}
-                                </small>
+                            <small class="text-danger">
+                                {{ $errors->first('category_id') }}
+                            </small>
+                            @endif
+                        </div>
+                        <div class="col-sm-4 form-group">
+                            <label>Order</label>
+                            <select class="nice-select form-control" id="order" name="order">
+                                <option value="">Please Select Category First</option>
+                            </select>
+                            <p id="order-error"></p>
+                            @if($errors->has('order'))
+                            <small class="text-danger">
+                                {{ $errors->first('order') }}
+                            </small>
                             @endif
                         </div>
                     </div>
@@ -140,6 +152,9 @@
                 category_id: {
                     required: true
                 },
+                order: {
+                    required: true
+                },
                 image: {
                     required: true
                 },
@@ -154,6 +169,9 @@
                 category_id: {
                     required: "Category field is required."
                 },
+                order: {
+                    required: "Order field is required."
+                },
                 image: {
                     required: "Image field is required."
                 },
@@ -166,7 +184,13 @@
                 if (element.hasClass('nice-select')) {
                     $('.text-danger').text('');
                     error.addClass('invalid-feedback');
-                    element.next('.nice-select').next('#cat-error').html(error);
+                    var fieldName = $(element).attr('name');
+                    if(fieldName == 'category_id'){
+                        element.next('.nice-select').next('#cat-error').html(error);
+                    }
+                    if(fieldName == 'order'){
+                        $('#order-error').html(error);
+                    }
                 } else {
                     $('.text-danger').text('');
                     error.addClass('invalid-feedback');
@@ -181,6 +205,35 @@
             if ($(this).val() !== "") {
                 $("#category_id").removeClass('error');
                 $("#category_id-error").remove();
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url : "{{ url('admin/brochure/category/count') }}/" + $(this).val(),
+                    type : 'GET',
+                    dataType : 'json',
+                    success : function(result){
+                        $("#order").niceSelect('destroy');
+                        $("#order").empty(); 
+                        $('#order').append($('<option>').text("Please Select Order").attr('value', ''));
+                        for (let i=1; i<=result+1; i++) {
+                            $('#order').append($('<option>').text(i).attr('value', i));
+                        }
+                      
+                        $("#order").niceSelect();
+                    }
+                });
+            }else{
+                $("#order").niceSelect('destroy');
+                $("#order").empty(); 
+                $('#order').append($('<option>').text("Please Select Category First").attr('value', ''));
+                $("#order").niceSelect(); 
+            }
+        });
+        $("#order").change(function () {
+            if ($(this).val() !== "") {
+                $("#order").removeClass('error');
+                $("#order-error").empty(); 
             }
         });
     });

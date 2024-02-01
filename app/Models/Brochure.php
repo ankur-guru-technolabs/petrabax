@@ -14,6 +14,7 @@ class Brochure extends Model
         'category_id',
         'image',
         'pdf',
+        'order',
     ];
 
     public function category()

@@ -14,7 +14,7 @@ class CategoryController extends Controller
 {
     //
     public function categoryList(){
-        $categories = Category::latest()->get();
+        $categories = Category::orderBy('id','desc')->get();
         return view('admin.Category.category-list',compact('categories'));
     }
 

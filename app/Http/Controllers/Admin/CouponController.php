@@ -15,7 +15,7 @@ class CouponController extends Controller
 {
     //
     public function couponList(){
-        $coupons = Coupon::with('category')->latest()->get();
+        $coupons = Coupon::with('category')->orderBy('id','desc')->get();
         return view('admin.Coupon.coupon-list',compact('coupons'));
     }
 

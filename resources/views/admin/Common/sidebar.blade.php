@@ -10,7 +10,7 @@
                 'user' => request()->routeIs('userList') || request()->routeIs('userView'),
                 'commision' => request()->routeIs('commissionList'),
                 'fee' => request()->routeIs('addFee') || request()->routeIs('feeList'),
-                'coupon' => request()->routeIs('addCoupon') || request()->routeIs('couponList') || request()->routeIs('countEdit'),
+                'coupon' => request()->routeIs('addCoupon') || request()->routeIs('couponList') || request()->routeIs('couponEdit'),
                 'hotelbeds' => request()->routeIs('addHotelbeds'),
                 'paradores' => request()->routeIs('addParadores'),
                 'brochure' => request()->routeIs('addBrochure') || request()->routeIs('brochureList') || request()->routeIs('brochureEdit'),

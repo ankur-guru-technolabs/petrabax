@@ -17,7 +17,7 @@ class VideoController extends Controller
 {
     //
     public function videoList(){
-        $videos = Video::with('category')->latest()->get();
+        $videos = Video::with('category')->orderBy('id','desc')->get();
         return view('admin.Video.video-list',compact('videos'));
     }
     

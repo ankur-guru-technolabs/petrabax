@@ -16,7 +16,7 @@ class BrochureManagementController extends Controller
 {
     //
     public function brochureList(){
-        $brochures = Brochure::with('category')->latest()->get();
+        $brochures = Brochure::with('category')->orderBy('id','desc')->get();
         return view('admin.Brochure.brochure-list',compact('brochures'));
     }
     
@@ -29,6 +29,7 @@ class BrochureManagementController extends Controller
         $validator = Validator::make($request->all(),[
             'name'=>"required",
             'category_id'=>"required",
+            'order'=>"required",
             'image'=>"required|file|mimes:jpeg,png,jpg|max:100000",
             'pdf'=>"required|file|mimes:pdf|max:100000",
         ]);
@@ -36,6 +37,15 @@ class BrochureManagementController extends Controller
         if ($validator->fails())
         {
             return back()->withInput()->withErrors($validator);
+        }
+
+        $existingRecord = Brochure::where('category_id', $request->category_id)->where('order', $request->order)->first();
+
+        if ($existingRecord) {
+            \DB::table('brochures')
+            ->where('category_id', $request->category_id)
+            ->where('order', '>=', $request->order)
+            ->increment('order');
         }
 
         $folderPath = public_path().'/brochure';
@@ -66,6 +76,7 @@ class BrochureManagementController extends Controller
         $brochure = new Brochure;
         $brochure->name = $request->name;
         $brochure->category_id = $request->category_id;
+        $brochure->order = $request->order;
         $brochure->image = $imagename;
         $brochure->pdf = $pdfname;
         $brochure->save();
@@ -85,18 +96,29 @@ class BrochureManagementController extends Controller
         $validator = Validator::make($request->all(),[
             'name'=>"required",
             'category_id'=>"required",
+            'order'=>"required",
         ]);
 
         if ($validator->fails())
         {
             return back()->withInput()->withErrors($validator);
         }
+        
+        $brochure = Brochure::find($request->id);
+        $existingRecord = Brochure::where('category_id', $request->category_id)->where('order', $request->order)->first();
+
+        if ($existingRecord && ($brochure->order !== $request->order)) {
+            \DB::table('brochures')
+            ->where('category_id', $request->category_id)
+            ->where('order', '>=', $request->order)
+            ->where('id', '!=', $request->id)
+            ->increment('order');
+        }
 
         $folderPath = public_path().'/brochure';
         if (!is_dir($folderPath)) {
             mkdir($folderPath, 0777, true);
         }
-        $brochure = Brochure::find($request->id);
 
         $imagename = '';
         if ($request->hasFile('image')) {
@@ -135,6 +157,7 @@ class BrochureManagementController extends Controller
 
         $brochure->name = $request->name;
         $brochure->category_id = $request->category_id;
+        $brochure->order = $request->order;
         $brochure->image = ($imagename == '') ? $brochure->image : $imagename;
         $brochure->pdf = ($pdfname == '') ? $brochure->pdf : $pdfname;
         $brochure->save();
@@ -160,7 +183,18 @@ class BrochureManagementController extends Controller
                 File::delete($pdf);
             }
         }
+
+        \DB::table('brochures')
+        ->where('category_id', $brochure->category_id)
+        ->where('order', '>', $brochure->order)
+        ->decrement('order');
+
         $brochure->delete();
         return redirect()->route('brochureList')->with('message', 'Brochure deleted successfully');
+    } 
+    
+    public function brochureCategoryCount($id){
+        $brochure = Brochure::where('category_id',$id)->count();
+        return $brochure;
     } 
 }

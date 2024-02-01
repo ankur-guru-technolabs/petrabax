@@ -39,6 +39,18 @@
                                 </small>
                             @endif
                         </div>
+                        <div class="col-sm-4 form-group">
+                            <label>Order</label>
+                            <select class="nice-select form-control" id="order" name="order">
+                                <option value="">Please Select Category First</option>
+                            </select>
+                            <p id="order-error"></p>
+                            @if($errors->has('order'))
+                            <small class="text-danger">
+                                {{ $errors->first('order') }}
+                            </small>
+                            @endif
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4 form-group brochure-full-width-upload  custom-upload">
@@ -135,6 +147,9 @@
         // $('#uploadicon2').removeClass('show');
     });
 
+    $(window).on('load', function () {
+         $("#category_id").trigger('change');
+    });
     $(document).ready(function() {
         $('#uploadicon2').addClass('show');
         $('.preview2').addClass('prev');
@@ -146,7 +161,10 @@
                 },
                 category_id: {
                     required: true
-                }
+                },
+                order: {
+                    required: true
+                },
             },
             messages:{
                 name:{
@@ -154,14 +172,23 @@
                 },
                 category_id: {
                     required: "Category is required."
-                }
+                },
+                order: {
+                    required: "Order field is required."
+                },
             },
             errorElement: 'span',
             errorPlacement: function (error, element) {
                 if (element.hasClass('nice-select')) {
                     $('.text-danger').text('');
                     error.addClass('invalid-feedback');
-                    element.next('.nice-select').next('#cat-error').html(error);
+                    var fieldName = $(element).attr('name');
+                    if(fieldName == 'category_id'){
+                        element.next('.nice-select').next('#cat-error').html(error);
+                    }
+                    if(fieldName == 'order'){
+                        $('#order-error').html(error);
+                    }
                 } else {
                     $('.text-danger').text('');
                     error.addClass('invalid-feedback');
@@ -170,6 +197,45 @@
             },
             submitHandler: function (form) {
                 form.submit();
+            }
+        });
+        $("#category_id").change(function () {
+            if ($(this).val() !== "") {
+                $("#category_id").removeClass('error');
+                $("#category_id-error").remove();
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url : "{{ url('admin/brochure/category/count') }}/" + $(this).val(),
+                    type : 'GET',
+                    dataType : 'json',
+                    success : function(result){
+                        $("#order").niceSelect('destroy');
+                        $("#order").empty(); 
+                        $('#order').append($('<option>').text("Please Select Order").attr('value', ''));
+                        for (let i=1; i<=result+1; i++) {
+                            var option = $('<option>').text(i).attr('value', i);
+                            if (i == {{ $brochure->order }}) {
+                                option.attr('selected', 'selected');
+                            }
+                            $('#order').append(option);
+                        } 
+
+                        $("#order").niceSelect();
+                    }
+                });
+            }else{
+                $("#order").niceSelect('destroy');
+                $("#order").empty(); 
+                $('#order').append($('<option>').text("Please Select Category First").attr('value', ''));
+                $("#order").niceSelect(); 
+            }
+        });
+        $("#order").change(function () {
+            if ($(this).val() !== "") {
+                $("#order").removeClass('error');
+                $("#order-error").empty(); 
             }
         });
     });

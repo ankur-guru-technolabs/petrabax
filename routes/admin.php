@@ -34,7 +34,10 @@ Route::prefix('/admin')->group(function () {
         Route::get('/brochure/list', [BrochureManagementController::class, 'brochureList'])->name('brochureList');
         Route::get('/add/brochure', [BrochureManagementController::class, 'addBrochure'])->name('addBrochure');
         Route::post('/brochure/submit', [BrochureManagementController::class, 'brochureSubmit'])->name('brochureSubmit');
+        Route::get('/brochure/edit/{id}', [BrochureManagementController::class, 'brochureEdit'])->name('brochureEdit'); 
+        Route::post('/brochure/update', [BrochureManagementController::class, 'brochureUpdate'])->name('brochureUpdate');  
         Route::get('/brochure/delete/{id}', [BrochureManagementController::class, 'brochureDelete'])->name('brochureDelete'); 
+        Route::get('/brochure/category/count/{id}', [BrochureManagementController::class, 'brochureCategoryCount'])->name('brochureCategoryCount'); 
         Route::get('/commission/list', [CommissionManagementController::class, 'commissionList'])->name('commissionList');
         Route::get('/content/list', [ContentManagementController::class, 'contentList'])->name('contentList'); 
         Route::post('/content/submit', [ContentManagementController::class, 'contentSubmit'])->name('contentSubmit'); 
