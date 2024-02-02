@@ -18,7 +18,7 @@
                 'order' => request()->routeIs('orderList') || request()->routeIs('orderDetail'),
                 'report' => request()->routeIs('report'),
                 'chat' => request()->routeIs('chat'),
-                'role' => request()->routeIs('addRole'),
+                'role' => request()->routeIs('addRole') || request()->routeIs('roleList'),
                 'employee' => request()->routeIs('addEmployee'),
                 'category' => request()->routeIs('addCategory') || request()->routeIs('categoryList'),
                 'content' => request()->routeIs('contentList'),
@@ -135,12 +135,12 @@
                 <li class="dropdown">
                     <a class="dropdown-link {{ $activeRoutes['role'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['role'] ? 'true' : 'false' }}">
                         <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/role.svg')}}" alt="Icon">
-                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/role-hover.svg')}}" alt="Icon"> Role Permission
+                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/role-hover.svg')}}" alt="Icon"> Role
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
                     <ul class="dropdown-menu {{ $activeRoutes['role'] ? 'show' : '' }}">
-                        <li><a class="dropdown-item {{ request()->routeIs('addRole') ? 'active' : '' }}" href="{{route('addRole')}}">Role</a></li>
-                        <li><a class="dropdown-item {{ request()->routeIs('addRole') ? 'active' : '' }}" href="{{route('addRole')}}">Create Role</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('roleList') ? 'active' : '' }}" href="{{route('roleList')}}">List</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('addRole') ? 'active' : '' }}" href="{{route('addRole')}}">Add</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

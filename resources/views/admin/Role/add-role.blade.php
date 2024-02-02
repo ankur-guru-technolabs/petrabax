@@ -1,80 +1,58 @@
 @extends('admin.master')
-@section('content')
+@section('content') 
 <div class="admin-content-area">
-    <div class="role-permission-section">
+    <div class="video-management">
         <div class="section-header">
-            <h2>Role Permission</h2>
+            <h2>Role</h2>
         </div>
-        <div class="role-permission-inner">
-            <form>
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 form-group">
-                        <label>Employee Name</label>
-                        <input type="text" class="form-control" placeholder="Name">
+        <div class="video-management-inner">
+            <div class="video-content">
+                <form action="{{route('roleSubmit')}}" method="post" id="role-form">
+                    @csrf 
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label>Role Name</label>
+                            <input type="text" class="form-control" name="name">
+                            @if($errors->has('name'))
+                                <small class="text-danger">
+                                    {{ $errors->first('name') }}
+                                </small>
+                            @endif
+                        </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 form-group">
-                        <label>Assign Roles</label>
-                        <select class="form-control nice-select">
-                            <option>Select</option>
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                        </select>
+                    <div class="form-submit-btn-list">
+                        <button type="submit">Save</button>
                     </div>
-                </div>
-                <div class="row role-permission-list">
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" id="role-1" checked>
-                        <label for="role-1">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" id="role-2">
-                        <label for="role-2">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" id="role-3">
-                        <label for="role-3">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" id="role-4">
-                        <label for="role-4">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" id="role-5">
-                        <label for="role-5">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" id="role-6">
-                        <label for="role-6">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" id="role-7">
-                        <label for="role-7">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" id="role-8">
-                        <label for="role-8">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" id="role-9">
-                        <label for="role-9">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" id="role-10">
-                        <label for="role-10">User management</label>
-                    </div>
-                </div>
-                <div class="group-btn">
-                    <button type="button">Save</button>
-                    <button type="button">Reset</button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
-</div> 
+</div>
 @endsection
 @section('jscontent') 
 <script type="text/javascript">
-    $(".nice-select").niceSelect();
+    $(document).ready(function() {
+        $("#role-form").validate({
+            rules:{
+                name: {
+                    required: true
+                }
+            },
+            messages:{
+                name:{
+                    required: "Name filed is required."
+                }
+            },
+            errorElement: 'span',
+            errorPlacement: function (error, element) {
+                $('.text-danger').text('');
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            submitHandler: function (form) {
+                form.submit();
+            }
+        });
+    });
 </script>
 @endsection

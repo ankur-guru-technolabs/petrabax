@@ -11,7 +11,7 @@
                     @csrf 
                     <div class="row">
                         <div class="col-sm-6 form-group">
-                            <label>Name</label>
+                            <label>Category Name</label>
                             <input type="text" class="form-control" name="name">
                             @if($errors->has('name'))
                                 <small class="text-danger">
