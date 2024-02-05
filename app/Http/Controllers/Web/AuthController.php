@@ -212,7 +212,7 @@ class AuthController extends Controller
                 'email_update_otp'    => 'email_update_otp',
                 'subject'             => 'Email Update OTP',
             ];
-            Helper::sendMail('emails.email_update_otp', $email_data, $aemail, '');
+            Helper::sendMail('emails.email_update_otp', $email_data, $email, '');
         }
 
         return redirect()->back()->with('message','OTP send Successfully');

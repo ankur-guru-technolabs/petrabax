@@ -3,6 +3,7 @@
 namespace App\Helpers;
 use Mail;
 use App\Mail\EmailVerificationMail;
+use App\Mail\EmployeePasswordMail;
 use App\Models\Temp;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -45,6 +46,10 @@ class Helper {
             $temp->user_id  = Auth::id();
             $temp->save();
             Mail::to($data['email'])->send(new EmailVerificationMail($otp));
+        }
+    
+        if(isset($data['employee_pwd'])){
+            Mail::to($data['email'])->send(new EmployeePasswordMail($data['password']));
         }
         
         return true;

@@ -19,7 +19,7 @@
                 'report' => request()->routeIs('report'),
                 'chat' => request()->routeIs('chat'),
                 'role' => request()->routeIs('addRole') || request()->routeIs('roleList'),
-                'employee' => request()->routeIs('addEmployee'),
+                'employee' => request()->routeIs('addEmployee')|| request()->routeIs('employeeList') || request()->routeIs('employeeEdit'),
                 'category' => request()->routeIs('addCategory') || request()->routeIs('categoryList'),
                 'content' => request()->routeIs('contentList'),
                 'support' => request()->routeIs('supportList'),
@@ -150,7 +150,8 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
                     <ul class="dropdown-menu {{ $activeRoutes['employee'] ? 'show' : '' }}">
-                        <li><a class="dropdown-item {{ request()->routeIs('addEmployee') ? 'active' : '' }}" href="{{route('addEmployee')}}">Add Employees</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('employeeList') ? 'active' : '' }}" href="{{route('employeeList')}}">List</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('addEmployee') ? 'active' : '' }}" href="{{route('addEmployee')}}">Add</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

@@ -47,7 +47,12 @@ Route::prefix('/admin')->group(function () {
         Route::get('/coupon/edit/{id}', [CouponController::class, 'couponEdit'])->name('couponEdit'); 
         Route::post('/coupon/update', [CouponController::class, 'couponUpdate'])->name('couponUpdate');  
         Route::get('/coupon/delete/{id}', [CouponController::class, 'couponDelete'])->name('couponDelete'); 
+        Route::get('/employee/list', [EmployeeController::class, 'employeeList'])->name('employeeList'); 
         Route::get('/add/employee', [EmployeeController::class, 'addEmployee'])->name('addEmployee');
+        Route::post('/employee/submit', [EmployeeController::class, 'employeeSubmit'])->name('employeeSubmit');
+        Route::get('/employee/edit/{id}', [EmployeeController::class, 'employeeEdit'])->name('employeeEdit'); 
+        Route::post('/employee/update', [EmployeeController::class, 'employeeUpdate'])->name('employeeUpdate');  
+        Route::get('/employee/delete/{id}', [EmployeeController::class, 'employeeDelete'])->name('employeeDelete');
         Route::get('/add/fee', [FeeManagementController::class, 'addFee'])->name('addFee');
         Route::get('/fee/list', [FeeManagementController::class, 'feeList'])->name('feeList');
         Route::get('/add/hotelbeds', [HotelManagementController::class, 'addHotelbeds'])->name('addHotelbeds');
