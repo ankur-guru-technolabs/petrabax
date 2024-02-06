@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\BannerManagementController;
 use App\Http\Controllers\Admin\BrochureManagementController;
 use App\Http\Controllers\Admin\CommissionManagementController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -31,6 +32,12 @@ use App\Http\Controllers\Admin\UserController;
 Route::prefix('/admin')->group(function () {
     Route::middleware(['auth','admin.check'])->group(function () {
         Route::get('/dashboard', [AuthController::class, 'index'])->name('dashboard');
+        Route::get('/banner/list', [BannerManagementController::class, 'bannerList'])->name('bannerList');
+        Route::get('/add/banner', [BannerManagementController::class, 'addBanner'])->name('addBanner');
+        Route::post('/banner/submit', [BannerManagementController::class, 'bannerSubmit'])->name('bannerSubmit');
+        Route::get('/banner/edit/{id}', [BannerManagementController::class, 'bannerEdit'])->name('bannerEdit'); 
+        Route::post('/banner/update', [BannerManagementController::class, 'bannerUpdate'])->name('bannerUpdate');  
+        Route::get('/banner/delete/{id}', [BannerManagementController::class, 'bannerDelete'])->name('bannerDelete'); 
         Route::get('/brochure/list', [BrochureManagementController::class, 'brochureList'])->name('brochureList');
         Route::get('/add/brochure', [BrochureManagementController::class, 'addBrochure'])->name('addBrochure');
         Route::post('/brochure/submit', [BrochureManagementController::class, 'brochureSubmit'])->name('brochureSubmit');

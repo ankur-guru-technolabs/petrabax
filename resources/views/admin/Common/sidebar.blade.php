@@ -13,6 +13,7 @@
                 'coupon' => request()->routeIs('addCoupon') || request()->routeIs('couponList') || request()->routeIs('couponEdit'),
                 'hotelbeds' => request()->routeIs('addHotelbeds'),
                 'paradores' => request()->routeIs('addParadores'),
+                'banner' => request()->routeIs('addBanner') || request()->routeIs('bannerList') || request()->routeIs('bannerEdit'),
                 'brochure' => request()->routeIs('addBrochure') || request()->routeIs('brochureList') || request()->routeIs('brochureEdit'),
                 'video' => request()->routeIs('addVideo') || request()->routeIs('videoList') || request()->routeIs('videoEdit'),
                 'order' => request()->routeIs('orderList') || request()->routeIs('orderDetail'),
@@ -86,6 +87,17 @@
                     </a>
                     <ul class="dropdown-menu {{ $activeRoutes['paradores'] ? 'show' : '' }}"> 
                         <li><a class="dropdown-item {{ request()->routeIs('addParadores') ? 'active' : '' }}" href="{{route('addParadores')}}">Create Paradores</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-link {{ $activeRoutes['banner'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['banner'] ? 'true' : 'false' }}">
+                        <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/brochure.svg')}}" alt="Icon">
+                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/brochure-hover.svg')}}" alt="Icon"> Banner management
+                        <span><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                    <ul class="dropdown-menu {{ $activeRoutes['banner'] ? 'show' : '' }}">
+                        <li><a class="dropdown-item {{ request()->routeIs('bannerList') ? 'active' : '' }}" href="{{route('bannerList')}}">List</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('addBanner') ? 'active' : '' }}" href="{{route('addBanner')}}">Add</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
