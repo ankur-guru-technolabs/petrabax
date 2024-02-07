@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Video;
 use Auth;
 use Helper;
 use Session;
@@ -23,7 +24,8 @@ class InfoController extends Controller
     }
    
     public function videoLibrary(){
-        return view('web.Info.video-library');
+        $videos = Video::with('category')->orderBy('id','desc')->paginate(9);
+        return view('web.Info.video-library',compact('videos'));
     }
     
     public function contactUs(){

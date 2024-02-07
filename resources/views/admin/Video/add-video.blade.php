@@ -5,12 +5,21 @@
         <div class="section-header">
             <h2>Video management</h2>
         </div>
-        <div class="video-management-inner">
+        <div class="video-management-inner brochure-management">
             <div class="video-content">
             <form id="video-form" action="{{route('videoSubmit')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
-                        <div class="col-sm-6 form-group">
+                        <div class="col-sm-4 form-group">
+                            <label>Video Title</label>
+                            <input type="text" class="form-control" name="title" id="title">
+                            @if($errors->has('title'))
+                                <small class="text-danger">
+                                    {{ $errors->first('title') }}
+                                </small>
+                            @endif
+                        </div>
+                        <div class="col-sm-4 form-group">
                             <label>Video URL</label>
                             <input type="text" class="form-control" name="url" id="url">
                             @if($errors->has('url'))
@@ -19,7 +28,7 @@
                                 </small>
                             @endif
                         </div>
-                        <div class="col-sm-6 form-group">
+                        <div class="col-sm-4 form-group">
                             <label>Select Category</label>
                             <select class="nice-select form-control" name="category_id" id="category_id">
                                 <option value="">Select Category</option>
@@ -34,7 +43,7 @@
                                 </small>
                             @endif
                         </div>
-                        <div class="col-sm-6 form-group brochure-full-width-upload custom-upload">
+                        <div class="col-sm-4 form-group brochure-full-width-upload custom-upload">
                             <label>Video Upload</label>
                             <div class="myform">
                                 <div class="uploadbox">
@@ -50,8 +59,8 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-sm-6 form-group brochure-full-width-upload custom-upload">
-                            <label>Thumbnail Upload</label>
+                        <div class="col-sm-4 form-group brochure-full-width-upload custom-upload">
+                            <label>Thumbnail Upload ( Ratio 362*207 )</label>
                             <div class="myform">
                                 <div class="uploadbox">
                                     <span class="btn_upload"><input type="file" id="imag2" title="" class="input-img" accept="image/*" name="thumbnail"/><img id="uploadicon2" src="{{ asset('/assets_admin/images/gallery-add.png')}}" alt="Gallery Add">
@@ -101,13 +110,35 @@
         $('.btn-rmv1').addClass('rmv');
     });
 
+    // $("#imag2").change(function() {
+    //     // add your logic to decide which image control you'll use
+    //     var imgControlName = "#ImgPreview2";
+    //     readURL(this, imgControlName);
+    //     $('#uploadicon2').addClass('show');
+    //     $('.preview2').addClass('prev');
+    //     $('.btn-rmv2').addClass('rmv');
+    // });
+
     $("#imag2").change(function() {
-        // add your logic to decide which image control you'll use
-        var imgControlName = "#ImgPreview2";
-        readURL(this, imgControlName);
-        $('#uploadicon2').addClass('show');
-        $('.preview2').addClass('prev');
-        $('.btn-rmv2').addClass('rmv');
+        var fileInput = this;
+        var file = fileInput.files[0];
+        if (file) {
+            var img = new Image();
+            img.src = window.URL.createObjectURL(file);
+            
+            img.onload = function() {
+                if (img.height < 362 && img.width < 267) {
+                    $(fileInput).val('');
+                    alert('Invalid aspect ratio. Please choose an image with a greater than 1000:300 ratio.');
+                }else{
+                    var imgControlName = "#ImgPreview2";
+                    readURL(fileInput, imgControlName);
+                    $('#uploadicon2').addClass('show');
+                    $('.preview2').addClass('prev');
+                    $('.btn-rmv2').addClass('rmv');
+                }
+            };
+        }
     });
 
     $("#removeImage1").click(function(e) {
@@ -150,6 +181,9 @@
                 category_id: {
                     required: true
                 },
+                title: {
+                    required: true
+                }
             },
             messages:{
                 url: {
@@ -163,6 +197,9 @@
                 },
                 category_id: {
                     required: "Category id field is required."
+                },
+                title: {
+                    required: "Title field is required."
                 }
             },
             errorElement: 'span',

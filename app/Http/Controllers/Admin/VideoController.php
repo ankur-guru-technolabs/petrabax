@@ -44,6 +44,7 @@ class VideoController extends Controller
                 }),
             ],
             'category_id' => 'required',
+            'title' => 'required',
         ]);
         
         if ($validator->fails())
@@ -76,6 +77,7 @@ class VideoController extends Controller
         $video->category_id = $request->category_id;
         $video->video = $videoname;
         $video->thumbnail_image = $thumbname;
+        $video->title = $request->title;
         $video->save();
         return redirect()->route('videoList')->with('message', 'Video added successfully');
     }
@@ -148,6 +150,7 @@ class VideoController extends Controller
         $video->category_id = $request->category_id;
         $video->video = ($videoname === '') ? $video->video : ($videoname !== null ? $videoname : '');
         $video->thumbnail_image = ($thumbname === '') ? $video->thumbnail_image : ($videoname !== null ? $thumbname : '');
+        $video->title = $request->title;
         $video->save();
         return redirect()->route('videoList')->with('message', 'Video updated successfully');
     }

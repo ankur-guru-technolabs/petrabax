@@ -261,6 +261,12 @@
 	       $('select.nice-select').niceSelect();
 	    } 
 
+	    if($(".add.children-add").length){
+		    $('.add.children-add').on("click",function () {
+	        	$(".child-block.dropdown-block").addClass('show');
+	     	} );
+		}
+
 	});
 
 })(jQuery);

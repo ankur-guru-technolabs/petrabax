@@ -11,6 +11,7 @@
                     <thead>
                         <tr>
                             <th>Thumbnail</th>
+                            <th>Title</th>
                             <th>Category</th>
                             <th>Video URL</th>
                             <th>Edit</th>
@@ -25,6 +26,7 @@
                                 @else
                                 <td>-</td>
                                 @endif
+                                <td>{{$video->title}}</td>
                                 <td>{{$video->category->name}}</td>
                                 <td>{{$video->url ?? '-'}}</td>
                                 <td><a href="{{route('videoEdit',['id' => $video->id])}}"><img src="{{ asset('/assets_admin/images/edit-2.png')}}" alt="Edit"></a></td>
