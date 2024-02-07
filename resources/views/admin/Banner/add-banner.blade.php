@@ -66,13 +66,25 @@
     }
 
     $("#imag").change(function() {
-        
-        // add your logic to decide which image control you'll use
-        var imgControlName = "#ImgPreview";
-        readURL(this, imgControlName);
-        $('#uploadicon1').addClass('show');
-        $('.preview1').addClass('prev');
-        $('.btn-rmv1').addClass('rmv');
+        var fileInput = this;
+        var file = fileInput.files[0];
+        if (file) {
+            var img = new Image();
+            img.src = window.URL.createObjectURL(file);
+            
+            img.onload = function() {
+                if (img.height < 1000 && img.width < 300) {
+                    $(fileInput).val('');
+                    alert('Invalid aspect ratio. Please choose an image with a greater than 1000:300 ratio.');
+                }else{
+                    var imgControlName = "#ImgPreview";
+                    readURL(fileInput, imgControlName);
+                    $('#uploadicon1').addClass('show');
+                    $('.preview1').addClass('prev');
+                    $('.btn-rmv1').addClass('rmv');
+                }
+            };
+        }
     });
 
     $("#removeImage1").click(function(e) {
