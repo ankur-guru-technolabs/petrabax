@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row align-items-center">
         <div class="col-4 left-logo-block">
-            <a href="{{route('/')}}" class="site-logo desktop-logo">Petrabax</a>
+            <a href="{{route('/')}}" class="site-logo image-logo"><img src="{{asset('/assets/images/logo.png')}}" alt="Site Logo"></a>
         </div>
         <div class="col-8 right-signup-btn">
             @if(Auth::guest() || Auth::user()->type == 'admin')

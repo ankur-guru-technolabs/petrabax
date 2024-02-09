@@ -12,11 +12,12 @@
 
             <li><a href="{{route('videoLibrary')}}">Video Library</a></li>
             <li><a href="#">Find an Agent </a></li>
-            <li><a href="#">Credit Card Form</a></li>
+            <li><a href="javascript:void()" data-bs-toggle="modal" data-bs-target="#ccformdownload">Credit Card Form</a></li>
             <li><a href="{{route('termsCondition')}}">Terms & Conditions</a></li>
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="{{route('contactUs')}}">Contact Us</a></li>
             <li><a href="#">Cookies  </a></li>
+            <li><a href="#">Trip planning </a></li>
         </ul>
         <div class="copyright-section">
             <div class="row">
@@ -32,6 +33,25 @@
         </div>
     </div>
 </div>
+    
+<div class="modal fade ccformdownload" id="ccformdownload" tabindex="-1" aria-labelledby="ccformdownloadLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header d-none">
+          <h1 class="modal-title fs-5" id="ccformdownloadLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="modal-body">
+          <div class="download-form-content">
+            <h2>Download CC Form</h2>
+            <p>Here you can download the Payment Details form</p>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
 <script type="text/javascript" src="{{ asset('/assets/js/propper.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('/assets/js/jquery.min.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>

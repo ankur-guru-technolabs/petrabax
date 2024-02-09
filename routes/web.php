@@ -73,7 +73,7 @@ Route::group(['middleware' => ['guest']], function () {
 });
 
 Route::get('/about-us', [InfoController::class,'aboutUs'])->name('aboutUs');
-Route::get('/video-libary', [InfoController::class,'videoLibrary'])->name('videoLibrary');
+Route::any('/video-libary/{search?}', [InfoController::class,'videoLibrary'])->name('videoLibrary');
 Route::get('/terms-conditions', [InfoController::class,'termsCondition'])->name('termsCondition');
 Route::get('/contact-us', [InfoController::class,'contactUs'])->name('contactUs');
 

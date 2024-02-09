@@ -23,9 +23,13 @@ class InfoController extends Controller
         return view('web.Info.terms-condition');
     }
    
-    public function videoLibrary(){
-        $videos = Video::with('category')->orderBy('id','desc')->paginate(9);
-        return view('web.Info.video-library',compact('videos'));
+    public function videoLibrary($search = null){
+        $videos = Video::with('category')
+                ->when($search, function ($query) use ($search) {
+                    $query->where('title', 'like', '%' . $search . '%');
+                })
+                ->orderBy('id','desc')->paginate(12);
+        return view('web.Info.video-library', compact('videos', 'search'));
     }
     
     public function contactUs(){

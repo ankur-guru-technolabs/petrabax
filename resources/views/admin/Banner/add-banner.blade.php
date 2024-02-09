@@ -73,9 +73,9 @@
             img.src = window.URL.createObjectURL(file);
             
             img.onload = function() {
-                if (img.height < 1000 && img.width < 300) {
+                if (img.height < 300 && img.width < 1000) {
                     $(fileInput).val('');
-                    alert('Invalid aspect ratio. Please choose an image with a greater than 1000:300 ratio.');
+                    alert('Invalid aspect ratio. Please choose an image with a greater than 300:1000 ratio.');
                 }else{
                     var imgControlName = "#ImgPreview";
                     readURL(fileInput, imgControlName);

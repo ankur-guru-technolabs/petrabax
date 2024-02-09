@@ -4144,6 +4144,10 @@ margin-bottom: 25px;
 }
 .video-block  .video-image img {
 	border-radius: 14px;
+	border-radius: 14px;
+    width: 100%;
+    object-fit: cover;
+    max-height: 207px;
 }
 .video-block .video-image .video-play-icon {
 	position: absolute;

@@ -30,7 +30,7 @@ class VideoController extends Controller
         $validator = Validator::make($request->all(),[
             'url' => ['nullable','url',
                 Rule::requiredIf(function () use ($request) {
-                    return empty($request->video) && empty($request->thumbnail);
+                    return empty($request->video);
                 }),
             ],
             'video' => ['nullable','file','mimes:mp4,avi,mov','max:100000',
@@ -38,11 +38,12 @@ class VideoController extends Controller
                     return empty($request->url);
                 }),
             ],
-            'thumbnail' => ['nullable','image','mimes:jpeg,png,jpg','max:100000',
-                Rule::requiredIf(function () use ($request) {
-                    return empty($request->url);
-                }),
-            ],
+            // 'thumbnail' => ['nullable','image','mimes:jpeg,png,jpg','max:100000',
+            //     Rule::requiredIf(function () use ($request) {
+            //         return empty($request->url);
+            //     }),
+            // ],
+            'thumbnail' => ['nullable','image','mimes:jpeg,png,jpg','max:100000'],
             'category_id' => 'required',
             'title' => 'required',
         ]);
@@ -81,7 +82,7 @@ class VideoController extends Controller
         $video->save();
         return redirect()->route('videoList')->with('message', 'Video added successfully');
     }
-    
+
     public function videoEdit($id){
         $video = Video::findOrFail($id);
         if(!empty($video)){
@@ -157,7 +158,7 @@ class VideoController extends Controller
 
     public function videoDelete($id){
         $video = Video::findOrFail($id);
-        if(!empty($video) && ($video->video !== '') && ($video->thumbnail_image !== '')){
+        if(!empty($video) && ($video->thumbnail_image !== '')){
             $thumbnail_image = public_path('video/' . $video->thumbnail_image);
             if (File::exists($thumbnail_image)) {
                 if (!is_writable($thumbnail_image)) {
@@ -165,7 +166,9 @@ class VideoController extends Controller
                 }
                 File::delete($thumbnail_image);
             }
+        }
 
+        if(!empty($video) && ($video->video !== '')){
             $video1 = public_path('video/' . $video->video);
             if (File::exists($video1)) {
                 if (!is_writable($video1)) {

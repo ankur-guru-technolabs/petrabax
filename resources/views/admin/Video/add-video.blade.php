@@ -127,9 +127,9 @@
             img.src = window.URL.createObjectURL(file);
             
             img.onload = function() {
-                if (img.height < 362 && img.width < 267) {
+                if (img.height < 207 && img.width < 362) {
                     $(fileInput).val('');
-                    alert('Invalid aspect ratio. Please choose an image with a greater than 1000:300 ratio.');
+                    alert('Invalid aspect ratio. Please choose an image with a greater than 207:362 ratio.');
                 }else{
                     var imgControlName = "#ImgPreview2";
                     readURL(fileInput, imgControlName);
@@ -165,7 +165,7 @@
             rules:{
                 url: {
                     required: function (element) {
-                        return ($("#imag").val().length == 0 && $("#imag2").val().length == 0);
+                        return ($("#imag").val().length == 0);
                     }
                 },
                 video: {
@@ -174,9 +174,7 @@
                     }
                 },
                 thumbnail: {
-                    required: function (element) {
-                        return ($("#url").val().length == 0);
-                    }
+                    required: true
                 },
                 category_id: {
                     required: true
@@ -187,13 +185,13 @@
             },
             messages:{
                 url: {
-                    required: "Url field is required when both video and thumbnail are empty."
+                    required: "Url field is required when video is empty."
                 },
                 video: {
-                    required: "Video field is required when both url and thumbnail are empty."
+                    required: "Video field is required when url is empty."
                 },
                 thumbnail: {
-                    required: "Thumbnail field is required when both url and video are empty."
+                    required: "Thumbnail field is required."
                 },
                 category_id: {
                     required: "Category id field is required."
@@ -215,8 +213,8 @@
                 }
             },
             submitHandler: function (form) {
-                if ($("#url").val().length !== 0 && $("#imag").val().length !== 0 && $("#imag2").val().length !== 0) {
-                    alert("Please fill only url or video and thumbnail");
+                if ($("#url").val().length !== 0 && $("#imag").val().length !== 0) {
+                    alert("Please fill only url or video");
                     return false;
                 }
                 form.submit();
@@ -226,9 +224,7 @@
                 if (fieldName === 'url') {
                     $("#imag").removeClass('error');
                     $("#imag-error").remove();
-                    $("#imag2").removeClass('error');
-                    $("#imag2-error").remove();
-                } else if (fieldName === 'video' || fieldName === 'thumbnail') {
+                } else if (fieldName === 'video') {
                     $("#url").removeClass('error');
                     $("#url").next('.error').remove();
                 }

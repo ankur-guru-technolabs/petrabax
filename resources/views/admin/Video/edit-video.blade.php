@@ -145,9 +145,9 @@
             img.src = window.URL.createObjectURL(file);
             
             img.onload = function() {
-                if (img.height < 362 && img.width < 267) {
+                if (img.height < 207 && img.width < 362) {
                     $(fileInput).val('');
-                    alert('Invalid aspect ratio. Please choose an image with a greater than 1000:300 ratio.');
+                    alert('Invalid aspect ratio. Please choose an image with a greater than 362:207 ratio.');
                 }else{
                     $('#old-thumb').attr("src", "");
                     $('#old-thumb').hide();
@@ -202,10 +202,9 @@
                 url: {
                     required: function (element) {
                         var hiddenVideoValue = $("#hidden-video-value").val();
-                        var hiddenThumbValue  = $("#hidden-thumb-value").val();
                         return (
-                            ($("#imag").val().length == 0 && $("#imag2").val().length == 0) &&
-                            ((hiddenVideoValue == undefined || hiddenVideoValue.length == 0) && (hiddenThumbValue == undefined || hiddenThumbValue.length == 0))
+                            ($("#imag").val().length == 0) &&
+                            ((hiddenVideoValue == undefined || hiddenVideoValue.length == 0))
                         );
                     }
                 },
@@ -218,7 +217,7 @@
                 thumbnail: {
                     required: function (element) {
                         var hiddenThumbValue  = $("#hidden-thumb-value").val();
-                        return ($("#url").val().length == 0 && (hiddenThumbValue == undefined || hiddenThumbValue.length == 0));
+                        return ((hiddenThumbValue == undefined || hiddenThumbValue.length == 0));
                     }
                 },
                 category_id: {
@@ -230,13 +229,13 @@
             },
             messages:{
                 url: {
-                    required: "Url field is required when both video and thumbnail are empty."
+                    required: "Url field is required when video is empty."
                 },
                 video: {
-                    required: "Video field is required when both url and thumbnail are empty."
+                    required: "Video field is required when url is empty."
                 },
                 thumbnail: {
-                    required: "Thumbnail field is required when both url and video are empty."
+                    required: "Thumbnail field is required."
                 },
                 category_id: {
                     required: "Category id field is required."
@@ -260,7 +259,7 @@
             submitHandler: function (form) {
                 var hiddenVideoValue = $("#hidden-video-value").val();
                 var hiddenThumbValue  = $("#hidden-thumb-value").val();
-                if ($("#url").val().length !== 0 && ($("#imag").val().length !== 0 && $("#imag2").val().length !== 0)) {
+                if ($("#url").val().length !== 0 && ($("#imag").val().length !== 0)) {
                     alert("Please fill only url or video and thumbnail");
                     return false;
                 }
@@ -271,9 +270,7 @@
                 if (fieldName === 'url') {
                     $("#imag").removeClass('error');
                     $("#imag-error").remove();
-                    $("#imag2").removeClass('error');
-                    $("#imag2-error").remove();
-                } else if (fieldName === 'video' || fieldName === 'thumbnail') {
+                } else if (fieldName === 'video') {
                     $("#url").removeClass('error');
                     $("#url").next('.error').remove();
                 }
