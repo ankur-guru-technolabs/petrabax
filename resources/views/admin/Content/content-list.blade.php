@@ -103,6 +103,10 @@
 @section('jscontent')
 <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
 <script type="text/javascript">
+    // CKEDITOR.replace('privacy-content', {
+        // removePlugins: 'CKFinderUploadAdapter,CKFinder,EasyImage,Image,ImageCaption,ImageStyle,ImageToolbar,ImageUpload,MediaEmbed',
+    // });
+
     ClassicEditor
     .create( document.querySelector( '#privacy-content' ),{
         removePlugins: ['CKFinderUploadAdapter', 'CKFinder', 'EasyImage', 'Image', 'ImageCaption', 'ImageStyle', 'ImageToolbar', 'ImageUpload', 'MediaEmbed'],

@@ -84,7 +84,7 @@ class BrochureManagementController extends Controller
     }
  
     public function brochureEdit($id){
-        $brochure = Brochure::findOrFail($id);
+        $brochure = Brochure::where('id',$id)->first();
         if(!empty($brochure)){
             $categories = Category::get();
             return view('admin.Brochure.edit-brochure',compact('brochure','categories'));

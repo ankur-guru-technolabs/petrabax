@@ -74,8 +74,12 @@ Route::group(['middleware' => ['guest']], function () {
 
 Route::get('/about-us', [InfoController::class,'aboutUs'])->name('aboutUs');
 Route::any('/video-libary/{search?}', [InfoController::class,'videoLibrary'])->name('videoLibrary');
+Route::any('/brochure-list/{catid?}/{search?}', [InfoController::class,'brochureList'])->name('brochureList');
 Route::get('/terms-conditions', [InfoController::class,'termsCondition'])->name('termsCondition');
+Route::get('/privacy-policy', [InfoController::class,'privacyPolicy'])->name('privacyPolicy');
 Route::get('/contact-us', [InfoController::class,'contactUs'])->name('contactUs');
+Route::post('/contact-us/submit', [InfoController::class,'contactUsSubmit'])->name('contactUsSubmit');
+Route::get('/cookie', [InfoController::class,'cookieStatement'])->name('cookie');
 
 Route::any('{fallback}', function () {
     return redirect()->route('/');

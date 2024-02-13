@@ -129,7 +129,7 @@
             img.onload = function() {
                 if (img.height < 207 && img.width < 362) {
                     $(fileInput).val('');
-                    alert('Invalid aspect ratio. Please choose an image with a greater than 207:362 ratio.');
+                    alert('Invalid aspect ratio. Please choose an image with a greater than 362:207 ratio.');
                 }else{
                     var imgControlName = "#ImgPreview2";
                     readURL(fileInput, imgControlName);

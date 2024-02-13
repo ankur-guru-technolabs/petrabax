@@ -4,6 +4,7 @@ namespace App\Helpers;
 use Mail;
 use App\Mail\EmailVerificationMail;
 use App\Mail\EmployeePasswordMail;
+use App\Mail\InquiryMail;
 use App\Models\Temp;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -52,6 +53,9 @@ class Helper {
             Mail::to($data['email'])->send(new EmployeePasswordMail($data['password']));
         }
         
+         if(isset($data['inquiry'])){
+            Mail::to($to)->send(new InquiryMail($data));
+        }
         return true;
 
     }

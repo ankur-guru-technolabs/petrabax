@@ -2,7 +2,7 @@
     <div class="container">
         <ul class="footer-menu-link">
             <li><a href="{{route('aboutUs')}}">About Us</a></li>
-            <li><a href="#">Brochure Centre </a></li>
+            <li><a href="{{route('brochureList')}}">Brochure Centre </a></li>
             <li><a href="#">Order Brochure</a></li>
             <li><a href="#">Affiliate Program</a></li>
             <li><a href="#">Special Offers</a></li>
@@ -14,9 +14,9 @@
             <li><a href="#">Find an Agent </a></li>
             <li><a href="javascript:void()" data-bs-toggle="modal" data-bs-target="#ccformdownload">Credit Card Form</a></li>
             <li><a href="{{route('termsCondition')}}">Terms & Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="{{route('privacyPolicy')}}">Privacy Policy</a></li>
             <li><a href="{{route('contactUs')}}">Contact Us</a></li>
-            <li><a href="#">Cookies  </a></li>
+            <li><a href="{{route('cookie')}}">Cookies  </a></li>
             <li><a href="#">Trip planning </a></li>
         </ul>
         <div class="copyright-section">
@@ -58,6 +58,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js" integrity="sha512-LsnSViqQyaXpD4mBBdRYeP6sRwJiJveh2ZIbW41EBrNmKxgr/LFZIiWT6yr+nycvhvauz8c2nYMhrP80YhG7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 <script type="text/javascript" src="{{ asset('/assets/js/bootstrap.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha512-NqYds8su6jivy1/WLoW8x1tZMRD7/1ZfhWG/jcRQLOzV1k1rIODCpMgoBnar5QXshKJGV7vi0LXLNXPoFsM5Zg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
 <script type="text/javascript" src="{{ asset('/assets/js/owl.carousel.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('/assets/js/custom.js')}}"></script>
 <script type="text/javascript" src="{{ asset('/custom/common.js')}}"></script>

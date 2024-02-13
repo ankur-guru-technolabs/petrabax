@@ -4032,6 +4032,9 @@ margin-bottom: 25px;
 }
 .brochure-box .brochure-box-inner img {
 	border-radius: 8px;
+	width: 100%;
+    object-fit: cover;
+    max-height: 123px;
 }
 
 .brochure-box .brochure-content {
@@ -10641,4 +10644,12 @@ table.dataTable tbody tr {
   100% {
     opacity: 1;
   }
+}
+
+.brochure-category-list ul {
+    margin-bottom: 15p;
+}
+.brochure-category-list li.nav-item {
+    margin-right: 15px;
+  	margin-bottom: 15px;
 }
