@@ -3,13 +3,8 @@
 <div class="login-section">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-sm-6 col-lg-6 login-right-text">
-                <!-- <h1>Petrabax</h1>-->
-                <img src="{{ asset('assets/images/login-bg.jpg')}}" alt="Login">
-            </div>
-            <div class="col-lg-1 d-none d-lg-block"></div>
             <div class="col-sm-6 col-lg-5 login-form">
-                <h2>Log in to Your Account</h2>
+                <h2>Log in</h2>
                 <form id="login-form" action="{{route('loginSubmit')}}" method="post">
                     @csrf
                     <div class="form-group">
@@ -35,13 +30,17 @@
                             <label class="mb-0" for="remember">Remember Me</label>
                         </div>
                     </div>
-                    <div class="form-submit-btn text-center">
+                    <div class="form-submit-btn">
                         <button type="submit">Submit</button>
                     </div>
-                    <div class="forgot-link text-center">
-                        <a href="{{route('forgotPassword')}}" title="Forgot password">Forgot password</a>
+                    <div class="forgot-link">
+                        <a href="{{route('forgotPassword')}}" title="Forgot password">Forgot Password?</a>
                     </div>
                 </form>
+            </div>
+            <div class="col-lg-1 d-none d-lg-block"></div>
+            <div class="col-sm-6 col-lg-6 login-right-text">
+                <img src="{{ asset('assets/images/logo-2.png')}}" alt="Login">
             </div>
         </div>
     </div>

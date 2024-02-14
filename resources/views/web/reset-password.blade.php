@@ -3,13 +3,8 @@
 <div class="login-section reset-password-section">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-sm-6 col-lg-6 login-right-text">
-                <!--<h1>Petrabax</h1>-->
-                <img src="{{ asset('assets/images/login-bg.jpg')}}" alt="Login">
-            </div>
-            <div class="col-lg-1 d-none d-lg-block"></div>
             <div class="col-sm-6 col-lg-5 login-form">
-                <h2>Reset Account Password</h2>
+                <h2>Reset Password</h2>
                 <form id="reset-password-form" action="{{route('resetPasswordSubmit')}}" method="post">
                     @csrf
                     <div class="form-group">
@@ -31,10 +26,15 @@
                         </div>
                     </div>
 
-                    <div class="form-submit-btn text-center">
-                        <button type="submit">Reset Password</button>
+                    <div class="form-submit-btn">
+                        <button type="submit">Submit</button>
                     </div>
                 </form>
+            </div>
+            <div class="col-lg-1 d-none d-lg-block"></div>
+            <div class="col-sm-6 col-lg-6 login-right-text">
+                <!--<h1>Petrabax</h1>-->
+                <img src="{{ asset('assets/images/logo-2.png')}}" alt="Login">
             </div>
         </div>
     </div>

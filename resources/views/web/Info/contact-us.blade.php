@@ -1,5 +1,6 @@
 @extends('web.master')
 @section('content')
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <div class="site-main-content">
 
     <div class="contact-section">
@@ -40,6 +41,11 @@
                         <div class="col-6 form-group">
                             <label>Inquiry</label>
                             <textarea type="text" class="form-control" placeholder="Inquiry" rows="1" name="inquiry"></textarea>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="display: inline-block;">
+                                {!! app('captcha')->display() !!}
+                            </div>
                         </div>
                         <div class="col-12 text-center form-submit-btn">
                             <button type="submit">Submit</button>
@@ -178,6 +184,11 @@
                 }
             },
             submitHandler: function (form) {
+                var recaptchaResponse = grecaptcha.getResponse();
+                if (recaptchaResponse.length === 0) {
+                    alert('Please complete the reCAPTCHA verification.');
+                   return false;
+                }
                 form.submit();
             }
         });

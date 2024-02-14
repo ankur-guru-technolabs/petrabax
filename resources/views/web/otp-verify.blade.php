@@ -3,11 +3,6 @@
 <div class="login-section otp-section">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-sm-6 col-lg-6 login-right-text">
-                <!--<h1>Petrabax</h1>-->
-                <img src="{{ asset('assets/images/login-bg.jpg')}}" alt="Login">
-            </div>
-            <div class="col-lg-1 d-none d-lg-block"></div>
             <div class="col-sm-6 col-lg-5 login-form">
                 <h2>OTP</h2>
                 <p class="otp-text">Please enter the OTP</p>
@@ -24,13 +19,18 @@
                     @enderror
                     <p class="mt-2 error" id="otp-error-message"></p>
                     <p class="mt-2" id="concate-otp"><input type="hidden" name="otp"></p>
-                    <div class="submit-btn text-center">
+                    <div class="submit-btn">
                         <div class="resend-btn">
                             <a href="{{route('resendOtp')}}">Resend</a>
                         </div>
                         <button type="submit">Submit</button>
                     </div>
                 </form>
+            </div>
+            <div class="col-lg-1 d-none d-lg-block"></div>
+            <div class="col-sm-6 col-lg-6 login-right-text">
+                <!--<h1>Petrabax</h1>-->
+                <img src="{{ asset('assets/images/logo-2.png')}}" alt="Login">
             </div>
         </div>
     </div>

@@ -27,7 +27,7 @@
                             <img src="{{ asset('/assets/images/regular-user.jpg')}}" alt="Regular User">
                         </div>
                         <div class="link-title">
-                            Regular User
+                            Non-Travel Agent
                         </div>
                     </a>
                 </div>

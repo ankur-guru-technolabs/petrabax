@@ -7,12 +7,12 @@
                 <div class="register-image position-relative">
                     <img src="{{ asset('assets/images/register-regular.jpg')}}" alt="Regular User">
                     <div class="register-text">
-                        <h2>Regular User</h2>
+                        <h2>Non-Travel Agent</h2>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 user-register-form">
-                <h2>Regular User</h2>
+                <h2>Non-Travel Agent</h2>
                 <form id="register-regular-user-form" action="{{route('registerRegularUserSubmit')}}" method="post">
                     @csrf
                     <div class="form-group">

@@ -49,20 +49,8 @@ $(document).ready(function() {
     var hasDigit = /\d/.test(value);
     var hasSpecialChar = /[@$!%*?&]/.test(value);
     var errorMessages = [];
-    if (!hasMinLength) {
-        errorMessages.push("Password must be at least 8 characters long.");
-    }
-    if (!hasUpperCase) {
-        errorMessages.push("Password must include at least one uppercase letter.");
-    }
-    if (!hasLowerCase) {
-        errorMessages.push("Password must include at least one lowercase letter.");
-    }
-    if (!hasDigit) {
-        errorMessages.push("Password must include at least one numeric digit.");
-    }
-    if (!hasSpecialChar) {
-        errorMessages.push("Password must include at least one special character (@ $ ! % * ? &).");
+    if (!hasMinLength || !hasUpperCase || !hasLowerCase || !hasDigit || !hasSpecialChar) {
+      errorMessages.push("Password must be at least 8 characters long and include an uppercase letter, a lowercase letter, a numeric digit, and a special character (@ $ ! % * ? &).");
     }
     this.settings.messages[element.name].strongPassword = errorMessages.join("<br>");
     return hasMinLength && hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar;
@@ -450,7 +438,7 @@ $(document).ready(function() {
         element.closest('.form-group').append(error);
     },
     submitHandler: function (form) {
-        form.submit();
+      form.submit();
     }
   });
   $("#edit-travel-agent-form").validate({

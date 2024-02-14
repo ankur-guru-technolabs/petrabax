@@ -9,7 +9,7 @@
                     <img src="{{ asset('assets/images/thankyou.jpg')}}" alt="Thank  You">
                 </div>
                 <div class="col-lg-4 col-md-5 col-sm-6 thankyou-content">
-                    <h1>Thank You for Booking with Us</h1>
+                    <h1>Thank you for your order</h1>
                 </div>  
             </div>
         </div>
