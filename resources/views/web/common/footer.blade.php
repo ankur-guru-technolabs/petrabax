@@ -3,7 +3,7 @@
         <ul class="footer-menu-link">
             <li><a href="{{route('aboutUs')}}">About Us</a></li>
             <li><a href="{{route('brochureList')}}">Brochure Centre </a></li>
-            <li><a href="#">Order Brochure</a></li>
+            <li><a href="{{route('orderBrochure')}}">Order Brochure</a></li>
             <li><a href="#">Affiliate Program</a></li>
             <li><a href="#">Special Offers</a></li>
             <li><a href="#">Site Map</a></li>
@@ -11,7 +11,7 @@
 
 
             <li><a href="{{route('videoLibrary')}}">Video Library</a></li>
-            <li><a href="#">Find an Agent </a></li>
+            <li><a href="{{route('findAgent')}}">Find an Agent </a></li>
             <li><a href="javascript:void()" data-bs-toggle="modal" data-bs-target="#ccformdownload">Credit Card Form</a></li>
             <li><a href="{{route('termsCondition')}}">Terms & Conditions</a></li>
             <li><a href="{{route('privacyPolicy')}}">Privacy Policy</a></li>
