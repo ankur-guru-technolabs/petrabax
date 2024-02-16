@@ -39,6 +39,7 @@ Route::prefix('/admin')->group(function () {
         Route::post('/banner/update', [BannerManagementController::class, 'bannerUpdate'])->name('bannerUpdate');  
         Route::get('/banner/delete/{id}', [BannerManagementController::class, 'bannerDelete'])->name('bannerDelete'); 
         Route::get('/brochure/list', [BrochureManagementController::class, 'brochureList'])->name('brochureList');
+        Route::get('/brochure/order/list', [BrochureManagementController::class, 'brochureOrderList'])->name('brochureOrderList');
         Route::get('/add/brochure', [BrochureManagementController::class, 'addBrochure'])->name('addBrochure');
         Route::post('/brochure/submit', [BrochureManagementController::class, 'brochureSubmit'])->name('brochureSubmit');
         Route::get('/brochure/edit/{id}', [BrochureManagementController::class, 'brochureEdit'])->name('brochureEdit'); 

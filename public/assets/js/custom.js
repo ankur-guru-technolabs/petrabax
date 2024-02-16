@@ -277,7 +277,6 @@
 
 			var todaydate = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
 
-
 			document.querySelector("#daterangestart").value = todaydate;
 
 
@@ -310,58 +309,57 @@
 					$('#daterangestart').val(todaydate);
 				}
 
+				if($("#daterangestart"  !=  null) ) {
+					var totalnight = parseInt($("#night").val(), 10);
+					var date2 = $('#daterangestart').datepicker('getDate');
+					var nextDayDate = new Date();
+					nextDayDate.setDate(date2.getDate() +totalnight);
 
-					var totalnights = parseInt($("#night").val(), 10);
+					var dd = nextDayDate.getDate();
+				    var mm = nextDayDate.getMonth() + 1;
+				    var yy = nextDayDate.getFullYear();
+					var nextDayDate = dd + '/' + mm + '/' + yy;
+					//alert(nextDayDate);
+					//$('#daterangeend').val(nextDayDate);
+					document.getElementById('daterangeend').value = nextDayDate;
 
-					var totalnight =  totalnights + 3;
+					//nextDayDate.getDate()+ '/' +(date.getMonth() + 1) + '/' + date.getFullYear();
+					//$('#daterangeend').val(nextDayDate);
+
+				}
+				else {
+					var totalnight = parseInt($("#night").val(), 10);
+
+					var totalnight =  totalnight + 3;
 
 				    var tt = document.getElementById('daterangestart').value;
 				
 				    var date = new Date(tt);
 				    var newdate = new Date(date);
+				   	var  days = 1;
 
-				   	if($("#daterangestart" != null) ) {	
-				    	newdate.setDate(newdate.getDate() + totalnights );
-				    }
-				    else {
-				    	newdate.setDate(newdate.getDate() + totalnight );
-				    }
-
+				    newdate.setDate(newdate.getDate() + totalnight );
+				  
 				    var dd = newdate.getDate();
 				    var mm = newdate.getMonth() + 1;
-				   	var yy = newdate.getFullYear();
+				    var yy = newdate.getFullYear();
 					var someFormattedDate = dd + '/' + mm + '/' + yy;
 					document.getElementById('daterangeend').value = someFormattedDate;
 
 					Date.prototype.addDays = function(days) {
-					    //var date = new Date(this.valueOf());
-					    var tt = document.getElementById('daterangestart').value;
-					    var date = new Date(tt);
+					    var date = new Date(this.valueOf());
+					    date.setDate(date.getDate() + days);
+					    //return date;
 
-
-
-					    date.setDate(date.getDate() );
-
-						date.setDate(date.getDate() + days);
-						return date.getDate()+ '/' +(date.getMonth() + 1) + '/' + date.getFullYear();
-
-
-
-					   //var date = date.setDate(date.getDate() + days);
-
-					   // date.setDate(date.getDate() + days);
-
-					    //return date.getDate()+ '/' +(date.getMonth() + 1) + '/' + date.getFullYear();
+					    return date.getDate()+ '/' +(date.getMonth() + 1) + '/' + date.getFullYear();
 					}
+
 
 					var date = new Date();
-					if($("#daterangestart" != null) ) {	
-						$('#daterangeend').val(date.addDays(totalnights));
-					}
-					else  {
-						$('#daterangeend').val(date.addDays(totalnight));
-					}
-				
+
+					$('#daterangeend').val(date.addDays(totalnight));
+
+				}
 
 	   		});
 
@@ -385,6 +383,12 @@
 			        }
 			    },
 			    onSelect: function(selected) {
+
+					//$("#daterangeend").datepicker("option","minDate", selected);
+		         	//var date = $(this).datepicker('getDate');
+		         	//var tempStartDate = new Date(date);
+		         	//var default_end = new Date(tempStartDate.getFullYear(), tempStartDate.getMonth(), tempStartDate.getDate()+1); 
+		         	//$('#daterangeend').datepicker('setDate', default_end); 
 		         	populateEndDate();
 		         	calculate();
 			    }
@@ -408,13 +412,14 @@
 			    	calculate();
 			    }
 			}).datepicker("setDate", new Date());
-			
+
 			function calculate() {
 			    var d1 = $('#daterangestart').datepicker('getDate');
 			    var d2 = $('#daterangeend').datepicker('getDate');
 			    var oneDay = 24*60*60*1000;
 			    var diff = 0;
 			    if (d1 && d2) {
+			  
 			      diff = Math.round(Math.abs((d2.getTime() - d1.getTime())/(oneDay)));
 			    }
 			    $('#night').val(diff);
@@ -428,13 +433,56 @@
 		}
 
 		if($(".filter-content").length) {
-	        $('.add:not(.child-add,.children-add)').click(function () {   
-	          var th = $(this).closest('.wrap').find('.count');     
-	          th.val(+th.val() + 1);
+	        $('.adults-add').click(function () {   
+	          if ($(this).prev().val() < 8) {
+	            $(this).prev().val(+$(this).prev().val() + 1);
+	          }
+	        });
+
+
+	        $('.room-total-inner-dropdown-1 .adults-sub').click(function () {
+	        	var th = $(this).closest('.wrap').find('.count');
+	        	if (th.val() > 1) th.val(+th.val() - 1);
+	        });
+	        $('.room-total-inner-dropdown-2 .adults-sub').click(function () {
+	        	var th = $(this).closest('.wrap').find('.count');
+	        	if (th.val() > 0) th.val(+th.val() - 1);
+	       	});
+	        $('.room-total-inner-dropdown-3 .adults-sub').click(function () {
+	        	var th = $(this).closest('.wrap').find('.count');
+	        	if (th.val() > 0) th.val(+th.val() - 1);
+	        });
+	        $('.room-total-inner-dropdown-4 .adults-sub').click(function () {
+	        	var th = $(this).closest('.wrap').find('.count');
+	        	if (th.val() > 0) th.val(+th.val() - 1);
+	        });
+	       	$('.room-total-inner-dropdown-5 .adults-sub').click(function () {
+	        	var th = $(this).closest('.wrap').find('.count');
+	        	if (th.val() > 0) th.val(+th.val() - 1);
+	        });
+	        $('.room-total-inner-dropdown-6 .adults-sub').click(function () {
+	        	var th = $(this).closest('.wrap').find('.count');
+	        	if (th.val() > 0) th.val(+th.val() - 1);
+	        });
+	        $('.room-total-inner-dropdown-7 .adults-sub').click(function () {
+	        	var th = $(this).closest('.wrap').find('.count');
+	        	if (th.val() > 0) th.val(+th.val() - 1);
+	        });
+	        $('.room-total-inner-dropdown-8 .adults-sub').click(function () {
+	        	var th = $(this).closest('.wrap').find('.count');
+	        	if (th.val() > 0) th.val(+th.val() - 1);
+	        });
+	        $('.room-total-inner-dropdown-9 .adults-sub').click(function () {
+	        	var th = $(this).closest('.wrap').find('.count');
+	        	if (th.val() > 0) th.val(+th.val() - 1);
+	        });
+	        $('.room-total-inner-dropdown-10 .adults-sub').click(function () {
+	        	var th = $(this).closest('.wrap').find('.count');
+	        	if (th.val() > 0) th.val(+th.val() - 1);
 	        });
 
 	        $('.roomadd').click(function () {   
-	          if ($(this).prev().val() < 4) {
+	          if ($(this).prev().val() < 10) {
 	            $(this).prev().val(+$(this).prev().val() + 1);
 	          }
 
@@ -452,49 +500,31 @@
 	          else if($('.totalroom-count').val() == 4) {
 	            $(".room-total-inner-dropdown-4").addClass('active');
 	          }
-
-	        });
-
-	        $('.roomsub').click(function () {
-	          var th = $(this).closest('.wrap').find('.count');     
-	          if (th.val() > 1) th.val(+th.val() - 1);
-
-	          var totalroom = $('.totalroom-count').val();
-	          
-	          if($('.totalroom-count').val() == 1) {
-	            $(".room-total-inner-dropdown").removeClass('active');
-	            $(".room-total-inner-dropdown-1").addClass('active');
-	          } 
-	          else if($('.totalroom-count').val() == 2) {
-	            $(".room-total-inner-dropdown").removeClass('active');
-	            $(".room-total-inner-dropdown-1").addClass('active');
-	             $(".room-total-inner-dropdown-2").addClass('active');
-	          } 
-	          else if($('.totalroom-count').val() == 3) {
-	            $(".room-total-inner-dropdown").removeClass('active');
-	            $(".room-total-inner-dropdown-1").addClass('active');
-	            $(".room-total-inner-dropdown-2").addClass('active');
-	            $(".room-total-inner-dropdown-3").addClass('active');
-	          } 
-	          else if($('.totalroom-count').val() == 4) {
-	            $(".room-total-inner-dropdown").removeClass('active');
-	            $(".room-total-inner-dropdown-1").addClass('active');
-	            $(".room-total-inner-dropdown-2").addClass('active');
-	            $(".room-total-inner-dropdown-3").addClass('active');
-	            $(".room-total-inner-dropdown-4").addClass('active');
-	          } 
+	          else if($('.totalroom-count').val() == 5) {
+	            $(".room-total-inner-dropdown-5").addClass('active');
+	          }
+	          else if($('.totalroom-count').val() == 6) {
+	            $(".room-total-inner-dropdown-6").addClass('active');
+	          }
+	          else if($('.totalroom-count').val() == 7) {
+	            $(".room-total-inner-dropdown-7").addClass('active');
+	          }
+	          else if($('.totalroom-count').val() == 8) {
+	            $(".room-total-inner-dropdown-8").addClass('active');
+	          }
+	          else if($('.totalroom-count').val() == 9) {
+	            $(".room-total-inner-dropdown-9").addClass('active');
+	          }
+	          else if($('.totalroom-count').val() == 10) {
+	            $(".room-total-inner-dropdown-10").addClass('active');
+	          }
 
 	        });
 
 	        $('.children-add').click(function () {   
-	         // var th = $(this).closest('.wrap').find('.count');
-
-	          //th.val(+th.val() + 1)
-
-	           if ($(this).prev().val() < 12) {
+	           if ($(this).prev().val() < 4) {
 	            $(this).prev().val(+$(this).prev().val() + 1);
 	          }
-	         
 	      
 	          var coundchild = $('.childerns-count').val();
 
@@ -514,38 +544,10 @@
 	            else if($("[id*="+roomid+"] .childerns-count").val() == 4) {
 	              $("[id*="+roomid+"] .children-box-4").addClass('active');
 	            }
-	            else if($("[id*="+roomid+"] .childerns-count").val() == 5) {
-	              $("[id*="+roomid+"] .children-box-5").addClass('active');
-	            }
-	              else if($("[id*="+roomid+"] .childerns-count").val() == 6) {
-	              $("[id*="+roomid+"] .children-box-6").addClass('active');
-	            }
-	              else if($("[id*="+roomid+"] .childerns-count").val() == 7) {
-	              $("[id*="+roomid+"] .children-box-7").addClass('active');
-	            }
-	              else if($("[id*="+roomid+"] .childerns-count").val() == 8) {
-	              $("[id*="+roomid+"] .children-box-8").addClass('active');
-	            }
-	            else if($("[id*="+roomid+"] .childerns-count").val() == 9) {
-	              $("[id*="+roomid+"] .children-box-9").addClass('active');
-	            }
-	            else if($("[id*="+roomid+"] .childerns-count").val() == 10) {
-	              $("[id*="+roomid+"] .children-box-10").addClass('active');
-	            }
-	            else if($("[id*="+roomid+"] .childerns-count").val() == 11) {
-	              $("[id*="+roomid+"] .children-box-11").addClass('active');
-	            }
-	            else if($("[id*="+roomid+"] .childerns-count").val() == 12) {
-	              $("[id*="+roomid+"] .children-box-12").addClass('active');
-	            }
 	          });
 	        });
 
-	          $('.sub:not(.children-sub)').click(function () {
-	            var th = $(this).closest('.wrap').find('.count');     
-	            if (th.val() > 1) th.val(+th.val() - 1);
-	          });
-
+	      
 	          $('.add.child-add').on("click",function () {
 	            if ($(this).prev().val() < 12) {
 	              $(this).prev().val(+$(this).prev().val() + 1);
@@ -592,119 +594,689 @@
 	              $("[id*="+roomid+"] .children-box.children-box-3").addClass('active');
 	              $("[id*="+roomid+"] .children-box.children-box-4").addClass('active');
 	            }
-	            else if($("[id*="+roomid+"] .childerns-count").val() == 5) {
-	              $("[id*="+roomid+"] .children-box").removeClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-1").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-2").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-3").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-4").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-5").addClass('active');
-	            }
-	            else if($("[id*="+roomid+"] .childerns-count").val() == 6) {
-	              $("[id*="+roomid+"] .children-box").removeClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-1").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-2").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-3").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-4").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-5").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-6").addClass('active');
-	            }
-	            else if($("[id*="+roomid+"] .childerns-count").val() == 7) {
-	              $("[id*="+roomid+"] .children-box").removeClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-1").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-2").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-3").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-4").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-5").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-6").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-7").addClass('active');
-	            }
-	            else if($("[id*="+roomid+"] .childerns-count").val() == 8) {
-	              $("[id*="+roomid+"] .children-box").removeClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-1").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-2").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-3").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-4").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-5").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-6").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-7").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-8").addClass('active');
-	            }
-	            else if($("[id*="+roomid+"] .childerns-count").val() == 9) {
-	              $("[id*="+roomid+"] .children-box").removeClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-1").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-2").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-3").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-4").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-5").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-6").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-7").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-8").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-9").addClass('active');
-	            }
-	            else if($("[id*="+roomid+"] .childerns-count").val() == 10) {
-	              $("[id*="+roomid+"] .children-box").removeClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-1").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-2").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-3").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-4").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-5").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-6").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-7").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-8").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-9").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-10").addClass('active');
-	            }
-	            else if($("[id*="+roomid+"] .childerns-count").val() == 11) {
-	              $("[id*="+roomid+"] .children-box").removeClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-1").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-2").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-3").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-4").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-5").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-6").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-7").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-8").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-9").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-10").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-11").addClass('active');
-	            }
-	            else if($("[id*="+roomid+"] .childerns-count").val() == 12) {
-	              $("[id*="+roomid+"] .children-box").removeClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-1").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-2").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-3").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-4").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-5").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-6").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-7").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-8").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-9").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-10").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-11").addClass('active');
-	              $("[id*="+roomid+"] .children-box.children-box-12 ").addClass('active');
-	            }
+	            
 	          });
-	          });
+	         });
 
-	      $('.adults-add, .adults-sub').click(function () {
+	      	$('.adults-add, .adults-sub').click(function () {
 	          var totaladults1 = parseInt($(".adults-count-1").val());
 	          var totaladults2 = parseInt($(".adults-count-2").val());
 	          var totaladults3 = parseInt($(".adults-count-3").val());
 	          var totaladults4 = parseInt($(".adults-count-4").val());
-	          var alladult  =  totaladults1 + totaladults2  + totaladults3  + totaladults4;
-	          $("#roomguest #adultscount").html(alladult + ' Adults');
-	      } );
+	          var totaladults5 = parseInt($(".adults-count-5").val());
+	          var totaladults6 = parseInt($(".adults-count-6").val());
+	          var totaladults7 = parseInt($(".adults-count-7").val());
+	          var totaladults8 = parseInt($(".adults-count-8").val());
+	          var totaladults9 = parseInt($(".adults-count-9").val());
+	          var totaladults10 = parseInt($(".adults-count-10").val());
 
-	      $('.children-add, .children-add').click(function () {
+	          var alladult  =  totaladults1 + totaladults2  + totaladults3  + totaladults4 + totaladults5 + totaladults6  + totaladults7 + totaladults8 + totaladults9 + totaladults10;
+	          $("#roomguest #adultscount").html(alladult + ' Adults');
+
+
+
+	      	} );
+
+	      	$('.children-add, .children-sub').click(function () {
 	          var children1 = parseInt($(".childerns-count-1").val());
 	          var children2 = parseInt($(".childerns-count-2").val());
 	          var children3 = parseInt($(".childerns-count-3").val());
 	          var children4 = parseInt($(".childerns-count-4").val());
+	          var children5 = parseInt($(".childerns-count-5").val());
+	          var children6 = parseInt($(".childerns-count-6").val());
+	          var children7 = parseInt($(".childerns-count-7").val());
+	          var children8 = parseInt($(".childerns-count-8").val());
+	          var children9 = parseInt($(".childerns-count-9").val());
+	          var children10 = parseInt($(".childerns-count-10").val());
 	      
-	          var childcount  =  children1 + children2  + children3  + children4;
-	          $("#roomguest #childcount").html(' and ' + childcount + ' Children');
-	      } );
+	          var childcount  =  children1 + children2  + children3  + children4  + children5  + children6  + children7  + children8  + children9  + children10;
+	          	
+				setTimeout(function() {
+			       if(childcount > 0 ) {
+		        		$("#roomguest #childcount").html(' and ' + childcount + ' Children');
+		       	 	}
+		       	 	
+		       	 	if(childcount == 0) {
+
+		       	 		$("#roomguest #childcount").empty();
+		       	 	}
+			   }, 100);
+
+	     	} );
+
+	     	$('.roomsub').click(function () {
+	          var th = $(this).closest('.wrap').find('.count');     
+	          if (th.val() > 1) th.val(+th.val() - 1);
+
+	          var totalroom = $('.totalroom-count').val();
+	          
+	          if($('.totalroom-count').val() == 1) {
+	            $(".room-total-inner-dropdown").removeClass('active');
+	            $(".room-total-inner-dropdown-1").addClass('active');
+
+	            $(".room-total-inner-dropdown-2 .adults-count-2").val(0);
+              	$(".room-total-inner-dropdown-3 .adults-count-3").val(0);
+               	$(".room-total-inner-dropdown-4 .adults-count-4").val(0);
+                $(".room-total-inner-dropdown-5 .adults-count-5").val(0);
+                $(".room-total-inner-dropdown-6 .adults-count-6").val(0);
+                $(".room-total-inner-dropdown-7 .adults-count-7").val(0);
+                $(".room-total-inner-dropdown-8 .adults-count-8").val(0);
+                $(".room-total-inner-dropdown-9 .adults-count-9").val(0);
+                $(".room-total-inner-dropdown-10 .adults-count-10").val(0);
+
+                $(".room-total-inner-dropdown-2 .childerns-count-2").val(0);
+              	$(".room-total-inner-dropdown-3 .childerns-count-3").val(0);
+               	$(".room-total-inner-dropdown-4 .childerns-count-4").val(0);
+                $(".room-total-inner-dropdown-5 .childerns-count-5").val(0);
+                $(".room-total-inner-dropdown-6 .childerns-count-6").val(0);
+                $(".room-total-inner-dropdown-7 .childerns-count-7").val(0);
+                $(".room-total-inner-dropdown-8 .childerns-count-8").val(0);
+                $(".room-total-inner-dropdown-9 .childerns-count-9").val(0);
+                $(".room-total-inner-dropdown-10 .childerns-count-10").val(0);
+
+                $(".room-total-inner-dropdown-2 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-3 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-4 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-5 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-6 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-7 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-8 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-9 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-10 .children-box .count").val(0);
+
+                $(".room-total-inner-dropdown-2 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-3 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-4 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-5 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-6 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-7 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-8 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-9 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-10 .children-box").removeClass('active');
+
+                $(".room-total-inner-dropdown-2 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-3 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-4 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-5 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-6 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-7 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-8 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-9 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-10 .child-block.dropdown-block").removeClass('show');
+
+                var totaladults1 = parseInt($(".adults-count-1").val());
+	          	var alladult  =  totaladults1 ;
+	          	$("#roomguest #adultscount").html(alladult + ' Adults');
+
+	          	var children1 = parseInt($(".childerns-count-1").val());
+		        var childcount  =  children1;
+
+		       
+		        setTimeout(function() {
+			       if(childcount > 0 ) {
+		        		$("#roomguest #childcount").html(' and ' + childcount + ' Children');
+		       	 	}
+		       	 	
+		       	 	if(childcount == 0) {
+
+		       	 		$("#roomguest #childcount").empty();
+		       	 	}
+			   }, 100);
+	          } 
+	          else if($('.totalroom-count').val() == 2) {
+	            $(".room-total-inner-dropdown").removeClass('active');
+	            $(".room-total-inner-dropdown-1").addClass('active');
+	            $(".room-total-inner-dropdown-2").addClass('active');
+
+              	$(".room-total-inner-dropdown-3 .adults-count-3").val(0);
+               	$(".room-total-inner-dropdown-4 .adults-count-4").val(0);
+                $(".room-total-inner-dropdown-5 .adults-count-5").val(0);
+                $(".room-total-inner-dropdown-6 .adults-count-6").val(0);
+                $(".room-total-inner-dropdown-7 .adults-count-7").val(0);
+                $(".room-total-inner-dropdown-8 .adults-count-8").val(0);
+                $(".room-total-inner-dropdown-9 .adults-count-9").val(0);
+                $(".room-total-inner-dropdown-10 .adults-count-10").val(0);
+
+              	$(".room-total-inner-dropdown-3 .childerns-count-3").val(0);
+               	$(".room-total-inner-dropdown-4 .childerns-count-4").val(0);
+                $(".room-total-inner-dropdown-5 .childerns-count-5").val(0);
+                $(".room-total-inner-dropdown-6 .childerns-count-6").val(0);
+                $(".room-total-inner-dropdown-7 .childerns-count-7").val(0);
+                $(".room-total-inner-dropdown-8 .childerns-count-8").val(0);
+                $(".room-total-inner-dropdown-9 .childerns-count-9").val(0);
+                $(".room-total-inner-dropdown-10 .childerns-count-10").val(0);
+
+                $(".room-total-inner-dropdown-3 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-4 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-5 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-6 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-7 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-8 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-9 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-10 .children-box .count").val(0);
+
+                $(".room-total-inner-dropdown-3 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-4 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-5 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-6 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-7 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-8 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-9 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-10 .children-box").removeClass('active');
+
+                $(".room-total-inner-dropdown-3 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-4 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-5 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-6 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-7 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-8 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-9 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-10 .child-block.dropdown-block").removeClass('show');
+
+                var totaladults1 = parseInt($(".adults-count-1").val());
+	          	var totaladults2 = parseInt($(".adults-count-2").val());
+	          
+	          	var alladult  =  totaladults1 + totaladults2;
+		        $("#roomguest #adultscount").html(alladult + ' Adults');
+
+		        var children1 = parseInt($(".childerns-count-1").val());
+		        var children2 = parseInt($(".childerns-count-2").val());
+		        var childcount  =  children1 + children2;
+
+		       	setTimeout(function() {
+			       if(childcount > 0 ) {
+		        		$("#roomguest #childcount").html(' and ' + childcount + ' Children');
+		       	 	}
+		       	 	
+		       	 	if(childcount == 0) {
+
+		       	 		$("#roomguest #childcount").empty();
+		       	 	}
+			   	}, 100);
+	          } 
+	          else if($('.totalroom-count').val() == 3) {
+	            $(".room-total-inner-dropdown").removeClass('active');
+	            $(".room-total-inner-dropdown-1").addClass('active');
+	            $(".room-total-inner-dropdown-2").addClass('active');
+	            $(".room-total-inner-dropdown-3").addClass('active');
+
+               	$(".room-total-inner-dropdown-4 .adults-count-4").val('');
+                $(".room-total-inner-dropdown-5 .adults-count-5").val('');
+                $(".room-total-inner-dropdown-6 .adults-count-6").val('');
+                $(".room-total-inner-dropdown-7 .adults-count-7").val('');
+                $(".room-total-inner-dropdown-8 .adults-count-8").val('');
+                $(".room-total-inner-dropdown-9 .adults-count-9").val('');
+                $(".room-total-inner-dropdown-10 .adults-count-10").val('');
+
+               	$(".room-total-inner-dropdown-4 .childerns-count-4").val(0);
+                $(".room-total-inner-dropdown-5 .childerns-count-5").val(0);
+                $(".room-total-inner-dropdown-6 .childerns-count-6").val(0);
+                $(".room-total-inner-dropdown-7 .childerns-count-7").val(0);
+                $(".room-total-inner-dropdown-8 .childerns-count-8").val(0);
+                $(".room-total-inner-dropdown-9 .childerns-count-9").val(0);
+                $(".room-total-inner-dropdown-10 .childerns-count-10").val(0);
+
+                $(".room-total-inner-dropdown-4 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-5 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-6 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-7 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-8 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-9 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-10 .children-box .count").val(0);
+
+                $(".room-total-inner-dropdown-4 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-5 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-6 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-7 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-8 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-9 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-10 .children-box").removeClass('active');
+
+                $(".room-total-inner-dropdown-4 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-5 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-6 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-7 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-8 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-9 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-10 .child-block.dropdown-block").removeClass('show');
+
+                var totaladults1 = parseInt($(".adults-count-1").val());
+	          	var totaladults2 = parseInt($(".adults-count-2").val());
+	          	var totaladults3 = parseInt($(".adults-count-3").val());
+	          
+	          	var alladult  =  totaladults1 + totaladults2  + totaladults3;
+	          	$("#roomguest #adultscount").html(alladult + ' Adults');
+
+	           	var children1 = parseInt($(".childerns-count-1").val());
+	          	var children2 = parseInt($(".childerns-count-2").val());
+	          	var children3 = parseInt($(".childerns-count-3").val());
+
+	          	var childcount  =  children1 + children2  + children3;
+	          	setTimeout(function() {
+			       if(childcount > 0 ) {
+		        		$("#roomguest #childcount").html(' and ' + childcount + ' Children');
+		       	 	}
+		       	 	
+		       	 	if(childcount == 0) {
+
+		       	 		$("#roomguest #childcount").empty();
+		       	 	}
+			   }, 100);
+	          } 
+	          else if($('.totalroom-count').val() == 4) {
+	            $(".room-total-inner-dropdown").removeClass('active');
+	            $(".room-total-inner-dropdown-1").addClass('active');
+	            $(".room-total-inner-dropdown-2").addClass('active');
+	            $(".room-total-inner-dropdown-3").addClass('active');
+	            $(".room-total-inner-dropdown-4").addClass('active');
+
+                $(".room-total-inner-dropdown-5 .adults-count-5").val('');
+                $(".room-total-inner-dropdown-6 .adults-count-6").val('');
+                $(".room-total-inner-dropdown-7 .adults-count-7").val('');
+                $(".room-total-inner-dropdown-8 .adults-count-8").val('');
+                $(".room-total-inner-dropdown-9 .adults-count-9").val('');
+                $(".room-total-inner-dropdown-10 .adults-count-10").val('');
+
+                $(".room-total-inner-dropdown-5 .childerns-count-5").val(0);
+                $(".room-total-inner-dropdown-6 .childerns-count-6").val(0);
+                $(".room-total-inner-dropdown-7 .childerns-count-7").val(0);
+                $(".room-total-inner-dropdown-8 .childerns-count-8").val(0);
+                $(".room-total-inner-dropdown-9 .childerns-count-9").val(0);
+                $(".room-total-inner-dropdown-10 .childerns-count-10").val(0);
+
+                $(".room-total-inner-dropdown-5 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-6 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-7 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-8 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-9 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-10 .children-box .count").val(0);
+
+                $(".room-total-inner-dropdown-5 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-6 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-7 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-8 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-9 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-10 .children-box").removeClass('active');
+
+                $(".room-total-inner-dropdown-6 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-7 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-8 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-9 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-10 .child-block.dropdown-block").removeClass('show');
+
+                var totaladults1 = parseInt($(".adults-count-1").val());
+	          	var totaladults2 = parseInt($(".adults-count-2").val());
+	         	var totaladults3 = parseInt($(".adults-count-3").val());
+	          	var totaladults4 = parseInt($(".adults-count-4").val());
+
+	          	var alladult  =  totaladults1 + totaladults2  + totaladults3  + totaladults4;
+	          	$("#roomguest #adultscount").html(alladult + ' Adults');
+
+	          	var children1 = parseInt($(".childerns-count-1").val());
+	          	var children2 = parseInt($(".childerns-count-2").val());
+	          	var children3 = parseInt($(".childerns-count-3").val());
+	          	var children4 = parseInt($(".childerns-count-4").val());
+
+	          	var childcount  =  children1 + children2  + children3  + children4;
+
+	          	setTimeout(function() {
+			       if(childcount > 0 ) {
+		        		$("#roomguest #childcount").html(' and ' + childcount + ' Children');
+		       	 	}
+		       	 	
+		       	 	if(childcount == 0) {
+
+		       	 		$("#roomguest #childcount").empty();
+		       	 	}
+			   }, 100);
+	          }
+	          else if($('.totalroom-count').val() == 5) {
+	            $(".room-total-inner-dropdown").removeClass('active');
+	            $(".room-total-inner-dropdown-1").addClass('active');
+	            $(".room-total-inner-dropdown-2").addClass('active');
+	            $(".room-total-inner-dropdown-3").addClass('active');
+	            $(".room-total-inner-dropdown-4").addClass('active');
+	            $(".room-total-inner-dropdown-5").addClass('active');
+
+                $(".room-total-inner-dropdown-6 .adults-count-6").val('');
+                $(".room-total-inner-dropdown-7 .adults-count-7").val('');
+                $(".room-total-inner-dropdown-8 .adults-count-8").val('');
+                $(".room-total-inner-dropdown-9 .adults-count-9").val('');
+                $(".room-total-inner-dropdown-10 .adults-count-10").val('');
+
+                $(".room-total-inner-dropdown-6 .childerns-count-6").val(0);
+                $(".room-total-inner-dropdown-7 .childerns-count-7").val(0);
+                $(".room-total-inner-dropdown-8 .childerns-count-8").val(0);
+                $(".room-total-inner-dropdown-9 .childerns-count-9").val(0);
+                $(".room-total-inner-dropdown-10 .childerns-count-10").val(0);
+
+                $(".room-total-inner-dropdown-6 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-7 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-8 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-9 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-10 .children-box .count").val(0);
+
+                $(".room-total-inner-dropdown-6 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-7 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-8 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-9 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-10 .children-box").removeClass('active');
+
+                $(".room-total-inner-dropdown-6 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-7 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-8 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-9 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-10 .child-block.dropdown-block").removeClass('show');
+
+                var totaladults1 = parseInt($(".adults-count-1").val());
+	          	var totaladults2 = parseInt($(".adults-count-2").val());
+	          	var totaladults3 = parseInt($(".adults-count-3").val());
+	          	var totaladults4 = parseInt($(".adults-count-4").val());
+	          	var totaladults5 = parseInt($(".adults-count-5").val());
+
+	          	var alladult  =  totaladults1 + totaladults2  + totaladults3  + totaladults4 + totaladults5;
+	          	$("#roomguest #adultscount").html(alladult + ' Adults');
+
+	          	var children1 = parseInt($(".childerns-count-1").val());
+	          	var children2 = parseInt($(".childerns-count-2").val());
+	          	var children3 = parseInt($(".childerns-count-3").val());
+	          	var children4 = parseInt($(".childerns-count-4").val());
+	         	var children5 = parseInt($(".childerns-count-5").val());
+	          
+	          	var childcount  =  children1 + children2  + children3  + children4  + children5;
+	          	if($(childcount === '0')) {
+	          		$("#roomguest #childcount").html(' and ' + childcount + ' Children');
+	          	}
+	          }
+	          else if($('.totalroom-count').val() == 6) {
+	            $(".room-total-inner-dropdown").removeClass('active');
+	            $(".room-total-inner-dropdown-1").addClass('active');
+	            $(".room-total-inner-dropdown-2").addClass('active');
+	            $(".room-total-inner-dropdown-3").addClass('active');
+	            $(".room-total-inner-dropdown-4").addClass('active');
+	            $(".room-total-inner-dropdown-5").addClass('active');
+	            $(".room-total-inner-dropdown-6").addClass('active');
+
+                $(".room-total-inner-dropdown-7 .adults-count-7").val('');
+                $(".room-total-inner-dropdown-8 .adults-count-8").val('');
+                $(".room-total-inner-dropdown-9 .adults-count-9").val('');
+                $(".room-total-inner-dropdown-10 .adults-count-10").val('');
+
+                $(".room-total-inner-dropdown-7 .childerns-count-7").val(0);
+                $(".room-total-inner-dropdown-8 .childerns-count-8").val(0);
+                $(".room-total-inner-dropdown-9 .childerns-count-9").val(0);
+                $(".room-total-inner-dropdown-10 .childerns-count-10").val(0);
+
+                $(".room-total-inner-dropdown-7 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-8 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-9 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-10 .children-box .count").val(0);
+
+                $(".room-total-inner-dropdown-7 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-8 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-9 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-10 .children-box").removeClass('active');
+
+                $(".room-total-inner-dropdown-7 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-8 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-9 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-10 .child-block.dropdown-block").removeClass('show');
+
+                var totaladults1 = parseInt($(".adults-count-1").val());
+				var totaladults2 = parseInt($(".adults-count-2").val());
+				var totaladults3 = parseInt($(".adults-count-3").val());
+				var totaladults4 = parseInt($(".adults-count-4").val());
+				var totaladults5 = parseInt($(".adults-count-5").val());
+				var totaladults6 = parseInt($(".adults-count-6").val());
+
+	          	var alladult  =  totaladults1 + totaladults2  + totaladults3  + totaladults4 + totaladults5 + totaladults6 ;
+	          	$("#roomguest #adultscount").html(alladult + ' Adults');
+
+				var children1 = parseInt($(".childerns-count-1").val());
+				var children2 = parseInt($(".childerns-count-2").val());
+				var children3 = parseInt($(".childerns-count-3").val());
+				var children4 = parseInt($(".childerns-count-4").val());
+				var children5 = parseInt($(".childerns-count-5").val());
+				var children6 = parseInt($(".childerns-count-6").val());
+	          
+	      
+	          	var childcount  =  children1 + children2  + children3  + children4  + children5  + children6;
+	          	setTimeout(function() {
+			       if(childcount > 0 ) {
+		        		$("#roomguest #childcount").html(' and ' + childcount + ' Children');
+		       	 	}
+		       	 	
+		       	 	if(childcount == 0) {
+
+		       	 		$("#roomguest #childcount").empty();
+		       	 	}
+			   }, 100);
+	          }
+	          else if($('.totalroom-count').val() == 7) {
+	            $(".room-total-inner-dropdown").removeClass('active');
+	            $(".room-total-inner-dropdown-1").addClass('active');
+	            $(".room-total-inner-dropdown-2").addClass('active');
+	            $(".room-total-inner-dropdown-3").addClass('active');
+	            $(".room-total-inner-dropdown-4").addClass('active');
+	            $(".room-total-inner-dropdown-5").addClass('active');
+	            $(".room-total-inner-dropdown-6").addClass('active');
+	            $(".room-total-inner-dropdown-7").addClass('active');
+
+                $(".room-total-inner-dropdown-8 .adults-count-8").val('');
+                $(".room-total-inner-dropdown-9 .adults-count-9").val('');
+                $(".room-total-inner-dropdown-10 .adults-count-10").val('');
+
+                $(".room-total-inner-dropdown-8 .childerns-count-8").val(0);
+                $(".room-total-inner-dropdown-9 .childerns-count-9").val(0);
+                $(".room-total-inner-dropdown-10 .childerns-count-10").val(0);
+
+                $(".room-total-inner-dropdown-8 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-9 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-10 .children-box .count").val(0);
+
+                $(".room-total-inner-dropdown-8 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-9 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-10 .children-box").removeClass('active');
+
+                $(".room-total-inner-dropdown-8 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-9 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-10 .child-block.dropdown-block").removeClass('show');
+
+				var totaladults1 = parseInt($(".adults-count-1").val());
+				var totaladults2 = parseInt($(".adults-count-2").val());
+				var totaladults3 = parseInt($(".adults-count-3").val());
+				var totaladults4 = parseInt($(".adults-count-4").val());
+				var totaladults5 = parseInt($(".adults-count-5").val());
+				var totaladults6 = parseInt($(".adults-count-6").val());
+				var totaladults7 = parseInt($(".adults-count-7").val());
+
+	          	var alladult  =  totaladults1 + totaladults2  + totaladults3  + totaladults4 + totaladults5 + totaladults6  + totaladults7;
+	          	$("#roomguest #adultscount").html(alladult + ' Adults');
+
+				var children1 = parseInt($(".childerns-count-1").val());
+				var children2 = parseInt($(".childerns-count-2").val());
+				var children3 = parseInt($(".childerns-count-3").val());
+				var children4 = parseInt($(".childerns-count-4").val());
+				var children5 = parseInt($(".childerns-count-5").val());
+				var children6 = parseInt($(".childerns-count-6").val());
+				var children7 = parseInt($(".childerns-count-7").val());
+	          
+	          	var childcount  =  children1 + children2  + children3  + children4  + children5  + children6  + children7;
+	          	setTimeout(function() {
+			       if(childcount > 0 ) {
+		        		$("#roomguest #childcount").html(' and ' + childcount + ' Children');
+		       	 	}
+		       	 	
+		       	 	if(childcount == 0) {
+
+		       	 		$("#roomguest #childcount").empty();
+		       	 	}
+			   }, 100);
+	          }
+	          else if($('.totalroom-count').val() == 8) {
+	            $(".room-total-inner-dropdown").removeClass('active');
+	            $(".room-total-inner-dropdown-1").addClass('active');
+	            $(".room-total-inner-dropdown-2").addClass('active');
+	            $(".room-total-inner-dropdown-3").addClass('active');
+	            $(".room-total-inner-dropdown-4").addClass('active');
+	            $(".room-total-inner-dropdown-5").addClass('active');
+	            $(".room-total-inner-dropdown-6").addClass('active');
+	            $(".room-total-inner-dropdown-7").addClass('active');
+	            $(".room-total-inner-dropdown-8").addClass('active');
+
+                $(".room-total-inner-dropdown-9 .adults-count-9").val('');
+                $(".room-total-inner-dropdown-10 .adults-count-10").val('');
+
+                $(".room-total-inner-dropdown-9 .childerns-count-9").val(0);
+                $(".room-total-inner-dropdown-10 .childerns-count-10").val(0);
+
+                $(".room-total-inner-dropdown-9 .children-box .count").val(0);
+                $(".room-total-inner-dropdown-10 .children-box .count").val(0);
+
+                $(".room-total-inner-dropdown-9 .child-block.dropdown-block").removeClass('show');
+                 $(".room-total-inner-dropdown-10 .child-block.dropdown-block").removeClass('show');
+
+                $(".room-total-inner-dropdown-9 .children-box").removeClass('active');
+                $(".room-total-inner-dropdown-10 .children-box").removeClass('active');
+
+                $(".room-total-inner-dropdown-9 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-10 .child-block.dropdown-block").removeClass('show');
+
+				var totaladults1 = parseInt($(".adults-count-1").val());
+				var totaladults2 = parseInt($(".adults-count-2").val());
+				var totaladults3 = parseInt($(".adults-count-3").val());
+				var totaladults4 = parseInt($(".adults-count-4").val());
+				var totaladults5 = parseInt($(".adults-count-5").val());
+				var totaladults6 = parseInt($(".adults-count-6").val());
+				var totaladults7 = parseInt($(".adults-count-7").val());
+				var totaladults8 = parseInt($(".adults-count-8").val());
+
+	          	var alladult  =  totaladults1 + totaladults2  + totaladults3  + totaladults4 + totaladults5 + totaladults6  + totaladults7 + totaladults8;
+	         	$("#roomguest #adultscount").html(alladult + ' Adults');
+
+				var children1 = parseInt($(".childerns-count-1").val());
+				var children2 = parseInt($(".childerns-count-2").val());
+				var children3 = parseInt($(".childerns-count-3").val());
+				var children4 = parseInt($(".childerns-count-4").val());
+				var children5 = parseInt($(".childerns-count-5").val());
+				var children6 = parseInt($(".childerns-count-6").val());
+				var children7 = parseInt($(".childerns-count-7").val());
+				var children8 = parseInt($(".childerns-count-8").val());
+	      
+	          	var childcount  =  children1 + children2  + children3  + children4  + children5  + children6  + children7  + children8;
+	          	if($(childcount === '0')) {
+	         		$("#roomguest #childcount").html(' and ' + childcount + ' Children');
+	         	}
+	          }
+	          else if($('.totalroom-count').val() == 9) {
+	            $(".room-total-inner-dropdown").removeClass('active');
+	            $(".room-total-inner-dropdown-1").addClass('active');
+	            $(".room-total-inner-dropdown-2").addClass('active');
+	            $(".room-total-inner-dropdown-3").addClass('active');
+	            $(".room-total-inner-dropdown-4").addClass('active');
+	            $(".room-total-inner-dropdown-5").addClass('active');
+	            $(".room-total-inner-dropdown-6").addClass('active');
+	            $(".room-total-inner-dropdown-7").addClass('active');
+	            $(".room-total-inner-dropdown-8").addClass('active');
+	            $(".room-total-inner-dropdown-9").addClass('active');
+
+                $(".room-total-inner-dropdown-10 .adults-count-10").val('');
+
+                $(".room-total-inner-dropdown-10 .childerns-count-10").val(0);
+
+                $(".room-total-inner-dropdown-10 .children-box .count").val(0);
+
+                $(".room-total-inner-dropdown-10 .child-block.dropdown-block").removeClass('show');
+                $(".room-total-inner-dropdown-10 .children-box").removeClass('active');
+
+                var totaladults1 = parseInt($(".adults-count-1").val());
+		        var totaladults2 = parseInt($(".adults-count-2").val());
+		        var totaladults3 = parseInt($(".adults-count-3").val());
+		        var totaladults4 = parseInt($(".adults-count-4").val());
+		        var totaladults5 = parseInt($(".adults-count-5").val());
+		        var totaladults6 = parseInt($(".adults-count-6").val());
+		        var totaladults7 = parseInt($(".adults-count-7").val());
+		        var totaladults8 = parseInt($(".adults-count-8").val());
+		        var totaladults9 = parseInt($(".adults-count-9").val());
+
+	          	var alladult  =  totaladults1 + totaladults2  + totaladults3  + totaladults4 + totaladults5 + totaladults6  + totaladults7 + totaladults8 + totaladults9;
+	          	$("#roomguest #adultscount").html(alladult + ' Adults');
+
+				var children1 = parseInt($(".childerns-count-1").val());
+				var children2 = parseInt($(".childerns-count-2").val());
+				var children3 = parseInt($(".childerns-count-3").val());
+				var children4 = parseInt($(".childerns-count-4").val());
+				var children5 = parseInt($(".childerns-count-5").val());
+				var children6 = parseInt($(".childerns-count-6").val());
+				var children7 = parseInt($(".childerns-count-7").val());
+				var children8 = parseInt($(".childerns-count-8").val());
+				var children9 = parseInt($(".childerns-count-9").val());
+	      
+	          	var childcount  =  children1 + children2  + children3  + children4  + children5  + children6  + children7  + children8  + children9;
+	         	setTimeout(function() {
+			       if(childcount > 0 ) {
+		        		$("#roomguest #childcount").html(' and ' + childcount + ' Children');
+		       	 	}
+		       	 	
+		       	 	if(childcount == 0) {
+
+		       	 		$("#roomguest #childcount").empty();
+		       	 	}
+			   }, 100);
+	          }
+	          else if($('.totalroom-count').val() == 10) {
+	            $(".room-total-inner-dropdown").removeClass('active');
+	            $(".room-total-inner-dropdown-1").addClass('active');
+	            $(".room-total-inner-dropdown-2").addClass('active');
+	            $(".room-total-inner-dropdown-3").addClass('active');
+	            $(".room-total-inner-dropdown-4").addClass('active');
+	            $(".room-total-inner-dropdown-5").addClass('active');
+	            $(".room-total-inner-dropdown-6").addClass('active');
+	            $(".room-total-inner-dropdown-7").addClass('active');
+	            $(".room-total-inner-dropdown-8").addClass('active');
+	            $(".room-total-inner-dropdown-9").addClass('active');
+	            $(".room-total-inner-dropdown-10").addClass('active');
+
+				var totaladults1 = parseInt($(".adults-count-1").val());
+				var totaladults2 = parseInt($(".adults-count-2").val());
+				var totaladults3 = parseInt($(".adults-count-3").val());
+				var totaladults4 = parseInt($(".adults-count-4").val());
+				var totaladults5 = parseInt($(".adults-count-5").val());
+				var totaladults6 = parseInt($(".adults-count-6").val());
+				var totaladults7 = parseInt($(".adults-count-7").val());
+				var totaladults8 = parseInt($(".adults-count-8").val());
+				var totaladults9 = parseInt($(".adults-count-9").val());
+				var totaladults10 = parseInt($(".adults-count-10").val());
+
+	          	var alladult  =  totaladults1 + totaladults2  + totaladults3  + totaladults4 + totaladults5 + totaladults6  + totaladults7 + totaladults8 + totaladults9 + totaladults10;
+	          	$("#roomguest #adultscount").html(alladult + ' Adults');
+
+				var children1 = parseInt($(".childerns-count-1").val());
+				var children2 = parseInt($(".childerns-count-2").val());
+				var children3 = parseInt($(".childerns-count-3").val());
+				var children4 = parseInt($(".childerns-count-4").val());
+				var children5 = parseInt($(".childerns-count-5").val());
+				var children6 = parseInt($(".childerns-count-6").val());
+				var children7 = parseInt($(".childerns-count-7").val());
+				var children8 = parseInt($(".childerns-count-8").val());
+				var children9 = parseInt($(".childerns-count-9").val());
+				var children10 = parseInt($(".childerns-count-10").val());
+	      
+	          	var childcount  =  children1 + children2  + children3  + children4  + children5  + children6  + children7  + children8  + children9  + children10;
+	         	setTimeout(function() {
+			       if(childcount > 0 ) {
+		        		$("#roomguest #childcount").html(' and ' + childcount + ' Children');
+		       	 	}
+		       	 	
+		       	 	if(childcount == 0) {
+
+		       	 		$("#roomguest #childcount").empty();
+		       	 	}
+			   }, 100);
+	          }
+
+	         
+	        });
 	    }
 
 	});

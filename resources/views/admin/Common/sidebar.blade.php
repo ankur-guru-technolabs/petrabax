@@ -14,7 +14,7 @@
                 'hotelbeds' => request()->routeIs('addHotelbeds'),
                 'paradores' => request()->routeIs('addParadores'),
                 'banner' => request()->routeIs('addBanner') || request()->routeIs('bannerList') || request()->routeIs('bannerEdit'),
-                'brochure' => request()->routeIs('addBrochure') || request()->routeIs('brochureList') || request()->routeIs('brochureEdit'),
+                'brochure' => request()->routeIs('addBrochure') || request()->routeIs('brochureList') || request()->routeIs('brochureEdit') || request()->routeIs('brochureOrderList'),
                 'video' => request()->routeIs('addVideo') || request()->routeIs('videoList') || request()->routeIs('videoEdit'),
                 'order' => request()->routeIs('orderList') || request()->routeIs('orderDetail'),
                 'report' => request()->routeIs('report'),
@@ -109,6 +109,7 @@
                     <ul class="dropdown-menu {{ $activeRoutes['brochure'] ? 'show' : '' }}">
                         <li><a class="dropdown-item {{ request()->routeIs('brochureList') ? 'active' : '' }}" href="{{route('brochureList')}}">List</a></li>
                         <li><a class="dropdown-item {{ request()->routeIs('addBrochure') ? 'active' : '' }}" href="{{route('addBrochure')}}">Add</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('brochureOrderList') ? 'active' : '' }}" href="{{route('brochureOrderList')}}">Order</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Coupon;
 use App\Models\Suggestion;
 use App\Models\Temp;
 use App\Models\User;
@@ -27,6 +28,13 @@ class HomeController extends Controller
 
     public function suggestions(){
         return view('web.Home.suggestions');
+    }
+    
+    public function couponsList(){
+        $user_type = Auth::user()->type;
+        $today_date = date('Y-m-d');
+        $coupons =  Coupon::where('user_type',$user_type)->orWhere('user_type','both')->where('start_date','<=',$today_date)->where('end_date','>=',$today_date)->orderBy('id','desc')->get();
+        return view('web.Home.coupon-list',compact('coupons'));
     }
     
     public function submitSuggestions(Request $request){

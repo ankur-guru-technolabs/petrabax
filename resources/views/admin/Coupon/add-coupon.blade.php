@@ -52,6 +52,7 @@
                                     <option value="">Select</option>
                                     <option value="user">User</option>
                                     <option value="travel_agent">Travel agent</option>
+                                    <option value="both">Both</option>
                                 </select>
                                 <p id="user-error"></p>
                                 @if($errors->has('user_type'))

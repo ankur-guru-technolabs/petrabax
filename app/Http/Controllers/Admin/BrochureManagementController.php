@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator; 
 use App\Models\Brochure;
 use App\Models\Category;
+use App\Models\OrderBrochure;
 use Auth;
 use Helper;
 use Session;
@@ -19,7 +20,12 @@ class BrochureManagementController extends Controller
         $brochures = Brochure::with('category')->orderBy('id','desc')->get();
         return view('admin.Brochure.brochure-list',compact('brochures'));
     }
-    
+
+    public function brochureOrderList(){
+        $order_brochure = OrderBrochure::orderBy('id','desc')->get();
+        return view('admin.Brochure.brochure-order-list',compact('order_brochure'));
+    }
+
     public function addBrochure(){
         $categories = Category::get();
         return view('admin.Brochure.add-brochure',compact('categories'));

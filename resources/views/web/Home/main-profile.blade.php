@@ -35,11 +35,11 @@
             </div>
             <div class="col-md-4 col-6 travel-box">
                 <div class="travel-box-inner">
-                    <a href="#">
+                    <a href="{{route('couponsList')}}">
                         <div class="icon-box">
                             <span><img src="{{ asset('assets/images/coupon.png')}}" alt="Coupons"></span>
                         </div>
-                        <h2>Offers/Coupons</h2>
+                        <h2>Coupons</h2>
                     </a>
                 </div>
             </div>
@@ -82,7 +82,7 @@
             @if(Auth::user()->type == 'travel_agent')
             <div class="col-md-4 col-6 travel-box">
                 <div class="travel-box-inner">
-                    <a href="#">
+                    <a href="javascript:void()" data-bs-toggle="modal" data-bs-target="#ccformdownload">
                         <div class="icon-box">
                             <span><img src="{{ asset('assets/images/terms.png')}}" alt="Terms"></span>
                         </div>
@@ -94,7 +94,7 @@
             @if(Auth::user()->type == 'travel_agent')
             <div class="col-md-4 col-6 travel-box">
                 <div class="travel-box-inner">
-                    <a href="#">
+                    <a href="{{route('orderBrochure')}}">
                         <div class="icon-box">
                             <span><img src="{{ asset('assets/images/terms.png')}}" alt="Terms"></span>
                         </div>
@@ -173,7 +173,23 @@
     </div>
 </div>
 
-
+<div class="modal fade ccformdownload" id="ccformdownload" tabindex="-1" aria-labelledby="ccformdownloadLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header d-none">
+                <h1 class="modal-title fs-5" id="ccformdownloadLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="download-form-content">
+                    <h2>Download CC Form</h2>
+                    <p>Here you can download the Payment Details form</p>
+                    <a href="#" class="download-btn">Download</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Logout Modal  -->
 <div class="modal fade couponeModal logoutmodal" id="logoutmodal" tabindex="-1" aria-labelledby="logoutmodallabel" aria-hidden="true">

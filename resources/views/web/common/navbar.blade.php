@@ -196,24 +196,23 @@
                         </svg>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ $activeRoutes['cart'] ? 'active' : '' }}" href="{{route('cart')}}"
-                        >Cart
+                <li class="nav-item dropdown cart-dropdown">
+                    <a class="nav-link dropdown-toggle" href="javascript:void()" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cart
                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M1.83398 1.83301H3.42899C4.41899 1.83301 5.19815 2.68551 5.11565 3.66634L4.35482 12.7963C4.22648 14.2905 5.40898 15.5738 6.91231 15.5738H16.6748C17.9948 15.5738 19.1498 14.4922 19.2507 13.1813L19.7456 6.30635C19.8556 4.78468 18.7006 3.54717 17.1698 3.54717H5.33566" stroke="#498C92" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"
-                            />
-                            <path
-                                d="M14.8958 20.1667C15.5287 20.1667 16.0417 19.6537 16.0417 19.0208C16.0417 18.388 15.5287 17.875 14.8958 17.875C14.263 17.875 13.75 18.388 13.75 19.0208C13.75 19.6537 14.263 20.1667 14.8958 20.1667Z" stroke="#498C92" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"
-                            />
-                            <path
-                                d="M7.56185 20.1667C8.19468 20.1667 8.70768 19.6537 8.70768 19.0208C8.70768 18.388 8.19468 17.875 7.56185 17.875C6.92902 17.875 6.41602 18.388 6.41602 19.0208C6.41602 19.6537 6.92902 20.1667 7.56185 20.1667Z" stroke="#498C92" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"
-                            />
-                            <path
-                                d="M8.25 7.33301H19.25" stroke="#498C92" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"
-                            />
+                        <path d="M1.83398 1.83301H3.42899C4.41899 1.83301 5.19815 2.68551 5.11565 3.66634L4.35482 12.7963C4.22648 14.2905 5.40898 15.5738 6.91231 15.5738H16.6748C17.9948 15.5738 19.1498 14.4922 19.2507 13.1813L19.7456 6.30635C19.8556 4.78468 18.7006 3.54717 17.1698 3.54717H5.33566" stroke="#498C92" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14.8958 20.1667C15.5287 20.1667 16.0417 19.6537 16.0417 19.0208C16.0417 18.388 15.5287 17.875 14.8958 17.875C14.263 17.875 13.75 18.388 13.75 19.0208C13.75 19.6537 14.263 20.1667 14.8958 20.1667Z" stroke="#498C92" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.56185 20.1667C8.19468 20.1667 8.70768 19.6537 8.70768 19.0208C8.70768 18.388 8.19468 17.875 7.56185 17.875C6.92902 17.875 6.41602 18.388 6.41602 19.0208C6.41602 19.6537 6.92902 20.1667 7.56185 20.1667Z" stroke="#498C92" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8.25 7.33301H19.25" stroke="#498C92" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
+                        <i class="fa-solid fa-chevron-down d-lg-none"></i>
                     </a>
+                    <ul class="dropdown-menu">
+                        <li><p>Mitsubishi ASX <span>$2121</span></p></li>
+                        <li><p>Hotel Spa Balmoral  <span>$2121</span></p></li>
+                        <li><p>Mitsubishi ASX <span>$2121</span></p></li>
+                        <li class="cart-total"><p>TOTAL <span>$6,363</span></p></li>
+                        <li class="cart-item-link"><p><a class="cart-item" href="cart-2.html">Checkout</a><span><img src="{{asset('assets/images/cart-white-icon.png')}}" alt="cart"></span></li>
+                    </ul>
                 </li>
             </ul>
         </div>

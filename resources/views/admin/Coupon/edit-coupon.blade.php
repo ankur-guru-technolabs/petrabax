@@ -53,6 +53,7 @@
                                     <option value="">Select</option>
                                     <option value="user"  {{$coupon->user_type == "user"  ? 'selected' : ''}}>User</option>
                                     <option value="travel_agent"  {{$coupon->user_type == "travel_agent"  ? 'selected' : ''}}>Travel agent</option>
+                                    <option value="both"  {{$coupon->user_type == "both"  ? 'selected' : ''}}>Both</option>
                                 </select>
                                 <p id="user-error"></p>
                                 @if($errors->has('user_type'))

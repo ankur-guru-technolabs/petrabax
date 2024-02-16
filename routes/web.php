@@ -30,6 +30,7 @@ Route::middleware(['checkUserSession'])->group(function () {
 
         Route::get('/main/profile', [HomeController::class, 'mainProfile'])->name('mainProfile');
         Route::get('/group/travel', [HomeController::class, 'groupTravel'])->name('groupTravel');
+        Route::get('/coupon/list', [HomeController::class, 'couponsList'])->name('couponsList');
         Route::get('/suggestions', [HomeController::class, 'suggestions'])->name('suggestions');
         Route::post('/submit/suggestions', [HomeController::class, 'submitSuggestions'])->name('submitSuggestions');
         Route::get('/my/profile', [HomeController::class, 'myProfile'])->name('myProfile');
@@ -80,6 +81,11 @@ Route::get('/privacy-policy', [InfoController::class,'privacyPolicy'])->name('pr
 Route::get('/contact-us', [InfoController::class,'contactUs'])->name('contactUs');
 Route::post('/contact-us/submit', [InfoController::class,'contactUsSubmit'])->name('contactUsSubmit');
 Route::get('/cookie', [InfoController::class,'cookieStatement'])->name('cookie');
+Route::get('/trip-planning', [InfoController::class,'tripPlanning'])->name('tripPlanning');
+Route::get('/special-offer', [InfoController::class,'specialOffer'])->name('specialOffer');
+Route::get('/order-brochure', [InfoController::class,'orderBrochure'])->name('orderBrochure');
+Route::post('/order-brochure/submit', [InfoController::class,'orderBrochureSubmit'])->name('orderBrochureSubmit');
+Route::any('/find-agent', [InfoController::class,'findAgent'])->name('findAgent');
 
 Route::any('{fallback}', function () {
     return redirect()->route('/');
