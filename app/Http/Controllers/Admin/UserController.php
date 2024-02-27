@@ -12,8 +12,8 @@ use Session;
 class UserController extends Controller
 {
     //
-    public function userList(){
-        return view('admin.User.user-list');
+    public function userList($type){
+        return view('admin.User.user-list',compact('type'));
     }
     
     public function userView(){

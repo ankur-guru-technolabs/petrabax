@@ -62,6 +62,14 @@ class HomeController extends Controller
         return view('web.Home.my-profile', compact('user'));
     }
     
+    public function myBookedOrder(){
+        return view('web.Home.my-booked-order');
+    }
+   
+    public function myCompletedOrder(){
+        return view('web.Home.my-completed-order');
+    }
+    
     public function updateProfile(Request $request){
         $validator = Validator::make($request->all(), [
             'first_name' => 'required|max:50',

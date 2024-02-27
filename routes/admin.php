@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\CouponController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\FeeManagementController;
 use App\Http\Controllers\Admin\HotelManagementController;
+use App\Http\Controllers\Admin\MenuManagementController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\RoleController;
@@ -32,6 +33,9 @@ use App\Http\Controllers\Admin\UserController;
 Route::prefix('/admin')->group(function () {
     Route::middleware(['auth','admin.check'])->group(function () {
         Route::get('/dashboard', [AuthController::class, 'index'])->name('dashboard');
+        Route::get('/add/menu', [MenuManagementController::class, 'addMenu'])->name('addMenu');
+        Route::get('/edit/menu', [MenuManagementController::class, 'editMenu'])->name('editMenu');
+        Route::get('/menu/list', [MenuManagementController::class, 'menuList'])->name('menuList');
         Route::get('/banner/list', [BannerManagementController::class, 'bannerList'])->name('bannerList');
         Route::get('/add/banner', [BannerManagementController::class, 'addBanner'])->name('addBanner');
         Route::post('/banner/submit', [BannerManagementController::class, 'bannerSubmit'])->name('bannerSubmit');
@@ -92,7 +96,7 @@ Route::prefix('/admin')->group(function () {
         Route::get('/withdraw/list', [WithdrawManagementController::class, 'withdrawList'])->name('withdrawList');
         Route::get('/withdraw/agent/detail', [WithdrawManagementController::class, 'withdrawAgentDetail'])->name('withdrawAgentDetail');
         Route::get('/withdraw/detail', [WithdrawManagementController::class, 'withdrawDetail'])->name('withdrawDetail');
-        Route::get('/user/list', [UserController::class, 'userList'])->name('userList');
+        Route::get('/user/list/{type}', [UserController::class, 'userList'])->name('userList');
         Route::get('/user/view', [UserController::class, 'userView'])->name('userView');
     });
 

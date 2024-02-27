@@ -87,25 +87,26 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 report-block weekly-report">
-                <div class="section-block-flex-content d-flex align-items-center justify-content-between">
-                    <h2 class="section-block-title">Weekly Report</h2>
-                    <div class="custom-nice-select-dropdown">
-                        <select class=" nice-select">
-                            <option>Select</option>
-                            <option>Hotels</option>
-                            <option>Agents </option>
-                            <option>Users</option>
-                        </select>
-                    </div>
-                    <div class="chart-date-report">
-                        <input type="hidden" name='datepicker' class="form-control" value="Select date" id="chartdatepicker" ng-required="true" placeholder="MM/DD/YYYY">
-                        <img class="icon-calendar" src="{{ asset('/assets_admin/images/calendar-2.png')}}" alt="calendar">
-                    </div>
+              <div class="section-block-flex-content d-flex align-items-center">
+                <h2 class="section-block-title w-50">Weekly Report</h2>
+                <div class="selection-picker d-flex align-items-center">
+                  <div class="custom-nice-select-dropdown me-3">
+                    <select class=" nice-select">
+                      <option>Hotels</option>
+                      <option>Agents </option>
+                      <option>Users</option>
+                    </select>
+                  </div>
+                  <div class="chart-date-report">
+                    <input type="hidden" name='datepicker' class="form-control"  value="Select date" id="chartdatepicker" ng-required="true" placeholder="MM/DD/YYYY" >
+                    <img class="icon-calendar" src="{{ asset('/assets_admin/images/calendar-2.png')}}" alt="calendar">
+                  </div>
                 </div>
-                <div class="report-block-inner">
-                    <div id="weeklyreport"></div>
-                </div>
-
+              </div>
+              <div class="report-block-inner">
+                <div id="weeklyreport"></div>
+              </div>
+              
             </div>
             <div class="col-lg-6 col-md-6 report-block monthly-report">
                 <div class="section-block-flex-content d-flex align-items-center justify-content-between">

@@ -34,6 +34,8 @@ Route::middleware(['checkUserSession'])->group(function () {
         Route::get('/suggestions', [HomeController::class, 'suggestions'])->name('suggestions');
         Route::post('/submit/suggestions', [HomeController::class, 'submitSuggestions'])->name('submitSuggestions');
         Route::get('/my/profile', [HomeController::class, 'myProfile'])->name('myProfile');
+        Route::get('/my-booked-order', [HomeController::class, 'myBookedOrder'])->name('myBookedOrder');
+        Route::get('/my-completed-order', [HomeController::class, 'myCompletedOrder'])->name('myCompletedOrder');
         Route::post('/update/profile', [HomeController::class, 'updateProfile'])->name('updateProfile');
         Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
     });

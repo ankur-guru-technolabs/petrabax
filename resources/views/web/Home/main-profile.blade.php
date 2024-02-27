@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-4 col-6 travel-box">
                 <div class="travel-box-inner">
-                    <a href="#">
+                    <a href="{{route('myBookedOrder')}}">
                         <div class="icon-box">
                             <span><img src="{{ asset('assets/images/online-booking.png')}}" alt="My Online Bookings"></span>
                         </div>

@@ -8,6 +8,7 @@
             $activeRoutes = [
                 'dashboard' => request()->routeIs('dashboard'),
                 'user' => request()->routeIs('userList') || request()->routeIs('userView'),
+                'menu' => request()->routeIs('addMenu') || request()->routeIs('menuList'),
                 'commision' => request()->routeIs('commissionList'),
                 'fee' => request()->routeIs('addFee') || request()->routeIs('feeList'),
                 'coupon' => request()->routeIs('addCoupon') || request()->routeIs('couponList') || request()->routeIs('couponEdit'),
@@ -35,12 +36,47 @@
                         <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/dashboard-hover.svg')}}" alt="Icon"> Dashboard
                     </a>
                 </li>
-                <li>
-                    <a class="{{ $activeRoutes['user'] ? 'active' : '' }}" href="{{route('userList')}}">
-                        <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/user-management.svg')}}" alt="Icon">
-                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/user-management-hover.svg')}}" alt="Icon"> User Management
+                <li class="dropdown">
+                    <a class="dropdown-link" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="image-default" src="{{ asset('assets_admin/images/menu-icon/home.svg')}}" alt="Icon">
+                        <img class="image-hover" src="{{ asset('assets_admin/images/menu-icon/home-hover.svg')}}" alt="Icon">
+                        Home Management
+                        <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
-                </li> 
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="home-management-add.html">Add</a></li>
+                        <li><a class="dropdown-item" href="home-management-list.html">List</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-link {{ $activeRoutes['menu'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['menu'] ? 'true' : 'false' }}">
+                        <img class="image-default" src="{{ asset('assets_admin/images/menu-icon/menu.svg')}}" alt="Icon">
+                        <img class="image-hover" src="{{ asset('assets_admin/images/menu-icon/menu-hover.svg')}}" alt="Icon">
+                        Menu Management
+                        <span><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                    <ul class="dropdown-menu  {{ $activeRoutes['menu'] ? 'show' : '' }}">
+                        <li><a class="dropdown-item  {{ request()->routeIs('addMenu') ? 'active' : '' }}" href="{{ route('addMenu') }}">Add</a></li>
+                        <li><a class="dropdown-item  {{ request()->routeIs('menuList') ? 'active' : '' }}" href="{{ route('menuList') }}">List</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-link {{ $activeRoutes['user'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['fee'] ? 'true' : 'false' }}">
+                        <img class="image-default" src="{{ asset('assets_admin/images/menu-icon/user-management.svg')}}" alt="Icon">
+                        <img class="image-hover" src="{{ asset('assets_admin/images/menu-icon/user-management-hover.svg')}}" alt="Icon">
+                        User Management
+                        <span><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                    <ul class="dropdown-menu {{ $activeRoutes['user'] ? 'show' : '' }}">
+                        <li><a class="dropdown-item {{ request()->route()->getName() == 'userList' && request()->route('type') == 'non-travel' ? 'active' : '' }}" href="{{ route('userList', ['type' => 'non-travel']) }}">Non-Travel Agents</a></li>
+                        <li><a class="dropdown-item {{ request()->route()->getName() == 'userList' && request()->route('type') == 'travel' ? 'active' : '' }}" href="{{ route('userList', ['type' => 'travel']) }}">Travel Agents</a></li>
+                        <li><a class="dropdown-item {{ request()->route()->getName() == 'userList' && request()->route('type') == 'guest' ? 'active' : '' }}" href="{{ route('userList', ['type' => 'guest']) }}">Guest Users</a></li>
+                        <li><a class="dropdown-item {{ request()->route()->getName() == 'userList' && request()->route('type') == 'non-active' ? 'active' : '' }}" href="{{ route('userList', ['type' => 'non-active']) }}">Non-active Agents</a></li>
+                    </ul>
+                </li>
+               
                 <li>
                     <a class="{{ $activeRoutes['commision'] ? 'active' : '' }}" href="{{route('commissionList')}}">
                         <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/commission.svg')}}" alt="Icon">
@@ -54,8 +90,8 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
                     <ul class="dropdown-menu {{ $activeRoutes['fee'] ? 'show' : '' }}">
-                        <li><a class="dropdown-item {{ request()->routeIs('feeList') ? 'active' : '' }}" href="{{route('feeList')}}">Fees management</a></li>
-                        <li><a class="dropdown-item {{ request()->routeIs('addFee') ? 'active' : '' }}" href="{{route('addFee')}}">Add Fees</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('addFee') ? 'active' : '' }}" href="{{route('addFee')}}">Add</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('feeList') ? 'active' : '' }}" href="{{route('feeList')}}">List</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

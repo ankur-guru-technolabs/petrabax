@@ -5,7 +5,7 @@
             <li><a href="{{route('brochureList')}}">Brochure Centre </a></li>
             <li><a href="{{route('orderBrochure')}}">Order Brochure</a></li>
             <li><a href="#">Affiliate Program</a></li>
-            <li><a href="#">Special Offers</a></li>
+            <li><a href="{{route('specialOffer')}}">Special Offers</a></li>
             <li><a href="#">Site Map</a></li>
             <li><a href="#">Terms of Use</a></li>
 
