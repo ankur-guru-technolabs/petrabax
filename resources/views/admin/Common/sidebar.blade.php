@@ -8,7 +8,8 @@
             $activeRoutes = [
                 'dashboard' => request()->routeIs('dashboard'),
                 'user' => request()->routeIs('userList') || request()->routeIs('userView'),
-                'menu' => request()->routeIs('addMenu') || request()->routeIs('menuList'),
+                'home' => request()->routeIs('addHome') || request()->routeIs('homeList') || request()->routeIs('editHome'),
+                'menu' => request()->routeIs('addMenu') || request()->routeIs('menuList') || request()->routeIs('editMenu'),
                 'commision' => request()->routeIs('commissionList'),
                 'fee' => request()->routeIs('addFee') || request()->routeIs('feeList'),
                 'coupon' => request()->routeIs('addCoupon') || request()->routeIs('couponList') || request()->routeIs('couponEdit'),
@@ -36,18 +37,6 @@
                         <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/dashboard-hover.svg')}}" alt="Icon"> Dashboard
                     </a>
                 </li>
-                <li class="dropdown">
-                    <a class="dropdown-link" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="image-default" src="{{ asset('assets_admin/images/menu-icon/home.svg')}}" alt="Icon">
-                        <img class="image-hover" src="{{ asset('assets_admin/images/menu-icon/home-hover.svg')}}" alt="Icon">
-                        Home Management
-                        <span><i class="fa-solid fa-chevron-down"></i></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="home-management-add.html">Add</a></li>
-                        <li><a class="dropdown-item" href="home-management-list.html">List</a></li>
-                    </ul>
-                </li>
 
                 <li class="dropdown">
                     <a class="dropdown-link {{ $activeRoutes['menu'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['menu'] ? 'true' : 'false' }}">
@@ -61,6 +50,28 @@
                         <li><a class="dropdown-item  {{ request()->routeIs('menuList') ? 'active' : '' }}" href="{{ route('menuList') }}">List</a></li>
                     </ul>
                 </li>
+                
+                <li class="dropdown">
+                    <a class="dropdown-link {{ $activeRoutes['home'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['home'] ? 'true' : 'false' }}">
+                        <img class="image-default" src="{{ asset('assets_admin/images/menu-icon/home.svg')}}" alt="Icon">
+                        <img class="image-hover" src="{{ asset('assets_admin/images/menu-icon/home-hover.svg')}}" alt="Icon">
+                        Home Management
+                        <span><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                    <ul class="dropdown-menu {{ $activeRoutes['home'] ? 'show' : '' }}">
+                        <li><a class="dropdown-item {{ request()->routeIs('addHome') ? 'active' : '' }}" href="{{ route('addHome') }}">Add</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('homeList') ? 'active' : '' }}" href="{{ route('homeList') }}">List</a></li>
+                    </ul>
+                </li>
+              
+                
+                <!-- <li>
+                    <a href="orders.html">
+                        <img class="image-default" src="{{asset('assets_admin/images/menu-icon/order.svg')}}" alt="Icon">
+                        <img class="image-hover" src="{{asset('assets_admin/images/menu-icon/order-hover.svg')}}" alt="Icon">
+                        Order
+                    </a>
+                </li> -->
 
                 <li class="dropdown">
                     <a class="dropdown-link {{ $activeRoutes['user'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['fee'] ? 'true' : 'false' }}">

@@ -48,10 +48,16 @@ class BrochureManagementController extends Controller
         $existingRecord = Brochure::where('category_id', $request->category_id)->where('order', $request->order)->first();
 
         if ($existingRecord) {
-            \DB::table('brochures')
-            ->where('category_id', $request->category_id)
-            ->where('order', '>=', $request->order)
-            ->increment('order');
+            // \DB::table('brochures')
+            // ->where('category_id', $request->category_id)
+            // ->where('order', '>=', $request->order)
+            // ->increment('order');
+            \DB::statement("
+                UPDATE `brochures`
+                SET `order` = CAST(`order` AS UNSIGNED INTEGER) + 1
+                WHERE `category_id` = {$request->category_id}
+                AND `order` >= {$request->order}
+            ");
         }
 
         $folderPath = public_path().'/brochure';
@@ -114,11 +120,18 @@ class BrochureManagementController extends Controller
         $existingRecord = Brochure::where('category_id', $request->category_id)->where('order', $request->order)->first();
 
         if ($existingRecord && ($brochure->order !== $request->order)) {
-            \DB::table('brochures')
-            ->where('category_id', $request->category_id)
-            ->where('order', '>=', $request->order)
-            ->where('id', '!=', $request->id)
-            ->increment('order');
+            // \DB::table('brochures')
+            // ->where('category_id', $request->category_id)
+            // ->where('order', '>=', $request->order)
+            // ->where('id', '!=', $request->id)
+            // ->increment('order');
+            \DB::statement("
+                UPDATE `brochures`
+                SET `order` = CAST(`order` AS UNSIGNED INTEGER) + 1
+                WHERE `category_id` = {$request->category_id}
+                AND `order` >= {$request->order}
+                AND `id` != {$request->id}
+            ");
         }
 
         $folderPath = public_path().'/brochure';

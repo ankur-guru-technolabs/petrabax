@@ -23,17 +23,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Hotel</td>
-                            <td>1</td>
-                            <td>
-                                <a href="{{route('editMenu')}}"><img src="{{asset('assets_admin/images/edit-2.png')}}" alt="Edit"></a>
-                            </td>
-                            <td>
-                                <a href="javascript:void(0)"><img src="{{asset('assets_admin/images/trash.png')}}" alt="delete"></a>
-                            </td>
-                        </tr>
+                        @foreach($menus as $key=>$menu)
+                            <tr>
+                                <td>{{++$key}}</td>
+                                <td>{{$menu->title}}</td>
+                                <td>{{$menu->order}}</td>
+                                <td>
+                                    <a href="{{route('editMenu',[$menu->id])}}"><img src="{{asset('assets_admin/images/edit-2.png')}}" alt="Edit"></a>
+                                </td>
+                                <td>
+                                    <a href="{{route('deleteMenu',[$menu->id])}}"><img src="{{asset('assets_admin/images/trash.png')}}" alt="delete"></a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
