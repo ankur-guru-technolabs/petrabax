@@ -33,9 +33,19 @@ use App\Http\Controllers\Admin\UserController;
 Route::prefix('/admin')->group(function () {
     Route::middleware(['auth','admin.check'])->group(function () {
         Route::get('/dashboard', [AuthController::class, 'index'])->name('dashboard');
-        Route::get('/add/menu', [MenuManagementController::class, 'addMenu'])->name('addMenu');
-        Route::get('/edit/menu', [MenuManagementController::class, 'editMenu'])->name('editMenu');
+
         Route::get('/menu/list', [MenuManagementController::class, 'menuList'])->name('menuList');
+        Route::get('/add/menu', [MenuManagementController::class, 'addMenu'])->name('addMenu');
+        Route::post('/menu/submit', [MenuManagementController::class, 'menuSubmit'])->name('menuSubmit');
+        Route::get('/edit/menu/{id}', [MenuManagementController::class, 'editMenu'])->name('editMenu');
+        Route::post('/menu/update', [MenuManagementController::class, 'menuUpdate'])->name('menuUpdate');
+        Route::get('/delete/menu/{id}', [MenuManagementController::class, 'deleteMenu'])->name('deleteMenu');
+        Route::get('/home/list', [MenuManagementController::class, 'homeList'])->name('homeList');
+        Route::get('/add/home', [MenuManagementController::class, 'addHome'])->name('addHome');
+        Route::post('/home/submit', [MenuManagementController::class, 'homeSubmit'])->name('homeSubmit');
+        Route::get('/edit/home/{id}', [MenuManagementController::class, 'editHome'])->name('editHome');
+        Route::post('/home/update', [MenuManagementController::class, 'homeUpdate'])->name('homeUpdate');
+        Route::get('/delete/home/{id}', [MenuManagementController::class, 'deleteHome'])->name('deleteHome');
         Route::get('/banner/list', [BannerManagementController::class, 'bannerList'])->name('bannerList');
         Route::get('/add/banner', [BannerManagementController::class, 'addBanner'])->name('addBanner');
         Route::post('/banner/submit', [BannerManagementController::class, 'bannerSubmit'])->name('bannerSubmit');

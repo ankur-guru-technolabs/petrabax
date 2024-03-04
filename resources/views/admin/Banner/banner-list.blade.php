@@ -39,8 +39,14 @@
         ordering: false,
         "language": {
             "searchPlaceholder": "Search..",
-            "search": ""
+            "search": "",
+            oPaginate: {
+                sNext: '<i class="fa-solid fa-chevron-right"></i>',
+                sPrevious: '<i class="fa-solid fa-chevron-left"></i>',
+            }
         }
     });
+
+    $(".dataTables_paginate").wrap( "<div class='datatable-paginate-custom'></div>" );
 </script>
 @endsection
