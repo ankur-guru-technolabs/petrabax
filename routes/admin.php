@@ -86,8 +86,9 @@ Route::prefix('/admin')->group(function () {
         Route::get('/role/list', [RoleController::class, 'roleList'])->name('roleList');
         Route::get('/add/role', [RoleController::class, 'addRole'])->name('addRole');
         Route::post('/role/submit', [RoleController::class, 'roleSubmit'])->name('roleSubmit');
-        Route::get('/role/delete/{id}', [RoleController::class, 'roleDelete'])->name('roleDelete'); 
+        Route::get('/role/edit/{id}', [RoleController::class, 'roleEdit'])->name('roleEdit'); 
         Route::post('/role/update', [RoleController::class, 'roleUpdate'])->name('roleUpdate'); 
+        Route::get('/role/delete/{id}', [RoleController::class, 'roleDelete'])->name('roleDelete'); 
         // Route::get('/add/genreral/seo', [SeoManagementController::class, 'addGeneralSeo'])->name('addGeneralSeo');
         // Route::get('/add/image/seo', [SeoManagementController::class, 'addImageSeo'])->name('addImageSeo');
         // Route::get('/add/page/seo', [SeoManagementController::class, 'addPageSeo'])->name('addPageSeo');

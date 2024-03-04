@@ -424,6 +424,7 @@
 			    }
 			    $('#night').val(diff);
 			}
+
 			if($(".featured-hotels-box").length) {
 			    $(".book-btn a").on("click", function() {
 			    	var hotal_title  = $(".featured-hotels-box .hotel-content h2").html();
@@ -1279,6 +1280,321 @@
 	        });
 	    }
 
+
+	    if($("#bookeddate").length) {
+	    	$('#bookeddate').datepicker({
+			    dateFormat: 'd/m/yy',
+			    minDate: "+3",
+			    numberOfMonths: 1,
+			    showOtherMonths: true,	    
+			});
+	    }
+
+	    if($(".hotel-filter-section-two").length) {
+		    $('#activedate').datepicker({
+			    dateFormat: 'd/m/yy',
+			    minDate: "+3",
+			    numberOfMonths: 1,
+			    showOtherMonths: true,	    
+			}).datepicker("setDate", new Date());
+
+		    $('.travelers-adults-add').click(function () {   
+			  if ($(this).prev().val() < 20) {
+			    $(this).prev().val(+$(this).prev().val() + 1);
+			  }
+			});
+
+			$('.travelers-adults-sub').click(function () {
+				var th = $(this).closest('.wrap').find('.count');
+				if (th.val() > 1) th.val(+th.val() - 1);
+			});
+
+			$('.travelers-children-add').click(function () { 
+			   	if ($(this).prev().val() < 20) {
+			    	$(this).prev().val(+$(this).prev().val() + 1);
+			 	}
+
+			    if($(".travelers-childerns-count").val() == 1) {
+			      $(".children-box-1").addClass('active');
+			      $(".child-block.dropdown-block").addClass('show');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 2) {
+			      $(".children-box-2").addClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 3) {
+			      $(".children-box-3").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 2) {
+			      $(".children-box-2").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 4) {
+			      $(".children-box-4").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 5) {
+			      $(".children-box-5").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 6) {
+			      $(".children-box-6").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 7) {
+			      $(".children-box-7").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 8) {
+			      $(".children-box-8").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 9) {
+			      $(".children-box-9").addClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 9) {
+			      $(".children-box-9").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 10) {
+			      $(".children-box-10").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 11) {
+			      $(".children-box-11").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 12) {
+			      $(".children-box-12").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 13) {
+			      $(".children-box-13").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 14) {
+			      $(".children-box-14").addClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 15) {
+			      $(".children-box-15").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 16) {
+			      $(".children-box-16").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 17) {
+			      $(".children-box-17").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 18) {
+			      $(".children-box-18").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 19) {
+			      $(".children-box-19").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 20) {
+			      $(".children-box-20").addClass('active');
+			    }
+			});
+
+			$('.travelers-children-sub').click(function () {
+			    var th = $(this).closest('.wrap').find('.count');     
+			    if (th.val() > 0) th.val(+th.val() - 1);
+
+			    if($(".travelers-childerns-count").val() == 0) {
+			      $(".children-box").removeClass('active');
+			      $(".child-block.dropdown-block").removeClass('show');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 1) {
+			      $(".children-box").removeClass('active');
+			      $(".children-box.children-box-1").addClass('active');
+			    } 
+			    else if($(".travelers-childerns-count").val() == 2) {
+			      $(".children-box").removeClass('active');
+			      $(".children-box.children-box-1").addClass('active');
+			      $(".children-box.children-box-2").addClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 3) {
+			      $(".children-box").removeClass('active');
+			      $(".children-box.children-box-1").addClass('active');
+			      $(".children-box.children-box-2").addClass('active');
+			      $(".children-box.children-box-3").addClass('active');
+			    }
+			   	else if($(".travelers-childerns-count").val() == 4) {
+			      $(".children-box").removeClass('active');
+			      $(".children-box.children-box-1").addClass('active');
+			      $(".children-box.children-box-2").addClass('active');
+			      $(".children-box.children-box-3").addClass('active');
+			      $(".children-box.children-box-4").addClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 5) {
+			      $(".children-box").removeClass('active');
+			      $(".children-box.children-box-1").addClass('active');
+			      $(".children-box.children-box-2").addClass('active');
+			      $(".children-box.children-box-3").addClass('active');
+			      $(".children-box.children-box-4").addClass('active');
+			      $(".children-box.children-box-5").addClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 6) {
+			      $(".children-box").removeClass('active');
+			      $(".children-box.children-box-1").addClass('active');
+			      $(".children-box.children-box-2").addClass('active');
+			      $(".children-box.children-box-3").addClass('active');
+			      $(".children-box.children-box-4").addClass('active');
+			      $(".children-box.children-box-5").addClass('active');
+			      $(".children-box.children-box-6").addClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 7) {
+			      $(".children-box").removeClass('active');
+			      $(".children-box.children-box-1").addClass('active');
+			      $(".children-box.children-box-2").addClass('active');
+			      $(".children-box.children-box-3").addClass('active');
+			      $(".children-box.children-box-4").addClass('active');
+			      $(".children-box.children-box-5").addClass('active');
+			      $(".children-box.children-box-6").addClass('active');
+			      $(".children-box.children-box-7").addClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 8) {
+			      $(".children-box").removeClass('active');
+			      $(".children-box.children-box-1").addClass('active');
+			      $(".children-box.children-box-2").addClass('active');
+			      $(".children-box.children-box-3").addClass('active');
+			      $(".children-box.children-box-4").addClass('active');
+			      $(".children-box.children-box-5").addClass('active');
+			      $(".children-box.children-box-6").addClass('active');
+			      $(".children-box.children-box-7").addClass('active');
+			      $(".children-box.children-box-8").addClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 9) {
+			      $(".children-box").removeClass('active');
+			      $(".children-box.children-box-1").addClass('active');
+			      $(".children-box.children-box-2").addClass('active');
+			      $(".children-box.children-box-3").addClass('active');
+			      $(".children-box.children-box-4").addClass('active');
+			      $(".children-box.children-box-5").addClass('active');
+			      $(".children-box.children-box-6").addClass('active');
+			      $(".children-box.children-box-7").addClass('active');
+			      $(".children-box.children-box-8").addClass('active');
+			      $(".children-box.children-box-9").addClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 10) {
+			      $(".children-box").removeClass('active');
+			      $(".children-box.children-box-1").addClass('active');
+			      $(".children-box.children-box-2").addClass('active');
+			      $(".children-box.children-box-3").addClass('active');
+			      $(".children-box.children-box-4").addClass('active');
+			      $(".children-box.children-box-5").addClass('active');
+			      $(".children-box.children-box-6").addClass('active');
+			      $(".children-box.children-box-7").addClass('active');
+			      $(".children-box.children-box-8").addClass('active');
+			      $(".children-box.children-box-9").addClass('active');
+			      $(".children-box.children-box-10").addClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 11) {
+			      $(".children-box").addClass('active');
+			      $(".children-box.children-box-12").removeClass('active');
+			      $(".children-box.children-box-13").removeClass('active');
+			      $(".children-box.children-box-14").removeClass('active');
+			      $(".children-box.children-box-15").removeClass('active');
+			      $(".children-box.children-box-16").removeClass('active');
+			      $(".children-box.children-box-17").removeClass('active');
+			      $(".children-box.children-box-18").removeClass('active');
+			      $(".children-box.children-box-19").removeClass('active');
+			      $(".children-box.children-box-20").removeClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 12) {
+			      $(".children-box").addClass('active');
+			      $(".children-box.children-box-13").removeClass('active');
+			      $(".children-box.children-box-14").removeClass('active');
+			      $(".children-box.children-box-15").removeClass('active');
+			      $(".children-box.children-box-16").removeClass('active');
+			      $(".children-box.children-box-17").removeClass('active');
+			      $(".children-box.children-box-18").removeClass('active');
+			      $(".children-box.children-box-19").removeClass('active');
+			      $(".children-box.children-box-20").removeClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 13) {
+			      $(".children-box").addClass('active');
+			      $(".children-box.children-box-14").removeClass('active');
+			      $(".children-box.children-box-15").removeClass('active');
+			      $(".children-box.children-box-16").removeClass('active');
+			      $(".children-box.children-box-17").removeClass('active');
+			      $(".children-box.children-box-18").removeClass('active');
+			      $(".children-box.children-box-19").removeClass('active');
+			      $(".children-box.children-box-20").removeClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 14) {
+			      $(".children-box").addClass('active');
+			      $(".children-box.children-box-15").removeClass('active');
+			      $(".children-box.children-box-16").removeClass('active');
+			      $(".children-box.children-box-17").removeClass('active');
+			      $(".children-box.children-box-18").removeClass('active');
+			      $(".children-box.children-box-19").removeClass('active');
+			      $(".children-box.children-box-20").removeClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 15) {
+			      $(".children-box").addClass('active');
+			      $(".children-box.children-box-16").removeClass('active');
+			      $(".children-box.children-box-17").removeClass('active');
+			      $(".children-box.children-box-18").removeClass('active');
+			      $(".children-box.children-box-19").removeClass('active');
+			      $(".children-box.children-box-20").removeClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 16) {
+			      $(".children-box").addClass('active');
+			      $(".children-box.children-box-17").removeClass('active');
+			      $(".children-box.children-box-18").removeClass('active');
+			      $(".children-box.children-box-19").removeClass('active');
+			      $(".children-box.children-box-20").removeClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 17) {
+			      $(".children-box").addClass('active');
+			      $(".children-box.children-box-18").removeClass('active');
+			      $(".children-box.children-box-19").removeClass('active');
+			      $(".children-box.children-box-20").removeClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 18) {
+			      $(".children-box").addClass('active');
+			      $(".children-box.children-box-19").removeClass('active');
+			      $(".children-box.children-box-20").removeClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 19) {
+			      $(".children-box").addClass('active');
+			      $(".children-box.children-box-20").removeClass('active');
+			    }
+			    else if($(".travelers-childerns-count").val() == 19) {
+			      $(".children-box").addClass('active');
+			    }
+			});
+
+			$('.travelers-adults-add, .travelers-adults-sub').click(function () {
+				var alladult = parseInt($(".travelers-adults-count").val());
+
+				$("#roomguest span.default-text").remove();
+
+				$("#roomguest #adultscount").html(alladult + ' Adults');
+			});
+
+			$('.travelers-children-add, .travelers-children-sub').click(function () {
+				var childcount = parseInt($(".travelers-childerns-count").val());
+
+				var alladult = parseInt($(".travelers-adults-count").val());
+
+				$("#roomguest span.default-text").hide();
+
+				
+				
+				if(childcount > 0 ) {
+					$("#roomguest #childcount").html(' and ' + childcount + ' Children');
+				}
+
+				if( alladult == 0) {
+					$("#roomguest #childcount").html(' ' + childcount + ' Children');
+				}
+
+				if(childcount == 0) {
+		       	 	$("#roomguest #childcount").empty();
+		       	}
+
+		       	if(childcount == 0 && alladult == 0) {
+		       		$("#roomguest span.default-text").show();
+		       	}
+			});
+
+			if($(".featured-hotels-box").length) {
+			    $(".book-btn a").on("click", function(e) {
+			    	var hotal_title  = $(".featured-hotels-box .hotel-content h2").html();
+			    	document.querySelector("#filter-serch-input").value = hotal_title;
+			    })
+			}
+
+		}
 	});
 
 })(jQuery);

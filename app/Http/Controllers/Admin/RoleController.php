@@ -25,6 +25,7 @@ class RoleController extends Controller
     public function roleSubmit(Request $request){
         $validator = Validator::make($request->all(),[
             'name'=>"required",
+            'permission'=>"required|array",
         ]);
 
         if ($validator->fails())
@@ -33,20 +34,40 @@ class RoleController extends Controller
         }
 
         $input = $request->all();
+        $input['permission'] = implode(',',$request->permission);
         Role::create($input);
  
         return redirect()->route('roleList')->with('message', 'Role added successfully');
     } 
+
+    public function roleEdit($id){
+        $role = Role::findOrFail($id);
+        if(!empty($role)){
+            return view('admin.Role.edit-role',compact('role'));
+        }
+        return redirect()->route('employeeList')->with('message', 'Role not found');
+    } 
     
+    public function roleUpdate(Request $request){
+        $validator = Validator::make($request->all(),[
+            'name'=>"required",
+            'permission'=>"required|array",
+        ]);
+
+        if ($validator->fails())
+        {
+            return back()->withInput()->withErrors($validator);
+        }
+
+        $input = $request->except('_token');
+        $input['permission'] = implode(',',$request->permission);
+        Role::where('id',$request->id)->update($input);
+        return redirect()->route('roleList')->with('message', 'Role updated successfully');
+    } 
+
     public function roleDelete($id){
         $role = Role::findOrFail($id);
         $role->delete();
         return redirect()->route('roleList')->with('message', 'Role deleted successfully');
-    } 
-    
-    public function roleUpdate(Request $request){
-        $input = $request->all();
-        Role::where('id',$request->id)->update(['name'=>$request->name]);
-        return redirect()->route('roleList')->with('message', 'Role updated successfully');
     } 
 }

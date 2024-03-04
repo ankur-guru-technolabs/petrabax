@@ -57,53 +57,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row role-permission-list">
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" name="permission[]" id="role-1" value="1" {{ in_array(1, old('permission', [])) ? 'checked' : '' }}>
-                        <label for="role-1">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" name="permission[]" id="role-2" value="2" {{ in_array(2, old('permission', [])) ? 'checked' : '' }}>
-                        <label for="role-2">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" name="permission[]" id="role-3" value="3" {{ in_array(3, old('permission', [])) ? 'checked' : '' }}>
-                        <label for="role-3">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" name="permission[]" id="role-4" value="4" {{ in_array(4, old('permission', [])) ? 'checked' : '' }}>
-                        <label for="role-4">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" name="permission[]" id="role-5" value="5" {{ in_array(5, old('permission', [])) ? 'checked' : '' }}>
-                        <label for="role-5">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" name="permission[]" id="role-6" value="6" {{ in_array(6, old('permission', [])) ? 'checked' : '' }}>
-                        <label for="role-6">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" name="permission[]" id="role-7" value="7" {{ in_array(7, old('permission', [])) ? 'checked' : '' }}>
-                        <label for="role-7">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" name="permission[]" id="role-8" value="8" {{ in_array(8, old('permission', [])) ? 'checked' : '' }}>
-                        <label for="role-8">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" name="permission[]" id="role-9" value="9" {{ in_array(9, old('permission', [])) ? 'checked' : '' }}>
-                        <label for="role-9">User management</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 form-group">
-                        <input type="checkbox" name="permission[]" id="role-10" value="10" {{ in_array(10, old('permission', [])) ? 'checked' : '' }}>
-                        <label for="role-10">User management</label>
-                    </div>
-                    @error('permission')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                    <p id="permission-error"></p>
-                </div>
                 
                 <div class="group-btn">
                     <button type="submit">Save</button>
@@ -135,11 +88,6 @@
                 password: {
                     required: true
                 },
-                'permission[]': {
-                    required: function(element) {
-                        return $('input[name="permission[]"]:checked').length === 0;
-                    }
-                }
             },
             messages:{
                 name:{
@@ -157,9 +105,6 @@
                 password: {
                     required: "Password field is required."
                 },
-                'permission[]': {
-                    required: "Please select at least one permission."
-                }
             },
             errorElement: 'span',
             errorPlacement: function (error, element) {
@@ -168,10 +113,7 @@
                     $('.text-danger').text('');
                     error.addClass('invalid-feedback');
                     element.next('.nice-select').next('#role-error').html(error);
-                }else if(fieldName == 'permission[]'){
-                    error.addClass('invalid-feedback');
-                    $('#permission-error').html(error);
-                } else {
+                }else {
                     $('.text-danger').text('');
                     error.addClass('invalid-feedback');
                     element.closest('.form-group').append(error);

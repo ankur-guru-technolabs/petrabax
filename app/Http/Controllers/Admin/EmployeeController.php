@@ -31,7 +31,6 @@ class EmployeeController extends Controller
             'role_id'=>"required",
             'contact'=>"required",
             'password'=>"required",
-            'permission'=>"required|array",
         ]);
 
         if ($validator->fails())
@@ -40,7 +39,6 @@ class EmployeeController extends Controller
         }
 
         $input = $request->all();
-        $input['permission'] = implode(',',$request->permission);
         $input['password'] = bcrypt($request->password);
         Employee::create($input);
 
@@ -70,7 +68,6 @@ class EmployeeController extends Controller
             'email' => 'required|email|unique:employees,email,' . $request->id,
             'role_id'=>"required",
             'contact'=>"required",
-            'permission'=>"required|array",
         ]);
 
         if ($validator->fails())
@@ -85,7 +82,6 @@ class EmployeeController extends Controller
             $input = $request->except('_token','password');
         }
         
-        $input['permission'] = implode(',',$request->permission);
         Employee::where('id',$request->id)->update($input);
  
         if($request->password != null){

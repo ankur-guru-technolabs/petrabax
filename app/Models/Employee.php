@@ -15,7 +15,6 @@ class Employee extends Model
         'role_id',
         'contact',
         'password',
-        'permission'
     ];
 
     public function role()

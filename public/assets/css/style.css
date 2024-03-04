@@ -1085,6 +1085,36 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	margin-bottom: 3px;
 }
 
+.hotel-filter-section-two .filter-grid-box > label {
+	font-size: 16px;
+	line-height: 23px;
+}
+
+.hotel-filter-section-two .filter-content .filter-grid-box {
+	margin-right: 20px;
+}
+.hotel-filter-section-two .filter-content .filter-grid-box:last-of-type {
+    margin-right: 0;
+}
+.hotel-filter-section-two .filte-same-width,
+.hotel-filter-section-two .filte-same-width.filter-night {
+  width: 20%;
+}
+
+
+.hotel-filter-section-two .custom-form-control::-webkit-input-placeholder {
+	color: #BFBFBF;
+}
+.hotel-filter-section-two .custom-form-control::-moz-placeholder {
+  color: #BFBFBF;
+}
+.hotel-filter-section-two .custom-form-control:-ms-input-placeholder {
+  color: #BFBFBF;
+}
+.hotel-filter-section-two .custom-form-control:-moz-placeholder {
+  color: #BFBFBF;
+}
+
 .filter-grid-box.filter-search-btn {
 	display: flex;
 	align-items: center;
@@ -1117,6 +1147,9 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 
 .filter-content .filter-search-box {
 	width: 28%;
+}
+#roomguest .default-text {
+	color: #BFBFBF;
 }
 
 #roomguest,
@@ -1306,6 +1339,9 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .widget {
 	margin-bottom: 25px;
 }
+.daytrips-booking-sidebar-inner .widget:last-of-type {
+	margin-bottom: 0;
+}
 .price-filter-content .ui-state-default,
 .price-filter-content .ui-widget-content .ui-state-default,
 .price-filter-content .ui-widget-header .ui-state-default,
@@ -1400,6 +1436,18 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
   line-height: 20px;
   color:  #515151;
 }
+
+.activity-type-content .custom-checkbox .form-group label {
+	padding-left: 25px;
+}
+
+.activity-type-content .custom-checkbox .form-group label:before {
+	position: absolute;
+	left: 0;
+	top: 2px;
+	margin-top: 0;
+}
+
 .checkbox-inline-list .custom-checkbox label:before,
 .custom-checkbox .form-group label:before {
   content:'';
@@ -1969,6 +2017,10 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 
 .order-box-full-details-inner-two .order-details {
 	width: 19.5%;
+}
+
+.order-details-section .order-box-full-details-inner-two .order-details {
+	width: 23.5%;
 }
 
 .order-payment-room-detail .order-box .remove-cart {
@@ -7110,6 +7162,9 @@ table.dataTable tbody tr {
 	max-width: 75%;
 	padding-right: 5px;
 }
+.cart-top-header .cart-item-header h2 span {
+	font-weight: 400;
+}
 .cart-right-item-content {
 	margin-left: auto;
 	width: 96%;
@@ -7966,6 +8021,428 @@ table.dataTable tbody tr {
 	padding-left: 20px;
 }
 
+.text-color-2 {
+	color: #1F1F1F;
+}
+
+/* Day Trips Section */
+.daytrips-booking-section {
+	margin-bottom: 50px;
+}
+.daytrips-booking-sidebar {
+	width: 26.819%;
+	padding: 0 12.5px;
+}
+.daytrips-booking-contentarea {
+	width: 73.181%;
+	padding: 0 12.5px;
+}
+.daytrips-booking-section .row-space-25 {
+	margin: 0 -12.5px;
+}
+
+.daytrips-booking-sidebar .daytrips-booking-sidebar-inner {
+	max-width: 250px;
+} 
+.widget-search .search-form-content .form-control {
+	font-size: 14px;
+	line-height: 21px;
+	color: #6C757D;
+	padding: 11px 12px 11px 40px;
+	border-radius: 30px;
+	border: 1px solid #98CE44;
+	box-shadow: none;
+	outline: 0;
+}
+.widget-search .search-form-content button {
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+	outline: 0;
+	padding: 0;
+	background-color: transparent;
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	color: #6C757D;
+}
+.widget-activity-type .activity-type-content {
+	padding: 15px;
+	border-radius: 2px;
+	box-shadow: 2px 2px 7px 1px #0000001A;
+	max-height: 250px;
+  overflow-y: auto;
+}
+.activity-type-content .custom-checkbox .form-group:last-of-type {
+	margin-bottom: 0;
+}
+
+.activity-type-content::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+.activity-type-content::-webkit-scrollbar {
+	width: 3.6px;
+	background-color: transparent;
+}
+
+.activity-type-content::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #C4C4C4;
+}
+
+.daytrips-booking-contentarea-top {
+	padding: 10px 15px;
+	border-radius: 10px;
+	border: 1px solid #98CE44;
+	margin-bottom: 40px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+.daytrips-booking-contentarea-top p {
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 22px;
+	color: #404040;
+	margin-bottom: 0;
+	margin-right: 8px;
+}
+.daytrips-booking-contentarea-top p:last-of-type {
+	margin-bottom: 0;
+	margin-right: 0;
+}
+.daytrips-booking-contentarea-top p span {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	color: #515151;
+}
+
+.daytrips-booking-listing-box .row {
+	margin: 0 -23px;
+}
+.daytrips-booking-listing-box .booking-listing-box {
+	padding: 0 23px;
+}
+.daytrips-booking-listing-box .booking-listing-box:nth-child(n+3) {
+	margin-top: 40px;
+}
+.booking-listing-box .image-box {
+	margin-bottom: 10px;
+}
+.booking-listing-box .image-box img {
+	border-radius: 10px;
+}
+.booking-listing-box .box-heading {
+	margin-bottom: 10px;
+}
+.booking-listing-box .box-heading h2 {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 26px;
+	color: #1E446F;
+	margin-bottom: 0;
+}
+.booking-listing-box .box-content {
+	margin-bottom: 15px;
+}
+.booking-listing-box .box-content p {
+	font-size: 18px;
+	line-height: 26px;
+	color: #636363;
+}
+.booking-listing-box .box-content p:last-of-type {
+	margin-bottom: 0;
+}
+
+.booking-listing-box .box-btnl-list a {
+	padding: 6px 10px;
+	text-align: center;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	color: #404040;
+	border-radius: 25px;
+	border: 1px solid #98CE44;
+	width: 132px;
+}
+.booking-listing-box .box-btnl-list {
+	justify-content: space-between;
+}
+.booking-listing-box .box-btnl-list p {
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 22px;
+	color: #1F1F1F;
+	margin-right: 25px;
+}
+
+.trip-booking-details {
+	margin-bottom: 50px;
+}
+
+.trip-booking-details .trip-booking-details-inner {
+	max-width: 800px;
+	margin: 0 auto;
+}
+.booking-top-gallery .row {
+	margin: 0 -9px;
+}
+.booking-top-gallery .gallery-img {
+	padding: 0 9px;
+	margin-bottom: 15px;
+}
+
+.booking-top-gallery .gallery-1 {
+	width: 53.6%;
+}
+.booking-top-gallery .gallery-2 {
+	width: 46.4%;
+}
+
+.details-boobking-title-block {
+	display: flex;
+	/*align-items: center; */
+	margin-bottom: 50px;
+}
+.details-boobking-title-block a {
+	color: #515151;
+	margin-right: 20px;
+	margin-top: 8px;
+}
+.details-boobking-title-block h2 {
+	font-size: 25px;
+	color: #1F1F1F;
+	font-weight: 600;
+	line-height: 32px;
+	margin: 0 auto;
+	text-align: center;
+}
+.booking-details-tab .nav-pills {
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.booking-details-tab .nav-pills .nav-item {
+	margin-right: 8px;
+}
+
+.booking-details-tab .nav-pills .nav-item:last-of-type {
+	margin-right: 0;
+}
+
+.booking-details-tab .nav-pills .nav-link {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 23px;
+	color: #515151;
+	border-radius: 30px;
+	padding: 11.5px 15px;
+	min-width: 150px;
+	border: 1px solid #98CE44;
+}
+.booking-details-tab .nav-pills .nav-link.active {
+	color: #fff;
+	background-color: #98CE44;
+}
+
+.booking-tab-description-content p strong {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+}
+
+.booking-tab-description-content p {
+	font-size: 14px;
+	line-height: 20px;
+	color: #515151;
+}
+.booking-tab-location-content .booking-location-box {
+	margin-bottom: 15px;
+}
+.booking-tab-location-content .booking-location-box h3 {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 23px;
+	color: #1F1F1F;
+	margin-bottom: 6px;
+}
+.booking-tab-location-content .booking-location-box p {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	color: #515151;
+	margin-bottom: 3px;
+}
+
+.booking-tab-price-content .price-top-header {
+	border: 1px solid #98CE44;
+	border-radius: 5px;
+	padding: 14px 10px;
+	margin-bottom: 10px;
+}
+.booking-tab-price-content .price-top-header h2 {
+	font-size: 16px;
+	line-height: 23px;
+	color: #1F1F1F;
+	margin-bottom: 0;
+}
+.booking-tab-price-content .price-full-details {
+	border: 1px solid #98CE44;
+	border-radius: 5px;
+	padding: 20px 10px;
+}
+
+.booking-tab-price-content .price-full-details-inner {
+	display: flex;
+	align-items: center;
+	margin: 0 -5px;
+	margin-bottom: 10px;
+}
+.booking-tab-price-content .price-full-details-inner:last-of-type {
+	margin-bottom: 0;
+}
+.booking-tab-price-content .price-details-box {
+	padding: 0 5px;
+}
+.booking-tab-price-content .price-details-box:first-of-type {
+	width: 50%;
+}
+.booking-tab-price-content .price-details-box:nth-child(2n) {
+	width: 30%;
+}
+
+.booking-tab-price-content .price-details-box:last-of-type {
+	width: 20%;
+	margin-left: auto;
+	text-align: right;
+}
+
+.booking-tab-price-content .price-details-box p {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	color: #515151;
+	margin-bottom: 0;
+}
+.booking-tab-price-content .price-details-box .custom-btn {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	color: #fff;
+	display: inline-block;
+	text-align: center;
+	border-radius: 30px;
+	background-color: #98CE44;
+	width: 106px;
+	padding: 7.5px 15px;
+}
+.daytrips-booked-section {
+	margin-bottom: 50px;
+}
+.daytrips-booked-top-header {
+	border-radius: 5px;
+	background-color: #E9EAEB;
+	padding: 10px 15px;
+	margin-bottom: 40px;
+}
+.daytrips-booked-top-header p {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 23px;
+	color: #1F1F1F;
+	margin-bottom: 0;
+}
+.daytrips-booked-top-header p span {
+	margin-top: 6px;
+	margin-bottom: 6px;
+	display: inline-block;
+	padding-right: 15px;
+	margin-right: 15px;
+	border-right: 1px solid #D7D7D7;
+}
+.daytrips-booked-top-header p span:last-of-type {
+	padding-right: 0;
+	margin-right: 0;
+	border-right: 0;
+}
+
+.daytrips-booked-details h3 {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 29px;
+	color: #1F1F1F;
+	margin-bottom: 15px;
+}
+.daytrips-booked-details .booking-details {
+	max-width: 730px;
+	margin-bottom: 40px;
+}
+.daytrips-booked-details .booking-user-details .row,
+.daytrips-booked-details .booking-details .row {
+	margin: 0 -17.5px;
+}
+.daytrips-booked-details .form-group {
+	padding: 0 17.5px;
+}
+
+.daytrips-booked-details .form-group label {
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 22px;
+	color: #1F1F1F;
+	margin-bottom: 5px;
+}
+.daytrips-booked-details .form-group .form-control {
+	font-size: 14px;
+	font-weight: 400;
+	color: #6C757D;
+	line-height: 20px;
+	border-radius: 10px;
+	border: 1px solid #98CE44;
+	padding: 11.5px 8px;
+	box-shadow: none;
+	outline: 0;
+}
+
+.termsbooking-checkbox input {
+	margin-right: 10px;
+}
+.termsbooking-checkbox label {
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	color: #515151;
+}
+.termsbooking-checkbox {
+	display: flex;
+	align-items: center;
+}
+.termsbooking-checkbox.left-space {
+	margin-left: 4%;
+}
+
+.form-submit-btn .add-cart-btn {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	color: #fff;
+	display: inline-block;
+	text-align: center;
+	border-radius: 25px;
+	background-color: #98CE44;
+	width: 132px;
+	padding: 8px 15px;
+}
+
+/* Day Trips Section End */
+
+
 @media (min-width: 1200px) {
 	.container {
 		max-width: 1140px;
@@ -8019,13 +8496,25 @@ table.dataTable tbody tr {
 
 }
 
-@media (min-width: 992px) and (max-width: 1199px) { 
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	.daytrips-booking-sidebar {
+		width: 28%;
+	}
+
+	.daytrips-booking-contentarea {
+		width: 72%;
+	}
+
 	.cart-right-item-content .cartbox-item-details-two .cartbox {
     width: 18%;
 	}
 
 	.order-box-full-details-inner-two .order-details {
     width: 18.4%;
+	}
+	.order-details-section .order-box-full-details-inner-two .order-details {
+    width: 21.5%;
 	}
 
 	.register-text h2 {
@@ -8358,6 +8847,7 @@ table.dataTable tbody tr {
 		padding-left: 0;
 		max-width: 100%;
 	}
+	.sitemain-menu .navbar-nav .nav-item .nav-link img,
 	.sitemain-menu .navbar-nav .nav-item .nav-link svg {
 		position: absolute;
 		left: 0;
@@ -8458,13 +8948,40 @@ table.dataTable tbody tr {
 	}
 }
 
-@media (min-width: 768px) and (max-width: 991px) { 
+@media (min-width: 768px) and (max-width: 991px) {
+
+	.daytrips-booking-sidebar {
+		width: 30%;
+	}
+
+	.daytrips-booking-contentarea {
+		width: 70%;
+	}
+	.daytrips-booking-listing-box .row {
+    margin: 0px -10px;
+	}
+
+	.daytrips-booking-listing-box .booking-listing-box {
+    padding: 0 10px;
+	}
+
+	.booking-listing-box .box-btnl-list p {
+		margin-right: 0;
+	}
+	.booking-listing-box .box-btnl-list a {
+		width: 110px;
+	}
+
 	.cart-right-item-content .cartbox-item-details-two .cartbox {
     width: 18%;
 	}
 
 	.order-box-full-details-inner-two .order-details {
     width: 17.4%;
+	}
+
+	.order-details-section .order-box-full-details-inner-two .order-details {
+    width: 20.5%;
 	}
 
 	.payment-trasction-method .custom-checkbox-inline .payment-type-box {
@@ -8545,6 +9062,23 @@ table.dataTable tbody tr {
 	.filter-search-btn  {
 		width: 100%;
 	}
+
+	.hotel-filter-section-two .filter-content .filter-search-box {
+		width: 30%;
+	}
+	.hotel-filter-section-two .filte-same-width,
+	.hotel-filter-section-two .filte-same-width.filter-night {
+		width: 17%;
+	}
+	.hotel-filter-section-two .filte-same-width.filter-room-guest {
+    width: 31%;
+    margin-right: 0 !important;
+	}
+
+	.hotel-filter-section-two .filter-content .filter-grid-box {
+    margin-right: 10px;
+	}
+
 	.hero-section-two .hero-content-text h1 {
 		font-size: 88px;
 		line-height: 130px;
@@ -8944,6 +9478,64 @@ table.dataTable tbody tr {
 }
 
 @media (max-width: 767px) {
+
+	.booking-tab-price-content .price-details-box .custom-btn {
+		width: 100%;
+		padding: 5px 10px;
+	}
+	.booking-details-tab .nav-pills .nav-link {
+		font-size: 14px;
+		padding: 7.5px 15px;
+		min-width: 120px;
+	}
+	.daytrips-booked-top-header p span {
+		margin-top: 2px;
+		margin-bottom: 2px;
+	}
+	.daytrips-booked-details .booking-user-details .row,
+	.daytrips-booked-details .booking-details .row {
+		margin: 0 -5px;
+	}
+	.daytrips-booked-details .form-group {
+		padding: 0 5px;
+	}
+	.daytrips-booked-top-header p {
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.daytrips-booked-top-header p span {
+		padding-right: 8px;
+    margin-right: 8px;
+	}
+	.termsbooking-checkbox.left-space {
+	    margin-left: 7%;
+	}
+	.daytrips-booking-sidebar {
+		width: 100%;
+	}
+	.daytrips-booking-contentarea {
+		width: 100%;
+	}
+
+	.daytrips-booking-listing-box .row {
+    margin: 0 -10px;
+	}
+
+	.daytrips-booking-listing-box .booking-listing-box {
+    padding: 0 10px;
+	}
+	.booking-listing-box .box-btnl-list p {
+		margin-right: 0;
+	}
+
+	.booking-listing-box .box-btnl-list a {
+		width: 110px;
+	}
+	.booking-listing-box .box-content p {
+		font-size: 16px;
+		line-height: 22px;
+	}
+
 	.room-select-dropdown {
 		max-height: 350px;
 	}
@@ -9099,11 +9691,16 @@ table.dataTable tbody tr {
 	.room-amenities-block .room-amenities-inner {
 		padding: 15px;
 	}
-
+	.daytrips-booking-sidebar .daytrips-booking-sidebar-inner,
 	.left-sidebar-widget .sidebar-inner {
 		display: none;
 		margin-bottom: 40px;
 	}
+	.daytrips-booking-sidebar .daytrips-booking-sidebar-inner {
+		max-width: 100%;
+	}
+
+	.daytrips-booking-sidebar .daytrips-booking-sidebar-inner.active,
 	.left-sidebar-widget .sidebar-inner.active {
 		display: block;
 		position: fixed;
@@ -9117,6 +9714,7 @@ table.dataTable tbody tr {
     padding: 30px;
     overflow-y: auto;
 	}
+	.daytrips-booking-sidebar .mobile-view-widget-btn,
 	.left-sidebar-widget .mobile-view-widget-btn {
 		text-align: center;
 		margin-bottom: 25px;
@@ -9132,6 +9730,7 @@ table.dataTable tbody tr {
 		align-items: center;
 		transform: rotate(-90deg);  */
 	}
+	.daytrips-booking-sidebar .mobile-view-widget-btn span,
 	.left-sidebar-widget .mobile-view-widget-btn span {
 		color: #fff;
 		background-color: #98CE44;
@@ -9252,6 +9851,21 @@ table.dataTable tbody tr {
 		width: 100%;
 		margin-bottom: 8px;
 	}
+	.hotel-filter-section-two .filter-content .filter-search-box {
+		margin-right: 0;
+	}
+
+	.hotel-filter-section-two .filte-same-width, 
+	.hotel-filter-section-two .filte-same-width.filter-night {
+		width: 27%;
+		margin-right: 10px !important;
+	}
+	
+	.hotel-filter-section-two .filte-same-width.filter-room-guest {
+		margin-right: 0 !important;
+		width: 41.5%;
+	}
+
 	.filte-same-width {
 		width: 23.7%;
 		margin-bottom: 8px;
@@ -10076,6 +10690,12 @@ table.dataTable tbody tr {
 } 
 
 @media (max-width: 575px) {
+	.booking-details-tab .nav-pills .nav-link {
+		min-width: 90px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-size: 13px;
+	}
 	.order-room-special-request .custom-checkbox .form-group label {
 		font-size: 12px;
 	}
@@ -10467,6 +11087,30 @@ table.dataTable tbody tr {
 
 
 @media (max-width: 479px) {
+	.daytrips-booking-listing-box .booking-listing-box {
+		width: 100%;
+    max-width: 328px;
+    margin-left: auto;
+    margin-right: auto;
+	}
+
+	.daytrips-booking-listing-box .booking-listing-box:nth-child(n+2) {
+		margin-top: 40px;
+	}
+
+	.hotel-filter-section-two .filte-same-width, 
+	.hotel-filter-section-two .filte-same-width.filter-night {
+		width: 48.5%;
+		margin-right: 0 !important;
+	}
+	.hotel-filter-section-two .filte-same-width.filter-night {
+		margin-left: auto;
+		margin-right: 0 !important;
+	}
+	.hotel-filter-section-two .filte-same-width.filter-room-guest {
+    margin-right: 0 !important;
+    width: 100%;
+	}
 
 	.order-room-special-request .custom-checkbox .form-group label {
     font-size: 11px;
@@ -10776,6 +11420,48 @@ table.dataTable tbody tr {
 }
 
 @media (max-width: 414px) {
+	/*.booking-tab-price-content .price-full-details-inner {
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+	.booking-tab-price-content .price-details-box:last-of-type, 
+	.booking-tab-price-content .price-details-box:nth-child(2n),
+	.booking-tab-price-content .price-details-box:first-of-type {
+		width: 100%;
+		margin-bottom: 8px;
+		text-align: center;
+	}  */
+	.booking-tab-price-content .price-details-box:first-of-type {
+    width: 55%;
+	}
+	.booking-tab-price-content .price-details-box:nth-child(2n) {
+    width: 20%;
+	}
+
+	.booking-tab-price-content .price-details-box:last-of-type {
+		width: 25%;
+	}
+
+	.booking-tab-price-content .price-full-details-inner {
+		align-items: unset !important;
+	}
+
+	.booking-details-tab .nav-pills {
+	 	justify-content: start;
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+  }
+  .booking-details-tab .nav-pills .nav-item {
+  	margin-bottom: 10px;
+  }
+
+	.booking-details-tab .nav-pills .nav-link {
+		width: 100%;
+	} 
+	.daytrips-booked-details .form-group {
+		width: 100%;
+	}
 	.order-room-special-request .custom-checkbox .form-group {
     width: 50%;
 	}
@@ -11073,6 +11759,10 @@ table.dataTable tbody tr {
 	}
 	.order-room-content-bottom .order-btn-list a:last-of-type {
 		margin-bottom: 0;
+	}
+	.booking-tab-price-content .price-details-box .custom-btn {
+		padding: 2px 5px;
+		font-size: 12px;
 	}
 }
 @media (max-width: 320px) { 

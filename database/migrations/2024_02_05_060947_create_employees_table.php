@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('role_id');
             $table->string('contact');
             $table->string('password');
-            $table->string('permission');
             $table->timestamps();
         });
     }
