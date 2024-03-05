@@ -112,8 +112,8 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
                     <ul class="dropdown-menu {{ $activeRoutes['coupon'] ? 'show' : '' }}"> 
-                        <li><a class="dropdown-item {{ request()->routeIs('couponList') ? 'active' : '' }}" href="{{route('couponList')}}">List</a></li>
                         <li><a class="dropdown-item {{ request()->routeIs('addCoupon') ? 'active' : '' }}" href="{{route('addCoupon')}}">Add</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('couponList') ? 'active' : '' }}" href="{{route('couponList')}}">List</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -138,13 +138,13 @@
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-link {{ $activeRoutes['banner'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['banner'] ? 'true' : 'false' }}">
-                        <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/brochure.svg')}}" alt="Icon">
-                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/brochure-hover.svg')}}" alt="Icon"> Banner management
+                        <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/banner.svg')}}" alt="Icon">
+                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/banner-hover.svg')}}" alt="Icon"> Banner management
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
                     <ul class="dropdown-menu {{ $activeRoutes['banner'] ? 'show' : '' }}">
-                        <li><a class="dropdown-item {{ request()->routeIs('bannerList') ? 'active' : '' }}" href="{{route('bannerList')}}">List</a></li>
                         <li><a class="dropdown-item {{ request()->routeIs('addBanner') ? 'active' : '' }}" href="{{route('addBanner')}}">Add</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('bannerList') ? 'active' : '' }}" href="{{route('bannerList')}}">List</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -154,8 +154,8 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
                     <ul class="dropdown-menu {{ $activeRoutes['brochure'] ? 'show' : '' }}">
-                        <li><a class="dropdown-item {{ request()->routeIs('brochureList') ? 'active' : '' }}" href="{{route('brochureList')}}">List</a></li>
                         <li><a class="dropdown-item {{ request()->routeIs('addBrochure') ? 'active' : '' }}" href="{{route('addBrochure')}}">Add</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('brochureList') ? 'active' : '' }}" href="{{route('brochureList')}}">List</a></li>
                         <li><a class="dropdown-item {{ request()->routeIs('brochureOrderList') ? 'active' : '' }}" href="{{route('brochureOrderList')}}">Order</a></li>
                     </ul>
                 </li>
@@ -166,14 +166,14 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
                     <ul class="dropdown-menu {{ $activeRoutes['video'] ? 'show' : '' }}">
-                        <li><a class="dropdown-item {{ request()->routeIs('videoList') ? 'active' : '' }}" href="{{route('videoList')}}">List</a></li>
                         <li><a class="dropdown-item {{ request()->routeIs('addVideo') ? 'active' : '' }}" href="{{route('addVideo')}}">Add</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('videoList') ? 'active' : '' }}" href="{{route('videoList')}}">List</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-link {{ $activeRoutes['order'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['order'] ? 'true' : 'false' }}">
-                        <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/video.svg')}}" alt="Icon">
-                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/video-hover.svg')}}" alt="Icon"> Order management
+                        <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/order.svg')}}" alt="Icon">
+                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/order-hover.svg')}}" alt="Icon"> Order management
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
                     <ul class="dropdown-menu {{ $activeRoutes['order'] ? 'show' : '' }}">
@@ -193,36 +193,36 @@
                     </a>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-link {{ $activeRoutes['role'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['role'] ? 'true' : 'false' }}">
-                        <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/role.svg')}}" alt="Icon">
-                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/role-hover.svg')}}" alt="Icon"> Role Permission
-                        <span><i class="fa-solid fa-chevron-down"></i></span>
-                    </a>
-                    <ul class="dropdown-menu {{ $activeRoutes['role'] ? 'show' : '' }}">
-                        <li><a class="dropdown-item {{ request()->routeIs('roleList') ? 'active' : '' }}" href="{{route('roleList')}}">List</a></li>
-                        <li><a class="dropdown-item {{ request()->routeIs('addRole') ? 'active' : '' }}" href="{{route('addRole')}}">Add</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
                     <a class="dropdown-link {{ $activeRoutes['employee'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['employee'] ? 'true' : 'false' }}">
                         <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/employees.svg')}}" alt="Icon">
                         <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/employees-hover.svg')}}" alt="Icon"> Employees
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
                     <ul class="dropdown-menu {{ $activeRoutes['employee'] ? 'show' : '' }}">
+                        <li><a class="dropdown-item {{ request()->routeIs('addEmployee') ? 'active' : '' }}" href="{{route('addEmployee')}}">Add Employees</a></li>
                         <li><a class="dropdown-item {{ request()->routeIs('employeeList') ? 'active' : '' }}" href="{{route('employeeList')}}">List</a></li>
-                        <li><a class="dropdown-item {{ request()->routeIs('addEmployee') ? 'active' : '' }}" href="{{route('addEmployee')}}">Add</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-link {{ $activeRoutes['role'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['role'] ? 'true' : 'false' }}">
+                        <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/role.svg')}}" alt="Icon">
+                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/role-hover.svg')}}" alt="Icon"> Role Permission
+                        <span><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                    <ul class="dropdown-menu {{ $activeRoutes['role'] ? 'show' : '' }}">
+                        <li><a class="dropdown-item {{ request()->routeIs('addRole') ? 'active' : '' }}" href="{{route('addRole')}}">Add</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('roleList') ? 'active' : '' }}" href="{{route('roleList')}}">List</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-link {{ $activeRoutes['category'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['brochure'] ? 'true' : 'false' }}">
-                        <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/brochure.svg')}}" alt="Icon">
-                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/brochure-hover.svg')}}" alt="Icon"> Category
+                        <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/task-square.svg')}}" alt="Icon">
+                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/task-square-hover.svg')}}" alt="Icon"> Category
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
                     <ul class="dropdown-menu {{ $activeRoutes['category'] ? 'show' : '' }}">
-                        <li><a class="dropdown-item {{ request()->routeIs('categoryList') ? 'active' : '' }}" href="{{route('categoryList')}}">List</a></li>
                         <li><a class="dropdown-item {{ request()->routeIs('addCategory') ? 'active' : '' }}" href="{{route('addCategory')}}">Add</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('categoryList') ? 'active' : '' }}" href="{{route('categoryList')}}">List</a></li>
                     </ul>
                 </li>
                 <li>
@@ -239,8 +239,8 @@
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-link {{ $activeRoutes['withdraw'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['withdraw'] ? 'true' : 'false' }}">
-                        <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/hotel-paradores.svg')}}" alt="Icon">
-                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/hotel-paradores-hover.svg')}}" alt="Icon"> Withdraw
+                        <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/withdraw.svg')}}" alt="Icon">
+                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/withdraw-hover.svg')}}" alt="Icon"> Withdraw
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
                     <ul class="dropdown-menu {{ $activeRoutes['withdraw'] ? 'show' : '' }}"> 

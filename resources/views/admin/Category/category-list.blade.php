@@ -1,13 +1,17 @@
 @extends('admin.master')
 @section('content')
 <div class="admin-content-area">
-    <div class="video-management">
-        <div class="section-header">
-            <h2>Category List</h2>
+    <div class="video-management user-management-section role-permission-list">
+        <div class="section-header d-flex align-items-center">
+            <h2 class="mb-0">Category</h2>
+            @include('admin.Common.admin-profile-menu')
         </div>
-        <div class="video-management-inner brochure-list brochure-management">
+        <div class="video-management-inner user-management-inner">
+            <div class="section-block-title">
+                <h3>Category List</h3>
+            </div>
             <div class="custom-table-responsive">
-                <table id="brochure-list">
+                <table id="brochure-list" data-searching="false" data-ordering="false">
                     <thead>
                         <tr>
                         <th>Category Name</th>
@@ -62,9 +66,14 @@
       ordering: false,
       "language": {
         "searchPlaceholder": "Search..",
-        "search": ""
+        "search": "",
+        oPaginate: {
+          sNext: '<i class="fa-solid fa-chevron-right"></i>',
+          sPrevious: '<i class="fa-solid fa-chevron-left"></i>',
+        }
       }
     });
+    $(".dataTables_paginate").wrap( "<div class='datatable-paginate-custom'></div>" );
 
     $(document).ready(function () {
         $('.category-edit-link').on('click', function () {

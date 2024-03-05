@@ -6,6 +6,9 @@
           <h2>Brochure List</h2>
         </div>
         <div class="video-management-inner brochure-list brochure-management">
+            <div class="section-block-title">
+                <h3>Brochure List</h3>
+            </div>
             <div class="custom-table-responsive">
                 <table id="brochure-list">
                     <thead>
@@ -37,12 +40,18 @@
 @section('jscontent')
 <script type="text/javascript">
     $('#brochure-list').DataTable({
-        responsive: true,
-        ordering: false,
-        "language": {
-            "searchPlaceholder": "Search..",
-            "search": ""
+      responsive: true,
+      ordering: false,
+      "language": {
+        "searchPlaceholder": "Search..",
+        "search": "",
+        oPaginate: {
+          sNext: '<i class="fa-solid fa-chevron-right"></i>',
+          sPrevious: '<i class="fa-solid fa-chevron-left"></i>',
         }
+      }
     });
+
+    $(".dataTables_paginate").wrap( "<div class='datatable-paginate-custom'></div>" );
 </script>
 @endsection

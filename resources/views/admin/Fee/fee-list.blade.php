@@ -6,7 +6,7 @@
     </div>
     <div class="user-management-inner agent-fee-management">
         <div class="custom-table-responsive">
-            <table id="regularuser">
+            <table id="regularuser" data-searching="false" data-ordering="false">
                 <thead>
                     <tr>
                         <th>Profile</th>
@@ -149,10 +149,16 @@
       responsive: true,
       "language": {
         "searchPlaceholder": "Search..",
-        "search": ""
+        "search": "",
+        oPaginate: {
+          sNext: '<i class="fa-solid fa-chevron-right"></i>',
+          sPrevious: '<i class="fa-solid fa-chevron-left"></i>',
+        }
       }
     });
 
+    $(".dataTables_paginate").wrap( "<div class='datatable-paginate-custom'></div>" );
+    
     $('.input-card-fees').keypress(function (e) {
       var txt = String.fromCharCode(e.which);
       if (!txt.match(/[0-9]/)) {

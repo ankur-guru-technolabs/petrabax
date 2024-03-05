@@ -4,15 +4,7 @@
     <div class="home-management">
         <div class="section-header d-flex align-items-center">
             <h2 class="mb-0">Home Page Management</h2>
-            <div class="user-profile-menu ms-auto">
-                <div class="dropdown">
-                    <a class="dropdown-toggle user-dropdown-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin <img src="assets/images/user.png" alt="User"></a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="user-profile.html">Profile</a></li>
-                        <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#logoutmodal">Log out</a></li>
-                    </ul>
-                </div>
-            </div>
+            @include('admin.Common.admin-profile-menu')
         </div>
 
         <div class="user-management-inner home-management-list">
