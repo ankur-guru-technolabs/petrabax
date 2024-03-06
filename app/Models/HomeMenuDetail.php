@@ -12,6 +12,7 @@ class HomeMenuDetail extends Model
     protected $fillable = [
         'title',
         'category_id',
+        'img_alt',
         'end_point',
         'description',
         'image'

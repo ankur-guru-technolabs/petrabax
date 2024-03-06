@@ -19,6 +19,7 @@
                             <th>Image</th>
                             <th>Title</th>
                             <th>Category</th>
+                            <th>URL</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -27,9 +28,10 @@
                         @foreach($home_menu_detail as $key=>$home_menu)
                             <tr>
                                 <td>{{++$key}}</td>
-                                <td><img class="video-thumbnail" src="{{ asset('/home_menu/'.$home_menu->image) }}" alt="Hotel"></td>
+                                <td><img class="home-management-thumbnail" src="{{ asset('/home_menu/'.$home_menu->image) }}" alt="Hotel"></td>
                                 <td>{{$home_menu->title}}</td>
                                 <td>{{$home_menu->mainMenu->title ?? ''}}</td>
+                                <td>{{$home_menu->end_point ?? ''}}</td>
                                 <td>
                                     <a href="{{route('editHome',[$home_menu->id])}}"><img src="{{asset('assets_admin/images/edit-2.png')}}" alt="Edit"></a>
                                 </td>

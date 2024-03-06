@@ -113,6 +113,7 @@ class MenuManagementController extends Controller
         $validator = Validator::make($request->all(),[
             'title' => 'required',
             'category_id' => 'required',
+            'img_alt' => 'required',
             'end_point' => 'required',
             'description' => 'required',
             'image'=>"required|file|mimes:jpeg,png,jpg|max:100000",
@@ -139,6 +140,7 @@ class MenuManagementController extends Controller
         $home = new HomeMenuDetail;
         $home->title = $request->title;
         $home->category_id = $request->category_id;
+        $home->img_alt = $request->img_alt;
         $home->end_point = $request->end_point;
         $home->description = $request->description;
         $home->image = $imagename;
@@ -160,6 +162,7 @@ class MenuManagementController extends Controller
         $validator = Validator::make($request->all(),[
             'title' => 'required',
             'category_id' => 'required',
+            'img_alt' => 'required',
             'end_point' => 'required',
             'description' => 'required',
         ]);
@@ -193,6 +196,7 @@ class MenuManagementController extends Controller
 
         $home->title = $request->title;
         $home->category_id = $request->category_id;
+        $home->img_alt = $request->img_alt;
         $home->end_point = $request->end_point;
         $home->description = $request->description;
         $home->image = ($imagename == '') ? $home->image : $imagename;

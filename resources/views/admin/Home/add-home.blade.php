@@ -16,7 +16,7 @@
                 <form class="max-width-100" id="add-home-form" action="{{route('homeSubmit')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
-                        <div class="col-sm-4 form-group">
+                        <div class="col-sm-3 form-group">
                             <label>Title</label>
                             <input type="text" class="form-control" name="title">
                             @if($errors->has('title'))
@@ -25,7 +25,7 @@
                                 </small>
                             @endif
                         </div>
-                        <div class="col-sm-4 form-group">
+                        <div class="col-sm-3 form-group">
                             <label>Category</label>
                             <select class="form-control nice-select w-100" name="category_id" id="category_id">
                                 <!-- <option value="">Select Category</option> -->
@@ -40,7 +40,16 @@
                                 </small>
                             @endif
                         </div>
-                        <div class="col-sm-4 form-group">
+                        <div class="col-sm-3 form-group">
+                            <label>Image Alt Text</label>
+                            <input type="text" class="form-control" name="img_alt">
+                            @if($errors->has('img_alt'))
+                                <small class="text-danger">
+                                    {{ $errors->first('img_alt') }}
+                                </small>
+                            @endif
+                        </div>
+                        <div class="col-sm-3 form-group">
                             <label>End Point</label>
                             <input type="text" class="form-control" name="end_point">
                             @if($errors->has('end_point'))
@@ -49,7 +58,7 @@
                                 </small>
                             @endif
                         </div>
-                        <div class="col-sm-4 form-group">
+                        <div class="col-sm-6 form-group">
                             <label>Description</label>
                             <textarea class="form-control" rows="8" name="description"></textarea>
                             @if($errors->has('description'))
@@ -59,7 +68,7 @@
                             @endif
                         </div>
 
-                        <div class="col-sm-4 form-group brochure-full-width-upload  custom-upload">
+                        <div class="col-sm-6 form-group brochure-full-width-upload  custom-upload">
                             <label>Image <span id="span-ratio"> </span></label>
                             <div class="myform">
                                 <div class="uploadbox"> 
@@ -146,6 +155,9 @@
                 category_id: {
                     required: true
                 },
+                img_alt: {
+                    required: true
+                },
                 end_point: {
                     required: true
                 },
@@ -162,6 +174,9 @@
                 },
                 category_id: {
                     required: "Category field is required."
+                },
+                img_alt: {
+                    required: "Image Alt field is required."
                 },
                 end_point: {
                     required: "End point field is required."

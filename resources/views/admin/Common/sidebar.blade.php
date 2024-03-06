@@ -10,7 +10,7 @@
                 'user' => request()->routeIs('userList') || request()->routeIs('userView'),
                 'home' => request()->routeIs('addHome') || request()->routeIs('homeList') || request()->routeIs('editHome'),
                 'menu' => request()->routeIs('addMenu') || request()->routeIs('menuList') || request()->routeIs('editMenu'),
-                'commision' => request()->routeIs('commissionList'),
+                'commision' =>  request()->routeIs('addCommission') || request()->routeIs('commissionList') || request()->routeIs('commissionEdit'),
                 'fee' => request()->routeIs('addFee') || request()->routeIs('feeList'),
                 'coupon' => request()->routeIs('addCoupon') || request()->routeIs('couponList') || request()->routeIs('couponEdit'),
                 'hotelbeds' => request()->routeIs('addHotelbeds'),
@@ -87,12 +87,17 @@
                         <li><a class="dropdown-item {{ request()->route()->getName() == 'userList' && request()->route('type') == 'non-active' ? 'active' : '' }}" href="{{ route('userList', ['type' => 'non-active']) }}">Non-active Agents</a></li>
                     </ul>
                 </li>
-               
-                <li>
-                    <a class="{{ $activeRoutes['commision'] ? 'active' : '' }}" href="{{route('commissionList')}}">
+                <li class="dropdown">
+                    <a class="dropdown-link {{ $activeRoutes['commision'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['commision'] ? 'true' : 'false' }}">
                         <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/commission.svg')}}" alt="Icon">
-                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/commission-hover.svg')}}" alt="Icon"> Commission
+                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/commission-hover.svg')}}" alt="Icon">
+                        Commission
+                        <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
+                    <ul class="dropdown-menu {{ $activeRoutes['commision'] ? 'show' : '' }}">
+                        <li><a class="dropdown-item {{ request()->routeIs('addCommission') ? 'active' : '' }}" href="{{route('addCommission')}}">Add</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('commissionList') ? 'active' : '' }}" href="{{route('commissionList')}}">List</a></li>
+                    </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-link {{ $activeRoutes['fee'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['fee'] ? 'true' : 'false' }}">

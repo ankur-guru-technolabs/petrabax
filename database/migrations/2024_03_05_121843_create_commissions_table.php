@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('home_menu_details', function (Blueprint $table) {
+        Schema::create('commissions', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
             $table->string('category_id');
-            $table->string('img_alt');
-            $table->string('end_point');
-            $table->text('description');
-            $table->string('image');
+            $table->string('commission_name');
+            $table->string('agent_id');
+            $table->string('commission');
+            $table->string('commission_type');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('home_menu_details');
+        Schema::dropIfExists('commissions');
     }
 };

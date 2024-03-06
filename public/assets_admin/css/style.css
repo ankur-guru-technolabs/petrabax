@@ -3693,7 +3693,7 @@ table.dataTable.no-footer {
 }
 
 .commission-management-content .submit-btn {
-	text-align: center;
+	/* text-align: center; */
 	margin-top: 40px;
 }
 .commission-management-content .submit-btn button {

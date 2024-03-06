@@ -61,6 +61,11 @@ Route::prefix('/admin')->group(function () {
         Route::get('/brochure/delete/{id}', [BrochureManagementController::class, 'brochureDelete'])->name('brochureDelete'); 
         Route::get('/brochure/category/count/{id}', [BrochureManagementController::class, 'brochureCategoryCount'])->name('brochureCategoryCount'); 
         Route::get('/commission/list', [CommissionManagementController::class, 'commissionList'])->name('commissionList');
+        Route::get('/add/commission', [CommissionManagementController::class, 'addCommission'])->name('addCommission');
+        Route::post('/commission/submit', [CommissionManagementController::class, 'commissionSubmit'])->name('commissionSubmit');
+        Route::get('/commission/edit/{id}', [CommissionManagementController::class, 'commissionEdit'])->name('commissionEdit'); 
+        Route::post('/commission/update', [CommissionManagementController::class, 'commissionUpdate'])->name('commissionUpdate');  
+        Route::get('/commission/delete/{id}', [CommissionManagementController::class, 'commissionDelete'])->name('commissionDelete'); 
         Route::get('/content/list', [ContentManagementController::class, 'contentList'])->name('contentList'); 
         Route::post('/content/submit', [ContentManagementController::class, 'contentSubmit'])->name('contentSubmit'); 
         Route::get('/coupon/list', [CouponController::class, 'couponList'])->name('couponList'); 
