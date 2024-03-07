@@ -1,6 +1,12 @@
 @extends('admin.master')
 @section('content')
 <div class="admin-content-area">
+    <div class="commission-management-section">
+        <div class="section-header d-flex align-items-center">
+           <h2 class="mb-0">Commission management</h2>
+           @include('admin.Common.admin-profile-menu')
+        </div>
+    </div>
     <div class="commission-management-section user-management-inner">
         <div class="section-block-title">
             <h3>Add Commission</h3>
@@ -11,7 +17,7 @@
                 <div class="row">
                     <div class="col-sm-4 form-group">
                         <label>Product Category</label>
-                        <select class="form-control nice-select" name="category_id" id="category_id">
+                        <select class="form-control mySelect" name="category_id" id="category_id">
                             <option value="">Select Category</option>
                             @foreach($categories as $cat)
                                 <option value="{{$cat->id}}">{{$cat->name}}</option>
@@ -21,7 +27,7 @@
                     </div>
                     <div class="col-sm-4 form-group">
                         <label>Sub Category</label>
-                        <select class="form-control nice-select">
+                        <select class="form-control mySelect">
                             <option>Select</option>
                             <option>Select</option>
                             <option>Select</option>
@@ -33,7 +39,7 @@
                     </div>
                     <div class="col-sm-4 form-group">
                         <label>Travel Agents</label>
-                        <select class="form-control nice-select" name="agent_id" id="agent_id">
+                        <select class="form-control mySelect" name="agent_id" id="agent_id">
                             <option value="">Select</option>
                             @foreach($agents as $agent)
                                 <option value="{{$agent->id}}">{{$agent->first_name}} {{$agent->last_name}}</option>

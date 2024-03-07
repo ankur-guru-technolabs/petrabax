@@ -11,7 +11,7 @@
                 'home' => request()->routeIs('addHome') || request()->routeIs('homeList') || request()->routeIs('editHome'),
                 'menu' => request()->routeIs('addMenu') || request()->routeIs('menuList') || request()->routeIs('editMenu'),
                 'commision' =>  request()->routeIs('addCommission') || request()->routeIs('commissionList') || request()->routeIs('commissionEdit'),
-                'fee' => request()->routeIs('addFee') || request()->routeIs('feeList'),
+                'fee' => request()->routeIs('addFee') || request()->routeIs('feeList') || request()->routeIs('feeEdit'),
                 'coupon' => request()->routeIs('addCoupon') || request()->routeIs('couponList') || request()->routeIs('couponEdit'),
                 'hotelbeds' => request()->routeIs('addHotelbeds'),
                 'paradores' => request()->routeIs('addParadores'),

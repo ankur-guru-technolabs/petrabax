@@ -24,9 +24,6 @@ a,button {
 h1,h2,h3,h4,h5,h5,p,span,li,a {
 	word-break: break-word;
 }
-.submenu-link {
-	pointer-events: none;
-}
 
 .row {
 	margin: 0 -15px;
@@ -88,6 +85,18 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	line-height: 18px;
 	color: #636363;
 }
+
+.nice-select.mySelect ul.list {
+	margin-top: 60px;
+}
+.commission-management-section .nice-select.mySelect ul.list,
+.coupon-form-content .nice-select.mySelect ul.list {
+	margin-top: 55px;
+}
+.role-permission-inner .nice-select.mySelect ul.list,
+.deposit-management .nice-select.mySelect ul.list {
+	margin-top: 53px;
+} 
 
 .signin-inner-form .form-group {
 	margin-bottom: 30px;
@@ -2794,6 +2803,7 @@ a.ui-button:active,
 
 .agent-addfee .form-group .form-control.nice-select {
 	height: auto;
+	width:100%
 }
 .form-control-prifix .price-prifix {
 	position: absolute;
@@ -3693,7 +3703,7 @@ table.dataTable.no-footer {
 }
 
 .commission-management-content .submit-btn {
-	/* text-align: center; */
+	text-align: center;
 	margin-top: 40px;
 }
 .commission-management-content .submit-btn button {
@@ -4440,11 +4450,15 @@ div.dt-container .dt-paging .dt-paging-button.current:hover  {
 		line-height: 23px;
 		color: #616161;
 		text-transform: capitalize;
+		display: flex;
+		align-items: center;
 	}
 
+	.sidebar-menu-list ul li.dropdown a.custom-main-drop-link span,
 	.sidebar-menu-list ul li.dropdown a.dropdown-link span {
 		-webkit-transition: all .15s ease-in-out;
     transition: all .15s ease-in-out;
+    margin-left: auto;
 	}
 
 	.sidebar-menu-list ul li.dropdown a.dropdown-link.show span i {
@@ -4479,6 +4493,10 @@ div.dt-container .dt-paging .dt-paging-button.current:hover  {
 		display: none;
 	}
 
+	.sidebar-menu-list .service-main-drp-menu .sub-menu-child { 
+		margin-bottom: 8px;
+	}
+
 	.sidebar-menu-list ul li.dropdown ul li a:before {
     content: "\f111";
     font-weight: 900;
@@ -4488,6 +4506,21 @@ div.dt-container .dt-paging .dt-paging-button.current:hover  {
 		top: 2px;
 		font-size: 3px;
 		color: #1F1F1F;
+	}
+
+	.sidebar-menu-list ul li.dropdown ul li a.submenu-link  {
+		color: #616161;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		display: flex;
+		align-items: center;
+	}
+	.sidebar-menu-list ul li.dropdown ul.service-main-drp-menu {
+		padding-left: 15px;
+		transform: translateX(0px) translateY(5px) !important;
+	}
+	.sidebar-menu-list ul li.dropdown ul li a.submenu-link  span {
+		margin-left: auto;
 	}
 	.sidebar-menu-list ul li.dropdown ul li a {
 		font-size: 14px;
@@ -5015,4 +5048,63 @@ div.dt-container .dt-paging .dt-paging-button.current:hover  {
 	.offer-coupon-box .custom-checkbox .form-group label  {
 		font-size: 14px;
 	}
+}
+
+
+.nice-select.has-multiple .multiple-options {
+    display: block;
+    line-height: 37px;
+    margin-left: 30px;
+    padding: 0
+}
+
+.nice-select .nice-select-search-box {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    margin-top: 5px;
+    top: 100%;
+    left: 0;
+    z-index: 8;
+    padding: 5px;
+    background: #FFF;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 0 0 1px rgba(68, 88, 112, .11);
+    -webkit-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform: scale(.75) translateY(-21px);
+    -ms-transform: scale(.75) translateY(-21px);
+    transform: scale(.75) translateY(-21px);
+    -webkit-transition: all .2s cubic-bezier(.5, 0, 0, 1.25), opacity .15s ease-out;
+    transition: all .2s cubic-bezier(.5, 0, 0, 1.25), opacity .15s ease-out
+}
+
+.nice-select .nice-select-search {
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 7px 12px;
+    margin: 0 10px 0 0;
+    width: 100%!important;
+    min-height: 36px;
+    line-height: 22px;
+    height: auto;
+    outline: 0!important
+}
+
+.nice-select.open .nice-select-search-box {
+    opacity: 1;
+    z-index: 10;
+    pointer-events: auto;
+    -webkit-transform: scale(1) translateY(0);
+    -ms-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0)
 }

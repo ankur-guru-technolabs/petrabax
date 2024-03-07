@@ -80,8 +80,12 @@ Route::prefix('/admin')->group(function () {
         Route::get('/employee/edit/{id}', [EmployeeController::class, 'employeeEdit'])->name('employeeEdit'); 
         Route::post('/employee/update', [EmployeeController::class, 'employeeUpdate'])->name('employeeUpdate');  
         Route::get('/employee/delete/{id}', [EmployeeController::class, 'employeeDelete'])->name('employeeDelete');
-        Route::get('/add/fee', [FeeManagementController::class, 'addFee'])->name('addFee');
         Route::get('/fee/list', [FeeManagementController::class, 'feeList'])->name('feeList');
+        Route::get('/add/fee', [FeeManagementController::class, 'addFee'])->name('addFee');
+        Route::post('/fee/submit', [FeeManagementController::class, 'feeSubmit'])->name('feeSubmit');
+        Route::get('/fee/edit/{id}', [FeeManagementController::class, 'feeEdit'])->name('feeEdit'); 
+        Route::post('/fee/update', [FeeManagementController::class, 'feeUpdate'])->name('feeUpdate');  
+        Route::get('/fee/delete/{id}', [FeeManagementController::class, 'feeDelete'])->name('feeDelete'); 
         Route::get('/add/hotelbeds', [HotelManagementController::class, 'addHotelbeds'])->name('addHotelbeds');
         Route::get('/add/paradores', [HotelManagementController::class, 'addParadores'])->name('addParadores');
         Route::get('/order/list', [OrderController::class, 'orderList'])->name('orderList');
