@@ -2,11 +2,12 @@
 @section('content') 
 <div class="admin-content-area">
     <div class="create-coupon-section">
-        <div class="section-header">
-            <h2>Create Coupon</h2>
+        <div class="section-header d-flex align-items-center">
+            <h2 class="mb-0">Coupon</h2>
+            @include('admin.Common.admin-profile-menu')
         </div>
         <div class="create-coupon-inner user-management-inner">
-            <h3>Create coupon</h3>
+            <h3>Create Coupon</h3>
             <div class="coupon-form-content">
                 <form id="coupon-form" action="{{route('couponSubmit')}}" method="post" enctype="multipart/form-data">
                     @csrf
@@ -32,8 +33,8 @@
                             </div>
 
                             <div class="col-sm-6 form-group">
-                                <label>Category</label>
-                                <select class="form-control nice-select" name="category_id" id="category_id">
+                                <label>Category Selection</label>
+                                <select class="form-control mySelect" name="category_id" id="category_id">
                                     <option value="">Select</option>
                                     @foreach($categories as $cat)
                                         <option value="{{$cat->id}}">{{$cat->name}}</option>
@@ -48,7 +49,7 @@
                             </div>
                             <div class="col-sm-6 form-group">
                                 <label>User Type</label>
-                                <select class="form-control nice-select" name="user_type" id="user_type">
+                                <select class="form-control mySelect" name="user_type" id="user_type">
                                     <option value="">Select</option>
                                     <option value="user">User</option>
                                     <option value="travel_agent">Travel agent</option>
@@ -105,9 +106,9 @@
                         </div>
                         <div class="col-6">
                             <div class="form-filed-data">
-                                <label>Start date</label>
+                                <label>Start Date</label>
                                 <div class="position-relative datepicker-icon-add">
-                                    <input type="text" class="form-control" id="datepickerstart" placeholder="Select date" name="start_date">
+                                    <input type="text" class="form-control" id="datepickerstart" placeholder="Select Date" name="start_date">
                                     @if($errors->has('start_date'))
                                         <small class="text-danger">
                                             {{ $errors->first('start_date') }}
@@ -116,9 +117,9 @@
                                 </div>
                             </div>
                             <div class="form-filed-data">
-                                <label>End date</label>
+                                <label>Expire Date</label>
                                 <div class="position-relative datepicker-icon-add">
-                                    <input type="text" class="form-control" id="datepickerend" placeholder="Select date" name="end_date">
+                                    <input type="text" class="form-control" id="datepickerend" placeholder="Select Date" name="end_date">
                                     @if($errors->has('end_date'))
                                         <small class="text-danger">
                                             {{ $errors->first('end_date') }}
@@ -258,11 +259,11 @@
                     required: "Percentage or price discount filed with selected type required."
                 },
                 start_date: {
-                    required: "Start date field is required."
+                    required: "Start Date field is required."
                 },
                 end_date: {
-                    required: "End date field is required.",
-                    greaterThanOrEqualToStart: "End date must be greater than or equal to the start date."
+                    required: "Expire Date field is required.",
+                    greaterThanOrEqualToStart: "Expire Date must be greater than or equal to the start date."
                 }
             },
             errorElement: 'span',

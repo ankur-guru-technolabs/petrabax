@@ -21,12 +21,12 @@ class CategoryController extends Controller
     public function addCategory(){
         return view('admin.Category.add-category');
     }
-
+    
     public function categorySubmit(Request $request){
         $validator = Validator::make($request->all(),[
             'name'=>"required",
         ]);
-
+        
         if ($validator->fails())
         {
             return back()->withInput()->withErrors($validator);
@@ -38,16 +38,21 @@ class CategoryController extends Controller
         return redirect()->route('categoryList')->with('message', 'Category added successfully');
     } 
     
-    public function categoryDelete($id){
+    public function categoryEdit($id){
         $category = Category::findOrFail($id);
-        $category->delete();
-        return redirect()->route('categoryList')->with('message', 'Category deleted successfully');
+        return view('admin.Category.edit-category',compact('category'));
     } 
     
     public function categoryUpdate(Request $request){
         $input = $request->all();
         Category::where('id',$request->id)->update(['name'=>$request->name]);
         return redirect()->route('categoryList')->with('message', 'Category updated successfully');
+    } 
+
+    public function categoryDelete($id){
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect()->route('categoryList')->with('message', 'Category deleted successfully');
     } 
 }
 

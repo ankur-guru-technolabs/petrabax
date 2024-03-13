@@ -2,23 +2,29 @@
 @section('content')
 <div class="admin-content-area">
     <div class="video-management">
-        <div class="section-header">
+        <div class="section-header d-flex align-items-center">
           <h2>Banner List</h2>
+          @include('admin.Common.admin-profile-menu')
         </div>
         <div class="video-management-inner brochure-list brochure-management">
+            <div class="section-block-title">
+                <h3>Banner List</h3>
+            </div>
             <div class="custom-table-responsive">
                 <table id="banner-list">
                     <thead>
                         <tr>
-                            <th>Banner image</th>
-                            <th>Category</th>
+                            <th>S.No</th>
+                            <th>Banner Image</th>
+                            <th>Banner Category</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($banners as $banner)
+                        @foreach($banners as $key=>$banner)
                         <tr>
+                            <td>{{++$key}}</td>
                             <td><img class="brochure-img" src="{{ asset('/banner/'.$banner->image) }}" alt="Banner"></td>
                             <td>{{$banner->category->name}}</td>
                             <td><a href="{{route('bannerEdit',['id' => $banner->id])}}"><img src="{{ asset('/assets_admin/images/edit-2.png')}}" alt="Edit"></a></td>

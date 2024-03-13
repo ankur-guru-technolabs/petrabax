@@ -2,21 +2,21 @@
 @section('content') 
 <div class="admin-content-area">
     <div class="video-management">
-        <div class="section-header">
+        <div class="section-header d-flex align-items-center">
             <h2>Banner management</h2>
+            @include('admin.Common.admin-profile-menu')
         </div>
         <div class="video-management-inner brochure-management">
+            <div class="section-block-title">
+                <h3>Edit Banner</h3>
+            </div>
             <div class="video-content ">
-                <div class="back-to-order-link d-flex align-items-center">
-                    <a href="{{route('bannerList')}}"><i class="fa-solid fa-chevron-left"></i></a>
-                    <h5 class="mx-auto">Edit</h5>
-                </div>
                 <form id="banner-form" action="{{route('bannerUpdate')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <input type="hidden" name="id" value="{{$banner->id}}">
                         <div class="col-sm-4 form-group">
-                            <label>Banner Category</label>
+                            <label>Select Banner Category</label>
                             <select class="nice-select form-control" name="category_id" id="category_id">
                                 <option value="">Select Category</option>
                                 @foreach($categories as $cat)
@@ -31,7 +31,7 @@
                             @endif
                         </div>
                         <div class="col-sm-4 form-group brochure-full-width-upload  custom-upload">
-                            <label>Banner Image  ( Ratio 1000*300 )</label>
+                            <label>Upload Banner Image <span>( Ratio 1000*300 )</span></label>
                             <div class="myform">
                                 <div class="uploadbox">
                                     <span class="btn_upload"><input type="file" id="imag" title="" class="input-img" accept="image/*" name="image"/><img class="preview1 prev" id="uploadicon1" src="{{ asset('/banner/'.$banner->image) }}" alt="Gallery Add">

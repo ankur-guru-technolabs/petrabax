@@ -1,11 +1,15 @@
 @extends('admin.master')
 @section('content') 
 <div class="admin-content-area">
-    <div class="user-management-section">
-        <div class="section-header">
-            <h2>Orders</h2>
+    <div class="video-management">
+        <div class="section-header d-flex align-items-center">
+            <h2 class="mb-0">Orders</h2>
+            @include('admin.Common.admin-profile-menu')
         </div>
-        <div class="user-management-inner">
+        <div class="video-management-inner brochure-list brochure-management">
+            <div class="section-block-title">
+                <h3>Brochure Order List</h3>
+            </div>
             <div class="custom-table-responsive">
                 <table id="order">
                     <thead>
@@ -37,11 +41,17 @@
 @section('jscontent')
 <script type="text/javascript">
     $('#order').DataTable({
-      responsive: true,
-      "language": {
-        "searchPlaceholder": "Search..",
-        "search": ""
-      }
+        responsive: true,
+        ordering: false,
+            "language": {
+            "searchPlaceholder": "Search..",
+            "search": "",
+            oPaginate: {
+                sNext: '<i class="fa-solid fa-chevron-right"></i>',
+                sPrevious: '<i class="fa-solid fa-chevron-left"></i>',
+            }
+        }
     });
+    $(".dataTables_paginate").wrap( "<div class='datatable-paginate-custom'></div>" );
 </script>
 @endsection

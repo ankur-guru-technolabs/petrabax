@@ -3,6 +3,7 @@
 <div class="admin-content-area">
     <div class="section-header d-flex align-items-center">
         <h2>Agent fees management</h2>
+        @include('admin.Common.admin-profile-menu')
     </div>
     <div class="user-management-inner agent-fee-management">
         <div class="section-block-title">

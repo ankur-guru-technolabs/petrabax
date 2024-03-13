@@ -2,10 +2,14 @@
 @section('content') 
 <div class="admin-content-area">
     <div class="video-management">
-        <div class="section-header">
+        <div class="section-header d-flex align-items-center">
             <h2>Video management</h2>
+            @include('admin.Common.admin-profile-menu') 
         </div>
         <div class="video-management-inner brochure-management">
+            <div class="section-block-title">
+                <h3>Add Video</h3>
+            </div>
             <div class="video-content">
             <form id="video-form" action="{{route('videoSubmit')}}" method="post" enctype="multipart/form-data">
                     @csrf
@@ -44,10 +48,10 @@
                             @endif
                         </div>
                         <div class="col-sm-4 form-group brochure-full-width-upload custom-upload">
-                            <label>Video Upload</label>
+                            <label>Upload Video</label>
                             <div class="myform">
                                 <div class="uploadbox">
-                                    <span class="btn_upload"><input type="file" id="imag" title="" class="input-img" accept="video/*" name="video"/><img id="uploadicon1" src="{{ asset('/assets_admin/images/gallery-add.png')}}" alt="Gallery Add">
+                                    <span class="btn_upload"><input type="file" id="imag" title="" class="input-img" accept="video/*" name="video"/><img id="uploadicon1" src="{{ asset('/assets_admin/images/document-upload.png')}}" alt="Gallery Add">
                                         <img id="ImgPreview" src="" class="preview1" />
                                         <input type="button" id="removeImage1" value="x" class="btn-rmv1" />
                                     </span>
@@ -60,7 +64,7 @@
                             </div>
                         </div>
                         <div class="col-sm-4 form-group brochure-full-width-upload custom-upload">
-                            <label>Thumbnail Upload ( Ratio 362*207 )</label>
+                            <label>Upload Thumbnail  <span>( Ratio 362*207 )</span></label>
                             <div class="myform">
                                 <div class="uploadbox">
                                     <span class="btn_upload"><input type="file" id="imag2" title="" class="input-img" accept="image/*" name="thumbnail"/><img id="uploadicon2" src="{{ asset('/assets_admin/images/gallery-add.png')}}" alt="Gallery Add">

@@ -2,8 +2,9 @@
 @section('content')
 <div class="admin-content-area">
     <div class="video-management">
-        <div class="section-header">
-          <h2>Brochure List</h2>
+        <div class="section-header d-flex align-items-center">
+            <h2 class="mb-0">Brochure Management</h2>
+            @include('admin.Common.admin-profile-menu')
         </div>
         <div class="video-management-inner brochure-list brochure-management">
             <div class="section-block-title">
@@ -13,7 +14,9 @@
                 <table id="brochure-list">
                     <thead>
                         <tr>
+                            <th>S.No</th>
                             <th>Brochure image</th>
+                            <th>Brochure Order</th>
                             <th>Category</th>
                             <th>Brochure Name</th>
                             <th>Edit</th>
@@ -21,9 +24,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($brochures as $brochure)
+                        @foreach($brochures as $key=>$brochure)
                         <tr>
+                            <td>{{++$key}}</td>
                             <td><img class="brochure-img" src="{{ asset('/brochure/'.$brochure->image) }}" alt="Brochure"></td>
+                            <td>{{$brochure->order}}</td>
                             <td>{{$brochure->category->name}}</td>
                             <td>{{$brochure->name}}</td>
                             <td><a href="{{route('brochureEdit',['id' => $brochure->id])}}"><img src="{{ asset('/assets_admin/images/edit-2.png')}}" alt="Edit"></a></td>

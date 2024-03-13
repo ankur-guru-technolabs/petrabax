@@ -112,6 +112,7 @@ Route::prefix('/admin')->group(function () {
         Route::get('/add/category', [CategoryController::class, 'addCategory'])->name('addCategory');
         Route::post('/category/submit', [CategoryController::class, 'categorySubmit'])->name('categorySubmit'); 
         Route::get('/category/delete/{id}', [CategoryController::class, 'categoryDelete'])->name('categoryDelete'); 
+        Route::get('/category/edit/{id}', [CategoryController::class, 'categoryEdit'])->name('categoryEdit'); 
         Route::post('/category/update', [CategoryController::class, 'categoryUpdate'])->name('categoryUpdate'); 
         Route::get('/withdraw/list', [WithdrawManagementController::class, 'withdrawList'])->name('withdrawList');
         Route::get('/withdraw/agent/detail', [WithdrawManagementController::class, 'withdrawAgentDetail'])->name('withdrawAgentDetail');

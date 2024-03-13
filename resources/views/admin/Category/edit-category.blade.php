@@ -8,15 +8,16 @@
         </div>
         <div class="video-management-inner">
             <div class="section-block-title">
-                <h3>Add Category</h3>
+                <h3>Edit Category</h3>
             </div>
             <div class="video-content">
-                <form action="{{route('categorySubmit')}}" method="post" id="category-form">
+                <form action="{{route('categoryUpdate')}}" method="post" id="category-edit-form">
                     @csrf 
+                    <input type="hidden" class="form-control" name="id" value="{{$category->id}}">
                     <div class="row">
                         <div class="col-sm-4 form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" name="name">
+                            <input type="text" class="form-control" name="name" value="{{$category->name}}">
                             @if($errors->has('name'))
                                 <small class="text-danger">
                                     {{ $errors->first('name') }}
@@ -36,7 +37,7 @@
 @section('jscontent') 
 <script type="text/javascript">
     $(document).ready(function() {
-        $("#category-form").validate({
+        $("#category-edit-form").validate({
             rules:{
                 name: {
                     required: true

@@ -2,15 +2,15 @@
 @section('content') 
 <div class="admin-content-area">
     <div class="video-management">
-        <div class="section-header">
+        <div class="section-header d-flex align-items-center">
             <h2>Brochure management</h2>
+            @include('admin.Common.admin-profile-menu')
         </div>
         <div class="video-management-inner brochure-management">
+            <div class="section-block-title">
+                <h3>Edit Brochure</h3>
+            </div>
             <div class="video-content ">
-                <div class="back-to-order-link d-flex align-items-center">
-                    <a href="{{route('brochureList')}}"><i class="fa-solid fa-chevron-left"></i></a>
-                    <h5 class="mx-auto">Edit</h5>
-                </div>
                 <form id="brochure-form" action="{{route('brochureUpdate')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
@@ -40,7 +40,7 @@
                             @endif
                         </div>
                         <div class="col-sm-4 form-group">
-                            <label>Order</label>
+                            <label>Brochure Order</label>
                             <select class="nice-select form-control" id="order" name="order">
                                 <option value="">Please Select Category First</option>
                             </select>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-4 form-group brochure-full-width-upload  custom-upload">
-                            <label>Image Upload</label>
+                            <label>Upload Image <span>( Ratio 1000*300 )</span></label>
                             <div class="myform">
                                 <div class="uploadbox">
                                     <span class="btn_upload"><input type="file" id="imag" title="" class="input-img" accept="image/*" name="image"/><img class="preview1 prev" id="uploadicon1" src="{{ asset('/brochure/'.$brochure->image) }}" alt="Gallery Add">
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="col-sm-4 form-group  custom-upload">
-                            <label>PDF Upload</label>
+                            <label>Upload PDF</label>
                             <div class="myform">
                                 <div class="uploadbox">
                                     <span class="btn_upload"><input type="file" id="imag2" title="" class="input-img" accept="application/pdf" name="pdf"/><img id="uploadicon2" src="{{ asset('/assets_admin/images/gallery-add.png')}}" alt="Gallery Add">
@@ -187,7 +187,7 @@
                     required: "Category is required."
                 },
                 order: {
-                    required: "Order field is required."
+                    required: "Brochure Order field is required."
                 },
             },
             errorElement: 'span',

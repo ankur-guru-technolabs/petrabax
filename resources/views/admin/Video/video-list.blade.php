@@ -2,8 +2,9 @@
 @section('content')
 <div class="admin-content-area">
     <div class="video-management">
-        <div class="section-header">
-            <h2>Video List</h2>
+        <div class="section-header d-flex align-items-center">
+            <h2>Video Management</h2>
+            @include('admin.Common.admin-profile-menu')
         </div>
         <div class="video-management-inner brochure-list brochure-management">
             <div class="section-block-title">
@@ -13,6 +14,7 @@
                 <table id="brochure-list">
                     <thead>
                         <tr>
+                            <th>S.No</th>
                             <th>Thumbnail</th>
                             <th>Title</th>
                             <th>Category</th>
@@ -22,8 +24,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($videos as $video)
+                        @foreach($videos as $key=>$video)
                             <tr>
+                                <td>{{++$key}}</td>
                                 @if($video->thumbnail_image !== '')
                                 <td><img class="video-thumbnail" src="{{ asset('/video/'.$video->thumbnail_image) }}" alt="video-thumbnail"></td>
                                 @else
