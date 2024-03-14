@@ -230,11 +230,19 @@
                         <li><a class="dropdown-item {{ request()->routeIs('categoryList') ? 'active' : '' }}" href="{{route('categoryList')}}">List</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a class="{{ $activeRoutes['content'] ? 'active' : '' }}" href="{{route('contentList')}}">
+                <li class="dropdown">
+                    <a class="dropdown-link {{ $activeRoutes['content'] ? 'active show' : '' }}" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="{{ $activeRoutes['content'] ? 'true' : 'false' }}">
                         <img class="image-default" src="{{ asset('/assets_admin/images/menu-icon/cms.svg')}}" alt="Icon">
-                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/cms-hover.svg')}}" alt="Icon"> Content management
+                        <img class="image-hover" src="{{ asset('/assets_admin/images/menu-icon/cms-hover.svg')}}" alt="Icon">
+                        Content management
+                        <span><i class="fa-solid fa-chevron-down"></i></span>
                     </a>
+                    <ul class="dropdown-menu {{ $activeRoutes['content'] ? 'show' : '' }}">
+                        <li><a class="dropdown-item {{ request()->routeIs('contentList') && request()->route('type') == 'privacy-policy' ? 'active' : '' }}" href="{{route('contentList',['type' => 'privacy-policy'])}}">Privacy Policy</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('contentList') && request()->route('type') == 'terms-conditions' ? 'active' : '' }}" href="{{route('contentList',['type' => 'terms-conditions'])}}">Terms & Conditions</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('contentList') && request()->route('type') == 'cancellation-policy' ? 'active' : '' }}" href="{{route('contentList',['type' => 'cancellation-policy'])}}">Cancellation Policy</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('contentList') && request()->route('type') == 'cookies' ? 'active' : '' }}" href="{{route('contentList',['type' => 'cookies'])}}">Cookies</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a class="{{ $activeRoutes['support'] ? 'active' : '' }}" href="{{route('supportList')}}">

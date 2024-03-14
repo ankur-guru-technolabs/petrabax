@@ -13,15 +13,24 @@ use Session;
 class ContentManagementController extends Controller
 {
     //
-    public function contentList(){
-        $activeTab = session('activeTab');
-        if (!$activeTab) {
+    public function contentList($type){
+        if($type == 'privacy-policy'){
             $activeTab = 'privacy_policy';
+            $title = 'Privacy Policy';
+        }elseif($type == 'terms-conditions'){
+            $activeTab = 'terms_condition';
+            $title = 'Terms & Conditions';
+        }elseif($type == 'cancellation-policy'){
+            $activeTab = 'cancellation_policy';
+            $title = 'Cancellation Policy';
+        }else{
+            $activeTab = 'cookie';
+            $title = 'Cookies';
         }
         
-        $data = Setting::get();
+        $data = Setting::where('key',$activeTab)->first();
 
-        return view('admin.Content.content-list')->with('data',$data)->with('activeTab', $activeTab);
+        return view('admin.Content.content-list')->with('data',$data)->with('activeTab', $activeTab)->with('title',$title);
     }
   
     public function contentSubmit(Request $request){
@@ -40,6 +49,6 @@ class ContentManagementController extends Controller
 
         Setting::where('key',$request->key)->update($insert_data);
  
-        return redirect()->route('contentList')->with('activeTab', $input['key'])->with('message', 'Content submitted successfully');
+        return redirect()->back()->with('activeTab', $input['key'])->with('message', 'Content submitted successfully');
     } 
 }

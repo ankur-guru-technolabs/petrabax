@@ -19,10 +19,13 @@
                 <div class="modal-body">
                     <div class="logout-content">
                         <h2>Log out</h2>
-                        <p>Are You sure you want to Logout?</p>
+                        <p>Are you sure you want to logout?</p>
                         <div class="logout-modal-btn-list">
-                            <button type="button" class="btn btn-primary">Log out</button>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                                <button type="submit" class="btn btn-primary">Log out</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            </form>
                         </div>
                     </div>
                 </div>

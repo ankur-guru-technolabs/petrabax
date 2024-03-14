@@ -15,5 +15,9 @@ class SupportController extends Controller
     public function supportList(){
         return view('admin.Support.support-list');
     }
+    
+    public function supportView(){
+        return view('admin.Support.support-view');
+    }
  
 }

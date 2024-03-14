@@ -18,7 +18,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
-                            <th>Contact</th>
+                            <th>Phone Number</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>

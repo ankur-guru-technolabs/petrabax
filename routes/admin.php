@@ -33,6 +33,8 @@ use App\Http\Controllers\Admin\UserController;
 Route::prefix('/admin')->group(function () {
     Route::middleware(['auth','admin.check'])->group(function () {
         Route::get('/dashboard', [AuthController::class, 'index'])->name('dashboard');
+        Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
+        Route::post('/updateProfile', [AuthController::class, 'updateProfile'])->name('updateProfile');
 
         Route::get('/menu/list', [MenuManagementController::class, 'menuList'])->name('menuList');
         Route::get('/add/menu', [MenuManagementController::class, 'addMenu'])->name('addMenu');
@@ -66,7 +68,7 @@ Route::prefix('/admin')->group(function () {
         Route::get('/commission/edit/{id}', [CommissionManagementController::class, 'commissionEdit'])->name('commissionEdit'); 
         Route::post('/commission/update', [CommissionManagementController::class, 'commissionUpdate'])->name('commissionUpdate');  
         Route::get('/commission/delete/{id}', [CommissionManagementController::class, 'commissionDelete'])->name('commissionDelete'); 
-        Route::get('/content/list', [ContentManagementController::class, 'contentList'])->name('contentList'); 
+        Route::get('/content/list/{type}', [ContentManagementController::class, 'contentList'])->name('contentList'); 
         Route::post('/content/submit', [ContentManagementController::class, 'contentSubmit'])->name('contentSubmit'); 
         Route::get('/coupon/list', [CouponController::class, 'couponList'])->name('couponList'); 
         Route::get('/add/coupon', [CouponController::class, 'addCoupon'])->name('addCoupon');
@@ -102,6 +104,7 @@ Route::prefix('/admin')->group(function () {
         // Route::get('/add/image/seo', [SeoManagementController::class, 'addImageSeo'])->name('addImageSeo');
         // Route::get('/add/page/seo', [SeoManagementController::class, 'addPageSeo'])->name('addPageSeo');
         Route::get('/support/list', [SupportController::class, 'supportList'])->name('supportList');
+        Route::get('/support/view/{id}', [SupportController::class, 'supportView'])->name('supportView');
         Route::get('/video/list', [VideoController::class, 'videoList'])->name('videoList');
         Route::get('/add/video', [VideoController::class, 'addVideo'])->name('addVideo');
         Route::post('/video/submit', [VideoController::class, 'videoSubmit'])->name('videoSubmit');
@@ -119,6 +122,11 @@ Route::prefix('/admin')->group(function () {
         Route::get('/withdraw/detail', [WithdrawManagementController::class, 'withdrawDetail'])->name('withdrawDetail');
         Route::get('/user/list/{type}', [UserController::class, 'userList'])->name('userList');
         Route::get('/user/view', [UserController::class, 'userView'])->name('userView');
+
+        Route::post('/logout', function(){
+            Auth::logout();
+            return redirect()->route('signin');
+         })->name('logout');
     });
 
     Route::group(['middleware' => ['guest']], function () {

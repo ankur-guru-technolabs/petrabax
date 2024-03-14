@@ -17,6 +17,23 @@ class AuthController extends Controller
     public function index(){
         return view('admin.dashboard');
     }
+    
+    public function profile(){
+        $admin_data = Auth::user();
+        return view('admin.profile',compact('admin_data'));
+    }
+    
+    public function updateProfile(Request $request){
+        $admin_data = User::where('id',$request->id)->first();
+        $admin_data->first_name = $request->first_name;
+        $admin_data->last_name = $request->last_name;
+        $admin_data->email = $request->email;
+        if(!empty($request->password)){
+            $admin_data->password = bcrypt($request->password);
+        }
+        $admin_data->save();
+        return view('admin.profile',compact('admin_data'));
+    }
 
     public function signin(){
         return view('admin.Auth.sign-in');

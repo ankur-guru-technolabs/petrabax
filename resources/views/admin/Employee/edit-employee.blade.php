@@ -2,10 +2,14 @@
 @section('content') 
 <div class="admin-content-area">
     <div class="role-permission-section">
-        <div class="section-header">
-            <h2>Edit New Emplyoee</h2>
+        <div class="section-header d-flex align-items-center">
+            <h2 class="mb-0">Employee Management</h2>
+            @include('admin.Common.admin-profile-menu')
         </div>
         <div class="role-permission-inner">
+            <div class="section-block-title">
+                <h3>Edit Employee</h3>
+            </div>
             <form id="employee-edit-form" action="{{route('employeeUpdate')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
@@ -26,7 +30,7 @@
                     </div>
 
                     <div class="col-md-4 col-sm-6 form-group">
-                        <label>Roles</label>
+                        <label>Role</label>
                         <select class="form-control nice-select" name="role_id">
                             <option value="">Select</option>
                             @foreach($roles as $role)
@@ -41,7 +45,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4 col-sm-6 form-group">
-                        <label>Contact</label>
+                        <label>Phone Number</label>
                         <input type="text" class="form-control" placeholder="+31 574 8654 879" name="contact" value="{{old('contact',$employee->contact)}}">
                         @error('contact')
                             <span class="text-danger">{{ $message }}</span>
@@ -94,7 +98,7 @@
                     required: "Role field is required."
                 },
                 contact: {
-                    required: "Contact field is required."
+                    required: "Phone Number field is required."
                 },
             },
             errorElement: 'span',
