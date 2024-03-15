@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Temp;
 use App\Models\User;
 use Auth;
+use File;
 use Helper;
 use Session;
 
@@ -31,8 +32,31 @@ class AuthController extends Controller
         if(!empty($request->password)){
             $admin_data->password = bcrypt($request->password);
         }
+
+        $folderPath = public_path().'/profile';
+        if (!is_dir($folderPath)) {
+            mkdir($folderPath, 0777, true);
+        }
+        
+        $imagename = '';
+        if ($request->hasFile('image')) {
+            $image_path = public_path('profile/' . $admin_data->profile_image);
+            if (File::exists($image_path)) {
+                if (!is_writable($image_path)) {
+                    chmod($image_path, 0777);
+                }
+                File::delete($image_path);
+            }
+
+            $image = $request->file('image');
+            $extension  = $image->getClientOriginalExtension();
+            $imagename = 'Profile_'.random_int(10000, 99999). '.' . $extension;
+            $image->move(public_path('profile'), $imagename);
+            $admin_data->profile_image = $imagename;
+        }
+
         $admin_data->save();
-        return view('admin.profile',compact('admin_data'));
+        return redirect()->route('profile')->with('message','Profile Updated Successfully');
     }
 
     public function signin(){

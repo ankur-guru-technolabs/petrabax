@@ -32,6 +32,7 @@ return new class extends Migration
             $table->string('agency')->nullable();
             $table->string('arc')->nullable();
             $table->text('remarks')->nullable();
+            $table->string('profile_image')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

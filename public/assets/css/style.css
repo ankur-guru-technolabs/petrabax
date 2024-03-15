@@ -17,25 +17,20 @@ a,button {
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-
 h1,h2,h3,h4,h5,h5,p,span,li,a {
 	word-break: break-word;
 }
 .opacity-7 {
 	opacity: .7;
 }
-
-
 .top-menu-box  {
 	padding: 20px 0;
 }
-
 .left-logo-block .desktop-logo {
 	font-size: 34px;
 	font-weight: 500;
 	color: #498C92;
 }
-
 .right-signup-btn {
 	margin-left: auto;
 	text-align: right;
@@ -48,7 +43,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	outline: 0;
 	color: #000;
 }
-
 .user-dropdown-box .btn-check:checked+.btn, 
 .user-dropdown-box .btn.active, 
 .user-dropdown-box .btn.show, 
@@ -61,14 +55,12 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	outline: 0;
 	color: #000;
 }
-
 .user-dropdown-box .btn img {
 	max-width: 30px;
 	max-height: 30px;
 	border-radius: 100px;
 	margin-right: 8px;
 }
-
 .right-signup-btn .site-login-btn {
 	padding:  5px 0;
 	text-align: center;
@@ -92,7 +84,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	border-color: transparent;
 	color: #fff;
 }
-
 .right-signup-btn .site-login-btn:last-of-type {
 	margin-right: 0;
 }
@@ -117,26 +108,24 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	height: 30px;
 	border-radius: 100%;
 }
-
 .user-dropdown-box .dropdown-menu,
 .sitemain-menu .navbar-nav .dropdown-menu {
 	border: 0;
 	box-shadow: 1px 1px 4px 0px #00000040;
-	min-width: 188px;
-	max-width: 188px;
+	min-width: 200px;
+	max-width: 200px;
 	padding: 0;
 	border-radius: 5px;
 }
 .sitemain-menu .navbar-nav .cart-dropdown .dropdown-menu {
 	right: 0;
-  left: auto;
-  box-shadow: -6px 4px 12px 0px #0000004A;
-  border: 1px solid #98CE44;
-  border-radius: 5px;
-  min-width: 293px;
-  max-width: 293px;
+	left: auto;
+	box-shadow: -6px 4px 12px 0px #0000004A;
+	border: 1px solid #98CE44;
+	border-radius: 5px;
+	min-width: 293px;
+	max-width: 293px;
 }
-
 .sitemain-menu .navbar-nav .cart-dropdown .dropdown-menu li {
 	padding: 10.5px 30px;
 }
@@ -146,7 +135,7 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	color: #1F1F1F;
 	margin-bottom: 0;
 	display: flex;
-  align-items: center;
+	align-items: center;
 }
 .sitemain-menu .navbar-nav .cart-dropdown .dropdown-menu li p span {
 	margin-left: auto;
@@ -158,14 +147,12 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .sitemain-menu .navbar-nav .cart-dropdown .dropdown-menu li.cart-total p span {
 	font-weight: 400
 }
-
 .sitemain-menu .navbar-nav .cart-dropdown .dropdown-menu li.cart-item-link {
 	background-color: #98CE44;
 }
 .sitemain-menu .navbar-nav .cart-dropdown .dropdown-menu li.cart-item-link p a {
 	color: #fff;
 }
-
 .user-dropdown-box .dropdown-menu {
 	right: 0 !important;
 	left: auto !important;
@@ -176,7 +163,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .user-dropdown-box .dropdown-menu .dropdown-item {
 	border-bottom: 1px solid #ccc;
 }
-
 .user-dropdown-box .dropdown-menu .dropdown-item,
 .sitemain-menu .navbar-nav .dropdown-menu .dropdown-item  {
 	font-size: 14px;
@@ -212,7 +198,7 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	background-color: #8E98A8;
 }
 .sitemain-menu .navbar-nav .nav-item:first-of-type .nav-link  {
-	 margin-left: 0;
+	margin-left: 0;
 }
 .sitemain-menu .navbar-nav .nav-item:last-of-type .nav-link  {
 	margin-right: 0;
@@ -306,7 +292,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .hotellist-section .row{
 	margin: 0 -15px;
 }
-
 .featured-hotels-section .container,
 .paradores-section .container,
 .hotellist-section .container {
@@ -331,8 +316,8 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 }
 .hotel-img img {
 	border-radius: 20px;
-  -webkit-transform: scale(1);
-  transform: scale(1);
+	-webkit-transform: scale(1);
+	transform: scale(1);
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -353,13 +338,15 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	color: #1E446F;
 }
 .hotel-content p {
-	font-size: 18px;
+	/*font-size: 18px;  */
 	font-weight: 400;
-	line-height: 26px;
+/*	line-height: 26px;  */
 	color: #515151;
+	font-size: 15px;
+	line-height: 22px;
 }
 .book-btn a {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 500;
 	line-height: 26px;
 	text-align: center;
@@ -466,7 +453,7 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
   align-items: center;
   justify-content: center;
 }
-.offer-section .nav-tabs .nav-link svg {
+.offer-section .nav-tabs .nav-link img {
 	margin-left: 5px;
 }
 .offer-section .nav-tabs .nav-link:before {
@@ -481,9 +468,7 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	
 	box-shadow: 4px 4px 20px 0px #00000026;
-
 	padding: 45px;
 	background-color: #EAEAEA;
 	border-radius: 20px;
@@ -599,20 +584,18 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	background-color: #EAEAEA;
 	border-radius: 30px !important;
 }
-
-.newsletter-form form .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.newsletter-form form .form-control::-webkit-input-placeholder {
   color: #808080;
 }
-.newsletter-form form .form-control::-moz-placeholder { /* Firefox 19+ */
+.newsletter-form form .form-control::-moz-placeholder {
  color: #808080;
 }
-.newsletter-form form .form-control:-ms-input-placeholder { /* IE 10+ */
+.newsletter-form form .form-control:-ms-input-placeholder {
   color: #808080;
 }
-.newsletter-form form .form-control:-moz-placeholder { /* Firefox 18- */
+.newsletter-form form .form-control:-moz-placeholder {
   color: #808080;
 }
-
 .newsletter-form form .form-btn  {
 	position: absolute;
 	right: 10px;
@@ -660,9 +643,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-/*.footer-section .footer-menu-link li:hover {
-	padding-left: 7px;
-}  */
 .footer-section .footer-menu-link li a  {
 	font-size: 14px;
 	line-height: 20px;
@@ -671,11 +651,9 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	display: inline-block;
 	position: relative;
 }
-
 .copyright-section  {
 	padding: 15px 0;
 }
-
 .social-link a {
 	font-size: 14px;
 	font-weight: 500;
@@ -684,7 +662,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	display: inline-block;
 	padding-right: 20px;
 }
-
 .social-link a:last-of-type {
 	padding-right: 0;
 }
@@ -697,7 +674,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	line-height: 20px;
 	color: #363636;
 }
-
 /*  Registration  Page */
 .section-header-two  {
 	margin-bottom: 30px;
@@ -735,7 +711,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	display: inline-block;
 	width: 100%;
 }
-
 .register-link-block .block-image::before  {
 	content: "";
 	position: absolute;
@@ -754,11 +729,9 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .register-link-block img {
 	border-radius: 10px;
 }
-
 .register-section {
 	margin-bottom: 55px;
 }
-
 .register-image::before	{
 	content: "";
 	position: absolute;
@@ -785,7 +758,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .guest-user-from .register-text {
 	top: 60px;
 }
-
 .travel-agent-from .register-text {
 	top: 80px;
 }
@@ -801,7 +773,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	padding-left: 45px;
 	max-width: 500px;
 }
-
 .user-register-form h2 {
  font-size: 25px;
  font-weight: 600;
@@ -838,7 +809,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	box-shadow: none;
 	outline: none;
 }
-
 .toggle-password {
 	position: absolute;
 	right:15px;
@@ -850,20 +820,18 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .user-register-form form textarea.form-control {
 	min-height: 135px;
 }
-
-.user-register-form form .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.user-register-form form .form-control::-webkit-input-placeholder {
   color: #6C757D;
 }
-.user-register-form form .form-control::-moz-placeholder { /* Firefox 19+ */
+.user-register-form form .form-control::-moz-placeholder {
   color: #6C757D;
 }
-.user-register-form form .form-control:-ms-input-placeholder { /* IE 10+ */
+.user-register-form form .form-control:-ms-input-placeholder {
   color: #6C757D;
 }
-.user-register-form form .form-control:-moz-placeholder { /* Firefox 18- */
+.user-register-form form .form-control:-moz-placeholder {
   color: #6C757D;
 }
-
 .back-btn-link {
 	margin-bottom: 30px;
 }
@@ -906,13 +874,11 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .terms-condtions-label a:hover {
 	color: #404040 !important;
 }
-
 .user-register-form form .form-btn {
 	text-align: right;
 	margin-left: auto;
 	margin-right: 0;
 }
-
 .login-section .form-submit-btn {
 	margin-top: 30px;
 	margin-bottom: 20px;
@@ -958,7 +924,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .user-register-form form .form-btn  button:hover {
 	background-color: #98CE44;
 }
-
 .checknewsletter input[type="checkbox"] {
 	margin-right: 15px;
 	position: relative;	
@@ -970,11 +935,9 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	line-height: 22px;
 	color: #808080;
 }
-
 .login-section {
 	margin: 50px 0;
 }
-
 .login-section h2 {
 	font-size: 40px;
 	font-weight: 700;
@@ -994,14 +957,12 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	background: linear-gradient(180deg, #01b7f27a -77.98%, rgba(66, 66, 66, 0.2) 100.19%);
 	-webkit-background-clip: text;
   -webkit-text-fill-color: transparent;	
-
 }
 .otp-section .submit-btn a,
 .submit-btn .resend-btn,
 .otp-section .submit-btn button {
 	margin-top: 30px;
 }
-
 .otp-text {
 	font-size: 15px;
 	font-weight: 500;
@@ -1028,7 +989,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .hero-section-two {
 	margin-bottom: 80px;
 }
-
 .hero-section-two .hero-content-text {
 	position: absolute;
 	right: 100px;
@@ -1059,7 +1019,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	line-height: 20px;
 	color: #1F1F1F;
 }
-
 .hotel-filter-section {
 	margin-bottom: 80px;
 }
@@ -1075,7 +1034,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .filter-content .filter-grid-box:last-of-type {
 	margin-right: 0;
 }
-
 .filter-grid-box > label {
 	font-size: 14px;
 	font-weight: 500;
@@ -1084,12 +1042,10 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	display: block;
 	margin-bottom: 3px;
 }
-
 .hotel-filter-section-two .filter-grid-box > label {
 	font-size: 16px;
 	line-height: 23px;
 }
-
 .hotel-filter-section-two .filter-content .filter-grid-box {
 	margin-right: 20px;
 }
@@ -1100,8 +1056,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .hotel-filter-section-two .filte-same-width.filter-night {
   width: 20%;
 }
-
-
 .hotel-filter-section-two .custom-form-control::-webkit-input-placeholder {
 	color: #BFBFBF;
 }
@@ -1114,7 +1068,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .hotel-filter-section-two .custom-form-control:-moz-placeholder {
   color: #BFBFBF;
 }
-
 .filter-grid-box.filter-search-btn {
 	display: flex;
 	align-items: center;
@@ -1144,14 +1097,15 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	display: inline-block;
 	cursor: pointer;
 }
-
 .filter-content .filter-search-box {
 	width: 28%;
+}
+.hotel-filter-section-two .filter-content .filter-search-box {
+	width: 25%;
 }
 #roomguest .default-text {
 	color: #BFBFBF;
 }
-
 #roomguest,
 .custom-form-control {
 	border:  0;
@@ -1163,7 +1117,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	font-weight: 400;
 	line-height: 23px;
 	color: #636363;
-
 }
 .filte-same-width {
 	width: 14%;
@@ -1174,25 +1127,22 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .filte-same-width.filter-room-guest {
 	width: 20%;
 }
-
 .filter-search-btn {
 	background-color: #FDB714;
 	width: 13%;
-
 }
 .filter-search-btn button {
-	 border:  0;
-	 box-shadow: none;
-	 outline: 0;
-	 color: #fff;
-	 font-size: 16px;
-	 background-color: transparent;
-	 padding: 0;
-	 text-align: center;
-    display: inline-block;
-    width: 100%;
+	border:  0;
+	box-shadow: none;
+	outline: 0;
+	color: #fff;
+	font-size: 16px;
+	background-color: transparent;
+	padding: 0;
+	text-align: center;
+	display: inline-block;
+	width: 100%;
 }
-
 .room-select-dropdown  {
 	min-width: 452px;
 	border: 0;
@@ -1203,16 +1153,12 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	margin-top: 15px;
 	max-height: 460px;
 	overflow-y: auto;
-
 }
 .dropdown-block {
 	margin-bottom: 15px;
 }
 .dropdown-block .left-label-text {
 	width: 50%;
-}
-.dropdown-block .right-qnt-select {
-	
 }
 .room-total-inner-dropdown .room-title-block,
 .dropdown-block .left-label-text label {
@@ -1221,13 +1167,11 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	font-weight: 500;
 	color: #667080;
 }
-
 .room-total-inner-dropdown .room-title-block {
 	margin-bottom: 7px;
 	background-color: #F3F3F3;
 	padding: 5px 2px;
 }
-
 .room-total-inner-dropdown:not(.active) {
 	display: none;
 }
@@ -1236,20 +1180,9 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	margin-bottom: 8px;
 	padding-bottom: 0;
 }
-
 .dropdown-block .right-qnt-select {
 	margin-left: auto;
 	margin-right: 0;
-}
-
-.dropdown-block .right-qnt-select .qnt-box {
-	/*color: #fff;
-	background-color: #98CE44;
-	color: #98CE44;
-	border-radius: 3.4px;
-	padding: 4.11px 10.21px 4.11px 10.21px;
-	max-width: 97.55px;
-	min-width: 97.55px;*/
 }
 .dropdown-block .right-qnt-select .qnt-box input,
 .dropdown-block .right-qnt-select .qnt-box button {
@@ -1273,7 +1206,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	color: #667080;
 	font-size: 10px;
 }
-
 .dropdown-block .right-qnt-select .qnt-box input {
 	padding: 0;
 	background-color: transparent;
@@ -1285,10 +1217,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	margin-top: 8px;
 	margin-bottom:8px;
 }
-.child-block.dropdown-block .row.m-0 {
-
-}
-
 .children-box {
 	margin-bottom: 3px;
 }
@@ -1296,7 +1224,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 .child-block.dropdown-block .children-box:not(.active) {
 	display: none;
 }
-
 .child-block.dropdown-block .left-child-lable label,
 .child-block.dropdown-block p {
 	font-size: 12px;
@@ -1312,13 +1239,11 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	margin-bottom: 7px;
 	padding-bottom: 7px;
 }
-
 .room-total-inner-dropdown .dropdown-block.room-block { 
 	border-bottom: 0;
 	margin-bottom: 7px;
 	padding-bottom: 0;
 }
-
 .left-child-box {
 	max-width: 200px;
 }
@@ -1328,7 +1253,6 @@ h1,h2,h3,h4,h5,h5,p,span,li,a {
 	margin-left: auto;
 	padding-right: 0;
 }
-
 .widget-title {
 	font-size: 18px;
 	font-weight: 600;
@@ -1388,14 +1312,13 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 	max-width: 99px;
 	padding-left: 12px;
 }
- .max-price-prifix,
+.max-price-prifix,
 .min-price-prifix {
 	color: #636363;
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 20px;
 }
-
 .maxprice-input {
 	margin-right: 0;
 	margin-left: auto;
@@ -1406,7 +1329,6 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 	left: 4px;
 	top: 4px;
 }
-
 .custom-checkbox .form-group {
 	margin-bottom: 15px;
 }
@@ -1426,7 +1348,6 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 .checkbox-inline-list .custom-checkbox:last-of-type label {
 	margin-right: 0;
 }
-
 .checkbox-inline-list .custom-checkbox label,
 .custom-checkbox .form-group label {
   position: relative;
@@ -1436,18 +1357,15 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
   line-height: 20px;
   color:  #515151;
 }
-
 .activity-type-content .custom-checkbox .form-group label {
 	padding-left: 25px;
 }
-
 .activity-type-content .custom-checkbox .form-group label:before {
 	position: absolute;
 	left: 0;
 	top: 2px;
 	margin-top: 0;
 }
-
 .checkbox-inline-list .custom-checkbox label:before,
 .custom-checkbox .form-group label:before {
   content:'';
@@ -1481,9 +1399,8 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 .checkbox-inline-list .custom-checkbox input:checked + label:after,
 .custom-checkbox .form-group input:checked + label:before,
 .custom-checkbox .form-group input:checked + label:after {
-	 border-color: #1E446F;
+	border-color: #1E446F;
 }
-
 .star-review-user {
   direction: rtl;
   display: inline-block;
@@ -1505,9 +1422,6 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 .star-review-user input[type=radio]:checked ~ label {
   color: #f2b600;
 }
-
-
-
 .listing-content-inner {
 	padding: 20px;
 	background-color: #F8F8F8;
@@ -1537,7 +1451,6 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 	right: 20px;
 	top: 20px;
 }
-
 .listing-box .listing-image-box {
 	width: 48.3%;
 }
@@ -1570,7 +1483,6 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 .listing-right-content .post-header p .star-fill-color {
 	color: #515151;
 } 
-
 .listing-right-content .post-header .availablety,
 .listing-right-content .post-header .rating {
 	font-size: 12px;
@@ -1624,7 +1536,6 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 .mb-25 {
 	margin-bottom: 25px;
 }
-
 .paradores-search-result-box {
 	border: 1px solid #98CE44;
 	border-radius: 12px;
@@ -1658,7 +1569,6 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 .thankyou-box .thankyou-content {
 	width: 36.2%;
 }
-
 .thankyou-box .thankyou-content  h1 {
 	font-size: 50px;
 	line-height: 72px;
@@ -1667,7 +1577,6 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 	margin: 0 auto;
 	color: #1F1F1F;
 }
-
 .thankyou-section,
 .payment-section {
  	margin-bottom: 50px;
@@ -1702,7 +1611,6 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 .payment-trasction-method .custom-checkbox-inline .payment-type-box:last-of-type {
 	padding-right: 0;
 }
-
 .payment-type-box label {
 	position: relative;
 	font-size: 15px;
@@ -1737,17 +1645,13 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
   box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
   transform: rotate(45deg);
 }
-
 .payment-options .payment-options-inner .payment-box-option {
 	padding: 15px;
 }	
-
 .payment-options .payment-options-inner .payment-box-option .row:not(.row-space-10) {
 	margin-left: -20px;
 	margin-right: -20px;
 }
-
-
 .payment-options .payment-options-inner .paynow-btn,
 .payment-options .payment-options-inner .total-text,
 .payment-options .payment-options-inner .payment-box-option .form-left-filed,
@@ -1755,7 +1659,6 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 	padding-left: 20px;
 	padding-right: 20px;
 }
-
 .payment-section .section-block-title {
 	font-size: 20px;
 	font-weight: 500;
@@ -1980,7 +1883,6 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 }
 
 .order-payment-room-detail .order-box .order-box-top h2 {
-	/*color: #B3B3B3;*/
 	color: #fff;
 	font-size: 20px;
 	line-height: 29px ;
@@ -1989,14 +1891,12 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 	padding-right: 5px;
 }
 .order-payment-room-detail .order-box .order-box-top h2 span {
-/*	color: #1F1F1F; */
 	color: #fff;
 	margin-right: 5px;
 }
 .order-payment-room-detail .order-box .order-box-top p {
 	font-size: 16px;
 	line-height: 23px;
-	/*color: #1F1F1F;  */
 	color: #fff;
 }
 .order-payment-room-detail .order-box .order-box-full-details {
@@ -2665,7 +2565,7 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
- box-shadow: 0px 12px 25px 17px rgb(0 0 0 / 4%);
+ box-shadow: 0px 12px 25px 17px rgb(0 0 0 / 8%);
 }
 
 .booktrip-box:hover .booktrip-box-inner {
@@ -2674,7 +2574,7 @@ html .price-filter-content .ui-button.ui-state-disabled:active {
 .booktrip-box .icon-box {
 	left: 0;
 	right: 0;
-	top: -30px;
+	top: -25px;
 	margin: 0  auto;
 	text-align: center;
 }
@@ -4187,7 +4087,7 @@ margin-bottom: 25px;
  	flex-wrap: nowrap;
 }
 .brochure-category-list ul {
-	margin-bottom: 15p;
+	margin-bottom: 15px;
 }
 .brochure-category-list li.nav-item {
 	margin-right: 15px;
@@ -7145,7 +7045,7 @@ table.dataTable tbody tr {
 .cart-top-header .cart-item-header {
 	background-color: #98CE44;
 	border-radius: 5px;
-	padding: 13.5px 15px 13.5px 5px;
+	padding: 13.5px 15px 13.5px;
 	width: 96%;
 }
 
@@ -7159,7 +7059,7 @@ table.dataTable tbody tr {
 	line-height: 29px;
 	color: #fff;
 	margin-bottom: 0;
-	max-width: 75%;
+	max-width: 90%;
 	padding-right: 5px;
 }
 .cart-top-header .cart-item-header h2 span {
@@ -7168,7 +7068,7 @@ table.dataTable tbody tr {
 .cart-right-item-content {
 	margin-left: auto;
 	width: 96%;
-	border-bottom: 1px solid #888;
+	border-bottom: 1px solid rgba(136,136,136,.4);
 }
 .cart-right-item-content .cartbox-item-details {
 	display: flex;
@@ -8067,9 +7967,9 @@ table.dataTable tbody tr {
 	color: #6C757D;
 }
 .widget-activity-type .activity-type-content {
-	padding: 15px;
+	/*padding: 15px;
 	border-radius: 2px;
-	box-shadow: 2px 2px 7px 1px #0000001A;
+	box-shadow: 2px 2px 7px 1px #0000001A;*/
 	max-height: 250px;
   overflow-y: auto;
 }
@@ -8295,16 +8195,22 @@ table.dataTable tbody tr {
 	border: 1px solid #98CE44;
 	border-radius: 5px;
 	padding: 20px 10px;
+	max-height: 250px;
+	overflow-y: auto;
 }
 
 .booking-tab-price-content .price-full-details-inner {
 	display: flex;
 	align-items: center;
 	margin: 0 -5px;
-	margin-bottom: 10px;
+	margin-bottom: 8px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #ddd;
 }
 .booking-tab-price-content .price-full-details-inner:last-of-type {
 	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: 0;
 }
 .booking-tab-price-content .price-details-box {
 	padding: 0 5px;
@@ -8314,6 +8220,7 @@ table.dataTable tbody tr {
 }
 .booking-tab-price-content .price-details-box:nth-child(2n) {
 	width: 30%;
+	text-align: center;
 }
 
 .booking-tab-price-content .price-details-box:last-of-type {
@@ -8348,7 +8255,7 @@ table.dataTable tbody tr {
 	border-radius: 5px;
 	background-color: #E9EAEB;
 	padding: 10px 15px;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 }
 .daytrips-booked-top-header p {
 	font-size: 16px;
@@ -8376,18 +8283,17 @@ table.dataTable tbody tr {
 	font-weight: 500;
 	line-height: 29px;
 	color: #1F1F1F;
-	margin-bottom: 15px;
+	margin-bottom: 11px;
 }
-.daytrips-booked-details .booking-details {
+/*.daytrips-booked-details .booking-details {
 	max-width: 730px;
-	margin-bottom: 40px;
-}
+} */
 .daytrips-booked-details .booking-user-details .row,
 .daytrips-booked-details .booking-details .row {
-	margin: 0 -17.5px;
+	/*margin: 0 -17.5px; */
 }
 .daytrips-booked-details .form-group {
-	padding: 0 17.5px;
+	/*padding: 0 17.5px; */
 }
 
 .daytrips-booked-details .form-group label {
@@ -8441,7 +8347,1380 @@ table.dataTable tbody tr {
 }
 
 /* Day Trips Section End */
+.transfer-filter-section {
+	margin-bottom: 50px;
+}
+.transfer-filter-box {
+	margin-bottom: 25px;
+}
+.select2-container .select2-selection--single {
+	height: auto;
+}
+.transfer-filter-section .select2-container--default .select2-selection--single {
+	border: 0;
+	border-radius: 0;
+	text-align: center;
+}
+.transfer-filter-section .select2-container--default .select2-selection--single .select2-selection__rendered,
+.transfer-filter-section .select2-container .select2-selection--single .select2-selection__rendered {
+  border: 0;
+  outline: 0;
+  box-shadow: none !important;
+  padding: 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 23px;
+  color: #636363;
+}
 
+.select2-container .select2-selection--single .select2-selection__rendered {
+	padding-right: 17px !important;
+}
+.widget-inner .select2-container--default .select2-selection--single .select2-selection__clear,
+.transfer-filter-section .select2-container--default .select2-selection--single .select2-selection__clear  {
+	color: #636363;
+	margin-right: 0;
+	position: relative;
+	right: 20px;
+}
+
+.widget-inner .select2-container--default .select2-selection--single .select2-selection__arrow b,
+.transfer-filter-section .select2-container--default .select2-selection--single .select2-selection__arrow b {
+	border: 0;
+}
+
+.widget-inner .select2-container--default .select2-selection--single .select2-selection__arrow,
+.transfer-filter-section .select2-container--default .select2-selection--single .select2-selection__arrow {
+	height: 0;
+}
+
+.widget-inner .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b:after,
+.transfer-filter-section .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b:after {
+	content: "\f077";
+	font-weight: 900;
+	font-family: "Font Awesome 6 Free";
+	color: #636363;
+}
+
+.widget-inner .select2-container--default .select2-selection--single .select2-selection__arrow b:after,
+.transfer-filter-section .select2-container--default .select2-selection--single .select2-selection__arrow b:after {
+	content: "\f078";
+	font-weight: 900;
+	font-family: "Font Awesome 6 Free";
+	color: #636363;
+}
+
+.select2-container--open .select2-dropdown--below,
+.transfer-filter-section .select2-dropdown {
+	margin-top: 9px;
+	border: 1px solid #98CE44 !important;
+}
+ 
+.select2-results__option {
+ 	font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #636363;
+  padding: 2px 10px;
+}
+
+.select2-container {
+	width: 100% !important;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+	background-color: #98CE44;
+}
+
+.select2-search__field {
+	border: 1px solid #98CE44 !important;
+	box-shadow: none !important;
+	outline: 0 !important; 
+	font-size: 15px;
+  font-weight: 400;
+  line-height: 23px;
+  color: #636363;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.custom-nice-select {
+	width: 100%;
+	height: auto;
+	float: none;
+}
+.nice-select.disabled {
+	color: #636363;
+}
+
+.custom-nice-select ul.list {
+	margin-top: 9px;
+	border-radius: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  box-shadow: none;
+  border-top: 0;	
+}
+
+.custom-nice-select .current {
+	display: block;
+	text-align: center;
+}
+
+.filter-city-box .custom-nice-select .current { 
+	padding: 0 15px;
+}
+
+.custom-nice-select.nice-select.open:after {
+	content: "\f077";
+}
+
+.custom-nice-select:after {
+	content: "\f078";
+	font-weight: 900;
+	font-family: "Font Awesome 6 Free";
+	color: #636363;
+}
+
+.custom-nice-select.nice-select .option {
+	font-size: 15px;
+  font-weight: 400;
+  min-height: auto;
+  line-height: 23px;
+  color: #636363;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.custom-nice-select.nice-select .option:hover,
+.custom-nice-select.nice-select .option.focus,
+.custom-nice-select.nice-select .option.selected.focus {
+	color: #fff;
+	background-color: #98CE44 !important;
+}
+
+.ui-timepicker-standard .ui-menu-item {
+	margin: 0 15px;
+	width: auto !important;
+}
+
+.ui-timepicker-standard a {
+	font-size: 15px;
+  font-weight: 400;
+  min-height: auto;
+  line-height: 23px;
+  color: #636363;
+}
+
+.h-0 {
+	height: 0;
+	margin-bottom: 0 !important;
+}
+.h-0 .filter-grid-box {
+	padding: 0 !important;
+}
+
+.transfer-filter-box.h-0 {
+	padding: 0;
+}
+
+.ui-widget.ui-widget-content {
+	border: 0;
+}
+
+.transfer-filter-section .widget {
+	margin-bottom: 15px;
+}
+
+.transfer-filter-section .widget-title {
+	margin-bottom: 10px;
+}
+.widget .widget-inner .widget-common-form-control {
+	border: 2px solid #98CE44;
+	border-radius: 10px;
+	box-shadow: none;
+	outline: 0;
+	min-height: 45px;
+	padding: 8px;
+	font-size: 13px;
+	line-height: 26px;
+	color: #6C757D;
+}
+.nice-select.widget-common-form-control {
+	float: none;
+}
+
+.widget-common-form-control.nice-select:after {
+	content: "\f078";
+  font-weight: 900;
+  font-family: "Font Awesome 6 Free";
+  color: #6C757D;
+  margin-right: 6px;
+  margin-top: -13px;
+}
+.widget-common-form-control ul.list {
+	border-radius: 0;
+	border: 1px solid #98CE44;
+}
+
+.widget-common-form-control ul.list .option {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #636363;
+  min-height: auto;
+  padding: 8px 10px;
+}
+
+.widget-common-form-control.nice-select .option:hover, 
+.widget-common-form-control.nice-select .option.focus, 
+.widget-common-form-control.nice-select .option.selected.focus {
+	color: #fff;
+	background-color: #98CE44 !important;
+}
+
+.widget-common-form-control.nice-select.open:after {
+	content: "\f077";
+}
+
+.widget-submit-btn .submit-btn {
+	color: #fff;
+	background-color: #98CE44;
+	border-radius: 30px;
+	display: inline-block;
+	padding: 10px 15px;
+	text-align: center;
+	font-size: 18px;
+	line-height: 26px;
+	box-shadow: none;
+	outline: 0;
+	border: 0;
+	width: 160px;
+}
+
+.ui-timepicker-standard .ui-state-hover {
+	border-color: transparent;
+	color: #fff;
+	background-color: #98CE44;
+}
+
+.transfer-filter-listing-box {
+	margin-bottom: 50px;
+}
+.transfer-filter-listing-box:last-of-type {
+	margin-bottom: 0;
+}
+.transfer-filter-listing-box .row {
+	margin: 0 -10px;
+}
+.transfer-filter-listing-box .transfer-filter-content,
+.transfer-filter-listing-box .transfer-filter-img {
+	padding: 0 10px;
+}
+
+.transfer-filter-listing-box .transfer-filter-img {
+	width: 38%;
+}
+
+.transfer-filter-listing-box .transfer-filter-content {
+	width: 62%;
+}
+
+.transfer-filter-listing-box .transfer-filter-img img {
+	border-radius: 10px;
+}
+
+.transfer-filter-listing-box .transfer-filter-content-inner {
+	max-width: 420px;
+} 
+
+.transfer-filter-listing-box .transfer-filter-content-inner .desc-content {
+	max-width: 360px;
+}
+
+.transfer-filter-listing-box .transfer-filter-content h2 {
+	font-size: 20px;
+	line-height: 26px;
+	color: #1E446F;
+}
+.transfer-filter-listing-box .transfer-filter-content .transfer-filter-content-inner h2 {
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+.transfer-filter-listing-box .transfer-filter-content p {
+	font-size: 14px;
+	line-height: 20px;
+	color: #515151;
+	margin-bottom: 3px;
+}
+.transfer-filter-listing-box .transfer-filter-content p a {
+	color: #1E446F;
+}
+
+.transfer-filter-listing-box .transfer-filter-content .bottom-book-btn {
+	margin-top: 15px;
+}
+.transfer-filter-listing-box .transfer-filter-content .bottom-book-btn a { 
+	border: 1px solid #98CE44;
+	width: 132px;
+	border-radius: 25px;
+	font-size: 14px;
+	color: #404040;
+	line-height: 20px;
+	display: inline-block;
+	text-align: center;
+	padding: 7px 15px;
+	margin-right: 45px;
+}
+.transfer-filter-listing-box .transfer-filter-content .bottom-book-btn p {
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 22px;
+	color: #1F1F1F;
+}
+
+.transfer-filter-section .daytrips-booking-sidebar {
+	width: 25%;
+}
+.transfer-filter-section .daytrips-booking-contentarea {
+	width: 75%;
+}
+
+.transfer-filter-section .daytrips-booking-sidebar .daytrips-booking-sidebar-inner {
+	max-width: 100%;
+}
+
+.transfer-booking-cart .cartbox-item-details .cartbox {
+	width: 20%;
+	padding-right: 7px;
+}
+
+.transfer-booking-cart .cartbox-item-details .cartbox.cart-items-delete {
+	width: auto;
+	position: absolute;
+	right: 0;
+}
+
+.transfer-booking-cart .cart-right-item-content .cartbox-item-details {
+	justify-content: start;
+	position: relative;
+} 
+
+.widget-inner .select2-container--default .select2-selection--single,
+.transfer-filter-section .widget-terminal .select2-container--default .select2-selection--single {
+	border: 2px solid #98CE44;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+
+.widget-inner .select2-container--default .select2-selection--single .select2-selection__rendered, 
+.widget-inner .select2-container .select2-selection--single .select2-selection__rendered {
+	font-size: 13px;
+  line-height: 26px;
+  color: #6C757D;
+  text-align: left;
+}
+
+.widget-inner .select2-container--default .select2-selection--single .select2-selection__arrow {
+	top: 12px;
+	right: 10px;
+}
+.widget-inner .select2-container--default .select2-selection--single .select2-selection__arrow b:after {
+	font-size: 13px;
+	color: #6C757D;
+}
+
+.widget-inner .select2-container--default .select2-selection--single .select2-selection__placeholder {
+	color: #6C757D;
+}
+
+.widget-inner .select2-container--default .select2-selection--single .select2-selection__arrow {
+	top: 13px;
+	right: 10px;
+}
+
+.custom-nice-select.nice-select .option {
+	white-space: normal;
+	word-break: break-word;
+}
+.custom-nice-select.nice-select ul.list {
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.custom-nice-select.nice-select ul.list::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: #F5F5F5;
+}
+
+.custom-nice-select.nice-select ul.list::-webkit-scrollbar {
+	width: 2px;
+	background-color: #F5F5F5;
+}
+
+.custom-nice-select.nice-select ul.list::-webkit-scrollbar-thumb {
+	background-color: #98CE44;
+}
+.custom-nice-select .current  {
+	overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filter-content-three .filter-country-box {
+	width: 20%;
+}
+.filter-content-three .filter-city-box {
+	width: 35%;
+}
+.filter-content-three .filter-date-box {
+	width: 15%;
+}
+
+.filter-content-three .filter-travelers-box {
+	width: 15%;
+}
+
+.filter-content-three .filter-search-box {
+	width: 15%;
+}
+.pointer-none {
+	pointer-events: none;
+}
+
+.widget-common-form-control.custom-nice-select .current {
+	text-align: left;
+}
+
+.booking-details .custom-nice-select .current {
+	text-align: left;
+}
+
+.private-tour-more-details-content h3 {
+	font-size: 17px;
+	font-weight: 600;
+	color: #1F1F1F;
+	line-height: 25px;
+	margin-bottom: 25px;
+}
+.private-tour-more-details-content p {
+	font-size: 15px;
+	line-height: 22px;
+	color: #515151;
+}
+.private-tour-more-details-content .includes-list-box {
+	margin-bottom: 15px;
+}
+
+.private-tour-more-details-content .includes-list-box h5 {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+	color: #1F1F1F;
+	margin-bottom: 3px;
+}
+.private-tour-more-details-content .includes-list-box p {
+	font-size: 12px;
+	color: #515151;
+	font-weight: 400;
+	line-height: 17px;
+	margin-bottom: 0;
+}
+
+.private-tour-more-details.modal .modal-header {
+	padding-bottom: 0;
+	border: 0;
+}
+
+.private-tour-more-details .include-list .row {
+	margin-left: -5px;
+	margin-right: -5px;
+}
+.private-tour-more-details .include-list .includes-list-box {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.form-control:disabled {
+	background-color: transparent;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder  {
+	color: #BFBFBF;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--single {
+	background-color: transparent;
+}
+
+.car-filter-tabs-content .nav-pills::-webkit-scrollbar {
+  height: 5px;
+}
+
+.car-filter-tabs-content .nav-pills::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+}
+
+.car-filter-tabs-content .nav-pills::-webkit-scrollbar-thumb {
+  height: 5px;
+  background-color: #98CE44;
+}
+
+.car-filter-tabs-content .nav-pills::-webkit-scrollbar-thumb:hover {
+  background-color: #ddd;
+}
+
+.car-filter-tabs-content .nav-pills {
+	margin-bottom: 30px;
+  overflow-x: auto;
+	white-space: nowrap;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	padding-bottom: 10px;
+}
+
+.car-filter-tabs-content .nav-pills .nav-link.active {
+	color: #fff;
+	border-color: transparent;
+	background-color: #98CE44;
+}
+
+.car-filter-tabs-content .nav-pills .nav-link {
+	min-width: 150px;
+	border: 1px solid #98CE44;
+	border-radius: 5px;
+	padding: 8px 15px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 23px;
+	text-align: center;
+	color: #515151;
+}
+.car-filter-tabs-content .nav-pills .nav-item {
+	margin-right: 35px;
+}
+.car-filter-tabs-content .nav-pills .nav-item:last-of-type {
+	margin-right: 0;
+}
+.car-filter-tabs-content .nav-pills .nav-link span {
+	display: block;
+	text-align: center;
+}
+.car-filter-tabs-content .nav-pills .nav-link span + span {
+	margin-top: 10px;
+}
+.car-filter-tabs-content .nav-pills .nav-link span:last-of-type {
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.car-filter-tabs-content .transfer-filter-listing-box .transfer-filter-content h2 {
+	margin-bottom: 0;
+}
+.transfer-filter-listing-box .transfer-filter-content .top-header-content {
+	margin-bottom: 10px;
+}
+.transfer-filter-listing-box .transfer-filter-content .top-header-content span {
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 17px;
+	color: #515151;
+	display: inline-block;
+	position: relative;
+	margin-right: 10px;
+	padding-right: 10px;
+}
+.transfer-filter-listing-box .transfer-filter-content .top-header-content span:last-of-type {
+	margin-right: 0;
+	padding-right: 0;
+}
+.transfer-filter-listing-box .transfer-filter-content .top-header-content span:after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 1px;
+	height: 100%;
+	background-color: #515151;
+}
+.transfer-filter-listing-box .transfer-filter-content .top-header-content span:last-of-type:after {
+	display: none;
+}
+
+.car-rental-details .trip-booking-details-inner {
+	max-width: 100%;
+}
+
+.car-rental-details .booking-details-tab .nav-pills {
+	margin-bottom: 40px;
+}
+
+.car-rental-details .booking-details-tab .nav-pills .nav-link {
+	padding: 10px 30px;
+}
+
+.car-rental-details .transfer-filter-listing-box .transfer-filter-img {
+	width: 32.6%;
+}  
+.car-rental-details .transfer-filter-listing-box .transfer-filter-content {
+	width: 67.4%;
+}  
+
+.cars-include-list .badge-default {
+	background-color: #EAEAEA;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 17px;
+	color: #515151;
+	text-align: center;
+	border-radius: 30px;
+	padding: 6.5px 10.5px;
+	margin-bottom: 10px;
+	margin-right: 8px;
+}
+.cars-include-list .badge-default:last-of-type {
+	margin-right: 0;
+}
+.car-rental-details .transfer-filter-listing-box .transfer-filter-content p {
+	font-size: 12px;
+	color: #515151;
+}
+
+.car-rental-details .booking-tab-price-content .price-full-details {
+	max-height: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.car-rental-terms-section h3 {
+	font-size: 25px;
+	font-weight:500;
+	line-height: 36px;
+	color: #1F1F1F;
+	margin-bottom: 20px;
+}
+.car-rental-terms-section p {
+	font-size: 13px;
+	line-height: 25px;
+	letter-spacing: 0em;
+	margin-bottom: 20px;
+}
+.car-rental-terms-section p strong {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 23px;
+}
+.car-rental-accordion .accordion-item {
+	border: 0;
+	border-bottom: 1px solid #DEE2E6;
+	border-radius: 0;
+}
+.car-rental-accordion .accordion-button:not(.collapsed) {
+	background-color: transparent;
+}
+
+.car-rental-accordion .accordion-button  {
+	background-color: transparent;
+	box-shadow: none;
+	outline: 0;
+	padding: 16px 0;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 24px;
+	color: #1F1F1F;
+}
+.car-rental-accordion .accordion-body {
+	padding: 0;
+}
+.car-rental-accordion .accordion-body .car-location-box {
+	margin-bottom: 15px;
+}
+.car-rental-accordion .accordion-body .car-location-box h5 {
+	font-size: 16px;
+	line-height: 23px;
+	color: #1F1F1F;
+	margin-bottom: 0;
+}
+.car-rental-accordion .accordion-body .car-location-box p {
+	font-size: 14px;
+	line-height: 20px;
+	color: #1F1F1F;
+	margin-bottom: 0;
+}
+.car-rental-booked-section .booking-other-information p {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	color: #515151;
+	margin-bottom: 12px;
+}
+.car-rental-booked-section .booking-other-information p span {
+	color: #1F1F1F;
+	font-weight: 500;
+}
+.car-rental-cart-section  .form-submit-btn {
+	margin-top: 30px;
+}
+.car-rental-cart-section  .car-rental-booking-information p strong {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 24px;
+}
+.car-rental-cart-section  .car-rental-booking-information p {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	color: #515151;
+}
+
+/*  Trains Section */
+.train-filter-point-ticket .filter-content {
+	margin-left: -5px;
+	margin-right: -5px;
+}
+.train-filter-point-ticket .filter-content .filte-same-width {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.trains-point-ticket-tab {
+	margin-bottom: 30px;
+}
+.trains-point-ticket-tab .nav-pills {
+	margin-bottom: 45px;
+}
+.trains-point-ticket-tab .nav-pills .nav-item {
+	margin-right: 45px;
+}
+.trains-point-ticket-tab .nav-pills .nav-item:last-of-type {
+	margin-right: 0;
+}
+.trains-point-ticket-tab .nav-pills .nav-link {
+	padding: 10px 10px;
+	text-align: center;
+	border-radius: 25px;
+	border: 1px solid #98CE44;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 23px;
+	color: #404040;
+	min-width: 132px;
+}
+.trains-point-ticket-tab .nav-pills .nav-link.active {
+	color: #fff;
+	border-color: transparent;
+	background-color:#98CE44;
+}
+.trains-tickets-video-box,
+.trains-tickets-map-box {
+	margin-bottom: 20px;
+}
+.trains-tickets-video-box .img-box,
+.trains-tickets-map-box .img-box {
+	margin-bottom: 15px;
+}
+.trains-tickets-video-box .img-box img,
+.trains-tickets-map-box .img-box img {
+	border-radius: 20px;
+}
+.trains-tickets-video-box h2,
+.trains-tickets-map-box h2 {
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 26px;
+	margin-bottom: 0;
+}
+.trains-tickets-video-box h2 a,
+.trains-tickets-map-box h2 a  {
+	color: #1E446F;
+}
+.trains-tickets-video-box .video-play-icon {
+	color: #fff;
+	font-size: 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.maproutemodal .modal-header {
+	border: 0;
+	padding: 0;
+}
+.maproutemodal .modal-header .btn-close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0;
+	background-image: none;
+	color: #fff;
+	background-color: #98CE44;
+	width: 30px;
+	height: 30px;
+	opacity: 1;
+	z-index: 1;
+	border-radius: 100%;
+	box-shadow: 1px 1px 3px 1px #6e6e6e;
+}
+.train-destination-search-box {
+	margin-bottom: 35px;
+}
+.train-destination-search-box .destination-search-box-inner {
+	padding: 15px 15px 20px 45px;
+	border-radius: 12px;
+	box-shadow: 1px 2px 27px 1px rgba(0, 0, 0,.2);
+	width: 100%;
+	cursor: pointer;
+	position: relative;
+}
+.train-destination-search-box input[type="radio"]{
+	display: none;
+}
+
+.train-destination-search-box .destination-search-box-inner:before {
+	content: "";
+  width: 20px;
+  height: 20px;
+  border: 2px solid #98CE44;
+  display: inline-block;
+  position: absolute;
+  left: 15px;
+  top: 20px;
+  border-radius: 100%;
+}
+.train-destination-search-box input[type="radio"]:checked + .destination-search-box-inner:before {
+	border-color: #fff;
+}
+
+.train-destination-search-box input[type="radio"]:checked + .destination-search-box-inner:after {
+	content: "";
+  display: block;
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #fff;
+}
+
+.train-destination-search-box input[type="radio"]:checked + .destination-search-box-inner {
+	background-color: #98CE44;
+}
+.train-destination-search-box input[type="radio"]:checked + .destination-search-box-inner p,
+.train-destination-search-box input[type="radio"]:checked + .destination-search-box-inner h2 {
+	color: #fff;
+}
+
+.train-destination-search-box h2 {
+	font-size: 20px;
+	line-height: 29px;
+	color: #1F1F1F;
+	margin-bottom: 0;
+}
+.train-destination-search-box p {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	margin-bottom: 0;
+	color: #515151;
+}
+
+.trains-searching-list {
+	margin-bottom: 40px;
+}
+
+.trains-searching-list .trains-searching-list-box {
+	margin-bottom: 20px;
+}
+.trains-searching-list-box .trains-searching-list-box-inner {
+	padding: 20px 15px;
+	border: 1px solid #98CE44;
+	border-radius: 10px;
+}
+
+.trains-top-header-info .trains-top-header-info-left {
+	margin-bottom: 15px;
+}
+
+.trains-top-header-info .trains-top-header-info-left,
+.trains-searching-list-box-inner .trains-content-left {
+	width: 74.5%;
+}
+.trains-top-header-info .trains-top-header-info-right,
+.trains-searching-list-box-inner .trains-content-right {
+	width: 25.5%;
+}
+
+.trains-top-header-info .trains-top-header-info-left h2 {
+	background-color: #EFEFEF;
+	border-radius: 6px;
+	padding: 5px 10px;
+	margin-bottom: 0;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 29px;
+	color: #1E446F;
+	display: inline-block;
+  max-width: 100%;
+}
+.trains-top-header-info .trains-top-header-info-left h2 img {
+	margin-left: 5px;
+}
+.trains-content-left .middle-content {
+	width: 75%;
+}
+.trains-content-left .middle-content .start-location-block h3 {
+	font-size: 16px;
+	line-height: 23px;
+	color: #1F1F1F;
+	margin-bottom: 0;
+}
+.trains-content-left .middle-content .start-location-block p {
+	font-size: 12px;
+	color: #515151;
+	line-height: 17px;
+	margin-bottom: 0;
+}
+.middle-content .time-block span {
+	padding: 5px 12px;
+	display: inline-block;
+	border-radius: 25px;
+	border: 1px solid #E5E5E5;
+	font-size: 12px;
+	line-height: 15px;
+	color: #515151;
+	position: relative;
+}
+.middle-content .time-block span:before {
+	content: "";
+	position: absolute;
+	left: -70px;
+	width: 70px;
+	height: 1px;
+	background-color: #E5E5E5;
+	top: 12px;
+}
+.middle-content .time-block span:after {
+	content: "";
+	position: absolute;
+	right: -70px;
+	width: 70px;
+	height: 1px;
+	background-color: #E5E5E5;
+	top: 12px;
+}
+.trains-top-header-info .trains-top-header-info-right {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.trains-content-right .top-price-label {
+	margin-bottom: 15px;
+}
+
+.trains-content-right .top-price-label span,
+.trains-top-header-info .trains-top-header-info-right span {
+	background-color: #EFEFEF;
+	border-radius: 6px;
+	padding: 5px 10px;
+	margin-bottom: 0;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 29px;
+	color: #1E446F;
+	display: inline-block;
+  max-width: 100%;
+}
+.trains-price-radio-btn {
+	margin-left: -5px;
+	margin-right: -5px;
+}
+.trains-price-radio-btn .radio-btn-custom {
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 50%;
+}
+.trains-price-radio-btn .radio-btn-custom:nth-child(n+3) {
+	margin-top: 10px;
+}
+.trains-price-radio-btn .radio-btn-custom input[type="radio"] {
+	display: none;
+}
+
+.trains-price-radio-btn .radio-btn-custom input[type="radio"]:checked + label {
+	color: #fff;
+	border-color: transparent;
+	background-color: #98CE44;
+}
+
+.trains-price-radio-btn .radio-btn-custom label {
+	width: 100%;
+	text-align: center;
+	border-radius: 25px;
+	border: 1px solid #98CE44;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	color: #404040;
+	cursor: pointer;
+	padding: 7px 10px;
+}
+
+.trains-select-modal .modal-body {
+	padding: 25px;
+}
+.trains-select-modal .trips-top-info {
+	margin-bottom: 15px;
+}
+.trains-select-modal .trips-top-info h2 {
+	font-size: 23px;
+	font-weight: 600;
+	line-height: 33px;
+	color: #1F1F1F;
+}
+.trains-select-modal .trips-top-info p {
+	font-size: 19px;
+	font-weight: 600;
+	line-height: 27px;
+	color: #515151;
+}
+.trains-select-modal .trip-middle-content {
+	margin-left: -5px;
+	margin-right: -5px;
+}
+
+.trains-select-modal .trip-middle-content-box {
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-bottom: 10px;
+}
+.trains-select-modal .trip-middle-content-box h4 {
+	font-size: 17px;
+	font-weight: 600;
+	line-height: 25px;
+	color: #1F1F1F;
+	margin-bottom: 5px;
+}
+.trains-select-modal .trip-middle-content-box p {
+	font-size: 15px;
+	line-height: 22px;
+	margin-bottom: 0;
+	color: #515151;
+}
+.trains-select-modal .trip-book-now-btn {
+	margin-top: 10px;
+}
+.trains-select-modal .trip-book-now-btn a {
+	font-size: 15px;
+	color: #fff;
+	font-weight: 500;
+	line-height: 22px;
+	background-color: #98CE44;
+	display: inline-block;
+	text-align: center;
+	padding: 11px 15px;
+	min-width: 145px;
+	border-radius: 35px;
+}
+.trins-ticket-booking-section {
+	margin-bottom: 40px;
+}
+.trins-ticket-booking-section .trins-ticket-booking-box h2 {
+	font-size: 20px;
+	line-height: 29px;
+	color: #1F1F1F;
+	margin-bottom: 20px;
+}
+.trins-ticket-booking-box .top-heading-list h3 {
+	font-size: 15px;
+	line-height: 22px;
+	color: #515151;
+	margin-bottom: 10px;
+}
+.trins-ticket-booking-box .trains-booking-info-list,
+.trins-ticket-booking-box .top-heading-list {
+	margin-left: -7.5px;
+	margin-right: -7.5px;
+}
+
+.trins-ticket-booking-box {
+	margin-bottom: 5px;
+}
+.trins-ticket-booking-box .trains-information {
+	width: 35%;
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+.trins-ticket-booking-box .total-no {
+	width: 7%;
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+.trins-ticket-booking-box .rate {
+	width: 40%;
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+
+.trins-ticket-booking-box .price {
+	width: 15%;
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+.trins-ticket-booking-section .custom-form-control {
+	padding: 13px 8px;
+	border-radius: 10px;
+	border: 1px solid #98CE44;
+	box-shadow: none;
+	outline: 0;
+	font-size: 12px;
+	line-height: 17px;
+	color: #6C757D;
+	text-align: left;
+	height: auto;
+}
+
+.trins-ticket-booking-section .custom-nice-select .current {
+	text-align: left;
+}
+.trains-booking-info-list .trains-information h4 {
+	padding: 12px 15px;
+	border-radius: 25px;
+	background-color: #EFEFEF;
+	margin-bottom: 0;
+	max-width: 210px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #515151;
+}
+
+.trins-ticket-booking-section .price-label {
+	border-radius: 30px;
+	padding: 10px;
+	color: #fff;
+	font-size: 16px;
+	line-height: 23px;
+	text-align: center;
+	display: inline-block;
+	background-color: #98CE44;
+	min-width: 134px;
+}
+
+.trins-booking-passenger-info h2 {
+	font-size: 20px;
+  line-height: 29px;
+  color: #1F1F1F;
+  margin-bottom: 20px;
+}
+
+.trins-booking-passenger-info  .row {
+	margin-left: -7.5px;
+	margin-right: -7.5px;
+}
+
+.trins-booking-passenger-info .p-no {
+	width: 6%;
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+
+.trins-booking-passenger-info .p-sufix {
+	width: 10%;
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+.trins-booking-passenger-info .p-lname,
+.trins-booking-passenger-info .p-fname {
+	width: 25%;
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+.trins-booking-passenger-info .p-age {
+	width: 8%;
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+.trins-booking-passenger-info .p-passport-number {
+	width: 26%;
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+.trins-booking-passenger-info label {
+	font-size: 15px;
+	font-weight: 500;
+  line-height: 22px;
+  color: #515151;
+  margin-bottom: 10px;
+}
+
+.spain-rails-pass-section {
+	margin-bottom: 20px;
+}
+.spain-rails-pass-section .section-header h2 {
+	color: #1F1F1F;
+}
+.spain-rails-pass-section .row {
+	margin-left: -7.5px;
+	margin-right: -7.5px;
+}
+.spain-rails-pass-section .left-rails-pass-block {
+	width: 38.7%;
+}
+.padding-lr-7 {
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+.spain-rails-pass-section .left-rails-pass-block img {
+	border-radius: 10px;
+}
+.spain-rails-pass-section .right-rails-pass-block {
+	width: 61.3%;
+}
+.rails-pass-top-box-info {
+	margin-bottom: 30px;
+	padding: 5px 15px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 7px 1px #00000026;
+	box-shadow: 2px 4px 12px 0px #0000001A;
+}
+.rails-pass-top-box-info h3 {
+	font-size: 15px;
+	line-height: 22px;
+	color: #515151;
+	margin-bottom: 0;
+}
+.spain-rails-pass-section .rails-pass-booking-form {
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 2px 4px 12px 0px #0000001A;
+}
+.rails-pass-booking-form h4 {
+	font-size: 15px;
+	line-height: 22px;
+	color: #515151;
+	margin-bottom: 5px;
+}
+.rails-pass-booking-form label {
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 19px;
+	color: #515151;
+	margin-bottom: 5px;
+}
+.rails-pass-booking-form .custom-form-control {
+	padding: 10.5px 14px;
+	border: 1px solid #98CE44;
+	border-radius: 10px;
+	box-shadow: none;
+	outline: 0;
+	float: none;
+	font-size: 12px;
+	line-height: 17px;
+	color: #6C757D;
+	text-align: left;
+}
+.rails-pass-booking-form .custom-nice-select .current {
+	text-align: left;
+}
+.rails-pass-booking-form .trip-pass-info p {
+	border-radius: 90px;
+	padding: 6px 10px;
+	background-color: #EBEBEB;
+	margin-bottom: 0;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 17px;
+	color: #515151;
+	text-align: center;
+}
+.rails-pass-booking-form .mb-50 {
+	margin-bottom: 50px;
+}
+.rails-pass-booking-detials {
+	margin-bottom: 40px;
+}
+.rails-pass-booking-detials-inner {
+	border-radius: 5px;
+	padding: 25px 10px;
+	box-shadow: 2px 4px 12px 0px #0000001A;
+}
+.rails-pass-booking-detials-inner .title-block {
+	margin-bottom: 20px;
+}
+.rails-pass-booking-detials-inner .title-block h2 {
+	font-size: 23px;
+	font-weight: 600;
+	line-height: 33px;
+	color: #1F1F1F;
+}
+.rails-pass-booking-detials-inner .title-block .booking-total-price p {
+	font-size: 19px;
+	font-weight: 600;
+	line-height: 27px;
+	color: #515151;
+}
+
+.rails-pass-booking-box .space-lr-10 {
+	margin-left: -5px;
+	margin-right: -5px;
+}
+.rails-pass-booking-box .space-lr-10 + .space-lr-10 {
+	margin-top: 20px;
+}
+
+.rails-pass-booking-box .booked-info {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.rails-pass-booking-box .booked-info h4 {
+	font-size: 17px;
+	font-weight: 600;
+	line-height: 25px;
+	color: #1F1F1F;
+	margin-bottom: 2px;
+}
+.rails-pass-booking-box .booked-info p {
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 22px;
+	color: #515151;
+	margin-bottom: 0;
+}
+.rails-pass-about-content {
+	margin-bottom: 50px;
+}
+
+.rails-pass-about-content .title-block {
+	margin-bottom: 20px;
+}
+.rails-pass-about-content .title-block h2 {
+	font-size: 16px;
+	line-height: 23px;
+	color: #1F1F1F;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #8E98A8;
+	margin-bottom: 0;
+	display: inline-block;
+	max-width: 100%;
+}
+.rails-pass-about-content .desc-content p {
+	font-size: 14px;
+	line-height: 22px;
+	color: #515151;
+	margin-bottom: 8px;
+}
+
+/*  Trains Section End */
 
 @media (min-width: 1200px) {
 	.container {
@@ -8450,7 +9729,6 @@ table.dataTable tbody tr {
 	.amenities .amenities-box {
 		width: 20%;
 	}
-
 	.editprofilemodal .modal-lg {
 		max-width: 1087px;
 	}
@@ -8458,13 +9736,16 @@ table.dataTable tbody tr {
   	margin: 0 -45px;
   }
 }
-
 @media (min-width: 992px) {
-
+	.trains-select-modal .modal-lg {
+		max-width: 865px;
+	}
+	.col-lg-2.small-form-fieild {
+		width: 20%;
+	}
 	.sitemain-menu .navbar-nav .nav-item.cart-dropdown:hover  .dropdown-menu {
 		display: block;
 	}  
-
 	.couponeModal .modal-lg {
 		max-width: 828px;
 	}
@@ -8474,13 +9755,15 @@ table.dataTable tbody tr {
 	.navbar-expand-lg.sitemain-menu .navbar-collapse {
 		display: block !important;
 	}
-
 	.room-amenities-modal .modal-lg {
-		 max-width: 828px;
+		max-width: 828px;
 	}
 }
-
 @media (min-width: 768px) {
+
+	.private-tour-more-details .modal-lg {
+		max-width: 700px;
+	}
 	.chatmodal .modal-lg {
 		max-width: 610px;
 	}
@@ -8496,7 +9779,29 @@ table.dataTable tbody tr {
 
 }
 
+@media (min-width: 576px) {
+	.maproutemodal .modal-dialog {
+		max-width: 550px;
+	}
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
+
+	.spain-rails-pass-section .rails-pass-booking-form {
+		padding: 15px 10px;
+	}
+
+	.rails-pass-top-box-info {
+ 		margin-bottom: 0;
+ 	}
+
+ 	.rails-pass-booking-form .mb-50 {
+	    margin-bottom: 17px;
+	}
+
+	.transfer-filter-listing-box .transfer-filter-content-inner .desc-content {
+		max-width: 100%;
+	}
 
 	.daytrips-booking-sidebar {
 		width: 28%;
@@ -8540,11 +9845,6 @@ table.dataTable tbody tr {
 	.pending-box .button-box-options {
 		padding-left: 20px;
 	}
-
-	/*.sitemain-menu .navbar-nav .nav-item .nav-link  {
-		margin-left: 9px;
-		margin-right: 9px;
-	} */
 	.login-right-text h1 {
 		font-size: 120px;
 	}
@@ -8573,11 +9873,9 @@ table.dataTable tbody tr {
 		padding: 0 15px;
 	}
 
-
 	.roomcontent-block .room-amenities-block {
 		width: 66.3333%;
 	}
-
 
 	.roomcontent-block .roomblock-details {
 		width: 33.3333%;
@@ -8679,9 +9977,36 @@ table.dataTable tbody tr {
 	.brochure-category-list.nav-pills .nav-link {
 		min-width: 170px;
 	}
+	.spain-rails-pass-section .left-rails-pass-block {
+    width: 35%;
+	}
+	.spain-rails-pass-section .right-rails-pass-block {
+    width: 65%;
+	}
+	.rails-pass-booking-form h4 {
+ 		font-size: 14px;
+ 		line-height: 20px;
+ 	}
+ 	.rails-pass-booking-form label {
+ 		font-size: 12px;
+ 		line-height: 16px;
+ 	}
 }
 
 @media (max-width: 991px) {
+	.trains-select-modal .modal-lg {
+		max-width: 100%;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	.car-filter-tabs-content .nav-pills .nav-item {
+	  margin-right: 15px;
+	}
+
+	.transfer-filter-listing-box .transfer-filter-content-inner,
+	.transfer-filter-listing-box .transfer-filter-content-inner .desc-content {
+		max-width: 100%;
+	}
 
 	.order-room-special-request .custom-checkbox {
 		flex-wrap: wrap;
@@ -8781,7 +10106,7 @@ table.dataTable tbody tr {
     overflow-y: auto;
     padding: 10px;
     min-height: 100Vh;
-    box-shadow: -1px 0px 0px 0px rgba(0,0,0,.2)
+    box-shadow: -1px 0px 0px 0px rgba(0,0,0,.2);
    transition: transform .7s ease-in-out;
 	}
 	.sitemain-menu .navbar-collapse .navbar-collapse {
@@ -8950,6 +10275,96 @@ table.dataTable tbody tr {
 
 @media (min-width: 768px) and (max-width: 991px) {
 
+	.rails-pass-booking-box .booked-info p {
+		font-size: 12px;
+		line-height: 16px;
+	}
+	.rails-pass-booking-box .booked-info h4 {
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.rails-pass-booking-box .space-lr-10 {
+		margin-bottom: 15px;
+	}
+
+	.trains-booking-info-list .trains-information h4 {
+		font-size: 13px;
+		padding: 12px;
+	}
+
+	.trins-ticket-booking-box .trains-booking-info-list, 
+	.trins-ticket-booking-box .top-heading-list,
+	.trins-booking-passenger-info .row {
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+	.trins-ticket-booking-box .trains-information,
+	.trins-ticket-booking-box .total-no,
+	.trins-ticket-booking-box .rate,
+	.trins-ticket-booking-box .price,
+	.trins-booking-passenger-info .p-passport-number,
+	.trins-booking-passenger-info .p-age,
+	.trins-booking-passenger-info .p-lname,
+	.trins-booking-passenger-info .p-fname,
+	.trins-booking-passenger-info .p-sufix
+	.trins-booking-passenger-info .p-no {
+		padding-left: 5px;
+    padding-right: 5px;
+	}
+	.trins-ticket-booking-box .total-no,
+	.trins-booking-passenger-info .p-no {
+		width: 9%;
+	}
+	.trins-booking-passenger-info .p-sufix {
+		width: 11%;
+	}
+	.trins-booking-passenger-info .p-lname, .trins-booking-passenger-info .p-fname {
+		width: 24%;
+	}
+	.trins-booking-passenger-info .p-passport-number {
+		width: 23%;
+	}
+
+	.trins-booking-passenger-info .p-age {
+		width: 9%;
+	}
+
+	.trins-ticket-booking-box .trains-info-left {
+		width: 82.5%;
+	}
+	.trins-ticket-booking-box .trains-info-right {
+		width: 17.5%;
+	}
+	.trins-ticket-booking-section .price-label {
+		min-width: auto;
+		width: 100%;
+		font-size: 13px;
+	}
+
+	.transfer-booking-cart .cartbox-item-details .cartbox.cart-items-delete {
+ 		top: 10px;
+ 	}
+
+	.transfer-filter-section .select2-container--default .select2-selection--single .select2-selection__rendered,
+	.transfer-filter-section .select2-container .select2-selection--single .select2-selection__rendered,
+	.filter-content-two #roomguest, 
+	.filter-content-two .custom-form-control {
+		font-size: 14px;
+	}
+
+	.filter-content-two .room-select-dropdown {
+		left: 0;
+		right: auto;
+	}
+
+	.filter-content-two {
+		margin: 0 -5px;
+	}
+	.transfer-filter-box {
+		padding: 0 5px;
+		margin-bottom: 10px;
+	}
+
 	.daytrips-booking-sidebar {
 		width: 30%;
 	}
@@ -8963,6 +10378,20 @@ table.dataTable tbody tr {
 
 	.daytrips-booking-listing-box .booking-listing-box {
     padding: 0 10px;
+	}
+
+	.transfer-filter-section .daytrips-booking-sidebar {
+    width: 30%;
+	}
+	.transfer-filter-section .daytrips-booking-contentarea {
+	  width: 70%;
+	}
+
+	.transfer-filter-listing-box .transfer-filter-img {
+    width: 40%;
+	}
+	.transfer-filter-listing-box .transfer-filter-content {
+    width: 60%;
 	}
 
 	.booking-listing-box .box-btnl-list p {
@@ -9049,6 +10478,13 @@ table.dataTable tbody tr {
 		width: 100%;
 		margin-bottom: 8px;
 	}
+
+	.filter-content.filter-content-three .filter-search-box {
+		width: 15%;
+		margin-bottom: 0;
+	}
+
+
 	.filte-same-width {
 		width: 25%;
 		margin-bottom: 8px;
@@ -9066,6 +10502,11 @@ table.dataTable tbody tr {
 	.hotel-filter-section-two .filter-content .filter-search-box {
 		width: 30%;
 	}
+
+	.hotel-filter-section-two.hotel-filter-section-three .filter-content .filter-search-box {
+		width: 50%;
+	}
+
 	.hotel-filter-section-two .filte-same-width,
 	.hotel-filter-section-two .filte-same-width.filter-night {
 		width: 17%;
@@ -9475,9 +10916,362 @@ table.dataTable tbody tr {
 	.searching-history-content .searching-history-left {
 		margin-bottom: 15px;
 	}
+	.transfer-filter-listing-box {
+	  margin-bottom: 30px;
+	}
+
+	.transfer-filter-listing-box .transfer-filter-content .bottom-book-btn a {
+		margin-right: 15px;
+	}
+	.train-filter-point-ticket .filter-content .filte-same-width {
+		width: 33.3333%;
+		margin-right: 0 !important;
+	}
+	.trains-content-left .middle-content {
+    width: 95%;
+	}
+	.middle-content .time-block span:before {
+		left: -50px;
+		width: 50px;
+	}
+	.middle-content .time-block span:after {
+		right: -50px;
+		width: 50px;
+	}
+	.trains-price-radio-btn .radio-btn-custom label {
+ 		font-size: 12px;
+ 	}
+ 	.trains-top-header-info .trains-top-header-info-left, 
+ 	.trains-searching-list-box-inner .trains-content-left {
+    width: 73%;
+	}
+	.trains-top-header-info .trains-top-header-info-right,
+	.trains-searching-list-box-inner .trains-content-right {
+		width: 27%;
+	}
+	.rails-pass-booking-form .rails-pass-booking-form-inner {
+		padding: 0 8px 8px;
+		border: 1px solid #EBEBEB;
+		border-radius: 5px;
+	}
+	.rails-pass-booking-form .trip-pass-info p {
+		border-radius: 0;
+		position: relative;
+	}
+
+	.rails-pass-booking-form .trip-pass-info p:before {
+		content:"";
+		position: absolute;
+		top: 0;
+		left: -8px;
+		background-color: #EBEBEB;
+		width: 8px;
+		height: 29px;
+	}
+
+	.rails-pass-booking-form .trip-pass-info p:after {
+		content:"";
+		position: absolute;
+		top: 0;
+		right: -8px;
+		background-color: #EBEBEB;
+		width: 8px;
+		height: 29px;
+	}
+	.spain-rails-pass-section .rails-pass-booking-form {
+		padding: 10px 10px;
+	}
+	.rails-pass-top-box-info {
+		margin-bottom: 0;
+	}
+	.rails-pass-booking-form .mb-50 {
+    margin-bottom: 10px;
+	}
+	.spain-rails-pass-section .left-rails-pass-block {
+    width: 35%;
+	}
+	.spain-rails-pass-section .right-rails-pass-block {
+    width: 65%;
+	}
+	.rails-pass-booking-form h4 {
+ 		font-size: 14px;
+ 		line-height: 20px;
+ 	}
+ 	.rails-pass-booking-form label {
+ 		font-size: 12px;
+ 		line-height: 16px;
+ 	}
 }
 
 @media (max-width: 767px) {
+
+	.rails-pass-booking-form .rails-pass-booking-form-inner {
+		padding: 0 8px 8px;
+		border: 1px solid #EBEBEB;
+		border-radius: 5px;
+	}
+	.rails-pass-booking-form .trip-pass-info p {
+		border-radius: 0;
+		position: relative;
+	}
+
+	.rails-pass-booking-form .trip-pass-info p:before {
+		content:"";
+		position: absolute;
+		top: 0;
+		left: -8px;
+		background-color: #EBEBEB;
+		width: 8px;
+		height: 29px;
+	}
+
+	.rails-pass-booking-form .trip-pass-info p:after {
+		content:"";
+		position: absolute;
+		top: 0;
+		right: -8px;
+		background-color: #EBEBEB;
+		width: 8px;
+		height: 29px;
+	}
+	.spain-rails-pass-section .rails-pass-booking-form {
+		padding: 10px;
+	}
+	.rails-pass-booking-form h4 {
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.rails-pass-booking-form label {
+		font-size: 12px;
+		line-height: 16px;
+	}
+	.rails-pass-booking-detials-inner .col-xl-2 ~	.rails-pass-booking-box {
+		margin-top: 15px;
+	}
+
+	.rails-pass-top-box-info {
+		margin-bottom: 10px;
+	}
+	.rails-pass-booking-form .mb-50 {
+    margin-bottom: 16px;
+	}
+	.spain-rails-pass-section .left-rails-pass-block {
+		width: 100%;
+		display: none;
+	}
+	.spain-rails-pass-section .right-rails-pass-block {
+		width: 100%;
+	}
+
+	.rails-pass-booking-box .booked-info p {
+		font-size: 12px;
+		line-height: 16px;
+	}
+	.rails-pass-booking-box .booked-info h4 {
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.rails-pass-booking-box .space-lr-10 + .space-lr-10 {
+		margin-top: 15px;
+	}
+
+	.trins-ticket-booking-section .trins-ticket-booking-box h2 {
+		font-size: 18px;
+		line-height: 24px;
+		margin-bottom: 10px;
+	}
+	.trins-ticket-booking-box .trains-information {
+		width: 100%;
+	}
+
+	.trains-booking-info-list .trains-information h4 {
+		font-size: 13px;
+		padding: 12px;
+	}
+
+	.trins-ticket-booking-box .trains-booking-info-list, 
+	.trins-ticket-booking-box .top-heading-list,
+	.trins-booking-passenger-info .row {
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+	.trins-ticket-booking-box .trains-information,
+	.trins-ticket-booking-box .total-no,
+	.trins-ticket-booking-box .rate,
+	.trins-ticket-booking-box .price,
+	.trins-booking-passenger-info .p-passport-number,
+	.trins-booking-passenger-info .p-age,
+	.trins-booking-passenger-info .p-lname,
+	.trins-booking-passenger-info .p-fname,
+	.trins-booking-passenger-info .p-sufix,
+	.trins-booking-passenger-info .p-no {
+		padding-left: 5px;
+    padding-right: 5px;
+	}
+	.trins-ticket-booking-box .total-no {
+		width: 14%;
+	}
+
+	.trins-ticket-booking-box .price {
+		width: 26%;
+	}
+
+	.trins-ticket-booking-box .rate { 
+		width: 60%;
+	}
+	.trins-booking-passenger-info .p-no {
+		width: 100%;
+	}
+
+	.trins-booking-passenger-info .p-sufix {
+		width: 20%;
+	}
+	.trins-booking-passenger-info .p-lname, 
+	.trins-booking-passenger-info .p-fname {
+		width: 40%;
+	}
+	.trins-booking-passenger-info .p-age {
+		width: 20%;
+	}
+	.trins-booking-passenger-info .p-passport-number {
+		width: 80%;
+	}
+
+	.top-heading-list .trains-information span {
+		color: #fff;
+		display: block;
+		padding: 10px;
+		background-color: #98CE44;
+		border-radius: 5px;
+		font-size: 14px;
+		font-weight: 400;
+		margin-top: 8px;
+	}
+	.top-heading-list .trains-information span i {
+		display: block;
+		font-style: normal;
+	}
+	.trins-booking-passenger-info .row {
+		border: 1px solid #98CE44;
+		padding-top: 10px;
+		margin-bottom: 15px;
+		border-radius: 5px;
+	}
+	.custom-nice-select.nice-select .option {
+ 		font-size: 14px;
+ 	}
+
+	.trins-ticket-booking-box .trains-info-left {
+		width: 75%;
+	}
+	.trins-ticket-booking-box .trains-info-right {
+		width: 25%;
+	}
+	.trins-ticket-booking-section .price-label {
+		min-width: auto;
+		width: 100%;
+		font-size: 13px;
+	}
+
+	.trains-select-modal .trip-middle-content-box {
+		width: 50%;
+	}
+
+	.trains-searching-main-content .trains-content-left {
+		margin-bottom: 15px;
+	}
+
+	.trains-content-left .middle-content {
+    width: 100%;
+	}
+
+	.middle-content .time-block span:before {
+		left: -35px;
+		width: 35px;
+	}
+	.middle-content .time-block span:after {
+		right: -35px;
+		width: 35px;
+	}
+
+	.trains-searching-list-box .trains-searching-list-box-inner {
+ 		padding: 10px;
+ 	}
+
+	.trains-top-header-info .trains-top-header-info-left, 
+	.trains-searching-list-box-inner .trains-content-left {
+		width: 100%;
+	}
+
+	.trains-top-header-info .trains-top-header-info-right, 
+	.trains-searching-list-box-inner .trains-content-right {
+		width: 100%;
+	}
+
+
+	.train-filter-point-ticket .filter-content .filte-same-width {
+		width: 50%;
+		margin-right: 0 !important;
+	}
+
+	.car-rental-details .transfer-filter-listing-box .transfer-filter-content {
+	  width: 60%;
+	}
+
+	.car-rental-details .transfer-filter-listing-box .transfer-filter-img {
+    width: 40%;
+	}
+
+	.car-rental-details .booking-details-tab .nav-pills  {
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+	.car-rental-details .booking-details-tab .nav-pills .nav-item {
+		margin-right: 0;
+		width: 33.3333%;
+		padding: 0 5px;
+	}
+	.car-rental-details .booking-details-tab .nav-pills .nav-link {
+		padding-left: 15px;
+		padding-right: 15px;
+		min-width: 100%;
+	}
+
+	.hotel-filter-section-two .filter-content .filter-search-box {
+    width: 50%;
+	}
+
+	.filter-content.filter-content-three {
+		margin: 0 -5px;
+	}
+
+	.filter-content-three .filter-travelers-box,
+	.filter-content-three .filter-date-box,
+	.filter-content-three .filter-city-box,
+	.filter-content-three .filter-country-box {
+    width: 50%;
+	}
+
+	.transfer-filter-listing-box {
+	    margin-bottom: 30px;
+	}
+
+	.transfer-filter-section .daytrips-booking-contentarea,
+	.transfer-filter-section .daytrips-booking-sidebar {
+	    width: 100%;
+	}
+
+	.transfer-filter-listing-box .transfer-filter-content .bottom-book-btn a {
+		margin-right: 15px;
+	}
+
+	.filter-content-two {
+		margin: 0 -5px;
+	}
+	.transfer-filter-box {
+		padding: 0 5px;
+		margin-bottom: 10px;
+	}
 
 	.booking-tab-price-content .price-details-box .custom-btn {
 		width: 100%;
@@ -9895,8 +11689,16 @@ table.dataTable tbody tr {
 	}
 	.hotel-filter-section,
 	.hero-section-two {
-		margin-bottom: 50px;
+		margin-bottom: 30px;
 	}
+	.transfer-filter-section {
+    margin-bottom: 30px;
+	}
+
+	.section-header.mb-50 {
+    margin-bottom: 25px;
+	}
+
 	.listing-right-content-area .listing-content-inner {
 		max-height: 100%;
 	}
@@ -10471,7 +12273,7 @@ table.dataTable tbody tr {
 	.booking-row .row {
     margin-left: -15px;
     margin-right: -15px;
-}
+	}
 	.booking-row .form-group.add-data-control {
 		padding-left: 15px;
 		padding-right: 15px;
@@ -10546,7 +12348,9 @@ table.dataTable tbody tr {
 	.cart-top-header .cart-item-header h2 {
 		font-size: 16px;
 		line-height: 20px;
+		max-width: 80%;
 	}
+
 	.cart-items-content-two .cartbox-item-details .cartbox {
     width: 50%;
 	}
@@ -10687,11 +12491,98 @@ table.dataTable tbody tr {
 	.scroll-link-section {
     margin-bottom: 25px;
 	}
+	.daytrips-booking-section .row-space-25 {
+    margin: 0;
+	}
+	.daytrips-booking-contentarea {
+		padding: 0;
+	}
+
+	.transfer-booking-cart .cartbox-item-details .cartbox {
+    width: 33.3333%;
+	}
+	.transfer-booking-cart .cartbox-item-details .cartbox.cart-items-delete {
+		right: 0;
+	}
+
+	.transfer-booking-cart .cartbox-item-details:first-of-type {
+		padding-bottom: 0;
+	}
+	.transfer-booking-cart .cartbox-item-details:nth-child(n+2) {
+		padding-top: 0;
+	}
+
+	.transfer-booking-cart .cartbox-item-details .cartbox {
+    padding-top: 3px;
+    padding-bottom: 3px;
+	}
+
+	.train-destination-search-box .destination-search-box-inner {
+		padding: 10px;
+	}
+
+	.train-destination-search-box h2 {
+		font-size: 18px;
+		line-height: 24px;
+	}
+
 } 
 
 @media (max-width: 575px) {
+
+	.trins-ticket-booking-box .trains-info-left {
+    width: 100%;
+	}
+
+	.trins-ticket-booking-box .trains-info-right {
+    width: 100%;
+	}
+
+	.trins-ticket-booking-box {
+		border-radius: 5px;
+		padding: 15px 10px;
+		border: 1px solid #98CE44;
+		margin-bottom: 16px;
+	}
+
+	.trains-select-modal .modal-body {
+    padding: 15px;
+	}
+
+	.trains-select-modal .trips-top-info h2 {
+		font-size: 20px;
+		line-height: 26px;
+	}
+
+	.trains-select-modal .trip-middle-content-box h4 {
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 16px;
+	}
+
+	.trains-select-modal .trip-middle-content-box p {
+		font-size: 12px;
+		line-height: 16px;
+	}
+
+	.trains-select-modal .trip-middle-content {
+		align-items: flex-start !important;
+	}
+
+	.cart-top-header .cart-item-header h2 {
+ 		width: 70%;
+ 	}
+	.car-rental-details .booking-details-tab .nav-pills .nav-link  {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+	.cars-include-list .badge-default {
+		margin-bottom: 5px;
+		margin-right: 2px;
+	}
+
 	.booking-details-tab .nav-pills .nav-link {
-		min-width: 90px;
+		min-width: 100px;
 		padding-left: 10px;
 		padding-right: 10px;
 		font-size: 13px;
@@ -10842,12 +12733,10 @@ table.dataTable tbody tr {
 		font-size: 30px;
 		line-height: 38px;
 	}
+	.guest-form .form-filed,
 	.payment-order-details .checkin-out-details p,
 	.payment-order-details .order-total label  {
 		width: 50%;
-	}
-	.guest-form .form-filed {
-	    width: 50%;
 	}
 	.guest-form .form-group-btn {
     display: flex;
@@ -11084,20 +12973,48 @@ table.dataTable tbody tr {
 		flex-wrap: wrap;
 	}
 }
-
-
 @media (max-width: 479px) {
+
+	.rails-pass-booking-form .rail-pass-category-box {
+		width: 100%;
+	}
+
+	.rails-pass-booking-form .rail-pass-category-box + .rail-pass-category-box {
+		margin-top: 15px;
+	}
+
+	.trains-content-left .middle-content .start-location-block h3 {
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.trains-content-left .middle-content .start-location-block p {
+		font-size: 11px;
+	}
+	.car-rental-details .booking-details-tab .nav-pills .nav-item:first-of-type {
+		width: 25%;
+	}
+	.car-rental-details .booking-details-tab .nav-pills .nav-item:nth-child(2n) {
+		width: 30%;
+	}
+	.car-rental-details .booking-details-tab .nav-pills .nav-item:last-of-type {
+		width: 45%;
+	}
+	.car-rental-details .booking-details-tab .nav-pills .nav-link {
+    padding-left: 8px;
+    padding-right: 8px;
+	}
+	.hotel-content h2 {
+		height: auto !important;
+	}
 	.daytrips-booking-listing-box .booking-listing-box {
 		width: 100%;
     max-width: 328px;
     margin-left: auto;
     margin-right: auto;
 	}
-
 	.daytrips-booking-listing-box .booking-listing-box:nth-child(n+2) {
 		margin-top: 40px;
 	}
-
 	.hotel-filter-section-two .filte-same-width, 
 	.hotel-filter-section-two .filte-same-width.filter-night {
 		width: 48.5%;
@@ -11111,11 +13028,9 @@ table.dataTable tbody tr {
     margin-right: 0 !important;
     width: 100%;
 	}
-
 	.order-room-special-request .custom-checkbox .form-group label {
     font-size: 11px;
 	}
-
 	.cookie-contact-section .cookie-contact-box {
 		width: 100%;
 		margin-bottom: 20px;
@@ -11123,7 +13038,6 @@ table.dataTable tbody tr {
 	.cookie-contact-section .cookie-contact-box:last-of-type {
 		margin-bottom: 0;
 	}
-
 	.room-priceing-block .room-priceing-inner p, 
 	.room-amenities-block .room-amenities-inner p {
 		font-size: 11px;
@@ -11136,19 +13050,16 @@ table.dataTable tbody tr {
 	.room-amenities-block .room-amenities-inner ul {
 		padding-left: 0;
 	}
-
 	.room-priceing-block .room-priceing-inner h5 {
 		font-size: 16px;
 		line-height: 18px;
 		margin-bottom: 10px;
 	}
-
 	.room-priceing-block .room-btn {
 		font-size: 11px;
 		line-height: 14px;
 		padding: 7px;
 	}
-
 	.room-amenities-seperat .room-amenities-inner {
 		width: 55%;
 	}
@@ -11168,8 +13079,7 @@ table.dataTable tbody tr {
 	.pending-order-name h2 {
     font-size: 12px;
     line-height: 20px;
-	}	
-
+	}
 	.pending-order-history-details .order-pending-box {
 		margin-top: 0;
 	}
@@ -11181,7 +13091,6 @@ table.dataTable tbody tr {
 		font-size: 10px;
 		line-height: 10px;
 	}
-
 	.payment-receipt-flex .customer-info-box {
 		width: 50%;
 	}
@@ -11198,7 +13107,6 @@ table.dataTable tbody tr {
 		min-width: 65px;
 		font-size: 12px;
 	}
-
 	.col-6.hotel-box {
 		width: 100%;
 	}
@@ -11225,7 +13133,6 @@ table.dataTable tbody tr {
 	.filter-grid-box.filter-check-out {
 		margin-right: 0;
 	}
-
 	.hero-section-two .hero-content-text h1 {
 		font-size: 40px;
 		line-height: 70px;
@@ -11242,7 +13149,6 @@ table.dataTable tbody tr {
     align-items: center;
     justify-content: center;
 	}
-
 	.thankyou-box .thankyou-content,
 	.thankyou-box .thankyou-img  {
 		width: 100%;
@@ -11250,29 +13156,24 @@ table.dataTable tbody tr {
 	.thankyou-box .thankyou-img  {
 		margin-bottom: 15px;
 	}
-
 	.hotel-details-box,
 	.cart-items-box .cart-inner { 
 		flex-direction: column;
 	}
-
 	.hotel-details-box .left-details-img,
 	.hotel-details-box .details-right-content,
 	.cart-items-box .cart-inner .cart-right-content,
 	.cart-items-box .cart-inner .cart-left-img {
 		width: 100%;
 	}
-
 	.hotel-details-box .left-details-img,
 	.cart-items-box .cart-inner .cart-left-img {
 		margin-bottom: 15px;
 	}
-
 	.hotel-details-box .left-details-img img,
 	.cart-items-box .cart-inner .cart-left-img img {
 		width: 100%;
 	}
-
 	.hotel-details-box .details-right-content,
 	.cart-items-box .cart-inner .cart-right-content {
 		padding-left: 0;
@@ -11301,7 +13202,6 @@ table.dataTable tbody tr {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
-
 	.brochure-section .brochure-box {
     width: 50%;
 	}
@@ -11350,7 +13250,6 @@ table.dataTable tbody tr {
     font-size: 14px;
     line-height: 18px;
 	}
-	
 	.cart-items-content .cart-item-number {
 		width: 10%;
 	}
@@ -11371,7 +13270,6 @@ table.dataTable tbody tr {
  		font-size: 12px;
  		line-height: 18px;
  	}
-
  	.room-select-dropdown {
  		min-width: 320px;
  	}
@@ -11417,48 +13315,55 @@ table.dataTable tbody tr {
 	.payment-order-inner .order-box-info.order-total-details p.total-amount  {
 		font-size: 14px;
 	}
+	.booking-details-tab .nav-pills {
+    flex-wrap: wrap;
+    margin: 0 -5px;
+  }
+  .booking-details-tab .nav-pills .nav-item {
+  	margin-right: 0;
+  	width: 50%;
+  	padding: 0 5px;
+  }
+  .booking-details-tab .nav-pills .nav-item {
+  	margin-bottom: 10px;
+  }
+	.booking-details-tab .nav-pills .nav-link {
+		width: 100%;
+	} 
 }
 
 @media (max-width: 414px) {
-	/*.booking-tab-price-content .price-full-details-inner {
-		flex-direction: column;
-		flex-wrap: wrap;
-	}
-	.booking-tab-price-content .price-details-box:last-of-type, 
-	.booking-tab-price-content .price-details-box:nth-child(2n),
-	.booking-tab-price-content .price-details-box:first-of-type {
+	.car-rental-details .transfer-filter-listing-box .transfer-filter-content,
+	.car-rental-details .transfer-filter-listing-box .transfer-filter-img {
 		width: 100%;
-		margin-bottom: 8px;
+	}
+	.transfer-booking-cart .cartbox-item-details .cartbox {
+    width: 50%;
+	}
+	.transfer-filter-listing-box .transfer-filter-img {
+    width: 100%;
+    margin-bottom: 10px;
+	}
+	.transfer-filter-listing-box .transfer-filter-img img {
+		display: block;
 		text-align: center;
-	}  */
+		margin: 0 auto;
+		width: 100%;
+		max-height: 250px;
+    object-fit: cover;
+	}
+	.transfer-filter-listing-box .transfer-filter-content {
+	  width: 100%;
+	}
 	.booking-tab-price-content .price-details-box:first-of-type {
     width: 55%;
 	}
 	.booking-tab-price-content .price-details-box:nth-child(2n) {
     width: 20%;
 	}
-
 	.booking-tab-price-content .price-details-box:last-of-type {
 		width: 25%;
 	}
-
-	.booking-tab-price-content .price-full-details-inner {
-		align-items: unset !important;
-	}
-
-	.booking-details-tab .nav-pills {
-	 	justify-content: start;
-    overflow-x: auto;
-    white-space: nowrap;
-    flex-wrap: nowrap;
-  }
-  .booking-details-tab .nav-pills .nav-item {
-  	margin-bottom: 10px;
-  }
-
-	.booking-details-tab .nav-pills .nav-link {
-		width: 100%;
-	} 
 	.daytrips-booked-details .form-group {
 		width: 100%;
 	}
@@ -11476,7 +13381,6 @@ table.dataTable tbody tr {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
-
 	.related-box .book-now-btn {
 		padding: 4px 15px;
 		font-size: 14px;
@@ -11496,7 +13400,6 @@ table.dataTable tbody tr {
 	.room-amenities-inner .col-6 {
 		width: 100%;
 	}
-
 	.main-profile-section .profile-box {
 		width: 100%;
 	}
@@ -11512,11 +13415,9 @@ table.dataTable tbody tr {
 	.things-box:last-of-type {
 		margin-bottom: 0;
 	}
-
 	.team-box {
 		width: 100%;
 	}
-
 	.order-brochure-section .form-group {
 		width: 100%;
 	}
@@ -11524,43 +13425,67 @@ table.dataTable tbody tr {
 	.order-content .order-box {
 		width: 100%;
 	}
-
 	.travel-users-section .travel-box {
 		width: 100%;
 	}
-
 	.travel-booking-box {
 		width: 100%;
 	}
-
 	.commission-flex-content {
 		flex-direction: column;
 	}
-
 	.social-share-block a {
 		width: 33.3333%;
 		margin-bottom: 10px;
 		border-bottom: 0;
 	}
-
 }
 @media (max-width: 375px) {
+
+	.rails-pass-booking-detials-inner {
+ 		padding: 15px 0;
+ 	}
+
+ 	.rails-pass-booking-box .booked-info p {
+ 		font-size: 11px;
+ 	}
+
+	.trins-ticket-booking-box .total-no {
+		width: 18%;
+	}
+	.trins-ticket-booking-box .rate {
+    width: 57%;
+	}
+	.trins-ticket-booking-box .price {
+    width: 25%;
+	}
+
+	.middle-content .time-block span:after,
+	.middle-content .time-block span:before {
+		display: none;
+	}
+	.trains-tickets-map-content .trains-tickets-video-box,
+	.trains-tickets-map-content .trains-tickets-map-box {
+		width: 100%;
+	}
+	.car-rental-details .booking-details-tab .nav-pills .nav-item:last-of-type,
+	.car-rental-details .booking-details-tab .nav-pills .nav-item:nth-child(2n),
+	.car-rental-details .booking-details-tab .nav-pills .nav-item:first-of-type {
+    width: 50%;
+	}
 	.tracker-btn-list a,
 	.tracker-btn-list button {
 		margin-right: 10px;
 		min-width: 100px;
 	}
-
 	.tracker-btn-list {
 		margin-top: 20px;
 	}
-
 	.booking-row .form-group:last-of-type,
 	.booking-row .form-group,
 	.booking-row .form-group.add-data-control {
 		width: 100%;
 	}
-
 	.delete-row-btn label {
     height: 0;
     display: none !important;
@@ -11573,7 +13498,6 @@ table.dataTable tbody tr {
 	.booking-row .form-group {
     margin-bottom: 15px;
 	}
-
 	.booking-checkinout-box {
 		flex-wrap: wrap;
 		border-bottom: .5px solid #cbcbcb;
@@ -11588,7 +13512,6 @@ table.dataTable tbody tr {
 		flex-direction: column;
 		align-items: start !important;
 	}
-
 	.searching-details-block:nth-child(3n),
 	.searching-details-block {
 		width: 100%;
@@ -11606,12 +13529,10 @@ table.dataTable tbody tr {
 	.search-tab .nav-tabs .nav-link:last-of-type {
 		margin-right: 0;
 	}
-
 	.memberships-inner .row  {
 		margin-left: -5px;
 		margin-right: -5px;
 	}
-
 	.memberships-inner .memberbox {
     padding: 0  5px;
 	}
@@ -11624,7 +13545,6 @@ table.dataTable tbody tr {
 		font-size: 14px;
 		line-height: 20px;
 	}
-
 	.logoutmodal .logout-content .button-block a {
 		min-width: 110px;
 	}
@@ -11638,28 +13558,23 @@ table.dataTable tbody tr {
 	.attractions-box:nth-child(n+2) {
 		margin-top: 30px;
 	}
-
 	.culture-section ul li {
 		width:100%;
 		margin-bottom: 0;
 	}
-
 	.nav-pills.booking-dashboard-tab .nav-item,
 	.booking-metrics-box .metrics-box {
 		width: 100%;
 	}
-
 	.digital-brochures-section .digital-brochures-box {
 		width: 100%;
 	}
-
 	.top-attraction-box {
 		width: 100%;
 	}
 	.brochure-full-inner .content {
     top: 50%;
 	}
-
 	.offerbox-inner .offer-right-content a,
 	.offerbox-inner .offer-right-content p {
 		font-size: 13px;
@@ -11667,14 +13582,12 @@ table.dataTable tbody tr {
 	.order-btn-list .common-btn {
 		font-size: 12px;
 	}
-
 	.button-box-options-inner {
 		padding: 10px;
 	}
 	.total-price-pending {
 		margin-top: 10px;
 	}
-
 	.payment-book-info-box-inner {
 		flex-direction: column;
 		align-items: start !important;
@@ -11748,7 +13661,7 @@ table.dataTable tbody tr {
 	.offer-section .nav-tabs .nav-link {
 		font-size: 13px;
 	}
-	.offer-section .nav-tabs .nav-link svg {
+	.offer-section .nav-tabs .nav-link img {
 		width: 16px;
 	}
 	.order-room-content-bottom .order-btn-list a {
@@ -11840,7 +13753,6 @@ table.dataTable tbody tr {
 	.room-priceing-block .room-priceing-inner h3 {
     margin-bottom: 5px;
 	}
-
 	.room-priceing-block .room-priceing-inner,
 	.room-amenities-block .room-amenities-inner {
     min-height: 130px;
@@ -11859,13 +13771,10 @@ table.dataTable tbody tr {
  		width: 100%;
  	}
 }
-
-
 .blink {
   animation: blink infinite .85s;
   display: inline-block
 }
-
 @keyframes blink {
   0% {
     opacity: 1;
@@ -11877,50 +13786,49 @@ table.dataTable tbody tr {
     opacity: 1;
   }
 }
-
 .ui-datepicker .ui-datepicker-header {
 	background-color: transparent;
 	border: 0;
 }
-
 .ui-widget-header {
 	font-weight: 500;
 	font-size: 16px;
 }
-
 .ui-datepicker th {
 	font-weight: 500;
 }
-
 .ui-state-default, 
 .ui-widget-content .ui-state-default, 
 .ui-widget-header .ui-state-default, 
 .ui-button,
- html .ui-button.ui-state-disabled:hover,
- html .ui-button.ui-state-disabled:active {
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
  	border: 0;
  	background-color: transparent;
- }
+}
 .ui-state-highlight, 
 .ui-widget-content .ui-state-highlight, 
 .ui-widget-header .ui-state-highlight {
  	background-color: #FDB714;
  	color: #fff;
 }
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover,
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover,
  html .ui-button.ui-state-disabled:active {
- 	/*background-color: #98CE44; */
  	color: #000;
 }
- .ui-datepicker td span, .ui-datepicker td a {
+.ui-datepicker td span, .ui-datepicker td a {
  	text-align: center;
  	background-color: transparent;
- }
- .ui-datepicker-current-day .ui-state-active,
- body .ui-datepicker .ui-datepicker-calendar .sejour > a {
-    background: #ececec;
 }
-
+.ui-datepicker-current-day .ui-state-active,
+body .ui-datepicker .ui-datepicker-calendar .sejour > a {
+  background: #ececec;
+}
 .ui-datepicker td {
 	padding: 0;
 }

@@ -424,13 +424,6 @@
 			    }
 			    $('#night').val(diff);
 			}
-
-			if($(".featured-hotels-box").length) {
-			    $(".book-btn a").on("click", function() {
-			    	var hotal_title  = $(".featured-hotels-box .hotel-content h2").html();
-			    	document.querySelector("#filter-serch-input").value = hotal_title;
-			    })
-			}
 		}
 
 		if($(".filter-content").length) {
@@ -1587,13 +1580,63 @@
 		       	}
 			});
 
-			if($(".featured-hotels-box").length) {
-			    $(".book-btn a").on("click", function(e) {
-			    	var hotal_title  = $(".featured-hotels-box .hotel-content h2").html();
+		}
+		if($(".featured-hotels-box").length && $("#filter-serch-input").length) {
+			$("[id*='featured-post-']" ).each(function () { 
+				var featuredpostid = $(this).attr('id');
+			    $("[id*="+featuredpostid+"] .book-btn a").on("click", function(e) {
+			    	var hotal_title  = $("[id*="+featuredpostid+"] .hotel-content h2").html();
 			    	document.querySelector("#filter-serch-input").value = hotal_title;
 			    })
-			}
-
+			});
+		}
+		if($('#transferdate').length) {
+			$('#transferdate').datepicker({
+			    dateFormat: 'd/m/yy',
+			    minDate: "+3",
+			    numberOfMonths: 1,
+			    showOtherMonths: true,	    
+			})
+		}
+		if($('#private-tour-date').length) {
+			$('#private-tour-date').datepicker({
+			    dateFormat: 'd/m/yy',
+			    minDate: "+3",
+			    numberOfMonths: 1,
+			    showOtherMonths: true,	    
+			})
+		}
+		if($('#pickupdate').length) {
+			$('#pickupdate').datepicker({
+			    dateFormat: 'd/m/yy',
+			    minDate: "+3",
+			    numberOfMonths: 1,
+			    showOtherMonths: true,	    
+			})
+		}
+		if($('#dropoffdate').length) {
+			$('#dropoffdate').datepicker({
+			    dateFormat: 'd/m/yy',
+			    minDate: "+3",
+			    numberOfMonths: 1,
+			    showOtherMonths: true,	    
+			})
+		}
+		if($('#departuredate').length) {
+			$('#departuredate').datepicker({
+			    dateFormat: 'd/m/yy',
+			    minDate: "+3",
+			    numberOfMonths: 1,
+			    showOtherMonths: true,	    
+			})
+		}
+		if($('#returndate').length) {
+			$('#returndate').datepicker({
+			    dateFormat: 'd/m/yy',
+			    minDate: "+3",
+			    numberOfMonths: 1,
+			    showOtherMonths: true,	    
+			})
 		}
 	});
 

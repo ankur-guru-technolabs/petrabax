@@ -6,19 +6,23 @@
         @include('admin.Common.admin-profile-menu')
     </div>
     <div class="user-management-inner user-profile-section">
-        <form method="post" action="{{route('updateProfile')}}" id="update-profile">
+        <form method="post" action="{{route('updateProfile')}}" id="update-profile" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <input type="hidden" name="id" value="{{$admin_data->id}}">
                 <div class="col-12 form-group custom-profile-upload">
                     <div class="avatar-upload">
                         <div class="avatar-edit">
-                            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" name="image"/>
                             <label for="imageUpload"><img src="{{asset('assets_admin/images/edit-profile.png')}}" alt="edit"></label>
                         </div>
                         <div class="avatar-preview">
-                            <img id="uploadicon" src="{{asset('assets_admin/images/gallery-add.png')}}" alt="Gallery Add">
-                            <div id="imagePreview" style="background-image: url();"></div>
+                            @if(Auth::user()->profile_image)
+                                <div id="imagePreview" style="background-image:url('{{asset('profile/'.$admin_data->profile_image)}}')"></div>
+                            @else
+                                <img id="uploadicon" src="{{asset('assets_admin/images/gallery-add.png')}}" alt="Gallery Add">
+                                <div id="imagePreview" style="background-image: url();"></div>
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -37,6 +37,7 @@ class User extends Authenticatable
         'agency',		
         'arc',	
         'remarks',		
+        'profile_image',		
     ];
 
     /**
