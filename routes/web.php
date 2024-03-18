@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\AuthController;
+use App\Http\Controllers\Web\DayTripController;
 use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\HotelController;
 use App\Http\Controllers\Web\InfoController;
@@ -47,6 +48,9 @@ Route::get('/hotels/list', [HotelController::class, 'hotelsList'])->name('hotels
 Route::get('/hotel/detail', [HotelController::class, 'hotelDetails'])->name('hotelDetails');
 
 Route::get('/paradores', [HotelController::class, 'paradores'])->name('paradores');
+
+Route::get('/daytrips/activities', [DayTripController::class, 'dayTripActivities'])->name('dayTripActivities');
+Route::get('/daytrips/booking/filter', [DayTripController::class, 'dayTripBookingFilter'])->name('dayTripBookingFilter');
 
 Route::get('/cart', [HotelController::class, 'cart'])->name('cart');
 Route::get('/thank-you', [HotelController::class, 'thankYou'])->name('thankYou');
