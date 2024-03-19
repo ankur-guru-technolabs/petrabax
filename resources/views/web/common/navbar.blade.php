@@ -60,7 +60,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item active" href="{{route('dayTripActivities')}}">Day Trips & Activities</a></li>
-                        <li><a class="dropdown-item" href="#">Transfer</a></li>
+                        <li><a class="dropdown-item" href="{{route('transfer')}}">Transfer</a></li>
                         <li><a class="dropdown-item" href="#">Private Day Tours</a></li>
                     </ul>
                 </li>
