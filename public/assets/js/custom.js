@@ -158,6 +158,19 @@
 	    }
 	}
 
+	function train_tour_carousel() {
+		if($('.tab-coursel-slider').length) {
+	      	$('.tab-coursel-slider').owlCarousel({
+	            loop:true,
+	            margin:0,
+	            nav:true,
+	            items: 1,
+	            autoplay: true,
+	            dots:false,
+	        })
+	    }
+	}
+
 	function hideshow_password() {
 		
 		if($(".toggle-password").length) {
@@ -238,6 +251,8 @@
 		tour_carousel();
 
 		orderimage_carousel();
+
+		train_tour_carousel();
 
 		var cururl = window.location.href;
 	 
@@ -374,7 +389,11 @@
 			    dateFormat: 'd/m/yy',
 			    minDate: "+3",
 			    numberOfMonths: 1,
-			    showOtherMonths: true,
+			   	showOtherMonths: false,
+			   	changeMonth: false,
+		        changeYear: false,
+		        stepMonths: true,
+			    dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"], 
 			    onClose: function(dateText,datePickerInstance) {
 			        var oldValue = $(this).data('oldValue') || "";
 			        if (dateText !== oldValue) {
@@ -398,7 +417,11 @@
 			    dateFormat: 'd/m/yy',
 			    minDate: "+4",
 			    numberOfMonths: 1,
-			    showOtherMonths: true,
+			    showOtherMonths: false,
+			   	changeMonth: false,
+		        changeYear: false,
+		        stepMonths: true,
+			    dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"], 
 			    onClose: function() {
 	      			var dt1 = $('#daterangestart').datepicker('getDate');
 			     	var dt2 = $('#daterangeend').datepicker('getDate');
@@ -1279,7 +1302,10 @@
 			    dateFormat: 'd/m/yy',
 			    minDate: "+3",
 			    numberOfMonths: 1,
-			    showOtherMonths: true,	    
+			    showOtherMonths: false,
+			   	changeMonth: false,
+		        changeYear: false,
+		        stepMonths: true,	    
 			});
 	    }
 
@@ -1288,7 +1314,11 @@
 			    dateFormat: 'd/m/yy',
 			    minDate: "+3",
 			    numberOfMonths: 1,
-			    showOtherMonths: true,	    
+			   	showOtherMonths: false,
+			   	changeMonth: false,
+		        changeYear: false,
+		        stepMonths: true,
+			   dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"], 
 			}).datepicker("setDate", new Date());
 
 		    $('.travelers-adults-add').click(function () {   
@@ -1595,7 +1625,11 @@
 			    dateFormat: 'd/m/yy',
 			    minDate: "+3",
 			    numberOfMonths: 1,
-			    showOtherMonths: true,	    
+			    showOtherMonths: false,
+			   	changeMonth: false,
+		        changeYear: false,
+		        stepMonths: true,
+			    dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"],     
 			})
 		}
 		if($('#private-tour-date').length) {
@@ -1603,7 +1637,11 @@
 			    dateFormat: 'd/m/yy',
 			    minDate: "+3",
 			    numberOfMonths: 1,
-			    showOtherMonths: true,	    
+			    showOtherMonths: false,
+			   	changeMonth: false,
+		        changeYear: false,
+		        stepMonths: true,
+			    dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"], 	    
 			})
 		}
 		if($('#pickupdate').length) {
@@ -1611,7 +1649,11 @@
 			    dateFormat: 'd/m/yy',
 			    minDate: "+3",
 			    numberOfMonths: 1,
-			    showOtherMonths: true,	    
+			    showOtherMonths: false,
+			   	changeMonth: false,
+		        changeYear: false,
+		        stepMonths: true,
+			    dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"],     
 			})
 		}
 		if($('#dropoffdate').length) {
@@ -1619,7 +1661,11 @@
 			    dateFormat: 'd/m/yy',
 			    minDate: "+3",
 			    numberOfMonths: 1,
-			    showOtherMonths: true,	    
+			    showOtherMonths: false,
+			   	changeMonth: false,
+		        changeYear: false,
+		        stepMonths: true,
+			    dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"], 	    
 			})
 		}
 		if($('#departuredate').length) {
@@ -1627,7 +1673,11 @@
 			    dateFormat: 'd/m/yy',
 			    minDate: "+3",
 			    numberOfMonths: 1,
-			    showOtherMonths: true,	    
+			    showOtherMonths: false,
+			   	changeMonth: false,
+		        changeYear: false,
+		        stepMonths: true,
+			    dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"],   
 			})
 		}
 		if($('#returndate').length) {
@@ -1635,7 +1685,22 @@
 			    dateFormat: 'd/m/yy',
 			    minDate: "+3",
 			    numberOfMonths: 1,
-			    showOtherMonths: true,	    
+			    showOtherMonths: false,
+			   	changeMonth: false,
+		        changeYear: false,
+		        stepMonths: true,
+			    dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"], 	    
+			})
+		}
+		if($('.booking-passbod').length) {
+			$('.booking-passbod').datepicker({
+			    dateFormat: 'd/m/yy',
+			    numberOfMonths: 1,
+			    showOtherMonths: false,
+			   	changeMonth: false,
+		        changeYear: false,
+		        stepMonths: true,
+			    dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"],     
 			})
 		}
 	});

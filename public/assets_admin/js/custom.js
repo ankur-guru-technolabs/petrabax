@@ -63,6 +63,7 @@
 		$(".service-main-drp-menu .submenu-link-1").on("click",function() {
 			$('.services-dropdown .submenu-link').removeClass("active");
 			$(this).addClass('active');
+			$(".service-main-drp-menu .sub-menu-child-3").removeClass('show');
 			$(".service-main-drp-menu .sub-menu-child-2").removeClass('show');
 			$(".service-main-drp-menu .sub-menu-child-1").toggleClass('show');
 		})
@@ -71,7 +72,16 @@
 			$('.services-dropdown .submenu-link').removeClass("active");
 			$(this).addClass('active');
 			$(".service-main-drp-menu .sub-menu-child-1").removeClass('show');
+			$(".service-main-drp-menu .sub-menu-child-2").removeClass('show');
 			$(".service-main-drp-menu .sub-menu-child-2").toggleClass('show');
+		})
+
+		$(".service-main-drp-menu .submenu-link-3").on("click",function() {
+			$('.services-dropdown .submenu-link').removeClass("active");
+			$(this).addClass('active');
+			$(".service-main-drp-menu .sub-menu-child-1").removeClass('show');
+			$(".service-main-drp-menu .sub-menu-child-2").removeClass('show');
+			$(".service-main-drp-menu .sub-menu-child-3").toggleClass('show');
 		})
 
 		$(document).click(function (e) {
