@@ -23,10 +23,10 @@
             $activeRoutes = [
                 'home' => request()->routeIs('/'),
                 'hotel' => request()->routeIs('hotels') || request()->routeIs('hotelsList') || request()->routeIs('hotelDetails') || request()->routeIs('paradores'),
-                'dayTripBooking' => request()->routeIs('dayTripActivities') || request()->routeIs('dayTripBookingFilter'),
+                'dayTripBooking' => request()->routeIs('dayTripActivities') || request()->routeIs('dayTripBookingFilter') || request()->routeIs('transfer') || request()->routeIs('transferTerminal') || request()->routeIs('transferBooking') || request()->routeIs('transferBookingCart'),
+                'car' => request()->routeIs('carRental') || request()->routeIs('carRentalFilter') || request()->routeIs('carRentalDetails') || request()->routeIs('carRentalBooking') || request()->routeIs('carRentalBookingCart') ,
                 'train' => request()->routeIs('support'),
                 'tour' => request()->routeIs('support'),
-                'car' => request()->routeIs('support'),
                 'road' => request()->routeIs('support'),
                 'spanish' => request()->routeIs('support'),
                 'cart' => request()->routeIs('cart'),
@@ -64,6 +64,11 @@
                         <li><a class="dropdown-item" href="#">Private Day Tours</a></li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ $activeRoutes['car'] ? 'active' : '' }}" href="{{route('carRental')}}">Cars
+                        <img src="{{ asset('assets/images/menu-icon/smart-car.png')}}" alt="Car">
+                    </a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{ $activeRoutes['train'] ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Trains
@@ -79,11 +84,6 @@
                 <li class="nav-item">
                     <a class="nav-link {{ $activeRoutes['tour'] ? 'active' : '' }}" href="#">Tours
                         <img src="{{ asset('assets/images/menu-icon/tours.png')}}" alt="Tours">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ $activeRoutes['car'] ? 'active' : '' }}" href="#">Cars
-                        <img src="{{ asset('assets/images/menu-icon/smart-car.png')}}" alt="Car">
                     </a>
                 </li>
                 <li class="nav-item">

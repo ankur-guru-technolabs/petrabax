@@ -231,7 +231,7 @@
 		sameheightform();
 
 		attration_carousel();
-
+		
 		testimonial_carousel();
 
 		hotalreview_carousel();

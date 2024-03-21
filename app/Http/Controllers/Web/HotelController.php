@@ -16,36 +16,37 @@ class HotelController extends Controller
 {
     //
      public function hotels(){
-          $client = new \GuzzleHttp\Client();
+          // $client = new \GuzzleHttp\Client();
 
 
-          $apiKey = "be842e80d1ef295b88040f0a62925a3c";
-          $secret = "9e5bc9fc0f";
+          // $apiKey = "be842e80d1ef295b88040f0a62925a3c";
+          // $secret = "9e5bc9fc0f";
 
-          $assemble = $apiKey . $secret . Carbon::now()->timestamp;
+          // $assemble = $apiKey . $secret . Carbon::now()->timestamp;
 
-          // $hash = Hash::make($assemble);
-          $hash =  (hash('sha256', $assemble));
+          // // $hash = Hash::make($assemble);
+          // $hash =  (hash('sha256', $assemble));
 
-          $headers = [
-               'Content-Type' => 'application/json',
-               'Accept' => 'application/json',
-               'Api-key' => $apiKey,
-               'X-Signature' => $hash,
-          ];
+          // $headers = [
+          //      'Content-Type' => 'application/json',
+          //      'Accept' => 'application/json',
+          //      'Api-key' => $apiKey,
+          //      'X-Signature' => $hash,
+          // ];
           
-          $baseUrl = 'https://api.test.hotelbeds.com/hotel-content-api/1.0/hotels';
+          // $baseUrl = 'https://api.test.hotelbeds.com/hotel-content-api/1.0/hotels';
 
-          $params = [
-               'from' => 1,
-               'to' => 6,
-          ];
+          // $params = [
+          //      'from' => 1,
+          //      'to' => 6,
+          // ];
 
-          $res = \Http::withHeaders($headers)->get($baseUrl, $params);
+          // $res = \Http::withHeaders($headers)->get($baseUrl, $params);
 
-          $statusCode = $res->getStatusCode();
-          $responseBody = json_decode($res->getBody(), true);
-          $hotels = $responseBody['hotels'];
+          // $statusCode = $res->getStatusCode();
+          // $responseBody = json_decode($res->getBody(), true);
+          // $hotels = $responseBody['hotels'];
+          $hotels = array();
           return view('web.Hotel.hotels')->with('hotels', $hotels);
      }
  

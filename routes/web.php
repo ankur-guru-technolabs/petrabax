@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\AuthController;
+use App\Http\Controllers\Web\CarController;
 use App\Http\Controllers\Web\DayTripController;
 use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\HotelController;
@@ -56,6 +57,13 @@ Route::get('/transfer', [DayTripController::class, 'transfer'])->name('transfer'
 Route::get('/transfer/terminal', [DayTripController::class, 'transferTerminal'])->name('transferTerminal');
 Route::get('/transfer/booking', [DayTripController::class, 'transferBooking'])->name('transferBooking');
 Route::get('/transfer/booking/cart', [DayTripController::class, 'transferBookingCart'])->name('transferBookingCart');
+
+Route::get('/car-rental', [CarController::class, 'carRental'])->name('carRental');
+Route::get('/car-rental/filter', [CarController::class, 'carRentalFilter'])->name('carRentalFilter');
+Route::get('/car-rental/terms', [CarController::class, 'carRentalTerms'])->name('carRentalTerms');
+Route::get('/car-rental/details', [CarController::class, 'carRentalDetails'])->name('carRentalDetails');
+Route::get('/car-rental/booking', [CarController::class, 'carRentalBooking'])->name('carRentalBooking');
+Route::get('/car-rental/booking/cart', [CarController::class, 'carRentalBookingCart'])->name('carRentalBookingCart');
 
 Route::get('/cart', [HotelController::class, 'cart'])->name('cart');
 Route::get('/thank-you', [HotelController::class, 'thankYou'])->name('thankYou');
