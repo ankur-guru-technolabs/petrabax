@@ -27,7 +27,7 @@ class BrochureManagementController extends Controller
     }
 
     public function addBrochure(){
-        $categories = Category::get();
+        $categories = Category::where('main_category_id',0)->get();
         return view('admin.Brochure.add-brochure',compact('categories'));
     }
     
@@ -98,7 +98,7 @@ class BrochureManagementController extends Controller
     public function brochureEdit($id){
         $brochure = Brochure::where('id',$id)->first();
         if(!empty($brochure)){
-            $categories = Category::get();
+            $categories = Category::where('main_category_id',0)->get();
             return view('admin.Brochure.edit-brochure',compact('brochure','categories'));
         }
         return redirect()->route('brochureList')->with('message', 'Brochure not found');

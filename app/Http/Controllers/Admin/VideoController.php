@@ -22,7 +22,7 @@ class VideoController extends Controller
     }
     
     public function addVideo(){
-        $categories = Category::get();
+        $categories = Category::where('main_category_id',0)->get();
         return view('admin.Video.add-video',compact('categories'));
     }
  
@@ -86,7 +86,7 @@ class VideoController extends Controller
     public function videoEdit($id){
         $video = Video::findOrFail($id);
         if(!empty($video)){
-            $categories = Category::get();
+            $categories = Category::where('main_category_id',0)->get();
             return view('admin.Video.edit-video',compact('video','categories'));
         }
         return redirect()->route('videoList')->with('message', 'Video not found');

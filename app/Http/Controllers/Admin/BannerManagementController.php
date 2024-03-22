@@ -21,7 +21,7 @@ class BannerManagementController extends Controller
     }
     
     public function addBanner(){
-        $categories = Category::get();
+        $categories = Category::where('main_category_id',0)->get();
         return view('admin.Banner.add-banner',compact('categories'));
     }
     
@@ -59,7 +59,7 @@ class BannerManagementController extends Controller
     public function bannerEdit($id){
         $banner = Banner::findOrFail($id);
         if(!empty($banner)){
-            $categories = Category::get();
+            $categories = Category::where('main_category_id',0)->get();
             return view('admin.Banner.edit-banner',compact('banner','categories'));
         }
         return redirect()->route('bannerList')->with('message', 'Banner not found');

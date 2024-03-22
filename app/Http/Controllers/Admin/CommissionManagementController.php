@@ -21,7 +21,7 @@ class CommissionManagementController extends Controller
     }
    
     public function addCommission(){
-        $categories = Category::get();
+        $categories = Category::where('main_category_id',0)->get();
         $agents = User::where('type','travel_agent')->orderby('id','desc')->get();
         return view('admin.Commission.add-commission',compact('categories','agents'));
     }
@@ -40,7 +40,7 @@ class CommissionManagementController extends Controller
     public function commissionEdit($id){
         $commission = Commission::findOrFail($id);
         if(!empty($commission)){
-            $categories = Category::get();
+            $categories = Category::where('main_category_id',0)->get();
             $agents = User::where('type','travel_agent')->orderby('id','desc')->get();
             return view('admin.Commission.edit-commission',compact('commission','categories','agents'));
         }

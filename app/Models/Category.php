@@ -11,6 +11,12 @@ class Category extends Model
 
     protected $fillable = [
         'name',
+        'main_category_id',
     ];
+
+    public function mainCategory()
+    {
+        return $this->belongsTo(Category::class, 'main_category_id');
+    }
 
 }

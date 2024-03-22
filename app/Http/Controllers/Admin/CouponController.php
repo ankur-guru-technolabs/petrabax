@@ -20,7 +20,7 @@ class CouponController extends Controller
     }
 
     public function addCoupon(){
-        $categories = Category::get();
+        $categories = Category::where('main_category_id',0)->get();
         return view('admin.Coupon.add-coupon',compact('categories'));
     }
    
@@ -60,7 +60,7 @@ class CouponController extends Controller
     public function couponEdit($id){
         $coupon = Coupon::findOrFail($id);
         if(!empty($coupon)){
-            $categories = Category::get();
+            $categories = Category::where('main_category_id',0)->get();
             return view('admin.Coupon.edit-coupon',compact('coupon','categories'));
         }
         return redirect()->route('couponList')->with('message', 'Coupon not found');

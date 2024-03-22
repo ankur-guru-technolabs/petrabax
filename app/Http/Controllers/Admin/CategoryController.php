@@ -14,12 +14,13 @@ class CategoryController extends Controller
 {
     //
     public function categoryList(){
-        $categories = Category::orderBy('id','desc')->get();
+        $categories = Category::with('mainCategory')->orderBy('id','desc')->get();
         return view('admin.Category.category-list',compact('categories'));
     }
 
     public function addCategory(){
-        return view('admin.Category.add-category');
+        $categories = Category::where('main_category_id',0)->get();
+        return view('admin.Category.add-category',compact('categories'));
     }
     
     public function categorySubmit(Request $request){
@@ -40,12 +41,13 @@ class CategoryController extends Controller
     
     public function categoryEdit($id){
         $category = Category::findOrFail($id);
-        return view('admin.Category.edit-category',compact('category'));
+        $categories = Category::where('main_category_id',0)->get();
+        return view('admin.Category.edit-category',compact('category','categories'));
     } 
     
     public function categoryUpdate(Request $request){
         $input = $request->all();
-        Category::where('id',$request->id)->update(['name'=>$request->name]);
+        Category::where('id',$request->id)->update(['name'=>$request->name,'main_category_id'=>$request->main_category_id]);
         return redirect()->route('categoryList')->with('message', 'Category updated successfully');
     } 
 

@@ -51,7 +51,7 @@ class InfoController extends Controller
     }
    
     public function brochureList($cat_id=null,$search = null){
-        $categories = Category::all();
+        $categories = Category::where('main_category_id',0)->get();
         $brochures = new Collection;
         if($categories->isNotEmpty()){
             $cat_id = ($cat_id==null) ? $categories->first()->id : $cat_id;
@@ -66,7 +66,7 @@ class InfoController extends Controller
     }
     
     public function contactUs(){
-        $categories = Category::all();
+        $categories = Category::where('main_category_id',0)->get();
         return view('web.Info.contact-us',compact('categories'));
     }
     

@@ -14,7 +14,8 @@
                 <table id="brochure-list" data-searching="false" data-ordering="false">
                     <thead>
                         <tr>
-                        <th>Category Name</th>
+                        <th>Category</th>
+                        <th>Main Category</th>
                         <th>Edit</th>
                         <th>Delete</th>
                         </tr>
@@ -23,6 +24,7 @@
                         @foreach($categories as $category)
                             <tr>
                                 <td>{{$category->name}}</td>
+                                <td>{{$category->main_category_id > 0 ? $category->mainCategory->name : '-'}}</td>
                                 <td><a href="{{route('categoryEdit',['id' => $category->id])}}" class="category-edit-link"><img src="{{ asset('/assets_admin/images/edit-2.png')}}" alt="Edit"></a></td>
                                 <td><a href="{{route('categoryDelete',['id' => $category->id])}}"><img src="{{ asset('/assets_admin/images/trash.png')}}" alt="delete"></a></td>
                             </tr>
