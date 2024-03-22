@@ -1703,6 +1703,20 @@
 			    dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"],     
 			})
 		}
+
+		if($('.departuredate').length) {
+			$('.departuredate').datepicker({
+			    dateFormat: 'd/m/yy',
+			    numberOfMonths: 1,
+			    showOtherMonths: false,
+			   	changeMonth: false,
+		        changeYear: false,
+		        stepMonths: true,
+			    dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"],     
+			})
+		}
+
+		
 	});
 
 })(jQuery);

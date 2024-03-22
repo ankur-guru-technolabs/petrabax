@@ -74,6 +74,7 @@
 
                 <div class="form-submit-btn text-center">
                     <a href="#" class="add-cart-btn large-btn me-2">Pay Now</a>
+                    <a href="javascript::void(0)" class="add-cart-btn large-btn w-auto continue-shop-btn">Continue Shopping</a>
                 </div>
             </div>
         </form>
@@ -97,7 +98,7 @@
                         <span class="rating"><i class="fa-solid fa-star"></i>  4.3</span>
                     </div>
                     <div class="book-btn btn-small">
-                        <a href="#" title="book now">Book Now</a>
+                        <a href="{{route('carRental')}}" title="book now">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -112,7 +113,7 @@
                         <span class="rating"><i class="fa-solid fa-star"></i>  4.3</span>
                     </div>
                     <div class="book-btn btn-small">
-                        <a href="#" title="book now">Book Now</a>
+                        <a href="javascript::void(0)" title="book now">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -127,12 +128,12 @@
                         <span class="rating"><i class="fa-solid fa-star"></i>  4.3</span>
                     </div>
                     <div class="book-btn btn-small">
-                        <a href="#" title="book now">Book Now</a>
+                        <a href="{{route('hotels')}}" title="book now">Book Now</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-3 col-6 booktrip-box">
+            <div class="col-lg-3 col-md-3 col-6 booktrip-box d-none">
                 <div class="booktrip-box-inner text-center position-relative">
                     <div class="icon-box position-absolute">
                         <img src="asset('assets/images/trips.png')}}" alt="Trip">
@@ -152,6 +153,10 @@
 @endsection
 @section('jscontent')
 <script type="text/javascript">
+    $(".continue-shop-btn").on("click",function() {
+        $(".book-trip-section").removeClass('d-none');
+    })
+
     var arr = $("[id*='cart-item-']" );
     arr.each(function(index, item) {
         var cart_id = $(this).attr('id');

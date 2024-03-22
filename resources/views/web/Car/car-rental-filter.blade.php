@@ -148,713 +148,714 @@
                   <p>Duration - <span>4 days</span></p>
                 </div>
               </div>-->
+                <div class="car-filter-content-area-inner">
+                    <div class="car-filter-tabs-content">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-1-tab" data-bs-toggle="pill" data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1" aria-selected="true">
+                                    <span>Economy</span>
+                                    <span>From $ 100</span>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-2-tab" data-bs-toggle="pill" data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-2" aria-selected="false">
+                                    <span>Compact</span>
+                                    <span>From $ 100</span>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-3-tab" data-bs-toggle="pill" data-bs-target="#pills-3" type="button" role="tab" aria-controls="pills-3" aria-selected="false">
+                                    <span>Intermediate</span>
+                                    <span>From $ 100</span>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-4-tab" data-bs-toggle="pill" data-bs-target="#pills-4" type="button" role="tab" aria-controls="pills-4" aria-selected="false">
+                                    <span>Standard</span>
+                                    <span>From $ 100</span>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-5-tab" data-bs-toggle="pill" data-bs-target="#pills-5" type="button" role="tab" aria-controls="pills-5" aria-selected="false">
+                                    <span>Full Size</span>
+                                    <span>From $ 100</span>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-6-tab" data-bs-toggle="pill" data-bs-target="#pills-6" type="button" role="tab" aria-controls="pills-6" aria-selected="false">
+                                    <span>Premium</span>
+                                    <span>From $ 100</span>
+                                </button>
+                            </li>
+                        </ul>
 
-                <div class="car-filter-tabs-content">
-                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="pills-1-tab" data-bs-toggle="pill" data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1" aria-selected="true">
-                                <span>Economy</span>
-                                <span>From $ 100</span>
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-2-tab" data-bs-toggle="pill" data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-2" aria-selected="false">
-                                <span>Compact</span>
-                                <span>From $ 100</span>
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-3-tab" data-bs-toggle="pill" data-bs-target="#pills-3" type="button" role="tab" aria-controls="pills-3" aria-selected="false">
-                                <span>Intermediate</span>
-                                <span>From $ 100</span>
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-4-tab" data-bs-toggle="pill" data-bs-target="#pills-4" type="button" role="tab" aria-controls="pills-4" aria-selected="false">
-                                <span>Standard</span>
-                                <span>From $ 100</span>
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-5-tab" data-bs-toggle="pill" data-bs-target="#pills-5" type="button" role="tab" aria-controls="pills-5" aria-selected="false">
-                                <span>Full Size</span>
-                                <span>From $ 100</span>
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-6-tab" data-bs-toggle="pill" data-bs-target="#pills-6" type="button" role="tab" aria-controls="pills-6" aria-selected="false">
-                                <span>Premium</span>
-                                <span>From $ 100</span>
-                            </button>
-                        </li>
-                    </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab" tabindex="0">
+                                <div class="transfer-filter-listing-box">
+                                    <div class="row">
+                                        <div class="col-md-5 transfer-filter-img">
+                                            <div class="img-box">
+                                                <img src="{{asset('assets/images/car-filter-1.jpg')}}" alt="car filter">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7 transfer-filter-content">
+                                            <div class="transfer-filter-content-inner">
+                                                <div class="top-header-content">
+                                                    <h2>Seat Ibiza</h2>
+                                                    <span>or similar</span><span>Compact Class</span>
+                                                </div>
+                                                <div class="cars-include-list">
+                                                    <span class="badge badge-default">Manual Transmission</span>
+                                                    <span class="badge badge-default">4 Passengers</span>
+                                                    <span class="badge badge-default">2 Hand bags</span>
+                                                    <span class="badge badge-default">5 Doors</span>
+                                                    <span class="badge badge-default">1 Suit case</span>
+                                                    <span class="badge badge-default">Air Conditioner</span>
+                                                </div>
+                                                <p>Unlimited Kilometers | Value Added Tax (VAT)</p>
+                                                <div class="bottom-more-details d-flex flex-wrap align-items-center">
+                                                    <div class="left-link-text">
+                                                        <a href="{{route('carRentalTerms')}}" class="d-block">Terms And Conditions</a>
+                                                        <a href="{{route('carRentalDetails')}}" class="d-block">More Details</a>
+                                                    </div>
+                                                    <div class="right-car-info-img">
+                                                        <img src="{{asset('assets/images/europcar.png')}}" alt="Car">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="car-rental-booking-price booking-tab-price-content">
+                                        <div class="price-full-details">
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Insurance with deductible More details <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
+                                            </div>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Zero Excess including tires and glass <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
+                                            </div>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Zero deductible insurance <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
+                                            </div>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Price includes applicable taxes. Zero Excess with Super Cover <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
+                                            </div>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Price includes applicable taxes. Zero Insurance Excess <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab" tabindex="0">
-                            <div class="transfer-filter-listing-box">
-                                <div class="row">
-                                    <div class="col-md-5 transfer-filter-img">
-                                        <div class="img-box">
-                                            <img src="{{asset('assets/images/car-filter-1.jpg')}}" alt="car filter">
+                                <div class="transfer-filter-listing-box">
+                                    <div class="row">
+                                        <div class="col-md-5 transfer-filter-img">
+                                            <div class="img-box">
+                                                <img src="{{asset('assets/images/car-filter-2.jpg')}}" alt="car filter">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7 transfer-filter-content">
+                                            <div class="transfer-filter-content-inner">
+                                                <div class="top-header-content">
+                                                    <h2>Seat Ibiza</h2>
+                                                    <span>or similar</span><span>Compact Class</span>
+                                                </div>
+                                                <div class="cars-include-list">
+                                                    <span class="badge badge-default">Manual Transmission</span>
+                                                    <span class="badge badge-default">4 Passengers</span>
+                                                    <span class="badge badge-default">2 Hand bags</span>
+                                                    <span class="badge badge-default">5 Doors</span>
+                                                    <span class="badge badge-default">1 Suit case</span>
+                                                    <span class="badge badge-default">Air Conditioner</span>
+                                                </div>
+                                                <p>Unlimited Kilometers | Value Added Tax (VAT)</p>
+                                                <div class="bottom-more-details d-flex flex-wrap align-items-center">
+                                                    <div class="left-link-text">
+                                                        <a href="{{route('carRentalTerms')}}" class="d-block">Terms And Conditions</a>
+                                                        <a href="{{route('carRentalDetails')}}" class="d-block">More Details</a>
+                                                    </div>
+                                                    <div class="right-car-info-img">
+                                                        <img src="{{asset('assets/images/europcar.png')}}" alt="Car">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-7 transfer-filter-content">
-                                        <div class="transfer-filter-content-inner">
-                                            <div class="top-header-content">
-                                                <h2>Seat Ibiza</h2>
-                                                <span>or similar</span><span>Compact Class</span>
-                                            </div>
-                                            <div class="cars-include-list">
-                                                <span class="badge badge-default">Manual Transmission</span>
-                                                <span class="badge badge-default">4 Passengers</span>
-                                                <span class="badge badge-default">2 Hand bags</span>
-                                                <span class="badge badge-default">5 Doors</span>
-                                                <span class="badge badge-default">1 Suit case</span>
-                                                <span class="badge badge-default">Air Conditioner</span>
-                                            </div>
-                                            <p>Unlimited Kilometers | Value Added Tax (VAT)</p>
-                                            <div class="bottom-more-details d-flex flex-wrap align-items-center">
-                                                <div class="left-link-text">
-                                                    <a href="{{route('carRentalTerms')}}" class="d-block">Terms And Conditions</a>
-                                                    <a href="{{route('carRentalDetails')}}" class="d-block">More Details</a>
+                                    <div class="car-rental-booking-price booking-tab-price-content">
+                                        <div class="price-full-details">
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Insurance with deductible More details <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
                                                 </div>
-                                                <div class="right-car-info-img">
-                                                    <img src="{{asset('assets/images/europcar.png')}}" alt="Car">
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="car-rental-booking-price booking-tab-price-content">
-                                    <div class="price-full-details">
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Insurance with deductible More details <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Zero Excess including tires and glass <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Zero deductible insurance <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Price includes applicable taxes. Zero Excess with Super Cover <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Zero Excess including tires and glass <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Zero deductible insurance <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Price includes applicable taxes. Zero Excess with Super Cover <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Price includes applicable taxes. Zero Insurance Excess <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Price includes applicable taxes. Zero Insurance Excess <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="transfer-filter-listing-box">
-                                <div class="row">
-                                    <div class="col-md-5 transfer-filter-img">
-                                        <div class="img-box">
-                                            <img src="{{asset('assets/images/car-filter-2.jpg')}}" alt="car filter">
+                            <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab" tabindex="0">
+                                <div class="transfer-filter-listing-box">
+                                    <div class="row">
+                                        <div class="col-md-5 transfer-filter-img">
+                                            <div class="img-box">
+                                                <img src="{{asset('assets/images/car-filter-1.jpg')}}" alt="car filter">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7 transfer-filter-content">
+                                            <div class="transfer-filter-content-inner">
+                                                <div class="top-header-content">
+                                                    <h2>Seat Ibiza</h2>
+                                                    <span>or similar</span><span>Compact Class</span>
+                                                </div>
+                                                <div class="cars-include-list">
+                                                    <span class="badge badge-default">Manual Transmission</span>
+                                                    <span class="badge badge-default">4 Passengers</span>
+                                                    <span class="badge badge-default">2 Hand bags</span>
+                                                    <span class="badge badge-default">5 Doors</span>
+                                                    <span class="badge badge-default">1 Suit case</span>
+                                                    <span class="badge badge-default">Air Conditioner</span>
+                                                </div>
+                                                <p>Unlimited Kilometers | Value Added Tax (VAT)</p>
+                                                <div class="bottom-more-details d-flex flex-wrap align-items-center">
+                                                    <div class="left-link-text">
+                                                        <a href="{{route('carRentalTerms')}}" class="d-block">Terms And Conditions</a>
+                                                        <a href="{{route('carRentalDetails')}}" class="d-block">More Details</a>
+                                                    </div>
+                                                    <div class="right-car-info-img">
+                                                        <img src="{{asset('assets/images/europcar.png')}}" alt="Car">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-7 transfer-filter-content">
-                                        <div class="transfer-filter-content-inner">
-                                            <div class="top-header-content">
-                                                <h2>Seat Ibiza</h2>
-                                                <span>or similar</span><span>Compact Class</span>
-                                            </div>
-                                            <div class="cars-include-list">
-                                                <span class="badge badge-default">Manual Transmission</span>
-                                                <span class="badge badge-default">4 Passengers</span>
-                                                <span class="badge badge-default">2 Hand bags</span>
-                                                <span class="badge badge-default">5 Doors</span>
-                                                <span class="badge badge-default">1 Suit case</span>
-                                                <span class="badge badge-default">Air Conditioner</span>
-                                            </div>
-                                            <p>Unlimited Kilometers | Value Added Tax (VAT)</p>
-                                            <div class="bottom-more-details d-flex flex-wrap align-items-center">
-                                                <div class="left-link-text">
-                                                    <a href="{{route('carRentalTerms')}}" class="d-block">Terms And Conditions</a>
-                                                    <a href="{{route('carRentalDetails')}}" class="d-block">More Details</a>
+                                    <div class="car-rental-booking-price booking-tab-price-content">
+                                        <div class="price-full-details">
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Insurance with deductible More details <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
                                                 </div>
-                                                <div class="right-car-info-img">
-                                                    <img src="{{asset('assets/images/europcar.png')}}" alt="Car">
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="car-rental-booking-price booking-tab-price-content">
-                                    <div class="price-full-details">
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Insurance with deductible More details <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Zero Excess including tires and glass <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Zero deductible insurance <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Price includes applicable taxes. Zero Excess with Super Cover <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Zero Excess including tires and glass <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Zero deductible insurance <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Price includes applicable taxes. Zero Excess with Super Cover <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Price includes applicable taxes. Zero Insurance Excess <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Price includes applicable taxes. Zero Insurance Excess <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab" tabindex="0">
-                            <div class="transfer-filter-listing-box">
-                                <div class="row">
-                                    <div class="col-md-5 transfer-filter-img">
-                                        <div class="img-box">
-                                            <img src="{{asset('assets/images/car-filter-1.jpg')}}" alt="car filter">
+                            <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab" tabindex="0">
+                                <div class="transfer-filter-listing-box">
+                                    <div class="row">
+                                        <div class="col-md-5 transfer-filter-img">
+                                            <div class="img-box">
+                                                <img src="{{asset('assets/images/car-filter-2.jpg')}}" alt="car filter">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7 transfer-filter-content">
+                                            <div class="transfer-filter-content-inner">
+                                                <div class="top-header-content">
+                                                    <h2>Seat Ibiza</h2>
+                                                    <span>or similar</span><span>Compact Class</span>
+                                                </div>
+                                                <div class="cars-include-list">
+                                                    <span class="badge badge-default">Manual Transmission</span>
+                                                    <span class="badge badge-default">4 Passengers</span>
+                                                    <span class="badge badge-default">2 Hand bags</span>
+                                                    <span class="badge badge-default">5 Doors</span>
+                                                    <span class="badge badge-default">1 Suit case</span>
+                                                    <span class="badge badge-default">Air Conditioner</span>
+                                                </div>
+                                                <p>Unlimited Kilometers | Value Added Tax (VAT)</p>
+                                                <div class="bottom-more-details d-flex flex-wrap align-items-center">
+                                                    <div class="left-link-text">
+                                                        <a href="{{route('carRentalTerms')}}" class="d-block">Terms And Conditions</a>
+                                                        <a href="{{route('carRentalDetails')}}" class="d-block">More Details</a>
+                                                    </div>
+                                                    <div class="right-car-info-img">
+                                                        <img src="{{asset('assets/images/europcar.png')}}" alt="Car">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-7 transfer-filter-content">
-                                        <div class="transfer-filter-content-inner">
-                                            <div class="top-header-content">
-                                                <h2>Seat Ibiza</h2>
-                                                <span>or similar</span><span>Compact Class</span>
-                                            </div>
-                                            <div class="cars-include-list">
-                                                <span class="badge badge-default">Manual Transmission</span>
-                                                <span class="badge badge-default">4 Passengers</span>
-                                                <span class="badge badge-default">2 Hand bags</span>
-                                                <span class="badge badge-default">5 Doors</span>
-                                                <span class="badge badge-default">1 Suit case</span>
-                                                <span class="badge badge-default">Air Conditioner</span>
-                                            </div>
-                                            <p>Unlimited Kilometers | Value Added Tax (VAT)</p>
-                                            <div class="bottom-more-details d-flex flex-wrap align-items-center">
-                                                <div class="left-link-text">
-                                                    <a href="{{route('carRentalTerms')}}" class="d-block">Terms And Conditions</a>
-                                                    <a href="{{route('carRentalDetails')}}" class="d-block">More Details</a>
+                                    <div class="car-rental-booking-price booking-tab-price-content">
+                                        <div class="price-full-details">
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Insurance with deductible More details <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
                                                 </div>
-                                                <div class="right-car-info-img">
-                                                    <img src="{{asset('assets/images/europcar.png')}}" alt="Car">
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="car-rental-booking-price booking-tab-price-content">
-                                    <div class="price-full-details">
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Insurance with deductible More details <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Zero Excess including tires and glass <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Zero deductible insurance <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Price includes applicable taxes. Zero Excess with Super Cover <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Zero Excess including tires and glass <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Zero deductible insurance <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Price includes applicable taxes. Zero Excess with Super Cover <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Price includes applicable taxes. Zero Insurance Excess <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Price includes applicable taxes. Zero Insurance Excess <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab" tabindex="0">
-                            <div class="transfer-filter-listing-box">
-                                <div class="row">
-                                    <div class="col-md-5 transfer-filter-img">
-                                        <div class="img-box">
-                                            <img src="{{asset('assets/images/car-filter-2.jpg')}}" alt="car filter">
+                            <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-4-tab" tabindex="0">
+                                <div class="transfer-filter-listing-box">
+                                    <div class="row">
+                                        <div class="col-md-5 transfer-filter-img">
+                                            <div class="img-box">
+                                                <img src="{{asset('assets/images/car-filter-1.jpg')}}" alt="car filter">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7 transfer-filter-content">
+                                            <div class="transfer-filter-content-inner">
+                                                <div class="top-header-content">
+                                                    <h2>Seat Ibiza</h2>
+                                                    <span>or similar</span><span>Compact Class</span>
+                                                </div>
+                                                <div class="cars-include-list">
+                                                    <span class="badge badge-default">Manual Transmission</span>
+                                                    <span class="badge badge-default">4 Passengers</span>
+                                                    <span class="badge badge-default">2 Hand bags</span>
+                                                    <span class="badge badge-default">5 Doors</span>
+                                                    <span class="badge badge-default">1 Suit case</span>
+                                                    <span class="badge badge-default">Air Conditioner</span>
+                                                </div>
+                                                <p>Unlimited Kilometers | Value Added Tax (VAT)</p>
+                                                <div class="bottom-more-details d-flex flex-wrap align-items-center">
+                                                    <div class="left-link-text">
+                                                        <a href="{{route('carRentalTerms')}}" class="d-block">Terms And Conditions</a>
+                                                        <a href="{{route('carRentalDetails')}}" class="d-block">More Details</a>
+                                                    </div>
+                                                    <div class="right-car-info-img">
+                                                        <img src="{{asset('assets/images/europcar.png')}}" alt="Car">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-7 transfer-filter-content">
-                                        <div class="transfer-filter-content-inner">
-                                            <div class="top-header-content">
-                                                <h2>Seat Ibiza</h2>
-                                                <span>or similar</span><span>Compact Class</span>
-                                            </div>
-                                            <div class="cars-include-list">
-                                                <span class="badge badge-default">Manual Transmission</span>
-                                                <span class="badge badge-default">4 Passengers</span>
-                                                <span class="badge badge-default">2 Hand bags</span>
-                                                <span class="badge badge-default">5 Doors</span>
-                                                <span class="badge badge-default">1 Suit case</span>
-                                                <span class="badge badge-default">Air Conditioner</span>
-                                            </div>
-                                            <p>Unlimited Kilometers | Value Added Tax (VAT)</p>
-                                            <div class="bottom-more-details d-flex flex-wrap align-items-center">
-                                                <div class="left-link-text">
-                                                    <a href="{{route('carRentalTerms')}}" class="d-block">Terms And Conditions</a>
-                                                    <a href="{{route('carRentalDetails')}}" class="d-block">More Details</a>
+                                    <div class="car-rental-booking-price booking-tab-price-content">
+                                        <div class="price-full-details">
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Insurance with deductible More details <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
                                                 </div>
-                                                <div class="right-car-info-img">
-                                                    <img src="{{asset('assets/images/europcar.png')}}" alt="Car">
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="car-rental-booking-price booking-tab-price-content">
-                                    <div class="price-full-details">
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Insurance with deductible More details <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Zero Excess including tires and glass <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Zero deductible insurance <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Price includes applicable taxes. Zero Excess with Super Cover <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Zero Excess including tires and glass <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Zero deductible insurance <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Price includes applicable taxes. Zero Excess with Super Cover <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Price includes applicable taxes. Zero Insurance Excess <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Price includes applicable taxes. Zero Insurance Excess <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-4-tab" tabindex="0">
-                            <div class="transfer-filter-listing-box">
-                                <div class="row">
-                                    <div class="col-md-5 transfer-filter-img">
-                                        <div class="img-box">
-                                            <img src="{{asset('assets/images/car-filter-1.jpg')}}" alt="car filter">
+                            <div class="tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-5-tab" tabindex="0">
+                                <div class="transfer-filter-listing-box">
+                                    <div class="row">
+                                        <div class="col-md-5 transfer-filter-img">
+                                            <div class="img-box">
+                                                <img src="{{asset('assets/images/car-filter-2.jpg')}}" alt="car filter">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7 transfer-filter-content">
+                                            <div class="transfer-filter-content-inner">
+                                                <div class="top-header-content">
+                                                    <h2>Seat Ibiza</h2>
+                                                    <span>or similar</span><span>Compact Class</span>
+                                                </div>
+                                                <div class="cars-include-list">
+                                                    <span class="badge badge-default">Manual Transmission</span>
+                                                    <span class="badge badge-default">4 Passengers</span>
+                                                    <span class="badge badge-default">2 Hand bags</span>
+                                                    <span class="badge badge-default">5 Doors</span>
+                                                    <span class="badge badge-default">1 Suit case</span>
+                                                    <span class="badge badge-default">Air Conditioner</span>
+                                                </div>
+                                                <p>Unlimited Kilometers | Value Added Tax (VAT)</p>
+                                                <div class="bottom-more-details d-flex flex-wrap align-items-center">
+                                                    <div class="left-link-text">
+                                                        <a href="{{route('carRentalTerms')}}" class="d-block">Terms And Conditions</a>
+                                                        <a href="{{route('carRentalDetails')}}" class="d-block">More Details</a>
+                                                    </div>
+                                                    <div class="right-car-info-img">
+                                                        <img src="{{asset('assets/images/europcar.png')}}" alt="Car">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-7 transfer-filter-content">
-                                        <div class="transfer-filter-content-inner">
-                                            <div class="top-header-content">
-                                                <h2>Seat Ibiza</h2>
-                                                <span>or similar</span><span>Compact Class</span>
-                                            </div>
-                                            <div class="cars-include-list">
-                                                <span class="badge badge-default">Manual Transmission</span>
-                                                <span class="badge badge-default">4 Passengers</span>
-                                                <span class="badge badge-default">2 Hand bags</span>
-                                                <span class="badge badge-default">5 Doors</span>
-                                                <span class="badge badge-default">1 Suit case</span>
-                                                <span class="badge badge-default">Air Conditioner</span>
-                                            </div>
-                                            <p>Unlimited Kilometers | Value Added Tax (VAT)</p>
-                                            <div class="bottom-more-details d-flex flex-wrap align-items-center">
-                                                <div class="left-link-text">
-                                                    <a href="{{route('carRentalTerms')}}" class="d-block">Terms And Conditions</a>
-                                                    <a href="{{route('carRentalDetails')}}" class="d-block">More Details</a>
+                                    <div class="car-rental-booking-price booking-tab-price-content">
+                                        <div class="price-full-details">
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Insurance with deductible More details <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
                                                 </div>
-                                                <div class="right-car-info-img">
-                                                    <img src="{{asset('assets/images/europcar.png')}}" alt="Car">
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="car-rental-booking-price booking-tab-price-content">
-                                    <div class="price-full-details">
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Insurance with deductible More details <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Zero Excess including tires and glass <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Zero deductible insurance <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Price includes applicable taxes. Zero Excess with Super Cover <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Zero Excess including tires and glass <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Zero deductible insurance <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Price includes applicable taxes. Zero Excess with Super Cover <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Price includes applicable taxes. Zero Insurance Excess <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Price includes applicable taxes. Zero Insurance Excess <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-5-tab" tabindex="0">
-                            <div class="transfer-filter-listing-box">
-                                <div class="row">
-                                    <div class="col-md-5 transfer-filter-img">
-                                        <div class="img-box">
-                                            <img src="{{asset('assets/images/car-filter-2.jpg')}}" alt="car filter">
+                            <div class="tab-pane fade" id="pills-6" role="tabpanel" aria-labelledby="pills-6-tab" tabindex="0">
+                                <div class="transfer-filter-listing-box">
+                                    <div class="row">
+                                        <div class="col-md-5 transfer-filter-img">
+                                            <div class="img-box">
+                                                <img src="{{asset('assets/images/car-filter-1.jpg')}}" alt="car filter">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-7 transfer-filter-content">
-                                        <div class="transfer-filter-content-inner">
-                                            <div class="top-header-content">
-                                                <h2>Seat Ibiza</h2>
-                                                <span>or similar</span><span>Compact Class</span>
-                                            </div>
-                                            <div class="cars-include-list">
-                                                <span class="badge badge-default">Manual Transmission</span>
-                                                <span class="badge badge-default">4 Passengers</span>
-                                                <span class="badge badge-default">2 Hand bags</span>
-                                                <span class="badge badge-default">5 Doors</span>
-                                                <span class="badge badge-default">1 Suit case</span>
-                                                <span class="badge badge-default">Air Conditioner</span>
-                                            </div>
-                                            <p>Unlimited Kilometers | Value Added Tax (VAT)</p>
-                                            <div class="bottom-more-details d-flex flex-wrap align-items-center">
-                                                <div class="left-link-text">
-                                                    <a href="{{route('carRentalTerms')}}" class="d-block">Terms And Conditions</a>
-                                                    <a href="{{route('carRentalDetails')}}" class="d-block">More Details</a>
+                                        <div class="col-md-7 transfer-filter-content">
+                                            <div class="transfer-filter-content-inner">
+                                                <div class="top-header-content">
+                                                    <h2>Seat Ibiza</h2>
+                                                    <span>or similar</span><span>Compact Class</span>
                                                 </div>
-                                                <div class="right-car-info-img">
-                                                    <img src="{{asset('assets/images/europcar.png')}}" alt="Car">
+                                                <div class="cars-include-list">
+                                                    <span class="badge badge-default">Manual Transmission</span>
+                                                    <span class="badge badge-default">4 Passengers</span>
+                                                    <span class="badge badge-default">2 Hand bags</span>
+                                                    <span class="badge badge-default">5 Doors</span>
+                                                    <span class="badge badge-default">1 Suit case</span>
+                                                    <span class="badge badge-default">Air Conditioner</span>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="car-rental-booking-price booking-tab-price-content">
-                                    <div class="price-full-details">
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Insurance with deductible More details <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Zero Excess including tires and glass <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Zero deductible insurance <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Price includes applicable taxes. Zero Excess with Super Cover <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Price includes applicable taxes. Zero Insurance Excess <img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="pills-6" role="tabpanel" aria-labelledby="pills-6-tab" tabindex="0">
-                            <div class="transfer-filter-listing-box">
-                                <div class="row">
-                                    <div class="col-md-5 transfer-filter-img">
-                                        <div class="img-box">
-                                            <img src="{{asset('assets/images/car-filter-1.jpg')}}" alt="car filter">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7 transfer-filter-content">
-                                        <div class="transfer-filter-content-inner">
-                                            <div class="top-header-content">
-                                                <h2>Seat Ibiza</h2>
-                                                <span>or similar</span><span>Compact Class</span>
-                                            </div>
-                                            <div class="cars-include-list">
-                                                <span class="badge badge-default">Manual Transmission</span>
-                                                <span class="badge badge-default">4 Passengers</span>
-                                                <span class="badge badge-default">2 Hand bags</span>
-                                                <span class="badge badge-default">5 Doors</span>
-                                                <span class="badge badge-default">1 Suit case</span>
-                                                <span class="badge badge-default">Air Conditioner</span>
-                                            </div>
-                                            <p>Unlimited Kilometers | Value Added Tax (VAT)</p>
-                                            <div class="bottom-more-details d-flex flex-wrap align-items-center">
-                                                <div class="left-link-text">
-                                                    <a href="{{route('carRentalTerms')}}" class="d-block">Terms And Conditions</a>
-                                                    <a href="{{route('carRentalDetails')}}" class="d-block">More Details</a>
-                                                </div>
-                                                <div class="right-car-info-img">
-                                                    <img src="{{asset('assets/images/europcar.png')}}" alt="Car">
+                                                <p>Unlimited Kilometers | Value Added Tax (VAT)</p>
+                                                <div class="bottom-more-details d-flex flex-wrap align-items-center">
+                                                    <div class="left-link-text">
+                                                        <a href="{{route('carRentalTerms')}}" class="d-block">Terms And Conditions</a>
+                                                        <a href="{{route('carRentalDetails')}}" class="d-block">More Details</a>
+                                                    </div>
+                                                    <div class="right-car-info-img">
+                                                        <img src="{{asset('assets/images/europcar.png')}}" alt="Car">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="car-rental-booking-price booking-tab-price-content">
-                                    <div class="price-full-details">
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Insurance with deductible More details <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                    <div class="car-rental-booking-price booking-tab-price-content">
+                                        <div class="price-full-details">
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Insurance with deductible More details <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Zero Excess including tires and glass <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Zero deductible insurance <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Zero Excess including tires and glass <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Price includes applicable taxes. Zero Excess with Super Cover <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Zero deductible insurance <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Price includes applicable taxes. Zero Excess with Super Cover <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
-                                            </div>
-                                        </div>
-                                        <div class="price-full-details-inner">
-                                            <div class="price-details-box">
-                                                <p>Price includes applicable taxes. Zero Insurance Excess <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <p>$184</p>
-                                            </div>
-                                            <div class="price-details-box">
-                                                <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                            <div class="price-full-details-inner">
+                                                <div class="price-details-box">
+                                                    <p>Price includes applicable taxes. Zero Insurance Excess <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Inclusive Package Rate Includes: VAT tax, liability, fire and theft insurances with deductible"><img src="{{asset('assets/images/info-circle.png')}}" alt="Info"></span></p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <p>$184</p>
+                                                </div>
+                                                <div class="price-details-box">
+                                                    <a href="{{route('carRentalBooking')}}" class="custom-btn">Select</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -957,5 +958,17 @@
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
+    function car_content_area_height() {
+      var widget_area_height = $(".car-rental-filter-section .left-sidebar-widget .sidebar-inner").height();
+      $(".car-rental-filter-section .car-filter-content-area").css('max-height',widget_area_height);
+    }
+
+    $( window ).on("resize",function() {
+      car_content_area_height();
+    })
+
+    $( window ).on("load",function() {
+      car_content_area_height();
+    })
 </script>
 @endsection
