@@ -21,6 +21,18 @@ class DayTripController extends Controller
     public function dayTripBookingFilter(){
         return view('web.DayTrip.day-trip-filter');
     }
+  
+    public function dayTripBookingDetail(){
+        return view('web.DayTrip.day-trip-detail');
+    }
+   
+    public function dayTripBooking(){
+        return view('web.DayTrip.day-trip-booking');
+    }
+    
+    public function dayTripBookingCart(){
+        return view('web.DayTrip.day-trip-booking-cart');
+    }
 
     public function transfer(){
         return view('web.DayTrip.transfer');

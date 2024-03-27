@@ -52,6 +52,9 @@ Route::get('/paradores', [HotelController::class, 'paradores'])->name('paradores
 
 Route::get('/daytrips/activities', [DayTripController::class, 'dayTripActivities'])->name('dayTripActivities');
 Route::get('/daytrips/booking/filter', [DayTripController::class, 'dayTripBookingFilter'])->name('dayTripBookingFilter');
+Route::get('/daytrips/booking/detail', [DayTripController::class, 'dayTripBookingDetail'])->name('dayTripBookingDetail');
+Route::get('/daytrips/booking', [DayTripController::class, 'dayTripBooking'])->name('dayTripBooking');
+Route::get('/dayTrip/booking/cart', [DayTripController::class, 'dayTripBookingCart'])->name('dayTripBookingCart');
 
 Route::get('/transfer', [DayTripController::class, 'transfer'])->name('transfer');
 Route::get('/transfer/terminal', [DayTripController::class, 'transferTerminal'])->name('transferTerminal');
